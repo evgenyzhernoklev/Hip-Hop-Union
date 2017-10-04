@@ -419,3 +419,35 @@ function twentysixteen_widget_tag_cloud_args( $args ) {
 	return $args;
 }
 add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
+
+
+
+/**
+ * Add custom post types => persons
+*/
+add_action( 'init', 'create_post_type' );
+
+function create_post_type() {
+	register_post_type( 'person',
+  		array(
+          'labels' => array( // добавляем новые элементы в административную частьку
+              'name' => __( 'Персоны' ),
+              'singular_name' => __( 'Персона' ),
+              'has_archive' => true,
+              'add_new' => 'Добавить новую персону',
+              'not_found' => 'Ничего не найдено',
+              'not_found_in_trash' => 'В корзине персон не найдено'
+          ),
+          'public' => true,
+					'menu_icon' => 'dashicons-admin-users',
+          'has_archive' => true,
+          'supports' => array( //добавляем элементы в редактор
+              'title',
+              'thumbnail',
+              'page-attributes',
+              'custom-fields'
+          )//,
+        //  'taxonomies' => array('category', 'post_tag') //добавляем к записям необходимый набор таксономий
+     	)
+	);
+}
