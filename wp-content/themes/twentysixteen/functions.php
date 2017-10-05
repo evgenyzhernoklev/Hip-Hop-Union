@@ -452,6 +452,11 @@ function create_post_type() {
 	);
 }
 
+
+
+/**
+ * Add custom fields for post types => persons
+*/
 abstract class Person_Meta_Boxes
 {
     public static function add()
@@ -510,3 +515,18 @@ abstract class Person_Meta_Boxes
 
 add_action('add_meta_boxes', ['Person_Meta_Boxes', 'add']);
 add_action('save_post', ['Person_Meta_Boxes', 'save']);
+
+
+
+/**
+ * Add custom thumbnails for post types => persons
+*/
+if (class_exists('MultiPostThumbnails')) {
+    new MultiPostThumbnails(
+        array(
+            'label' => 'Фото для ховера',
+            'id' => 'secondary-image',
+            'post_type' => 'person'
+        )
+    );
+}

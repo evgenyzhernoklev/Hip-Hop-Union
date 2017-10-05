@@ -18,6 +18,12 @@
 		<div class="post-thumbnail">
 			<a href="<?php echo $link ?>" target="_blank">
 				<?php the_post_thumbnail(); ?>
+				<?php if (class_exists('MultiPostThumbnails')) :
+				    MultiPostThumbnails::the_post_thumbnail(
+				        get_post_type(),
+				        'secondary-image'
+				    );
+				endif; ?>
 			</a>
 		</div>
 
