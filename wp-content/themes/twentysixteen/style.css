@@ -3984,4 +3984,82 @@ p > video {
 /****************************** custom styles ******************************/
 /***************************************************************************/
 
-/***** persons/partners *****/
+/********** common **********/
+body {
+	
+}
+
+.contentIn {
+	margin: 0 auto;
+}
+
+.titleMain {
+ text-align: center;
+}
+
+/* cols */
+.cols {
+	margin: 0 auto;
+	overflow: hidden;
+  zoom: 1;
+}
+
+.cols:before,
+.cols:after {
+	content: "";
+	display: table;
+}
+
+.cols:after {
+	clear: both;
+}
+
+.cols--2 {
+	max-width: 720px;
+}
+
+.cols__col {
+	float: left;
+	width: 100%;
+}
+
+.cols__col--2 {
+	width: 50%;
+}
+
+
+
+/********** persons/partners **********/
+.partner {
+	margin: 0 auto;
+	max-width: 280px;
+	text-align: center;
+}
+
+.partnerImg {
+
+}
+
+.partnerImg img {
+
+}
+
+.partnerImg__link {
+
+}
+
+.partnerTitle {
+
+}
+
+.partnerTitle__link {
+
+}
+
+.partnerInfo {
+
+}
+
+.partnerInfo p {
+
+}
