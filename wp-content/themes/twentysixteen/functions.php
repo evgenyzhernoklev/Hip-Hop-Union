@@ -422,12 +422,15 @@ add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
 
 
 
+/******************************************************************************/
+/********************************** Persons ***********************************/
+/******************************************************************************/
 /**
  * Add custom post types => persons
 */
-add_action( 'init', 'create_post_type' );
+add_action( 'init', 'create_post_type_persons' );
 
-function create_post_type() {
+function create_post_type_persons() {
 	register_post_type( 'person',
   		array(
           'labels' => array( // добавляем новые элементы в административную частьку
@@ -530,3 +533,79 @@ if (class_exists('MultiPostThumbnails')) {
         )
     );
 }
+
+
+
+/******************************************************************************/
+/********************************** Partners **********************************/
+/******************************************************************************/
+/**
+ * Add custom post types => partners
+*/
+add_action( 'init', 'create_post_type_partners' );
+
+function create_post_type_partners() {
+	register_post_type( 'partner',
+  		array(
+          'labels' => array( // добавляем новые элементы в административную частьку
+              'name' => __( 'Партнеры' ),
+              'singular_name' => __( 'Партнер' ),
+              'has_archive' => true,
+              'add_new' => 'Добавить нового партнера',
+              'not_found' => 'Ничего не найдено',
+              'not_found_in_trash' => 'В корзине партнеров не найдено'
+          ),
+          'public' => true,
+					'menu_icon' => 'dashicons-groups',
+          'has_archive' => true,
+          'supports' => array( //добавляем элементы в редактор
+              'title',
+							'excerpt',
+              'thumbnail',
+              'page-attributes'
+          )//,
+         //'taxonomies' => array('category') //добавляем к записям необходимый набор таксономий
+     	)
+	);
+}
+
+/**
+ * Add custom fields for post types => partners
+*/
+abstract class Partner_Meta_Boxes
+{
+    public static function add()
+    {
+        $screens = ['partner'];
+        foreach ($screens as $screen) {
+						add_meta_box(
+								'partner_link_id',        				// Unique ID
+								'Ссылка на контакты', 					// Box title
+								[self::class, 'html_link'],   	// Content callback, must be of type callable
+								$screen                 				// Post type
+						);
+        }
+    }
+
+    public static function save($post_id)
+    {
+				if (array_key_exists('partner_link_field', $_POST)) {
+						update_post_meta(
+								$post_id,
+								'_partner_link_meta_key',
+								$_POST['partner_link_field']
+						);
+				}
+    }
+
+		public static function html_link($post)
+    {
+				$valueLink = get_post_meta($post->ID, '_partner_link_meta_key', true);
+        ?>
+				<input type="text" name="partner_link_field" id="partner_link_field" value="<?php echo $valueLink ?>" style="width: 100%;" />
+        <?php
+    }
+}
+
+add_action('add_meta_boxes', ['Partner_Meta_Boxes', 'add']);
+add_action('save_post', ['Partner_Meta_Boxes', 'save']);
