@@ -443,11 +443,70 @@ function create_post_type() {
           'has_archive' => true,
           'supports' => array( //добавляем элементы в редактор
               'title',
+							'excerpt',
               'thumbnail',
-              'page-attributes',
-              'custom-fields'
-          )//,
-        //  'taxonomies' => array('category', 'post_tag') //добавляем к записям необходимый набор таксономий
+              'page-attributes'
+          ),
+         'taxonomies' => array('category') //добавляем к записям необходимый набор таксономий
      	)
 	);
 }
+
+abstract class Person_Meta_Boxes
+{
+    public static function add()
+    {
+        $screens = ['person'];
+        foreach ($screens as $screen) {
+						add_meta_box(
+								'person_link_id',        				// Unique ID
+								'Ссылка на контакты', 					// Box title
+								[self::class, 'html_link'],   	// Content callback, must be of type callable
+								$screen                 				// Post type
+						);
+            add_meta_box(
+                'person_phone_id',        			// Unique ID
+                'Телефон', 											// Box title
+                [self::class, 'html_phone'],   	// Content callback, must be of type callable
+                $screen                 				// Post type
+            );
+        }
+    }
+
+    public static function save($post_id)
+    {
+				if (array_key_exists('person_link_field', $_POST)) {
+						update_post_meta(
+								$post_id,
+								'_person_link_meta_key',
+								$_POST['person_link_field']
+						);
+				}
+        if (array_key_exists('person_phone_field', $_POST)) {
+            update_post_meta(
+                $post_id,
+                '_person_phone_meta_key',
+                $_POST['person_phone_field']
+            );
+        }
+    }
+
+		public static function html_link($post)
+    {
+				$valueLink = get_post_meta($post->ID, '_person_link_meta_key', true);
+        ?>
+				<input type="text" name="person_link_field" id="person_link_field" value="<?php echo $valueLink ?>" style="width: 100%;" />
+        <?php
+    }
+
+    public static function html_phone($post)
+    {
+        $valuePhone = get_post_meta($post->ID, '_person_phone_meta_key', true);
+        ?>
+				<input type="text" name="person_phone_field" id="person_phone_field" value="<?php echo $valuePhone ?>" style="width: 100%;" />
+        <?php
+    }
+}
+
+add_action('add_meta_boxes', ['Person_Meta_Boxes', 'add']);
+add_action('save_post', ['Person_Meta_Boxes', 'save']);
