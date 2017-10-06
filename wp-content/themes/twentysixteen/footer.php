@@ -13,7 +13,9 @@
 	<footer class="footer" role="contentinfo">
 		<div class="contentIn">
 
-			<?php twentysixteen_the_custom_logo(); ?>
+			<?php the_custom_logo(); ?>
+
+			<?php get_sidebar( 'content-bottom' ); ?>
 
 			<?php if ( has_nav_menu( 'social' ) ) : ?>
 				<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'twentysixteen' ); ?>">
