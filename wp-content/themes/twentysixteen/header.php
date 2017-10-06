@@ -2,8 +2,6 @@
 /**
  * The template for displaying the header
  *
- * Displays all of the head element and everything up until the "site-content" div.
- *
  * @package WordPress
  * @subpackage Twenty_Sixteen
  * @since Twenty Sixteen 1.0
@@ -90,6 +88,6 @@
 				</a>
 			</div><!-- .header-image -->
 		<?php endif; // End header image check. ?>
-	</header><!-- .site-header -->
+	</header>
 
 	<div class="content">

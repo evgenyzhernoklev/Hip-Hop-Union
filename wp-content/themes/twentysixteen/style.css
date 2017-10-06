@@ -3028,8 +3028,8 @@ a {
 	background-color: #ffffff;
 }
 
-.titleMain {
-	padding: 30px 0;
+.titlePage {
+	padding: 80px 0 75px;
 	font: 60px/72px 'ProximaNova-Bold', Arial, sans-serif;
 	text-align: center;
 }
@@ -3050,6 +3050,13 @@ a {
 
 .colsFlex--2 {
 	max-width: 720px;
+}
+
+.colsFlex--center {
+	-webkit-box-pack: center;
+  -moz-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .colsFlex__col {
@@ -3122,14 +3129,16 @@ a {
 }
 
 
+
 /********** persons/partners **********/
 .partner {
-	margin: 0 auto;
+	margin: 0 auto 98px;
 	max-width: 280px;
 	text-align: center;
 }
 
 .partnerImg {
+	margin-bottom: 38px;
 	height: 120px;
 	line-height: 120px;
 }
@@ -3139,6 +3148,7 @@ a {
 	height: auto;
 	max-width: 100%;
 	max-height: 100%;
+	vertical-align: middle;
 }
 
 .partnerImg__link {
@@ -3146,6 +3156,7 @@ a {
 }
 
 .partnerTitle {
+	margin-bottom: 28px;
 	font: 24px/29px 'ProximaNova-Bold', Arial, sans-serif;
 	color: #FE2F2F;
 }

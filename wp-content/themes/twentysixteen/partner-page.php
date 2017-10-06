@@ -7,15 +7,21 @@ Template Name: Шаблон страницы партнеров
 <?php get_header(); ?>
 
 <main class="contentIn" role="main">
-	<?php the_title( '<h1 class="titleMain">', '</h1>' ); ?>
+	<?php the_title( '<h1 class="titlePage">', '</h1>' ); ?>
 
 	<?php
 	// запрос
-	$wpb_all_query = new WP_Query(array('post_type'=>'partner', 'post_status'=>'publish', 'posts_per_page'=>-1)); ?>
+	$wpb_all_query = new WP_Query(array(
+																	'post_type'				=>'partner',
+																	'post_status'			=>'publish',
+																	'posts_per_page'	=> -1,
+																	'order' 					=> 'ASC',
+																	'orderby' 				=> 'menu_order'
+																)); ?>
 
 	<?php if ( $wpb_all_query->have_posts() ) : ?>
 
-		<div class="colsFlex colsFlex--2">
+		<div class="colsFlex colsFlex--2 colsFlex--center">
 			<?php while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post(); ?>
 
 				<?php $link = get_post_meta($post->ID, '_partner_link_meta_key', true); ?>

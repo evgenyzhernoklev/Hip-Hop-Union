@@ -2,8 +2,6 @@
 /**
  * The template for displaying the footer
  *
- * Contains the closing of the #content div and all content after
- *
  * @package WordPress
  * @subpackage Twenty_Sixteen
  * @since Twenty Sixteen 1.0
@@ -52,7 +50,7 @@
 				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentysixteen' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'twentysixteen' ), 'WordPress' ); ?></a>
 			</div><!-- .site-info -->
 		</div>
-	</footer><!-- .site-footer -->
+	</footer>
 
 <?php wp_footer(); ?>
 </body>
