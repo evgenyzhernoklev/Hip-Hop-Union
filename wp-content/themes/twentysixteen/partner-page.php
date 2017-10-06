@@ -15,30 +15,30 @@ Template Name: Шаблон страницы партнеров
 
 	<?php if ( $wpb_all_query->have_posts() ) : ?>
 
-		<div class="cols cols--2">
+		<div class="colsFlex colsFlex--2">
 			<?php while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post(); ?>
 
 				<?php $link = get_post_meta($post->ID, '_partner_link_meta_key', true); ?>
 
-				<div class="cols__col cols__col--2">
-
-					<?php
-						if ( $link ) :
-							echo 'nigger';
-						else :
-							echo 'nothing for nigger';
-						endif;
-					?>
-
+				<div class="colsFlex__col colsFlex__col--2">
 					<div class="partner">
-						<div class="partnerImg">
-							<a class="partnerImg__link" href="<?php echo $link ?>" target="_blank">
+
+						<?php if ( $link ) : ?>
+							<div class="partnerImg">
+								<a class="partnerImg__link" href="<?php echo $link ?>" target="_blank">
+									<?php the_post_thumbnail(); ?>
+								</a>
+							</div>
+							<h2 class="partnerTitle"><a class="partnerTitle__link"
+																					href="<?php echo $link ?>"
+																					target="_blank"><?php the_title(); ?></a></h2>
+						<?php else : ?>
+							<div class="partnerImg">
 								<?php the_post_thumbnail(); ?>
-							</a>
-						</div>
-						<h2 class="partnerTitle"><a class="partnerTitle__link"
-																				href="<?php echo $link ?>"
-																				target="_blank"><?php the_title(); ?></a></h2>
+							</div>
+							<h2 class="partnerTitle"><?php the_title(); ?></h2>
+						<?php endif; ?>
+
 						<div class="partnerInfo">
 							<?php the_excerpt(); ?>
 						</div>
