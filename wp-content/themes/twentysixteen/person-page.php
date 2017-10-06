@@ -30,7 +30,7 @@ Template Name: Шаблон страницы персон
 					<div class="partner">
 
 						<?php if ( $link ) : ?>
-							<div class="partnerImg">
+							<div class="partnerImg partnerImg--big">
 								<a class="partnerImg__link" href="<?php echo $link ?>" target="_blank">
 									<?php the_post_thumbnail(); ?>
 								</a>
@@ -39,7 +39,7 @@ Template Name: Шаблон страницы персон
 																					href="<?php echo $link ?>"
 																					target="_blank"><?php the_title(); ?></a></h2>
 						<?php else : ?>
-							<div class="partnerImg">
+							<div class="partnerImg partnerImg--big">
 								<?php the_post_thumbnail(); ?>
 							</div>
 							<h2 class="partnerTitle"><?php the_title(); ?></h2>

@@ -2568,13 +2568,21 @@ a {
 	transition: color .3s linear, border-color .3s linear, background-color .3s linear;
 }
 
-.contentIn {
+.content {
 	position: relative;
-	margin: 0 auto;
 	max-width: 1440px;
 	min-width: 320px;
+	margin: 0 auto;
 	padding: 0 20px;
 	background-color: #ffffff;
+}
+
+.contentIn {
+	margin: 0 auto;
+}
+
+.contentIn--small {
+	max-width: 720px;
 }
 
 .titlePage {
@@ -2657,14 +2665,21 @@ a {
 
 
 
+/* forms */
+div.wpforms-container-full {
+	margin: 0;
+	padding-bottom: 24px;
+}
+
+
+
 /********** header **********/
 .header {
-
+	border-bottom: 1px solid #DDDDDD;
 }
 
 .header .contentIn {
 	height: 160px;
-	border-bottom: 1px solid #DDDDDD;
 }
 
 .header .custom-logo-link {
@@ -2724,11 +2739,11 @@ a {
 
 /********** footer **********/
 .footer {
-
+	border-top: 1px solid #DDDDDD;
 }
 
 .footer .contentIn {
-	border-top: 1px solid #DDDDDD;
+
 }
 
 .footer .custom-logo-link {
@@ -2773,6 +2788,11 @@ a {
 	margin-bottom: 38px;
 	height: 120px;
 	line-height: 120px;
+}
+
+.partnerImg--big {
+	height: 200px;
+	line-height: 200px;
 }
 
 .partnerImg img {

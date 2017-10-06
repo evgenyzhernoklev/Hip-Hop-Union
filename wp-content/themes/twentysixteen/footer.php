@@ -10,7 +10,7 @@
 
 	</div><!-- .site-content -->
 
-	<footer class="footer" role="contentinfo">
+	<footer class="footer content" role="contentinfo">
 		<div class="contentIn">
 
 			<?php the_custom_logo(); ?>
