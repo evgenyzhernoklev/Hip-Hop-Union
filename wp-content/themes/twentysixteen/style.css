@@ -1023,14 +1023,6 @@ blockquote:after,
 	overflow: hidden;
 }
 
-.custom-logo-link {
-	display: block;
-}
-
-.custom-logo {
-	max-width: 180px;
-}
-
 .site-title {
 	font-family: Montserrat, "Helvetica Neue", sans-serif;
 	font-size: 23px;
