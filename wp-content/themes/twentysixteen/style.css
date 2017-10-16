@@ -1055,36 +1055,94 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 }
 
 /* pagination */
-.pagination {
-	width: 400px;
-	margin: 90px auto;
-	float: none;
-	clear: both;
-}
-
-.pagination .nav-links {
+.wp-pagenavi {
 	position: relative;
-	padding: 0 100px;
-}
-
-.pagination .nav-links:before,
-.pagination .nav-links:after {
-	content: '';
-	position: absolute;
-	top: 0;
-	display: block;
-	width: 60px;
+	width: 400px;
 	height: 60px;
-	border: 2px solid #D42727;
+	margin: 90px auto;
+	padding-top: 16px;
+	text-align: center;
 }
 
-.pagination .nav-links:before {
+.wp-pagenavi:after,
+.wp-pagenavi:before {
+	content: '';
+	display: block;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	width: 56px;
+	height: 56px;
+	background-color: #fff;
+	border: 2px solid #111111;
+	background: #fff url('/wp-content/uploads/icons/arrow_pagi_disabled.svg') no-repeat 18px center;
+	background-size: 17px 30px;
+}
+
+.wp-pagenavi:after:hover,
+.wp-pagenavi:before:hover {
+	border-color: #D42727;
+}
+
+.wp-pagenavi:before {
 	left: 0;
 }
 
-.pagination .nav-links:after {
+.wp-pagenavi:after {
 	right: 0;
+	transform: rotate(180deg);
 }
+
+.nextpostslink,
+.previouspostslink {
+	display: block;
+	position: absolute;
+	z-index: 5;
+	top: 0;
+	right: 0;
+	width: 60px;
+	height: 60px;
+	border: 2px solid #FE2F2F;
+	font-size: 0;
+	background: #fff url('/wp-content/uploads/icons/arrow_pagi.svg') no-repeat 18px center;
+	background-size: 17px 30px;
+	transition: background-image .3s linear, border-color .3s linear;
+}
+
+.nextpostslink:hover,
+.previouspostslink:hover {
+	border-color: #D42727;
+	background-image: url('/wp-content/uploads/icons/arrow_pagi_hover.svg');
+}
+
+.previouspostslink {
+	left: 0;
+}
+
+.nextpostslink {
+	right: 0;
+	transform: rotate(180deg);
+}
+
+.wp-pagenavi .page,
+.wp-pagenavi .current {
+	display: inline-block;
+	margin: 0 10px;
+	font: 20px/30px 'ProximaNova-Bold', Arial, sans-serif;
+}
+
+.wp-pagenavi .page {
+	color: #FE2F2F;
+}
+
+.wp-pagenavi .page:hover {
+	color: #D42727;
+}
+
+.wp-pagenavi .current {
+	color: #111111;
+}
+
 
 
 
