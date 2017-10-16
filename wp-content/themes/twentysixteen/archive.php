@@ -21,7 +21,7 @@
 get_header(); ?>
 
 
-<main class="contentIn contentIn--full clear" role="main">
+<main class="contentIn contentIn--full" role="main">
 
 	<?php if ( have_posts() ) : ?>
 
@@ -30,7 +30,7 @@ get_header(); ?>
 		</header>
 
 		<?php
-		echo '<div class="clear">';
+		echo '<div class="clear posts">';
 		// Start the Loop.
 		while ( have_posts() ) : the_post();
 

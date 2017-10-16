@@ -889,6 +889,10 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 
 
 /********** news list **********/
+.posts {
+	margin-bottom: -1px;
+}
+
 .post {
 	width: 25%;
 	float: left;
@@ -997,13 +1001,18 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 	height: 210px;
 	overflow: hidden;
 	border-bottom: 1px solid #DDDDDD;
+	border-right: 1px solid #DDDDDD;
 }
 
-.post:nth-child(6n-4) .postContent,
+.post:nth-child(3n) .postContent {
+	border-right: 0;
+}
+
+/*.post:nth-child(6n-4) .postContent,
 .post:nth-child(6n-1) .postContent {
 	border-left: 1px solid #DDDDDD;
 	border-right: 1px solid #DDDDDD;
-}
+}*/
 
 /* post info */
 .postContentInfo {
@@ -1058,9 +1067,9 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 .wp-pagenavi {
 	position: relative;
 	width: 400px;
-	height: 60px;
-	margin: 90px auto;
-	padding-top: 16px;
+	height: 240px;
+	margin: 0 auto;
+	padding: 90px 0;
 	text-align: center;
 }
 
@@ -1070,7 +1079,7 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 	display: block;
 	position: absolute;
 	z-index: 1;
-	top: 0;
+	top: 90px;
 	width: 56px;
 	height: 56px;
 	background-color: #fff;
@@ -1098,7 +1107,7 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 	display: block;
 	position: absolute;
 	z-index: 5;
-	top: 0;
+	top: 90px;
 	right: 0;
 	width: 60px;
 	height: 60px;
@@ -1127,7 +1136,7 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 .wp-pagenavi .page,
 .wp-pagenavi .current {
 	display: inline-block;
-	margin: 0 10px;
+	margin: 16px 10px 0;
 	font: 20px/30px 'ProximaNova-Bold', Arial, sans-serif;
 }
 
@@ -1142,9 +1151,6 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 .wp-pagenavi .current {
 	color: #111111;
 }
-
-
-
 
 
 
