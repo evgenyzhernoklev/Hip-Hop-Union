@@ -1239,16 +1239,43 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 
 /* post categories */
 .post-categories {
-	padding: 10px 20px 10px;
+	padding: 10px 20px 10px 5px;
 	position: absolute;
 	z-index: 2;
 	bottom: -20px;
-	left: 20px;
+	left: 35px;
+	max-width: calc(100% - 65px);
+}
+
+.post-categories:before {
+	content: '';
+	display: block;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	transform: skew(20deg);
+	background-color: #226BD3;
+}
+
+.post-categories:after {
+	content: '';
+	display: block;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	bottom: 0;
+	left: -15px;
+	width: 30px;
 	background-color: #226BD3;
 }
 
 .post-categories li {
+	position: relative;
 	display: inline-block;
+	z-index: 2;
 }
 
 .post-categories li:after {
@@ -1274,14 +1301,13 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 .postContent {
 	height: 210px;
 	overflow: hidden;
-	border: 1px solid #DDDDDD;
-	border-top: 0;
+	border-bottom: 1px solid #DDDDDD;
 }
 
 .post:nth-child(6n-3) .postContent,
 .post:nth-child(6n) .postContent {
-	border-left: 0;
-	border-right: 0;
+	border-left: 1px solid #DDDDDD;
+	border-right: 1px solid #DDDDDD;
 }
 
 /* post info */
@@ -1289,7 +1315,7 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 	position: relative;
 	top: 0;
 	height: 100%;
-	padding: 37px 20px 20px;
+	padding: 37px 20px 50px;
 	transition: top .15s linear;
 }
 
@@ -1298,12 +1324,22 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 }
 
 .postContentInfo__title {
-
+	height: 100%;
+	overflow: hidden;
 }
 
 .postContentInfo__link {
 	font: 24px/32px 'ProximaNova-Semibold', Arial, sans-serif;
 	color: #111111;
+}
+
+.postContentInfo__date {
+	position: absolute;
+	bottom: 21px;
+	left: 20px;
+	font-size: 14px;
+	font-family: 'ProximaNova-Regular', Arial, sans-serif;
+	color: #888888;
 }
 
 .postContentHidden {
@@ -1321,6 +1357,12 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 
 .post:hover .postContentHidden {
 	top: -100%;
+}
+
+/* pagination */
+.pagination {
+	float: none;
+	clear: both;
 }
 
 

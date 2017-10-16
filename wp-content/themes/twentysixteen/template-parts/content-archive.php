@@ -20,10 +20,19 @@
 	<div class="entry-content postContent">
 		<div class="postContentInfo">
 			<?php the_title( sprintf( '<h2 class="entry-title postContentInfo__title"><a class="postContentInfo__link" href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+			<span class="postContentInfo__date"><?php echo get_the_date(); ?></span>
 		</div>
 
 		<a class="postContentHidden" href="<?php the_permalink() ?>">
-			<?php twentysixteen_excerpt(); ?>
+			<?php
+				$excerpt_length = strlen(get_the_excerpt());
+
+				if ($excerpt_length > 120) :
+					echo mb_substr( strip_tags( get_the_excerpt() ), 0, 100 ) . '...';
+				else :
+					echo get_the_excerpt();
+				endif;
+			?>
 		</a>
 	</div>
 </article>
