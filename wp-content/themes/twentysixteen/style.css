@@ -29,63 +29,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
  * 6.2 - Menus
  */
 
-.main-navigation li {
-	position: relative;
-}
-
-.main-navigation ul ul {
-	display: none;
-	margin-left: 0.875em;
-}
-
-.main-navigation ul .toggled-on {
-	display: block;
-}
-
-.dropdown-toggle {
-	background-color: transparent;
-	border: 0;
-	border-radius: 0;
-	color: #1a1a1a;
-	content: "";
-	height: 48px;
-	padding: 0;
-	position: absolute;
-	right: 0;
-	text-transform: none;
-	top: 0;
-	width: 48px;
-}
-
-.dropdown-toggle:after {
-	border: 0 solid #d1d1d1;
-	border-left-width: 1px;
-	content: "\f431";
-	font-size: 24px;
-	left: 1px;
-	position: relative;
-	width: 48px;
-}
-
-.dropdown-toggle:hover,
-.dropdown-toggle:focus {
-	background-color: transparent;
-	color: #007acc;
-}
-
-.dropdown-toggle:focus {
-	outline: thin dotted;
-	outline-offset: -1px;
-}
-
-.dropdown-toggle:focus:after {
-	border-color: transparent;
-}
-
-.dropdown-toggle.toggled-on:after {
-	content: "\f432";
-}
-
 .image-navigation,
 .comment-navigation {
 	border-top: 1px solid #d1d1d1;
@@ -722,13 +665,17 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 }
 
 /* menu */
+.menu-toggle {
+	display: none;
+}
+
 .main-navigation {
-	max-width: 720px;
+	max-width: 820px;
 	margin: 0 auto;
 }
 
 .menu-main-menu-container {
-	padding: 65px 0 0;
+	padding: 58px 0 0;
 }
 
 .primary-menu {
@@ -743,20 +690,84 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 
 .menu-item {
 	display: inline-block;
+	position: relative;
+	transition: background-color .3s linear;
+}
+
+.menu-item.menu-item-has-children:hover {
+	background: #e5e5e5;
 }
 
 .menu-item a {
+	display: inline-block;
 	position: relative;
+	padding: 10px 15px;
 	font: 20px/30px 'ProximaNova-Bold', Arial, sans-serif;
 	color: #111111;
 	text-transform: uppercase;
 }
 
-.menu-item a:hover {
+.menu-item.menu-item-has-children a {
+	/*padding-left: 15px;*/
+}
+
+.menu-item a:hover,
+.current-menu-item a,
+.current-menu-parent a {
 	color: #226BD3;
 }
 
-.current-menu-item a {
+.dropdown-toggle {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	margin-left: -15px;
+	background: url('/wp-content/uploads/icons/arrow_dropdown.svg') no-repeat center center;
+	background-size: 10px 6px;
+	cursor: pointer;
+	transition: background-image .3s linear;
+}
+
+.menu-item:hover > .dropdown-toggle {
+	background-image: url('/wp-content/uploads/icons/arrow_dropdown_hover.svg');
+}
+
+/* sub menu */
+.sub-menu,
+.current-menu-parent .sub-menu.toggled-on {
+	padding: 10px 0;
+	position: absolute;
+	z-index: 1;
+	top: 100%;
+	left: 0;
+	background: #e5e5e5;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity .3s linear, visibility .3s linear;
+}
+
+.menu-item:hover > .sub-menu,
+.menu-item:hover > .toggled-on {
+	opacity: 1;
+	visibility: visible;
+}
+
+.sub-menu .menu-item a {
+	display: block;
+	padding: 0 15px 5px;
+}
+
+.sub-menu .menu-item:last-child a {
+	padding-bottom: 0;
+}
+
+.sub-menu .menu-item a {
+	white-space: nowrap;
+	color: #111;
+}
+
+.sub-menu .menu-item a:hover,
+.sub-menu .menu-item.current-menu-item a {
 	color: #226BD3;
 }
 
@@ -765,10 +776,6 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 /********** footer **********/
 .footer {
 	border-top: 1px solid #DDDDDD;
-}
-
-.footer .contentIn {
-
 }
 
 .footer .custom-logo-link {
@@ -903,8 +910,6 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 	width: 50%;
 }
 
-
-
 /* header */
 .postHeader {
 	position: relative;
@@ -1007,12 +1012,6 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 .post:nth-child(3n) .postContent {
 	border-right: 0;
 }
-
-/*.post:nth-child(6n-4) .postContent,
-.post:nth-child(6n-1) .postContent {
-	border-left: 1px solid #DDDDDD;
-	border-right: 1px solid #DDDDDD;
-}*/
 
 /* post info */
 .postContentInfo {
@@ -1180,10 +1179,6 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 	vertical-align: middle;
 }
 
-.partnerImg__link {
-
-}
-
 .partnerTitle {
 	margin-bottom: 28px;
 	font: 24px/29px 'ProximaNova-Bold', Arial, sans-serif;
@@ -1201,8 +1196,4 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 .partnerInfo {
 	font: 21px/30px 'ProximaNova-Bold', Arial, sans-serif;
 	color: #111111;
-}
-
-.partnerInfo p {
-
 }

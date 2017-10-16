@@ -20,8 +20,6 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentysixteen' ); ?></a>
-
 	<header class="header content" role="banner">
 		<div class="contentIn">
 			<?php twentysixteen_the_custom_logo(); ?>
