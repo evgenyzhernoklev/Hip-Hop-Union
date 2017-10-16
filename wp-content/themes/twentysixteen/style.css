@@ -900,13 +900,13 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 	margin-bottom: -1px;
 }
 
-.post {
+.posts .post {
 	width: 25%;
 	float: left;
 }
 
-.post:nth-child(6n-3),
-.post:nth-child(6n-2) {
+.posts .post:nth-child(6n-3),
+.posts .post:nth-child(6n-2) {
 	width: 50%;
 }
 
@@ -1196,4 +1196,107 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 .partnerInfo {
 	font: 21px/30px 'ProximaNova-Bold', Arial, sans-serif;
 	color: #111111;
+}
+
+
+
+/********** single post **********/
+/* header */
+.singleHeader {
+	position: relative;
+	height: 700px;
+	margin: 0 -20px;
+	padding: 0 20px;
+}
+
+.singleHeader__img,
+.singleHeader__overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.singleHeader__img {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.singleHeader__overlay {
+	background: rgba(0,0,0, 0.5);
+}
+
+.singleHeader .contentIn {
+	position: relative;
+	height: 100%;
+}
+
+.singleHeader__date,
+.singleHeader__author {
+	position: absolute;
+	top: 74px;
+	left: 0;
+	font: 24px/36px 'ProximaNova-Regular', Arial, sans-serif;
+	color: #FCFCFC;
+}
+
+.singleHeader__author {
+	left: auto;
+	right: 0;
+}
+
+.singleHeader__title {
+	position: absolute;
+	bottom: 100px;
+	left: 0;
+	right: 0;
+	font: 48px/60px 'ProximaNova-Regular', Arial, sans-serif;
+	color: #FCFCFC;
+}
+
+.singleHeader .post-categories {
+	left: 15px;
+}
+
+/* content */
+.singleContent {
+	padding-top: 52px;
+	font: 20px/30px 'PTSerif-Regular', Arial, sans-serif;
+	color: #111111;
+}
+
+.singleContent .entry-summary {
+	position: relative;
+	margin-bottom: 45px;
+	padding-bottom: 18px;
+	font: 24px/36px 'PTSerif-Regular', Arial, sans-serif;
+	color: #111111;
+}
+
+.singleContent .entry-summary:after {
+	content: '';
+	display: inline-block;
+	width: 90px;
+	height: 1px;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	margin-left: -45px;
+	background: #555555;
+}
+
+.singleContent p {
+	margin-bottom: 22px;
+}
+
+.singleContent a {
+	color: #FE2F2F;
+	border-bottom: 1px solid #FE2F2F;
+}
+
+.singleContent a:hover {
+	color: #D42727;
+	border-color: transparent;
 }

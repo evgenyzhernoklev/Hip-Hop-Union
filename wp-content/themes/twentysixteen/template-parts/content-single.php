@@ -9,15 +9,21 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
+	<header class="entry-header singleHeader">
+		<div class="singleHeader__img" style="background-image: url('<?php the_post_thumbnail_url(); ?>')"></div>
+		<div class="singleHeader__overlay"></div>
 
-	<?php twentysixteen_excerpt(); ?>
+		<div class="contentIn contentIn--small">
+			<span class="singleHeader__date"><?php echo get_the_date('F j, Y'); ?></span>
+			<span class="singleHeader__author">Автор: <?php echo get_the_author(); ?></span>
+			<?php the_title( '<h1 class="entry-title singleHeader__title">', '</h1>' ); ?>
+			<?php echo get_the_category_list(); ?>
+		</div>
+	</header>
 
-	<?php twentysixteen_post_thumbnail(); ?>
+	<div class="entry-content singleContent contentIn contentIn--small">
+		<?php twentysixteen_excerpt(); ?>
 
-	<div class="entry-content">
 		<?php
 			the_content();
 
@@ -34,20 +40,10 @@
 				get_template_part( 'template-parts/biography' );
 			}
 		?>
-	</div><!-- .entry-content -->
+	</div>
 
 	<footer class="entry-footer">
-		<?php twentysixteen_entry_meta(); ?>
-		<?php
-			edit_post_link(
-				sprintf(
-					/* translators: %s: Name of current post */
-					__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ),
-					get_the_title()
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-		?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+
+
+	</footer>
+</article>
