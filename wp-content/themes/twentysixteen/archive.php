@@ -30,6 +30,7 @@ get_header(); ?>
 		</header>
 
 		<?php
+		echo '<div class="clear">';
 		// Start the Loop.
 		while ( have_posts() ) : the_post();
 
@@ -42,6 +43,7 @@ get_header(); ?>
 
 		// End the loop.
 		endwhile;
+		echo '</div>';
 
 		// Previous/next page navigation.
 		the_posts_pagination( array(

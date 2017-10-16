@@ -19,65 +19,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
  * Table of Contents
  *
 
- * 2.0 - Genericons
+ *
 
- * 6.0 - Navigation
- *   6.1 - Links
- *   6.2 - Menus
- * 7.0 - Accessibility
-
- * 9.0 - Clearings
- * 10.0 - Widgets
- * 11.0 - Content
- *    11.1 - Header
- *    11.2 - Posts and pages
- *    11.3 - Post Formats
- *    11.4 - Comments
- *    11.5 - Sidebar
- *    11.6 - Footer
- * 12.0 - Media
- *    12.1 - Captions
- *    12.2 - Galleries
- * 13.0 - Multisite
- * 14.0 - Media Queries
- *    14.1 - >= 710px
- *    14.2 - >= 783px
- *    14.3 - >= 910px
- *    14.4 - >= 985px
- *    14.5 - >= 1200px
  */
-
-
-
-/**
- * 2.0 - Genericons
- */
-
-.menu-item-has-children a:after,
-.social-navigation a:before,
-.dropdown-toggle:after,
-.bypostauthor > article .fn:after,
-.comment-reply-title small a:before,
-.pagination .prev:before,
-.pagination .next:before,
-.pagination .nav-links:before,
-.pagination .nav-links:after,
-.search-submit:before {
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
-	display: inline-block;
-	font-family: "Genericons";
-	font-size: 16px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: normal;
-	line-height: 1;
-	speak: none;
-	text-align: center;
-	text-decoration: inherit;
-	text-transform: none;
-	vertical-align: top;
-}
 
 
 
@@ -142,189 +86,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	content: "\f432";
 }
 
-.post-navigation {
-	border-top: 4px solid #1a1a1a;
-	border-bottom: 4px solid #1a1a1a;
-	clear: both;
-	font-family: Montserrat, "Helvetica Neue", sans-serif;
-	margin: 0 7.6923% 3.5em;
-}
-
-.post-navigation a {
-	color: #1a1a1a;
-	display: block;
-	padding: 1.75em 0;
-}
-
-.post-navigation span {
-	display: block;
-}
-
-.post-navigation .meta-nav {
-	color: #686868;
-	font-size: 13px;
-	font-size: 0.8125rem;
-	letter-spacing: 0.076923077em;
-	line-height: 1.6153846154;
-	margin-bottom: 0.5384615385em;
-	text-transform: uppercase;
-}
-
-.post-navigation .post-title {
-	display: inline;
-	font-family: Montserrat, "Helvetica Neue", sans-serif;
-	font-size: 23px;
-	font-size: 1.4375rem;
-	font-weight: 700;
-	line-height: 1.2173913043;
-	text-rendering: optimizeLegibility;
-}
-
-.post-navigation a:hover .post-title,
-.post-navigation a:focus .post-title {
-	color: #007acc;
-}
-
-.post-navigation div + div {
-	border-top: 4px solid #1a1a1a;
-}
-
-.pagination {
-	border-top: 4px solid #1a1a1a;
-	font-family: Montserrat, "Helvetica Neue", sans-serif;
-	font-size: 19px;
-	font-size: 1.1875rem;
-	margin: 0 7.6923% 2.947368421em;
-	min-height: 56px;
-	position: relative;
-}
-
-.pagination:before,
-.pagination:after {
-	background-color: #1a1a1a;
-	content: "";
-	height: 52px;
-	position: absolute;
-	top:0;
-	width: 52px;
-	z-index: 0;
-}
-
-.pagination:before {
-	right: 0;
-}
-
-.pagination:after {
-	right: 54px;
-}
-
-.pagination a:hover,
-.pagination a:focus {
-	color: #1a1a1a;
-}
-
-.pagination .nav-links {
-	padding-right: 106px;
-	position: relative;
-}
-
-.pagination .nav-links:before,
-.pagination .nav-links:after {
-	color: #fff;
-	font-size: 32px;
-	line-height: 51px;
-	opacity: 0.3;
-	position: absolute;
-	width: 52px;
-	z-index: 1;
-}
-
-.pagination .nav-links:before {
-	content: "\f429";
-	right: -1px;
-}
-
-.pagination .nav-links:after {
-	content: "\f430";
-	right: 55px;
-}
-
-/* reset screen-reader-text */
-.pagination .current .screen-reader-text {
-	position: static !important;
-}
-
-.pagination .page-numbers {
-	display: none;
-	letter-spacing: 0.013157895em;
-	line-height: 1;
-	margin: 0 0.7368421053em 0 -0.7368421053em;
-	padding: 0.8157894737em 0.7368421053em 0.3947368421em;
-	text-transform: uppercase;
-}
-
-.pagination .current {
-	display: inline-block;
-	font-weight: 700;
-}
-
-.pagination .prev,
-.pagination .next {
-	background-color: #1a1a1a;
-	color: #fff;
-	display: inline-block;
-	height: 52px;
-	margin: 0;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	top: 0;
-	width: 52px;
-	z-index: 2;
-}
-
-.pagination .prev:before,
-.pagination .next:before {
-	font-size: 32px;
-	height: 53px;
-	line-height: 52px;
-	position: relative;
-	width: 53px;
-}
-
-.pagination .prev:hover,
-.pagination .prev:focus,
-.pagination .next:hover,
-.pagination .next:focus {
-	background-color: #007acc;
-	color: #fff;
-}
-
-.pagination .prev:focus,
-.pagination .next:focus {
-	outline: 0;
-}
-
-.pagination .prev {
-	right: 54px;
-}
-
-.pagination .prev:before {
-	content: "\f430";
-	left: -1px;
-	top: -1px;
-}
-
-.pagination .next {
-	right: 0;
-}
-
-.pagination .next:before {
-	content: "\f429";
-	right: -1px;
-	top: -1px;
-}
-
 .image-navigation,
 .comment-navigation {
 	border-top: 1px solid #d1d1d1;
@@ -361,72 +122,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	display: inline-block;
 	opacity: 0.7;
 	padding: 0 0.538461538em;
-}
-
-
-
-/**
- * IE8 and earlier will drop any block with CSS3 selectors.
- * Do not combine these styles with the next block.
- */
-
-.page-links {
-	clear: both;
-	font-family: Montserrat, "Helvetica Neue", sans-serif;
-	margin: 0 0 1.75em;
-}
-
-.page-links a,
-.page-links > span {
-	border: 1px solid #d1d1d1;
-	border-radius: 2px;
-	display: inline-block;
-	font-size: 13px;
-	font-size: 0.8125rem;
-	height: 1.8461538462em;
-	line-height: 1.6923076923em;
-	margin-right: 0.3076923077em;
-	text-align: center;
-	width: 1.8461538462em;
-}
-
-.page-links a {
-	background-color: #1a1a1a;
-	border-color: #1a1a1a;
-	color: #fff;
-}
-
-.page-links a:hover,
-.page-links a:focus {
-	background-color: #007acc;
-	border-color: transparent;
-	color: #fff;
-}
-
-.page-links > .page-links-title {
-	border: 0;
-	color: #1a1a1a;
-	height: auto;
-	margin: 0;
-	padding-right: 0.6153846154em;
-	width: auto;
-}
-
-.entry-attachment {
-	margin-bottom: 1.75em;
-}
-
-.entry-caption {
-	color: #686868;
-	font-size: 13px;
-	font-size: 0.8125rem;
-	font-style: italic;
-	line-height: 1.6153846154;
-	padding-top: 1.0769230769em;
-}
-
-.entry-caption > :last-child {
-	margin-bottom: 0;
 }
 
 
@@ -1199,8 +894,8 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 	float: left;
 }
 
-.post:nth-child(6n-2),
-.post:nth-child(6n-1) {
+.post:nth-child(6n-3),
+.post:nth-child(6n-2) {
 	width: 50%;
 }
 
@@ -1304,8 +999,8 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 	border-bottom: 1px solid #DDDDDD;
 }
 
-.post:nth-child(6n-3) .postContent,
-.post:nth-child(6n) .postContent {
+.post:nth-child(6n-4) .postContent,
+.post:nth-child(6n-1) .postContent {
 	border-left: 1px solid #DDDDDD;
 	border-right: 1px solid #DDDDDD;
 }
@@ -1361,9 +1056,37 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 
 /* pagination */
 .pagination {
+	width: 400px;
+	margin: 90px auto;
 	float: none;
 	clear: both;
 }
+
+.pagination .nav-links {
+	position: relative;
+	padding: 0 100px;
+}
+
+.pagination .nav-links:before,
+.pagination .nav-links:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	display: block;
+	width: 60px;
+	height: 60px;
+	border: 2px solid #D42727;
+}
+
+.pagination .nav-links:before {
+	left: 0;
+}
+
+.pagination .nav-links:after {
+	right: 0;
+}
+
+
 
 
 
