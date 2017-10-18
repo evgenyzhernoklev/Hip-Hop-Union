@@ -46,9 +46,10 @@ Template Name: Шаблон главной страницы
 	</div>
 
 	<?php
-		$we_do = get_post_meta(152, 'what_we_do');
-		$we_do_title = get_post_meta(152, 'what_we_do_title', true);
-		$we_do_bg = get_post_meta(152, 'what_we_do_bg', true);
+		$id_current = get_the_ID();
+		$we_do = get_post_meta($id_current, 'what_we_do');
+		$we_do_title = get_post_meta($id_current, 'what_we_do_title', true);
+		$we_do_bg = get_post_meta($id_current, 'what_we_do_bg', true);
 	?>
 	<div class="weDo overlay" style="background-image: url('<?php echo $we_do_bg; ?>');">
 		<div class="overlay__in"></div>
