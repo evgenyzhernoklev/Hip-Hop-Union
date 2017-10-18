@@ -33,13 +33,25 @@ Template Name: Шаблон главной страницы
 		<p><?php _e( 'Извините, нет записей, соответствуюших Вашему запросу.' ); ?></p>
 	<?php endif; ?>
 
+	<div class="idea overlay" style="background-image: url('<?php the_post_thumbnail_url(); ?>');">
+		<div class="overlay__in"></div>
+		<div class="ideaIn colsFlex">
+			<div class="colsFlex__col--2">
+				<?php the_custom_logo(); ?>
+			</div>
+			<div class="ideaInContent colsFlex__col--2">
+				<?php the_content(); ?>
+			</div>
+		</div>
+	</div>
+
 	<?php
 		$we_do = get_post_meta(152, 'what_we_do');
 		$we_do_title = get_post_meta(152, 'what_we_do_title', true);
 		$we_do_bg = get_post_meta(152, 'what_we_do_bg', true);
 	?>
-	<div class="weDo" style="background-image: url('<?php echo $we_do_bg; ?>')">
-		<div class="weDo__overlay"></div>
+	<div class="weDo overlay" style="background-image: url('<?php echo $we_do_bg; ?>');">
+		<div class="overlay__in"></div>
 		<div class="weDoIn">
 			<h2 class="subtitle subtitle--white"><?php echo $we_do_title; ?></h2>
 			<div class="weDoCols colsFlex">
@@ -57,9 +69,6 @@ Template Name: Шаблон главной страницы
 			</div>
 		</div>
 	</div>
-
-
-
 </main>
 
 <?php get_footer(); ?>
