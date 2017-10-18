@@ -38,8 +38,12 @@
 							?>
 						</nav>
 					<?php endif; ?>
+					
 					<div class="searchHeader">
-						<span class="searchHeader__loupe toggle-search"></span>
+						<div class="search__icon toggle-search" aria-hidden="true">
+							<span class="circle"></span>
+							<span class="handle"></span>
+						</div>
 						<?php get_search_form(); ?>
 					</div>
 				</div>

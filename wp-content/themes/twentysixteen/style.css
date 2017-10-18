@@ -1510,23 +1510,92 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 	z-index: 3;
 }
 
-.searchHeader__loupe {
+.circle,
+.search__icon {
+  position: relative;
+  display: block;
+}
+
+.search__icon {
 	position: absolute;
 	top: 0;
 	left: 100%;
-	margin-top: 12px;
+	margin-top: 1px;
 	margin-left: 15px;
-	display: inline-block;
-	width: 30px;
-	height: 30px;
-	background: url('/wp-content/uploads/icons/loupe.svg') no-repeat center center;
-	background-size: 30px 30px;
 	cursor: pointer;
-	transition: background-image .3s linear;
+	transition: opacity .3s ease,-webkit-transform .3s ease;
+	transition: opacity .3s ease,transform .3s ease;
+	transition: opacity .3s ease,transform .3s ease,-webkit-transform .3s ease;
+	width: 40px;
+	height: 40px;
+	padding: 6px;
 }
 
-.searchHeader__loupe:hover {
-	background-image: url('/wp-content/uploads/icons/loupe_hover.svg');
+.circle {
+	height: 28px;
+	width: 28px;
+	border-radius: 100%;
+	border: 4px solid #111;
+	background: #fff;
+	z-index: 1;
+	transition: transform .3s ease,border-color .3s ease;
+	transition: transform .3s ease,-webkit-transform .3s ease,border-color .3s ease;
+}
+
+.search__icon:hover .circle {
+	border-color: #226BD3;
+}
+
+.is-active .circle {
+	-webkit-transform: scale(.02);
+	-ms-transform: scale(.02);
+	transform: scale(.02);
+	-webkit-transform-origin: 30% 40%;
+	-ms-transform-origin: 30% 40%;
+	transform-origin: 30% 40%;
+	background: #226BD3!important;
+	border-color: #226BD3!important;
+}
+
+.handle {
+	position: absolute;
+	top: 24px;
+	left: 9px;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+	transition: transform .3s ease,background-color .3s ease;
+	transition: transform .3s ease,-webkit-transform .3s ease, background-color .3s ease;
+}
+
+.handle,
+.handle:after {
+	background-color: #111;
+	width: 35px;
+	height: 4px;
+	display: block;
+}
+
+.search__icon:hover .handle,
+.search__icon:hover .handle:after {
+	background-color: #226BD3;
+}
+
+.handle:after {
+	content: "";
+	z-index: -1;
+	transition: -webkit-transform .3s ease,background-color .3s ease;
+	transition: transform .3s ease,background-color .3s ease;
+	transition: transform .3s ease,-webkit-transform .3s ease,background-color .3s ease;
+}
+
+.is-active .handle:after {
+	-webkit-transform-origin: center center;
+	-ms-transform-origin: center center;
+	transform-origin: center center;
+	-webkit-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	transform: rotate(90deg);
 }
 
 .searchHeader .search-form {
