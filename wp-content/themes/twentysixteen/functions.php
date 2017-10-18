@@ -599,3 +599,15 @@ abstract class Partner_Meta_Boxes
 
 add_action('add_meta_boxes', ['Partner_Meta_Boxes', 'add']);
 add_action('save_post', ['Partner_Meta_Boxes', 'save']);
+
+
+
+/******************************************************************************/
+/******************************* Add svg support ******************************/
+/******************************************************************************/
+function my_myme_types($mime_types){
+    $mime_types['svg'] = 'image/svg+xml'; // поддержка SVG
+    return $mime_types;
+}
+
+add_filter('upload_mimes', 'my_myme_types', 1, 1);

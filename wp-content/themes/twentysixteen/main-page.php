@@ -32,6 +32,34 @@ Template Name: Шаблон главной страницы
 	<?php else : ?>
 		<p><?php _e( 'Извините, нет записей, соответствуюших Вашему запросу.' ); ?></p>
 	<?php endif; ?>
+
+	<?php
+		$we_do = get_post_meta(152, 'what_we_do');
+		$we_do_title = get_post_meta(152, 'what_we_do_title', true);
+		$we_do_bg = get_post_meta(152, 'what_we_do_bg', true);
+	?>
+	<div class="weDo" style="background-image: url('<?php echo $we_do_bg; ?>')">
+		<div class="weDo__overlay"></div>
+		<div class="weDoIn">
+			<h2 class="subtitle subtitle--white"><?php echo $we_do_title; ?></h2>
+			<div class="weDoCols colsFlex">
+				<?php
+					foreach ($we_do as $element) {
+						echo '<div class="weDoCol colsFlex__col--4"><div class="weDoCol__in">';
+						echo $element;
+						echo '</div></div>';
+					}
+				?>
+			</div>
+			<div class="weDoInfo">
+				Обратиться к руководителям движения можно через
+				<a href="/contacts/">специальную форму</a> на нашем сайте.
+			</div>
+		</div>
+	</div>
+
+
+
 </main>
 
 <?php get_footer(); ?>
