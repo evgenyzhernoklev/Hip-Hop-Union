@@ -27,18 +27,25 @@
 			<?php if ( has_nav_menu( 'primary' ) ) : ?>
 				<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'twentysixteen' ); ?></button>
 
-				<?php if ( has_nav_menu( 'primary' ) ) : ?>
-					<nav class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'twentysixteen' ); ?>">
-						<?php
-							wp_nav_menu( array(
-								'theme_location' => 'primary',
-								'menu_class'     => 'primary-menu',
-							 ) );
-						?>
-					</nav>
-				<?php endif; ?>
+				<div class="navigationWrapper">
+					<?php if ( has_nav_menu( 'primary' ) ) : ?>
+						<nav class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'twentysixteen' ); ?>">
+							<?php
+								wp_nav_menu( array(
+									'theme_location' => 'primary',
+									'menu_class'     => 'primary-menu',
+								 ) );
+							?>
+						</nav>
+					<?php endif; ?>
+					<div class="searchHeader">
+						<span class="searchHeader__loupe toggle-search"></span>
+						<?php get_search_form(); ?>
+					</div>
+				</div>
 
 			<?php endif; ?>
+
 		</div>
 	</header>
 

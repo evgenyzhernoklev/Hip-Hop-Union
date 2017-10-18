@@ -681,7 +681,8 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 	display: none;
 }
 
-.main-navigation {
+.navigationWrapper {
+	position: relative;
 	max-width: 820px;
 	margin: 0 auto;
 }
@@ -1434,7 +1435,8 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 
 
 
-/********** search empty **********/
+/********** search **********/
+/* search empty */
 .searchContent {
 	font: 20px/30px 'PTSerif-Regular', Arial, sans-serif;
 	color: #111111;
@@ -1444,7 +1446,7 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 	margin-bottom: 30px;
 }
 
-.search-form {
+.searchContent .search-form {
 	padding-bottom: 100px;
 }
 
@@ -1461,7 +1463,7 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 	border-radius: 3px;
 }
 
-.search-submit {
+.searchContent .search-submit {
 	width: 100%;
 	height: 50px;
 	margin-top: 20px;
@@ -1473,11 +1475,73 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 	cursor: pointer;
 }
 
-.search-submit:hover {
+.searchContent .search-submit:hover {
 	background-color: #D42727;
 }
 
-.search-submit .screen-reader-text {
+.searchContent .search-submit .screen-reader-text {
 	font: 18px/50px 'ProximaNova-Bold', Arial, sans-serif;
+	color: #ffffff;
+}
+
+/* search header */
+.searchHeader {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	margin-top: -8px;
+	font-size: 0;
+}
+
+.searchHeader__loupe {
+	position: absolute;
+	top: 0;
+	left: 100%;
+	margin-top: 12px;
+	margin-left: 15px;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background: url('/wp-content/uploads/icons/loupe.svg') no-repeat center center;
+	background-size: 30px 30px;
+	cursor: pointer;
+	transition: background-image .3s linear;
+}
+
+.searchHeader__loupe:hover {
+	background-image: url('/wp-content/uploads/icons/loupe_hover.svg');
+}
+
+.searchHeader .search-form {
+	position: relative;
+	float: right;
+	width: 0;
+	overflow: hidden;
+	transition: width .2s linear;
+}
+
+.navigationWrapper.is-active .search-form {
+	width: 100%;
+}
+
+.searchHeader .search-submit {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100px;
+	height: 50px;
+	background-color: #FE2F2F;
+	transition: background-color .3s linear;
+	border-radius: 0 3px 3px 0;
+	cursor: pointer;
+}
+
+.searchHeader .search-submit:hover {
+	background-color: #D42727;
+}
+
+.searchHeader .search-submit .screen-reader-text {
+	font: 16px/50px 'ProximaNova-Bold', Arial, sans-serif;
 	color: #ffffff;
 }
