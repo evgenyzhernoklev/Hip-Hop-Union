@@ -611,3 +611,10 @@ function my_myme_types($mime_types){
 }
 
 add_filter('upload_mimes', 'my_myme_types', 1, 1);
+
+
+
+/******************************************************************************/
+/****************************** Add custom script *****************************/
+/******************************************************************************/
+wp_enqueue_script( 'script', get_template_directory_uri() . '/js/custom.js', array ( 'jquery' ), 1.1, true);
