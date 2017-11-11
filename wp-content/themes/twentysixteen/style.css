@@ -490,6 +490,12 @@ a {
 	text-transform: uppercase;
 }
 
+.titlePage__request {
+	font-size: 48px;
+	line-height: 54px;
+	color: #226BD3;
+}
+
 .subtitle {
 	font: 48px/60px 'ProximaNova-Bold', Arial, sans-serif;
 	text-align: center;
@@ -1295,6 +1301,86 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 
 
 
+/********** search results page **********/
+.searchResults {
+	max-width: 720px;
+	margin: 0 auto;
+}
+
+.searchResults article {
+	margin-bottom: 35px;
+	padding-bottom: 40px;
+	border-bottom: 2px solid #111;
+}
+
+.searchResults article:last-of-type {
+	margin-bottom: 0;
+	border-bottom: 0;
+}
+
+.searchResults__title {
+	font: 32px/40px 'ProximaNova-Bold', Arial, sans-serif;
+}
+
+.searchResults__title a {
+	color: #111;
+}
+
+.searchResults__title a:hover {
+	color: #226BD3;
+}
+
+.searchResults__date {
+	margin-bottom: 10px;
+	font: 20px/30px 'ProximaNova-Regular', Arial, sans-serif;
+	color: #111;
+}
+
+.searchResults__imgWrapper {
+	margin-bottom: 20px;
+}
+
+.searchResults__imgWrapper img {
+	width: 100%;
+	height: auto;
+}
+
+.searchResults__info {
+	font: 20px/30px 'PTSerif-Regular', Arial, sans-serif;
+	color: #111111;
+}
+
+.searchResults__footer {
+	margin-top: 20px;
+}
+
+.searchResults__meta {
+	margin-bottom: 15px;
+	font-family: 'ProximaNova-Regular', Arial, sans-serif;
+	color: #111;
+}
+
+.searchResults__meta:last-child {
+	margin-bottom: 0;
+}
+
+.searchResults__metaTitle {
+	display: inline-block;
+	width: 100px;
+}
+
+.searchResults__meta a {
+	display: inline-block;
+	margin-right: 10px;
+	color: #111;
+}
+
+.searchResults__meta a:hover {
+	color: #226BD3;
+}
+
+
+
 /********** persons/partners **********/
 .partner {
 	margin: 0 auto 98px;
@@ -1538,7 +1624,7 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 }
 
 .singleFooterIn {
-
+	margin-bottom: 30px;
 }
 
 /* tags */
