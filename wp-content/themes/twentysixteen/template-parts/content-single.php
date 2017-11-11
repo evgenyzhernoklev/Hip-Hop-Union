@@ -41,18 +41,22 @@
 
 	<footer class="entry-footer singleFooter contentIn contentIn--small">
 		<div class="singleFooterIn">
-			<?php
-				the_tags();
 
+			<div class="tags">
+				<h4 class="tags__title subtitle">Метки</h4>
+				<?php
+					$posttags = get_the_tags();
 
-				// $posttags = get_the_tags();
-				// if ($posttags) {
-				// 	foreach($posttags as $tag) {
-				// 		echo $tag->name . ' ';
-				// 	}
-				// }
+					if ($posttags) {
+						foreach($posttags as $tag) {
+							$name = $tag->name;
+							$link = get_tag_link($tag->term_id);
+							echo '<a class="tags__link" href="' . $link . '">' . $name . '</a>';
+						}
+					}
+				?>
+			</div>
 
-			?>
 		</div>
 	</footer>
 </article>

@@ -1525,13 +1525,47 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
 	width: 140%;
 }
 
+/* video */
+.singleContent iframe {
+	width: 140%!important;
+	height: 600px!important;
+	margin-left: -20%;
+}
+
 /* footer block */
 .singleFooter {
-
+	overflow: hidden;
 }
 
 .singleFooterIn {
-	border-top: 1px solid #111111;
+
+}
+
+/* tags */
+.tags {
+	margin: 60px -15px 40px;
+	padding-top: 50px;
+	border-top: 3px solid #111111;
+}
+
+.tags__title {
+	margin: 0 15px 35px;
+	text-align: left;
+}
+
+.tags__link {
+	display: inline-block;
+	margin: 0 15px 30px;
+	padding: 0 30px;
+	height: 50px;
+	font: 20px/46px 'ProximaNova-Regular', Arial, sans-serif;
+	color: #111111;
+	border: 2px solid #111111;
+}
+
+.tags__link:hover {
+	color: #226BD3;
+	border-color: #226BD3;
 }
 
 

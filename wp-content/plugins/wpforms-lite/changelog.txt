@@ -1,5 +1,12 @@
 == Changelog ==
 
+= 1.4.2 =
+- Added: Import your old Ninja Forms or Contact Form 7 forms! (WPForms > Tools > Import)
+- Changed: Dropdown/Checkbox/Multiple Choice "Show Values" setting has been hidden by default to avoid confusion, can be re-enabled using the `wpforms_fields_show_options_setting` filter
+- Fixed: reCAPTCHA now showing in the Form Builder preview when enabled
+- Fixed: Encoded/escaped entities in email notifications
+- Fixed: German translation issue
+
 = 1.4.1.1 =
 - Changed: Improved the loading order of javascript files for forms builder
 - Changed: Update some strings for Russian translation
