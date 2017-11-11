@@ -42,20 +42,21 @@
 	<footer class="entry-footer singleFooter contentIn contentIn--small">
 		<div class="singleFooterIn">
 
-			<div class="tags">
-				<h4 class="tags__title subtitle">Метки</h4>
 				<?php
 					$posttags = get_the_tags();
-
 					if ($posttags) {
-						foreach($posttags as $tag) {
-							$name = $tag->name;
-							$link = get_tag_link($tag->term_id);
-							echo '<a class="tags__link" href="' . $link . '">' . $name . '</a>';
-						}
-					}
 				?>
-			</div>
+					<div class="tags">
+						<h4 class="tags__title subtitle">Метки</h4>
+						<?php
+							foreach($posttags as $tag) {
+								$name = $tag->name;
+								$link = get_tag_link($tag->term_id);
+								echo '<a class="tags__link" href="' . $link . '">' . $name . '</a>';
+							}
+						?>
+					</div>
+				<?php } ?>
 
 		</div>
 	</footer>
