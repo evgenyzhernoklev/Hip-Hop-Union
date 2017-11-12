@@ -1222,7 +1222,7 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
 }
 /* tags */
 .tags {
-  margin: 60px -15px 42px;
+  margin: 41px -15px 22px;
   padding-top: 50px;
   border-top: 3px solid #111;
 }
@@ -1242,6 +1242,21 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
 .tags__link:hover {
   color: #226bd3;
   border-color: #226bd3;
+}
+.postsRelated {
+  margin: 41px 0 72px;
+  padding-top: 50px;
+  border-top: 3px solid #111;
+}
+.posts--related .post {
+  width: 50%;
+}
+.posts--related .post:first-child .postContent {
+  border-left: 1px solid #ddd;
+}
+.postsRelated__title {
+  margin: 0 0 35px;
+  text-align: left;
 }
 .searchResults {
   max-width: 720px;
