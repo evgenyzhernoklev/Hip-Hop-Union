@@ -41,7 +41,7 @@
 	transition: transform .15s linear;
 }
 
-.post:hover .postHeaderImg__link {
+.post:hover > .postHeader .postHeaderImg__link {
 	transform: scale(1.1);
 }
 
@@ -132,7 +132,7 @@
 	transition: top .15s linear;
 }
 
-.post:hover .postContentInfo {
+.post:hover > .postContent .postContentInfo {
 	top: -100%;
 }
 
@@ -168,6 +168,6 @@
 	transition: top .15s linear;
 }
 
-.post:hover .postContentHidden {
+.post:hover > .postContent .postContentHidden {
 	top: -100%;
 }

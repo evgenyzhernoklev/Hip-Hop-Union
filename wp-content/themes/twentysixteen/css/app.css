@@ -921,7 +921,7 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
   background-size: cover;
   transition: transform 0.15s linear;
 }
-.post:hover .postHeaderImg__link {
+.post:hover > .postHeader .postHeaderImg__link {
   transform: scale(1.1);
 }
 /* post categories */
@@ -994,7 +994,7 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
   padding: 37px 20px 50px;
   transition: top 0.15s linear;
 }
-.post:hover .postContentInfo {
+.post:hover > .postContent .postContentInfo {
   top: -100%;
 }
 .postContentInfo__title {
@@ -1025,7 +1025,7 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
   cursor: pointer;
   transition: top 0.15s linear;
 }
-.post:hover .postContentHidden {
+.post:hover > .postContent .postContentHidden {
   top: -100%;
 }
 .partner {
