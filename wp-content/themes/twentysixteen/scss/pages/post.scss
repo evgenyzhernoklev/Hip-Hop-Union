@@ -40,7 +40,7 @@
 	top: 74px;
 	left: 0;
 	font: 24px/36px $nova-regular;
-	color: #FCFCFC;
+	color: $white-light;
 }
 
 .singleHeader__author {
@@ -54,7 +54,7 @@
 	left: 0;
 	right: 0;
 	font: 48px/60px $nova-regular;
-	color: #FCFCFC;
+	color: $white-light;
 }
 
 
@@ -62,14 +62,14 @@
 /* content */
 .singleContent {
 	padding-top: 52px;
-	font: 20px/30px 'PTSerif-Regular', Arial, sans-serif;
+	font: 20px/30px $pt-regular;
 	color: $black;
 
 	.entry-summary {
 		position: relative;
 		margin-bottom: 45px;
 		padding-bottom: 18px;
-		font: 24px/36px 'PTSerif-Regular', Arial, sans-serif;
+		font: 24px/36px $pt-regular;
 		color: $black;
 
 		&:after {

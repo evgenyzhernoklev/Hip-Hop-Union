@@ -49,7 +49,7 @@
 }
 
 .searchResults__info {
-	font: 20px/30px 'PTSerif-Regular', Arial, sans-serif;
+	font: 20px/30px $pt-regular;
 	color: $black;
 }
 
@@ -119,7 +119,7 @@
 
 /* search empty */
 .searchContent {
-	font: 20px/30px 'PTSerif-Regular', Arial, sans-serif;
+	font: 20px/30px $pt-regular;
 	color: $black;
 
 	.search-form {

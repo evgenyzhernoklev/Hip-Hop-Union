@@ -53,6 +53,13 @@ article, aside, figcaption, figure, footer, header, hgroup, nav, section, time {
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'PTSerif-Regular';
+  src: url('/wp-includes/fonts/PTSerif-Regular.eot');
+  src: url('/wp-includes/fonts/PTSerif-Regular.eot?#iefix') format('embedded-opentype'), url('/wp-includes/fonts/PTSerif-Regular.woff') format('woff'), url('/wp-includes/fonts/PTSerif-Regular.ttf') format('truetype'), url('/wp-includes/fonts/PTSerif-Regular.svg#PTSerif-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 /* cols flex */
 .colsFlex {
   display: -webkit-box;
