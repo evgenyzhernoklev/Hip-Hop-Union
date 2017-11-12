@@ -1281,17 +1281,19 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
   color: #111;
 }
 .more-link {
-  color: #fe2f2f;
-  border-bottom: 1px solid #fe2f2f;
+  color: #226bd3;
+  border-bottom: 1px solid #226bd3;
 }
 .more-link:hover {
-  color: #d42727;
+  color: #174b96;
   border-color: transparent;
 }
 .searchResults__footer {
   margin-top: 20px;
 }
 .searchResults__meta {
+  position: relative;
+  padding-left: 100px;
   margin-bottom: 15px;
   font-family: 'ProximaNova-Regular', Arial, sans-serif;
   color: #111;
@@ -1302,14 +1304,16 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
 .searchResults__meta a {
   display: inline-block;
   margin-right: 10px;
-  color: #111;
+  color: #226bd3;
 }
 .searchResults__meta a:hover {
-  color: #226bd3;
+  color: #174b96;
 }
 .searchResults__metaTitle {
   display: inline-block;
-  width: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
   font-family: 'ProximaNova-Semibold', Arial, sans-serif;
 }
 .searchPerson {

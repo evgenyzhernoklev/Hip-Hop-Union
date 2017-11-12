@@ -54,11 +54,11 @@
 }
 
 .more-link {
-	color: $red;
-	border-bottom: 1px solid $red;
+	color: $blue;
+	border-bottom: 1px solid $blue;
 
 	&:hover {
-		color: $red-hover;
+		color: $blue-hover;
 		border-color: transparent;
 	}
 }
@@ -68,6 +68,8 @@
 }
 
 .searchResults__meta {
+	position: relative;
+	padding-left: 100px;
 	margin-bottom: 15px;
 	font-family: $nova-regular;
 	color: $black;
@@ -79,17 +81,19 @@
 	a {
 		display: inline-block;
 		margin-right: 10px;
-		color: $black;
+		color: $blue;
 
 		&:hover {
-			color: $blue;
+			color: $blue-hover;
 		}
 	}
 }
 
 .searchResults__metaTitle {
 	display: inline-block;
-	width: 100px;
+	position: absolute;
+	top: 0;
+	left: 0;
 	font-family: $nova-semibold;
 }
 

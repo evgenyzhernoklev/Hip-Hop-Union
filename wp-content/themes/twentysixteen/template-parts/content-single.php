@@ -8,6 +8,14 @@
  */
 ?>
 
+<?php
+	$author = get_post_meta($post->ID, '_post_author_meta_key', true);
+
+	if (!$author) :
+		$author = get_the_author();
+	endif;
+?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header singleHeader">
 		<div class="singleHeader__img" style="background-image: url('<?php the_post_thumbnail_url(); ?>')"></div>
@@ -15,7 +23,7 @@
 
 		<div class="contentIn contentIn--small">
 			<span class="singleHeader__date"><?php echo get_the_date('F j, Y'); ?></span>
-			<span class="singleHeader__author">Автор: <?php echo get_the_author(); ?></span>
+			<span class="singleHeader__author">Автор: <?php echo $author; ?></span>
 			<?php the_title( '<h1 class="entry-title singleHeader__title">', '</h1>' ); ?>
 			<?php echo get_the_category_list(); ?>
 		</div>

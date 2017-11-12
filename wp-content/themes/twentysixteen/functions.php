@@ -401,6 +401,52 @@ add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
 
 
 /******************************************************************************/
+/*********************************** Posts ************************************/
+/******************************************************************************/
+/**
+ * Add custom fields for post types => posts
+*/
+abstract class Post_Meta_Boxes
+{
+    public static function add()
+    {
+        $screens = ['post'];
+        foreach ($screens as $screen) {
+						add_meta_box(
+								'post_author_id',        				// Unique ID
+								'Автор', 												// Box title
+								[self::class, 'html_link'],   	// Content callback, must be of type callable
+								$screen                 				// Post type
+						);
+        }
+    }
+
+    public static function save($post_id)
+    {
+				if (array_key_exists('post_author_field', $_POST)) {
+						update_post_meta(
+								$post_id,
+								'_post_author_meta_key',
+								$_POST['post_author_field']
+						);
+				}
+    }
+
+		public static function html_link($post)
+    {
+				$valueLink = get_post_meta($post->ID, '_post_author_meta_key', true);
+        ?>
+				<input type="text" name="post_author_field" id="post_author_field" value="<?php echo $valueLink ?>" style="width: 100%;" />
+        <?php
+    }
+}
+
+add_action('add_meta_boxes', ['Post_Meta_Boxes', 'add']);
+add_action('save_post', ['Post_Meta_Boxes', 'save']);
+
+
+
+/******************************************************************************/
 /********************************** Persons ***********************************/
 /******************************************************************************/
 /**
