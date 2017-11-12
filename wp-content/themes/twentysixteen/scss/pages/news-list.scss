@@ -1,15 +1,15 @@
 .posts {
 	margin-bottom: -1px;
-}
 
-.posts .post {
-	width: 25%;
-	float: left;
-}
+	.post {
+		width: 25%;
+		float: left;
+	}
 
-.posts .post:nth-child(6n-3),
-.posts .post:nth-child(6n-2) {
-	width: 50%;
+	.post:nth-child(6n-3),
+	.post:nth-child(6n-2) {
+		width: 50%;
+	}
 }
 
 
@@ -55,56 +55,56 @@
 	bottom: -20px;
 	left: 35px;
 	max-width: calc(100% - 65px);
-}
 
-.post-categories:before {
-	content: '';
-	display: block;
-	position: absolute;
-	z-index: 1;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	transform: skew(20deg);
-	background-color: #226BD3;
-}
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		transform: skew(20deg);
+		background-color: $blue;
+	}
 
-.post-categories:after {
-	content: '';
-	display: block;
-	position: absolute;
-	z-index: 1;
-	top: 0;
-	bottom: 0;
-	left: -15px;
-	width: 30px;
-	background-color: #226BD3;
-}
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		bottom: 0;
+		left: -15px;
+		width: 30px;
+		background-color: $blue;
+	}
 
-.post-categories li {
-	position: relative;
-	display: inline-block;
-	z-index: 2;
-}
+	li {
+		position: relative;
+		display: inline-block;
+		z-index: 2;
 
-.post-categories li:after {
-	content: ' \\';
-	font: 14px/20px 'ProximaNova-Bold', Arial, sans-serif;
-	color: #FFFFFF;
-}
+		&:after {
+			content: ' \\';
+			font: 14px/20px $nova-bold;
+			color: $white;
+		}
 
-.post-categories li:last-child:after {
-	display: none;
-}
+		&:last-child:after {
+			display: none;
+		}
+	}
 
-.post-categories a {
-	font: 14px/20px 'ProximaNova-Bold', Arial, sans-serif;
-	color: #FFFFFF;
-}
+	a {
+		font: 14px/20px $nova-bold;
+		color: $white;
 
-.post-categories a:hover {
-	color: #cccccc;
+		&:hover {
+			color: #cccccc;
+		}
+	}
 }
 
 
@@ -142,8 +142,8 @@
 }
 
 .postContentInfo__link {
-	font: 24px/32px 'ProximaNova-Semibold', Arial, sans-serif;
-	color: #111111;
+	font: 24px/32px $nova-semibold;
+	color: $black;
 }
 
 .postContentInfo__date {
@@ -151,8 +151,8 @@
 	bottom: 21px;
 	left: 20px;
 	font-size: 14px;
-	font-family: 'ProximaNova-Regular', Arial, sans-serif;
-	color: #888888;
+	font-family: $nova-regular;
+	color: $gray;
 }
 
 .postContentHidden {
@@ -161,7 +161,7 @@
 	top: 0;
 	height: 100%;
 	padding: 37px 20px 20px;
-	font: 20px/27px 'ProximaNova-Regular', Arial, sans-serif;
+	font: 20px/27px $nova-regular;
 	color: #666666;
 	background-color: #E3E8EA;
 	cursor: pointer;

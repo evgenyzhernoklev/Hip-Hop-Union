@@ -9,22 +9,21 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title searchResults__title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-
-		<p class="searchResults__date"><?php echo get_the_date('F j, Y'); ?></p>
-	</header>
-
-	<div class="searchResults__imgWrapper">
-		<?php twentysixteen_post_thumbnail(); ?>
-	</div>
-
-	<div class="searchResults__info">
-		<?php twentysixteen_excerpt(); ?>
-	</div>
-
 
 	<?php if ( 'post' === get_post_type() ) : ?>
+		<header class="entry-header">
+			<?php the_title( sprintf( '<h2 class="entry-title searchResults__title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+
+			<p class="searchResults__date"><?php echo get_the_date('F j, Y'); ?></p>
+		</header>
+
+		<div class="searchResults__imgWrapper">
+			<?php twentysixteen_post_thumbnail(); ?>
+		</div>
+
+		<div class="searchResults__info">
+			<?php twentysixteen_excerpt(); ?>
+		</div>
 
 		<footer class="searchResults__footer entry-footer">
 			<?php
@@ -51,9 +50,43 @@
 			?>
 		</footer>
 
+	<?php elseif ( 'person' === get_post_type() ) : ?>
+
+		<div class="searchPerson">
+			<header class="entry-header">
+				<?php
+					// the_title( sprintf( '<h2 class="entry-title searchResults__title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+					the_title( '<h2 class="entry-title searchResults__title">', '</h2>' );
+				?>
+			</header>
+
+			<div class="searchResults__imgWrapper">
+				<?php
+					// twentysixteen_post_thumbnail();
+					the_post_thumbnail(); 
+				?>
+			</div>
+
+			<div class="searchResults__info">
+				<?php twentysixteen_excerpt(); ?>
+			</div>
+		</div>
+
 	<?php else : ?>
 
+		<div class="searchPage">
+			<header class="entry-header">
+				<?php the_title( sprintf( '<h2 class="entry-title searchResults__title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+			</header>
 
+			<div class="searchResults__imgWrapper">
+				<?php twentysixteen_post_thumbnail(); ?>
+			</div>
+
+			<div class="searchResults__info">
+				<?php twentysixteen_excerpt(); ?>
+			</div>
+		</div>
 
 	<?php endif; ?>
 </article>

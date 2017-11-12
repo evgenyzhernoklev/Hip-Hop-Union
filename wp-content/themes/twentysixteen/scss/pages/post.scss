@@ -39,7 +39,7 @@
 	position: absolute;
 	top: 74px;
 	left: 0;
-	font: 24px/36px 'ProximaNova-Regular', Arial, sans-serif;
+	font: 24px/36px $nova-regular;
 	color: #FCFCFC;
 }
 
@@ -53,7 +53,7 @@
 	bottom: 100px;
 	left: 0;
 	right: 0;
-	font: 48px/60px 'ProximaNova-Regular', Arial, sans-serif;
+	font: 48px/60px $nova-regular;
 	color: #FCFCFC;
 }
 
@@ -63,14 +63,14 @@
 .singleContent {
 	padding-top: 52px;
 	font: 20px/30px 'PTSerif-Regular', Arial, sans-serif;
-	color: #111111;
+	color: $black;
 
 	.entry-summary {
 		position: relative;
 		margin-bottom: 45px;
 		padding-bottom: 18px;
 		font: 24px/36px 'PTSerif-Regular', Arial, sans-serif;
-		color: #111111;
+		color: $black;
 
 		&:after {
 			content: '';
@@ -88,7 +88,7 @@
 	h1, h2, h3, h4, h5 {
 		margin-top: 40px;
 		margin-bottom: 20px;
-		font: 27px/36px 'ProximaNova-Bold', Arial, sans-serif;
+		font: 27px/36px $nova-bold;
 	}
 
 	p {
@@ -96,11 +96,11 @@
 	}
 
 	a {
-		color: #226BD3;
-		border-bottom: 1px solid #226BD3;
+		color: $blue;
+		border-bottom: 1px solid $blue;
 
 		&:hover {
-			color: #174B96;
+			color: $blue-hover;
 			border-color: transparent;
 		}
 	}
@@ -121,7 +121,7 @@
 				left: 0;
 				width: 20px;
 				height: 1px;
-				background-color: #888888;
+				background-color: $gray;
 			}
 
 			&:last-child {
@@ -137,8 +137,8 @@
 	.su-quote-style-default {
 		margin: 0 -120px 37px;
 		padding: 0;
-		font: 30px/42px 'ProximaNova-Regular', Arial, sans-serif;
-		color: #226BD3;
+		font: 30px/42px $nova-regular;
+		color: $blue;
 		font-style: normal;
 		text-align: center;
 
@@ -201,7 +201,7 @@
 .tags {
 	margin: 60px -15px 42px;
 	padding-top: 50px;
-	border-top: 3px solid #111111;
+	border-top: 3px solid $black;
 }
 
 .tags__title {
@@ -214,12 +214,12 @@
 	margin: 0 15px 30px;
 	padding: 0 30px;
 	height: 50px;
-	font: 20px/46px 'ProximaNova-Regular', Arial, sans-serif;
-	color: #111111;
-	border: 2px solid #111111;
+	font: 20px/46px $nova-regular;
+	color: $black;
+	border: 2px solid $black;
 
 	&:hover {
-		color: #226BD3;
-		border-color: #226BD3;
+		color: $blue;
+		border-color: $blue;
 	}
 }

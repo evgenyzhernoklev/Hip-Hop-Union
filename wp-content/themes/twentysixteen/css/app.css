@@ -705,9 +705,8 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
 .wp-pagenavi {
   position: relative;
   width: 400px;
-  height: 240px;
   margin: 0 auto;
-  padding: 90px 0;
+  padding: 90px 0 103px;
   text-align: center;
 }
 .wp-pagenavi:after, .wp-pagenavi:before {
@@ -852,11 +851,6 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
   font: 21px/30px 'ProximaNova-Regular', Arial, sans-serif;
   color: #fcfcfc;
 }
-.weDoCol__in {
-  max-width: 310px;
-  margin: 0 auto;
-  padding: 0 10px;
-}
 .weDoCol p {
   margin-bottom: 20px;
   height: 120px;
@@ -864,6 +858,11 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
 }
 .weDoCol img {
   vertical-align: middle;
+}
+.weDoCol__in {
+  max-width: 310px;
+  margin: 0 auto;
+  padding: 0 10px;
 }
 .weDoInfo {
   max-width: 560px;
@@ -957,7 +956,7 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
 }
 .post-categories li:after {
   content: ' \\';
-	font: 14px/20px ' ProximaNova-Bold', Arial, sans-serif;
+  font: 14px/20px 'ProximaNova-Bold', Arial, sans-serif;
   color: #fff;
 }
 .post-categories li:last-child:after {
@@ -1032,16 +1031,16 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
   height: 120px;
   line-height: 120px;
 }
-.partnerImg--big {
-  height: 200px;
-  line-height: 200px;
-}
 .partnerImg img {
   width: auto;
   height: auto;
   max-width: 100%;
   max-height: 100%;
   vertical-align: middle;
+}
+.partnerImg--big {
+  height: 200px;
+  line-height: 200px;
 }
 .partnerTitle {
   margin-bottom: 28px;
@@ -1240,6 +1239,10 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
 .searchResults {
   max-width: 720px;
   margin: 0 auto;
+  padding-bottom: 50px;
+}
+.searchResults .wp-pagenavi {
+  padding: 90px 0 53px;
 }
 .searchResults article {
   margin-bottom: 35px;
@@ -1252,16 +1255,17 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
   border-bottom: 0;
 }
 .searchResults__title {
+  margin-bottom: 10px;
   font: 32px/40px 'ProximaNova-Bold', Arial, sans-serif;
 }
 .searchResults__title a {
-  color: #111;
-}
-.searchResults__title a:hover {
   color: #226bd3;
 }
+.searchResults__title a:hover {
+  color: #174b96;
+}
 .searchResults__date {
-  margin-bottom: 10px;
+  margin-bottom: 27px;
   font: 20px/30px 'ProximaNova-Regular', Arial, sans-serif;
   color: #111;
 }
@@ -1276,6 +1280,14 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
   font: 20px/30px 'PTSerif-Regular', Arial, sans-serif;
   color: #111;
 }
+.more-link {
+  color: #fe2f2f;
+  border-bottom: 1px solid #fe2f2f;
+}
+.more-link:hover {
+  color: #d42727;
+  border-color: transparent;
+}
 .searchResults__footer {
   margin-top: 20px;
 }
@@ -1287,11 +1299,6 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
 .searchResults__meta:last-child {
   margin-bottom: 0;
 }
-.searchResults__metaTitle {
-  display: inline-block;
-  width: 100px;
-  font-family: 'ProximaNova-Semibold', Arial, sans-serif;
-}
 .searchResults__meta a {
   display: inline-block;
   margin-right: 10px;
@@ -1300,28 +1307,24 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
 .searchResults__meta a:hover {
   color: #226bd3;
 }
+.searchResults__metaTitle {
+  display: inline-block;
+  width: 100px;
+  font-family: 'ProximaNova-Semibold', Arial, sans-serif;
+}
+.searchPerson {
+  text-align: center;
+}
+.searchPerson img {
+  width: 220px;
+}
 /* search empty */
 .searchContent {
   font: 20px/30px 'PTSerif-Regular', Arial, sans-serif;
   color: #111;
 }
-.searchContent__info {
-  margin-bottom: 30px;
-}
 .searchContent .search-form {
   padding-bottom: 100px;
-}
-.search-form input {
-  width: 100%;
-  max-width: none;
-  height: 50px;
-  padding: 6px 15px;
-  font-size: 16px;
-  font-family: 'ProximaNova-Regular', Arial, sans-serif;
-  background: #fff;
-  border: 1px solid #cacaca;
-  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.15);
-  border-radius: 3px;
 }
 .searchContent .search-submit {
   width: 100%;
@@ -1340,6 +1343,21 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
 .searchContent .search-submit .screen-reader-text {
   font: 18px/50px 'ProximaNova-Bold', Arial, sans-serif;
   color: #fff;
+}
+.searchContent__info {
+  margin-bottom: 30px;
+}
+.search-form input {
+  width: 100%;
+  max-width: none;
+  height: 50px;
+  padding: 6px 15px;
+  font-size: 16px;
+  font-family: 'ProximaNova-Regular', Arial, sans-serif;
+  background: #fff;
+  border: 1px solid #cacaca;
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
 }
 /* search header */
 .searchHeader {
@@ -1437,9 +1455,6 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
   overflow: hidden;
   transition: width 0.2s linear;
 }
-.navigationWrapper.is-active .search-form {
-  width: 100%;
-}
 .searchHeader .search-submit {
   position: absolute;
   top: 0;
@@ -1457,4 +1472,7 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
 .searchHeader .search-submit .screen-reader-text {
   font: 16px/50px 'ProximaNova-Bold', Arial, sans-serif;
   color: #fff;
+}
+.navigationWrapper.is-active .search-form {
+  width: 100%;
 }

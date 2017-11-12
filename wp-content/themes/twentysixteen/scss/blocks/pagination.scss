@@ -1,39 +1,38 @@
 .wp-pagenavi {
 	position: relative;
 	width: 400px;
-	height: 240px;
+	// height: 240px;
 	margin: 0 auto;
-	padding: 90px 0;
+	padding: 90px 0 103px;
 	text-align: center;
-}
 
-.wp-pagenavi:after,
-.wp-pagenavi:before {
-	content: '';
-	display: block;
-	position: absolute;
-	z-index: 1;
-	top: 90px;
-	width: 56px;
-	height: 56px;
-	background-color: #fff;
-	border: 2px solid #111111;
-	background: #fff url('/wp-content/uploads/icons/arrow_pagi_disabled.svg') no-repeat 18px center;
-	background-size: 17px 30px;
-}
+	&:after,
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		z-index: 1;
+		top: 90px;
+		width: 56px;
+		height: 56px;
+		background-color: $white;
+		border: 2px solid $black;
+		background: $white url('/wp-content/uploads/icons/arrow_pagi_disabled.svg') no-repeat 18px center;
+		background-size: 17px 30px;
 
-.wp-pagenavi:after:hover,
-.wp-pagenavi:before:hover {
-	border-color: #D42727;
-}
+		&:hover {
+			border-color: $red-hover;
+		}
+	}
 
-.wp-pagenavi:before {
-	left: 0;
-}
+	&:before {
+		left: 0;
+	}
 
-.wp-pagenavi:after {
-	right: 0;
-	transform: rotate(180deg);
+	&:after {
+		right: 0;
+		transform: rotate(180deg);
+	}
 }
 
 .nextpostslink,
@@ -45,17 +44,16 @@
 	right: 0;
 	width: 60px;
 	height: 60px;
-	border: 2px solid #FE2F2F;
+	border: 2px solid $red;
 	font-size: 0;
-	background: #fff url('/wp-content/uploads/icons/arrow_pagi.svg') no-repeat 18px center;
+	background: $white url('/wp-content/uploads/icons/arrow_pagi.svg') no-repeat 18px center;
 	background-size: 17px 30px;
 	transition: background-image .3s linear, border-color .3s linear;
-}
 
-.nextpostslink:hover,
-.previouspostslink:hover {
-	border-color: #D42727;
-	background-image: url('/wp-content/uploads/icons/arrow_pagi_hover.svg');
+	&:hover {
+		border-color: $red-hover;
+		background-image: url('/wp-content/uploads/icons/arrow_pagi_hover.svg');
+	}
 }
 
 .previouspostslink {
@@ -67,21 +65,23 @@
 	transform: rotate(180deg);
 }
 
-.wp-pagenavi .page,
-.wp-pagenavi .current {
-	display: inline-block;
-	margin: 16px 10px 0;
-	font: 20px/30px 'ProximaNova-Bold', Arial, sans-serif;
-}
+.wp-pagenavi {
+	.page,
+	.current {
+		display: inline-block;
+		margin: 16px 10px 0;
+		font: 20px/30px $nova-bold;
+	}
 
-.wp-pagenavi .page {
-	color: #FE2F2F;
-}
+	.page {
+		color: $red;
 
-.wp-pagenavi .page:hover {
-	color: #D42727;
-}
+		&:hover {
+			color: $red-hover;
+		}
+	}
 
-.wp-pagenavi .current {
-	color: #111111;
+	.current {
+		color: $black;
+	}
 }

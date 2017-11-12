@@ -1,5 +1,5 @@
 body {
-	color: #111111;
+	color: $black;
 	background-color: #F1F1F1;
 	text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -17,7 +17,7 @@ a {
 	width: 1440px;
 	margin: 0 auto;
 	padding: 0 20px;
-	background-color: #ffffff;
+	background-color: $white;
 }
 
 .contentIn {
@@ -34,7 +34,7 @@ a {
 
 .titlePage {
 	padding: 70px 0 75px;
-	font: 60px/72px 'ProximaNova-Bold', Arial, sans-serif;
+	font: 60px/72px $nova-bold;
 	text-align: center;
 }
 
@@ -54,7 +54,7 @@ a {
 }
 
 .subtitle {
-	font: 48px/60px 'ProximaNova-Bold', Arial, sans-serif;
+	font: 48px/60px $nova-bold;
 	text-align: center;
 }
 

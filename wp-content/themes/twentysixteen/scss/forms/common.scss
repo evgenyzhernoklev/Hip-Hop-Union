@@ -4,9 +4,9 @@ div.wpforms-container-full {
 }
 
 .wpforms-field-container {
-	font: 16px/20px 'ProximaNova-Regular', Arial, sans-serif;
+	font: 16px/20px $nova-regular;
 	font-weight: normal;
-	color: #111111;
+	color: $black;
 }
 
 div.wpforms-container-full .wpforms-form .wpforms-field-label {
@@ -19,7 +19,7 @@ div.wpforms-container-full .wpforms-form .wpforms-field-row.wpforms-field-medium
 	width: 100%;
 	max-width: none;
 	height: 50px;
-	background: #FFFFFF;
+	background: $white;
 	border: 1px solid #CACACA;
 	box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.15);
 	border-radius: 3px;
@@ -31,7 +31,7 @@ div.wpforms-container-full .wpforms-form textarea.wpforms-field-medium {
 	max-height: 300px;
 	min-height: 120px;
 	height: 200px;
-	background: #FFFFFF;
+	background: $white;
 	border: 1px solid #CACACA;
 	box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.15);
 	border-radius: 3px;
@@ -48,9 +48,9 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button {
 	height: 50px;
 	padding: 0;
 	border: 0;
-	font: 18px/50px 'ProximaNova-Bold', Arial, sans-serif;
-	color: #ffffff;
-	background-color: #FE2F2F;
+	font: 18px/50px $nova-bold;
+	color: $white;
+	background-color: $red;
 	transition: background-color .3s linear;
 	border-radius: 3px;
 }
@@ -58,6 +58,6 @@ div.wpforms-container-full .wpforms-form .wpforms-page-button {
 div.wpforms-container-full .wpforms-form input[type=submit]:hover,
 div.wpforms-container-full .wpforms-form button[type=submit]:hover,
 div.wpforms-container-full .wpforms-form .wpforms-page-button:hover {
-	background-color: #D42727;
+	background-color: $red-hover;
 	border: 0;
 }
