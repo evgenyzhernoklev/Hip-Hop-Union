@@ -772,6 +772,19 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
 .wp-pagenavi .current {
   color: #111;
 }
+.su-slider {
+  margin: 40px 0 36px !important;
+  width: 140% !important;
+  margin-left: -20% !important;
+}
+.su-slider .su-slider-pagination {
+  top: auto;
+  bottom: 40px !important;
+  margin-top: 0;
+}
+.su-slider .su-slider-slides a {
+  border: 0;
+}
 .overlay {
   position: relative;
 }
