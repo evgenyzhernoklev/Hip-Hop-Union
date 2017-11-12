@@ -1,0 +1,23 @@
+.header {
+	position: relative;
+	z-index: 10;
+	border-bottom: 1px solid #DDDDDD;
+
+	.contentIn {
+		height: 160px;
+	}
+
+	.custom-logo-link {
+		position: absolute;
+		top: 50%;
+		margin-top: -60px;
+		left: 20px;
+		display: inline-block;
+		font-size: 0;
+	}
+
+	.custom-logo {
+		width: 120px!important;
+		height: 120px!important;
+	}
+}

@@ -1,0 +1,118 @@
+.footer {
+	border-top: 1px solid #DDDDDD;
+
+	.custom-logo-link {
+		position: absolute;
+		top: 50%;
+		margin-top: -50px;
+		left: 20px;
+		display: inline-block;
+		font-size: 0;
+	}
+
+	.custom-logo {
+		width: 100px!important;
+		height: 100px!important;
+	}
+}
+
+/* copyright */
+.widget {
+	margin: 0 200px;
+	padding: 73px 0 69px;
+	text-align: center;
+}
+
+.widget-title {
+	font: 21px/30px 'ProximaNova-Bold', Arial, sans-serif;
+}
+
+.textwidget {
+	font: 14px/30px 'ProximaNova-Regular', Arial, sans-serif;
+}
+
+/* social nav */
+.social-navigation {
+	height: 40px;
+	line-height: 40px;
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	margin-top: -20px;
+
+	a {
+		display: inline-block;
+		width: auto;
+		height: auto;
+		margin-left: 10px;
+		border: 0;
+		border-radius: 0;
+		vertical-align: middle;
+		transition: background-image .3s linear;
+
+		&:before {
+			display: none;
+		}
+	}
+
+	a[href*="vk.com"] {
+		width: 28px;
+		height: 16px;
+		background: url('/wp-content/uploads/icons/vk.svg') no-repeat center center;
+		background-size: 28px 16px;
+	}
+
+	a[href*="vk.com"]:hover {
+		background: url('/wp-content/uploads/icons/vk_hover.svg') no-repeat center center;
+	}
+
+	a[href*="facebook.com"] {
+		width: 11px;
+		height: 22px;
+		background: url('/wp-content/uploads/icons/fb.svg') no-repeat center center;
+		background-size: 11px 22px;
+	}
+
+	a[href*="facebook.com"]:hover {
+		background: url('/wp-content/uploads/icons/fb_hover.svg') no-repeat center center;
+	}
+
+	a[href*="youtube.com"] {
+		width: 20px;
+		height: 24px;
+		background: url('/wp-content/uploads/icons/youtube.svg') no-repeat center center;
+		background-size: 20px 24px;
+	}
+
+	a[href*="youtube.com"]:hover {
+		background: url('/wp-content/uploads/icons/youtube_hover.svg') no-repeat center center;
+	}
+
+	a[href*="instagram.com"] {
+		width: 24px;
+		height: 24px;
+		background: url('/wp-content/uploads/icons/instagram.svg') no-repeat center center;
+		background-size: 24px 24px;
+	}
+
+	a[href*="instagram.com"]:hover {
+		background: url('/wp-content/uploads/icons/instagram_hover.svg') no-repeat center center;
+	}
+
+	a[href*="soundcloud.com"] {
+		width: 28px;
+		height: 14px;
+		background: url('/wp-content/uploads/icons/soundcloud.svg') no-repeat center center;
+		background-size: 28px 14px;
+	}
+
+	a[href*="soundcloud.com"]:hover {
+		background: url('/wp-content/uploads/icons/soundcloud_hover.svg') no-repeat center center;
+		background-size: 28px 14px;
+	}
+}
+
+.screen-reader-text {
+	font-size: 0;
+	line-height: 0;
+}

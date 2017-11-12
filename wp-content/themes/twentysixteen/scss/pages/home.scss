@@ -1,0 +1,115 @@
+.overlay {
+	position: relative;
+}
+
+.overlay__in {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0, 0.7);
+}
+
+/* main idea */
+.idea {
+	padding: 247px 20px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.ideaIn {
+	position: relative;
+	max-width: 1040px;
+	margin: 0 auto;
+	font: 20px/30px 'ProximaNova-Semibold', Arial, sans-serif;
+	color: #FCFCFC;
+
+	-webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.ideaIn h1 {
+	margin-bottom: 46px;
+	font: 48px/60px 'ProximaNova-Bold', Arial, sans-serif;
+}
+
+.ideaIn p {
+	margin-bottom: 30px;
+}
+
+.ideaIn p:last-child {
+	margin-bottom: 0;
+}
+
+.ideaInContent a {
+	color: #FE2F2F;
+	border-bottom: 1px solid #FE2F2F;
+}
+
+.ideaInContent a:hover {
+	color: #D42727;
+	border-bottom-color: transparent;
+}
+
+/* what we do */
+.weDo {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.weDoIn {
+	position: relative;
+	z-index: 1;
+	padding: 124px 0 220px;
+}
+
+.weDoCols {
+	margin: 114px auto 0;
+}
+
+.weDoCol {
+	margin-bottom: 104px;
+	text-align: center;
+	font: 21px/30px 'ProximaNova-Regular', Arial, sans-serif;
+	color: #FCFCFC;
+}
+
+.weDoCol__in {
+	max-width: 310px;
+	margin: 0 auto;
+	padding: 0 10px;
+}
+
+.weDoCol p {
+	margin-bottom: 20px;
+	height: 120px;
+	line-height: 120px;
+}
+
+.weDoCol img {
+	vertical-align: middle;
+}
+
+.weDoInfo {
+	max-width: 560px;
+	margin: 0 auto;
+	padding-top: 33px;
+	font: 20px/30px 'ProximaNova-Semibold', Arial, sans-serif;
+	text-align: center;
+	color: #FCFCFC;
+}
+
+.weDoInfo a {
+	color: #FE2F2F;
+	border-bottom: 1px solid #FE2F2F;
+}
+
+.weDoInfo a:hover {
+	color: #D42727;
+	border-bottom-color: transparent;
+}

@@ -38,7 +38,7 @@
 							?>
 						</nav>
 					<?php endif; ?>
-					
+
 					<div class="searchHeader">
 						<div class="search__icon toggle-search" aria-hidden="true">
 							<span class="circle"></span>

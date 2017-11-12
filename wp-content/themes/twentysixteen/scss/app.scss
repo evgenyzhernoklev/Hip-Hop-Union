@@ -1,0 +1,22 @@
+@import 'additional/reset';
+@import 'additional/fonts';
+@import 'additional/mixins';
+@import 'additional/variables';
+@import 'additional/cols';
+@import 'additional/common';
+
+@import 'forms/reset';
+@import 'forms/common';
+
+@import 'blocks/comments';
+@import 'blocks/footer';
+@import 'blocks/galleries';
+@import 'blocks/header';
+@import 'blocks/menu';
+@import 'blocks/pagination';
+
+@import 'pages/home';
+@import 'pages/news-list';
+@import 'pages/partners-list';
+@import 'pages/post';
+@import 'pages/search-results';

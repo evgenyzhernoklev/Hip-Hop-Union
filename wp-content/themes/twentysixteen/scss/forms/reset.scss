@@ -1,0 +1,31 @@
+::-webkit-input-placeholder {color:#999999;}
+::-moz-placeholder          {color:#999999;}/* Firefox 19+ */
+:-moz-placeholder           {color:#999999;}/* Firefox 18- */
+:-ms-input-placeholder      {color:#999999;}
+
+form input,
+form button {
+  -moz-appearance:none;
+  -webkit-appearance: none;
+}
+
+/* delete arrows */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+/* ie: clear 'x' icon in text field */
+::-ms-clear {
+  display: none;
+}
+
+/* ie: clear icon in password field */
+::-ms-reveal {
+  display: none;
+}
