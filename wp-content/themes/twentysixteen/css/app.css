@@ -662,6 +662,20 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
   visibility: hidden;
   transition: opacity 0.3s linear, visibility 0.3s linear;
 }
+.sub-menu .menu-item {
+  display: block;
+}
+.sub-menu ul {
+  left: 100%;
+  top: 0;
+}
+.sub-menu .dropdown-toggle {
+  position: absolute;
+  right: 5px;
+  top: 0;
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
 .menu-item:hover > .sub-menu, .menu-item:hover > .toggled-on {
   opacity: 1;
   visibility: visible;
