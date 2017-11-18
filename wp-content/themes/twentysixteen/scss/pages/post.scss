@@ -182,7 +182,9 @@
 		margin-bottom: 6px;
 	}
 
-	iframe[src*="youtube"] {
+	iframe[src*="youtube"],
+	iframe[src*="vimeo"],
+	iframe[src*="vk.com"] {
 		width: 140%!important;
 		height: 600px!important;
 		margin-left: -20%;

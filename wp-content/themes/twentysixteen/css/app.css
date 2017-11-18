@@ -1212,7 +1212,7 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
   margin-top: 18px;
   margin-bottom: 6px;
 }
-.singleContent iframe[src*="youtube"] {
+.singleContent iframe[src*="youtube"], .singleContent iframe[src*="vimeo"], .singleContent iframe[src*="vk.com"] {
   width: 140% !important;
   height: 600px !important;
   margin-left: -20%;
