@@ -908,7 +908,7 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
   width: 25%;
   float: left;
 }
-.posts .post:nth-child(6n-3), .posts .post:nth-child(6n-2) {
+.posts .post:nth-child(6n), .posts .post:nth-child(6n - 5) {
   width: 50%;
 }
 /* header */

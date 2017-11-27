@@ -6,8 +6,8 @@
 		float: left;
 	}
 
-	.post:nth-child(6n-3),
-	.post:nth-child(6n-2) {
+	.post:nth-child(6n),
+	.post:nth-child(6n - 5) {
 		width: 50%;
 	}
 }
