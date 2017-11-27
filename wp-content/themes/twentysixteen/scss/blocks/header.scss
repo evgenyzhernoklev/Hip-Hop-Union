@@ -21,3 +21,37 @@
 		height: 120px!important;
 	}
 }
+
+.logo-daexit {
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	left: 145px;
+	margin-top: -20px;
+	color: $black;
+	font: 32px/40px $pt-regular;
+
+	span {
+		display: inline-block;
+	}
+}
+
+.logo-daexit-link {
+	color: $black;
+
+	&:hover {
+		color: $blue;
+	}
+}
+
+
+
+/* social nav */
+.social-navigation {
+	&.social-navigation-header {
+		position: absolute;
+		top: 10px;
+		right: 15px;
+		margin-top: 0;
+	}
+}

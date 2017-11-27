@@ -590,6 +590,31 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
   width: 120px !important;
   height: 120px !important;
 }
+.logo-daexit {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 145px;
+  margin-top: -20px;
+  color: #111;
+  font: 32px/40px 'PTSerif-Regular', Arial, sans-serif;
+}
+.logo-daexit span {
+  display: inline-block;
+}
+.logo-daexit-link {
+  color: #111;
+}
+.logo-daexit-link:hover {
+  color: #226bd3;
+}
+/* social nav */
+.social-navigation.social-navigation-header {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  margin-top: 0;
+}
 .menu-toggle {
   display: none;
 }
