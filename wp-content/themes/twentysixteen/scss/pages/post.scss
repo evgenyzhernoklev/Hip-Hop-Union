@@ -57,6 +57,33 @@
 	color: $white-light;
 }
 
+@media (max-width: 767px) {
+	.singleHeader {
+		height: 550px;
+		margin-bottom: 42px;
+	}
+
+	.singleHeader__date,
+	.singleHeader__author {
+		top: 30px;
+		font-size: 18px;
+		line-height: 36px;
+	}
+
+	.singleHeader__author {
+		top: auto;
+		bottom: 80px;
+		right: auto;
+		left: 0;
+	}
+
+	.singleHeader__title {
+		bottom: 125px;
+		font-size: 36px;
+		line-height: 48px;
+	}
+}
+
 
 
 /* content */
@@ -177,15 +204,70 @@
 		height: auto!important;
 	}
 
-	iframe {
-		margin-top: 18px;
-		margin-bottom: 6px;
-	}
-
-	iframe {
+	iframe[src*='youtube.com'] {
 		width: 140%!important;
 		height: 600px!important;
+		margin-top: 18px;
+		margin-bottom: 6px;
 		margin-left: -20%;
+	}
+}
+
+@media (max-width: 1024px) {
+	.singleContent {
+		iframe[src*='youtube.com'] {
+			height: 600px!important;
+			width: calc(100% + 240px)!important;
+			margin-left: -120px;
+		}
+	}
+}
+
+@media (max-width: 992px) {
+	.singleContent {
+		iframe[src*='youtube.com'] {
+			width: calc(100% + 40px)!important;
+			height: 500px!important;
+			margin-left: -20px;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.singleContent {
+		padding-top: 10px;
+		font-size: 18px;
+		line-height: 27px;
+
+		.entry-summary {
+			font-size: 21px;
+		}
+
+		ul {
+			margin-left: 0;
+
+			li {
+				padding-left: 29px;
+
+				&:before {
+					top: 14px;
+					width: 10px;
+				}
+			}
+		}
+
+		iframe[src*='youtube.com'] {
+			height: 450px!important;
+			margin-top: 10px;
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.singleContent {
+		iframe[src*='youtube.com'] {
+			height: 300px!important;
+		}
 	}
 }
 
@@ -198,6 +280,12 @@
 
 .singleFooterIn {
 	margin-bottom: 30px;
+}
+
+@media (max-width: 767px) {
+	.singleFooter {
+		margin: 0 -20px;
+	}
 }
 
 
@@ -229,6 +317,25 @@
 	}
 }
 
+@media (max-width: 767px) {
+	.tags {
+		margin: 41px 0 22px;
+		padding: 50px 10px 0;
+	}
+
+	.tags__title {
+		margin: 0 10px 30px;
+	}
+
+	.tags__link {
+		margin: 0 10px 20px;
+		padding: 0 20px;
+		height: 40px;
+		font-size: 18px;
+		line-height: 36px;
+	}
+}
+
 
 
 // related posts
@@ -253,4 +360,20 @@
 .postsRelated__title {
 	margin: 0 0 35px;
 	text-align: left;
+}
+
+@media (max-width: 767px) {
+	.postsRelated {
+		margin: 30px 0 50px;
+	}
+
+	.posts--related {
+		.post {
+			width: 100%;
+		}
+	}
+
+	.postsRelated__title {
+		padding: 0 20px;
+	}
 }

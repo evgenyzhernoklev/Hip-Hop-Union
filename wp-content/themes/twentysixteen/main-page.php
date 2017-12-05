@@ -57,7 +57,7 @@ Template Name: Шаблон главной страницы
 			<div class="weDoCols colsFlex">
 				<?php
 					foreach ($we_do as $element) {
-						echo '<div class="weDoCol colsFlex__col--4"><div class="weDoCol__in">';
+						echo '<div class="weDoCol colsFlex__col--3"><div class="weDoCol__in">';
 						echo $element;
 						echo '</div></div>';
 					}

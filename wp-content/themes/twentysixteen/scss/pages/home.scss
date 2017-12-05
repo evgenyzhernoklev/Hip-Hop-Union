@@ -59,6 +59,43 @@
 	}
 }
 
+@media (max-width: 992px) {
+	.idea {
+		padding-top: 120px;
+		padding-bottom: 120px;
+	}
+
+	.ideaIn {
+		.colsFlex__col--2 {
+			-ms-flex-preferred-size: 100%;
+			flex-basis: 100%;
+		}
+
+		.custom-logo {
+			display: block;
+			width: 120px;
+			height: 120px;
+			margin: 0 auto 50px;
+		}
+
+		h1, h2, h3 {
+			text-align: center;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.ideaIn {
+		font-size: 18px;
+		line-height: 27px;
+
+		h1 {
+			font-size: 36px;
+			line-height: 48px;
+		}
+	}
+}
+
 
 
 /* what we do */
@@ -76,6 +113,7 @@
 
 .weDoCols {
 	margin: 114px auto 0;
+	justify-content: center;
 }
 
 .weDoCol {
@@ -117,5 +155,22 @@
 			color: $red-hover;
 			border-bottom-color: transparent;
 		}
+	}
+}
+
+@media (max-width: 767px) {
+	.weDoIn {
+		padding-top: 120px;
+		padding-bottom: 120px;
+	}
+
+	.weDoCols {
+		margin-top: 46px;
+	}
+
+	.weDoCol {
+		margin-bottom: 70px;
+		font-size: 18px;
+		line-height: 27px;
 	}
 }

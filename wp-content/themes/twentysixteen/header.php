@@ -24,10 +24,6 @@
 		<div class="contentIn">
 			<?php twentysixteen_the_custom_logo(); ?>
 
-			<div class="logo-daexit">
-				<span>+</span> <a class="logo-daexit-link" href="http://daexit.wixsite.com/daexit">DA Exit</a>
-			</div>
-
 			<?php if ( has_nav_menu( 'primary' ) ) : ?>
 				<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'twentysixteen' ); ?></button>
 
@@ -39,20 +35,6 @@
 									'theme_location' => 'primary',
 									'menu_class'     => 'primary-menu',
 								 ) );
-							?>
-						</nav>
-					<?php endif; ?>
-
-					<?php if ( has_nav_menu( 'social' ) ) : ?>
-						<nav class="social-navigation social-navigation-header" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'twentysixteen' ); ?>">
-							<?php
-								wp_nav_menu( array(
-									'theme_location' => 'social',
-									'menu_class'     => 'social-links-menu',
-									'depth'          => 1,
-									'link_before'    => '<span class="screen-reader-text">',
-									'link_after'     => '</span>',
-								) );
 							?>
 						</nav>
 					<?php endif; ?>
@@ -71,4 +53,4 @@
 		</div>
 	</header>
 
-	<div id="content" class="content">
+	<div id="content" class="content contentWrapper">

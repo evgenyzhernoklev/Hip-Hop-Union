@@ -15,3 +15,18 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .su-slider {
+    width: auto!important;
+    margin-left: -120px!important;
+    margin-right: -120px!important;
+  }
+}
+
+@media (max-width: 992px) {
+  .su-slider {
+    margin-left: -20px!important;
+    margin-right: -20px!important;
+  }
+}

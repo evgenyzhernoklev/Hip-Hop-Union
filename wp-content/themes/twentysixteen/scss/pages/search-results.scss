@@ -176,7 +176,12 @@
 	right: 0;
 	margin-top: -8px;
 	font-size: 0;
-	transition: z-index .2s linear;
+	-webkit-transition: z-index .2s linear, margin $transition-normal;
+	transition: z-index .2s linear, margin $transition-normal;
+
+	.is-scrolled & {
+		margin-top: -25px;
+	}
 }
 
 .navigationWrapper.is-active .searchHeader {

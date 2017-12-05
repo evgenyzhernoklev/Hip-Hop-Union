@@ -12,12 +12,15 @@ a {
 
 .content {
 	position: relative;
-	/*max-width: 1440px;
-	min-width: 320px;*/
-	width: 1440px;
+	max-width: 1440px;
+	min-width: 320px;
 	margin: 0 auto;
 	padding: 0 20px;
 	background-color: $white;
+}
+
+.contentWrapper {
+	padding-top: 160px;
 }
 
 .contentIn {
@@ -32,6 +35,9 @@ a {
 	max-width: 720px;
 }
 
+
+
+// titles
 .titlePage {
 	padding: 70px 0 75px;
 	font: 60px/72px $nova-bold;
@@ -62,13 +68,32 @@ a {
 	color: $white-light;
 }
 
-/* clear fix */
-.clear:before,
-.clear:after {
-	content: "";
-	display: table;
+@media (max-width: 767px) {
+	.titlePage {
+		padding: 55px 0 60px;
+		font-size: 48px;
+		line-height: 64px;
+	}
+
+	.subtitle {
+		font-size: 40px;
+		line-height: 50px;
+	}
 }
 
-.clear:after {
-	clear: both;
+
+
+/* clearfix */
+.clear {
+	overflow: hidden;
+
+	&:before,
+	&:after {
+		content: "";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
 }
