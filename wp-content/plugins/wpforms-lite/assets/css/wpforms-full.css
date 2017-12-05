@@ -523,8 +523,9 @@ div.wpforms-container-full .wpforms-form .wpforms-error-alert {
 ----------------------------------------------------------------------------- */
 
 .wpforms-confirmation-container-full {
+	position: relative;
+	top: -40px;
 	color: #333;
-	margin: 0 0 24px 0;
 	background: #e0ffc7;
 	border: 1px solid #b4d39b;
 	padding: 15px 15px;

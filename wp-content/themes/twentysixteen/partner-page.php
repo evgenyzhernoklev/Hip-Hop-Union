@@ -21,12 +21,12 @@ Template Name: Шаблон страницы партнеров
 
 	<?php if ( $wpb_all_query->have_posts() ) : ?>
 
-		<div class="colsFlex colsFlex--2 colsFlex--center">
+		<div class="colsFlex colsFlex--3 colsFlex--center">
 			<?php while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post(); ?>
 
 				<?php $link = get_post_meta($post->ID, '_partner_link_meta_key', true); ?>
 
-				<div class="colsFlex__col colsFlex__col--2">
+				<div class="colsFlex__col colsFlex__col--3">
 					<div class="partner">
 
 						<?php if ( $link ) : ?>
