@@ -59,3 +59,15 @@
     position: absolute;
   }
 }
+
+@media (max-width: 1160px) {
+  .scroll-top {
+    margin-right: 400px;
+  }
+}
+
+@media (max-width: 900px) {
+  .scroll-top {
+    display: none;
+  }
+}

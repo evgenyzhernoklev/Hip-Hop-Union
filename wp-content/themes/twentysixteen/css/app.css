@@ -295,6 +295,16 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
 .scroll-top.is-absolute {
   position: absolute;
 }
+@media (max-width: 1160px) {
+  .scroll-top {
+    margin-right: 400px;
+  }
+}
+@media (max-width: 900px) {
+  .scroll-top {
+    display: none;
+  }
+}
 /* cols flex */
 .colsFlex {
   display: -webkit-box;
