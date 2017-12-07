@@ -12,6 +12,10 @@
 	}
 }
 
+article.post {
+	position: relative;
+}
+
 @media (max-width: 992px) {
 	.posts {
 		.post {

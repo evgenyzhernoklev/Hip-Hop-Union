@@ -1,0 +1,61 @@
+@-webkit-keyframes arrowTop {
+  0% {top: 0;}
+  50% {top: -25px;}
+  51% {top: 25px;}
+  100% {top: 0;}
+}
+
+@keyframes arrowTop {
+  0% {top: 0;}
+  50% {top: -25px;}
+  51% {top: 25px;}
+  100% {top: 0;}
+}
+
+.scroll-top {
+  position: fixed;
+  z-index: 50;
+  bottom: 30px;
+  right: 50%;
+  display: inline-block;
+  margin-right: 520px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: $blue;
+  cursor: pointer;
+  border-radius: 3px;
+  @include hide();
+  transition: opacity $transition-normal, visibility $transition-normal, background-color $transition-normal;
+
+  &:before {
+    position: relative;
+    top: 0;
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url('/wp-content/uploads/icons/arrow_up_white.svg') no-repeat center center;
+    background-size: 20px 20px;
+    vertical-align: middle;
+  }
+
+  &:hover {
+    background-color: $blue-hover;
+
+    &:before {
+      -webkit-animation: arrowTop $transition-normal;
+      animation: arrowTop $transition-normal;
+    }
+  }
+
+  &.is-active {
+    @include show();
+    transition: opacity $transition-normal, visibility $transition-normal, background-color $transition-normal;
+  }
+
+  &.is-absolute {
+    position: absolute;
+  }
+}

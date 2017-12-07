@@ -2,12 +2,13 @@
 @import 'additional/fonts';
 @import 'additional/mixins';
 @import 'additional/variables';
-@import 'additional/cols';
 @import 'additional/common';
 
 @import 'forms/reset';
 @import 'forms/common';
 
+@import 'blocks/button-scroll';
+@import 'blocks/cols';
 @import 'blocks/comments';
 @import 'blocks/footer';
 @import 'blocks/galleries';
