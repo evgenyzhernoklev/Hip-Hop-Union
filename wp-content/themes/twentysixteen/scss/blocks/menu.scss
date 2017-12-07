@@ -95,6 +95,52 @@
 	}
 }
 
+@media (max-width: 992px) {
+	.navigationWrapper {
+		position: absolute;
+		top: 20px;
+    left: 0;
+    right: 67px;
+    height: 50px;
+    padding: 0;
+    max-width: none;
+	}
+
+	.main-navigation {
+		position: fixed;
+		top: 90px;
+		bottom: 0;
+		left: -100%;
+		width: 100%;
+		background-color: $white;
+		overflow: auto;
+		-webkit-transition: left $transition-normal;
+		transition: left $transition-normal;
+
+		&.is-active {
+			left: 0;
+		}
+	}
+
+	.menu-item {
+		position: relative;
+		display: block;
+		border-bottom: 1px solid #e6e6e6;
+
+		a {
+			display: block;
+			padding-left: 40px;
+			padding-right: 20px;
+		}
+
+		.dropdown-toggle {
+			position: absolute;
+			top: 10px;
+			left: 20px;
+		}
+	}
+}
+
 
 
 /* sub menu */

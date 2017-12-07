@@ -12,6 +12,7 @@
       var $container = $(this).closest('.navigationWrapper');
 
       $container.toggleClass('is-active');
+      $headerContainer.toggleClass('search-opened');
     });
 
 
@@ -28,6 +29,12 @@
       } else {
         $headerContainer.removeClass('is-scrolled');
       }
+    });
+
+    $('.hamburger').on('click', function() {
+      console.log('ffgfdg');
+      $(this).toggleClass('is-active');
+      $('.main-navigation').toggleClass('is-active');
     });
 
 

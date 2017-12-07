@@ -284,6 +284,17 @@
 	}
 }
 
+@media (max-width: 992px) {
+	.searchHeader {
+		line-height: 50px;
+		height: 50px;
+	}
+
+	.search__icon {
+		margin-left: 7px;
+	}
+}
+
 
 
 .searchHeader {
@@ -320,4 +331,10 @@
 .navigationWrapper.is-active .search-form {
 	width: 100%;
 	padding-left: 10px;
+}
+
+@media (max-width: 992px) {
+	.navigationWrapper.is-active .search-form {
+		padding-left: 20px;
+	}
 }

@@ -724,6 +724,70 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
 .gallery-columns-6 .gallery-caption, .gallery-columns-7 .gallery-caption, .gallery-columns-8 .gallery-caption, .gallery-columns-9 .gallery-caption {
   display: none;
 }
+.hamburger {
+  display: none;
+  width: 60px;
+  height: 60px;
+  line-height: 40px;
+  padding: 15px;
+  position: absolute;
+  left: 2px;
+  top: 14px;
+  overflow: visible;
+  cursor: pointer;
+}
+.hamburger-box {
+  position: relative;
+  display: inline-block;
+  width: 25px;
+  height: 18px;
+}
+.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  border-radius: 4px;
+  background-color: #111;
+}
+.hamburger-inner {
+  top: 50%;
+  display: block;
+  margin-top: -2px;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition-duration: 0.22s;
+}
+.hamburger-inner:after, .hamburger-inner:before {
+  content: '';
+  display: block;
+}
+.hamburger-inner:before {
+  top: -7px;
+  transition: top 0.1s ease-in 0.25s, opacity 0.1s ease-in;
+}
+.hamburger-inner:after {
+  bottom: -7px;
+  transition: bottom 0.1s ease-in 0.25s, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.hamburger.is-active .hamburger-inner {
+  transition-delay: 0.12s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  transform: rotate(225deg);
+}
+.hamburger.is-active .hamburger-inner:before {
+  top: 0;
+  transition: top 0.1s ease-out, opacity 0.1s ease-out 0.12s;
+  opacity: 0;
+}
+.hamburger.is-active .hamburger-inner:after {
+  bottom: 0;
+  transition: bottom 0.1s ease-out, transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
+  transform: rotate(-90deg);
+}
+@media (max-width: 992px) {
+  .hamburger {
+    display: inline-block;
+  }
+}
 .header {
   position: fixed;
   top: 0;
@@ -845,6 +909,26 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
     left: 85px;
   }
 }
+@media (max-width: 992px) {
+  .header.search-opened .custom-logo-link, .header.search-opened .logoDaexit {
+    opacity: 0;
+  }
+  .header .contentIn {
+    line-height: 90px;
+    text-align: center;
+  }
+  .header .custom-logo-link, .header .logoDaexit {
+    position: static;
+    vertical-align: middle;
+    font-size: 0;
+    line-height: 0;
+    -webkit-transition: opacity 0.2s linear;
+    transition: opacity 0.2s linear;
+  }
+  .header .custom-logo-link {
+    margin-right: 15px;
+  }
+}
 /* social nav */
 .social-navigation.social-navigation-header {
   position: absolute;
@@ -926,6 +1010,46 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
     padding-left: 10px;
     padding-right: 10px;
     font-size: 18px;
+  }
+}
+@media (max-width: 992px) {
+  .navigationWrapper {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 67px;
+    height: 50px;
+    padding: 0;
+    max-width: none;
+  }
+  .main-navigation {
+    position: fixed;
+    top: 90px;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    background-color: #fff;
+    overflow: auto;
+    -webkit-transition: left 0.3s linear;
+    transition: left 0.3s linear;
+  }
+  .main-navigation.is-active {
+    left: 0;
+  }
+  .menu-item {
+    position: relative;
+    display: block;
+    border-bottom: 1px solid #e6e6e6;
+  }
+  .menu-item a {
+    display: block;
+    padding-left: 40px;
+    padding-right: 20px;
+  }
+  .menu-item .dropdown-toggle {
+    position: absolute;
+    top: 10px;
+    left: 20px;
   }
 }
 /* sub menu */
@@ -1962,6 +2086,15 @@ article.post {
     margin-top: -25px;
   }
 }
+@media (max-width: 992px) {
+  .searchHeader {
+    line-height: 50px;
+    height: 50px;
+  }
+  .search__icon {
+    margin-left: 7px;
+  }
+}
 .searchHeader .search-form {
   position: relative;
   float: right;
@@ -1990,4 +2123,9 @@ article.post {
 .navigationWrapper.is-active .search-form {
   width: 100%;
   padding-left: 10px;
+}
+@media (max-width: 992px) {
+  .navigationWrapper.is-active .search-form {
+    padding-left: 20px;
+  }
 }

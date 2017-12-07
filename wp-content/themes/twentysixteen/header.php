@@ -27,8 +27,6 @@
 			<a href="http://daexit.wixsite.com/daexit" class="logoDaexit">Da Exit</a>
 
 			<?php if ( has_nav_menu( 'primary' ) ) : ?>
-				<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'twentysixteen' ); ?></button>
-
 				<div class="navigationWrapper">
 					<?php if ( has_nav_menu( 'primary' ) ) : ?>
 						<nav class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'twentysixteen' ); ?>">
@@ -50,6 +48,11 @@
 					</div>
 				</div>
 
+				<div class="hamburger hamburger-spin">
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+					</div>
+				</div>
 			<?php endif; ?>
 
 		</div>
