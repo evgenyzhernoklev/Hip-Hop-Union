@@ -1,5 +1,24 @@
 == Changelog ==
 
+= 1.4.3 =
+- Added: Early filter for form data before form output, `wpforms_frontend_form_data`
+- Changed: Standardize and tweak modal window button styles
+- Changed: Default mail notification settings are now sent "from" the site administrator email; user email is used in Reply-To where applicable (to hopefully improve email deliverability)
+- Changed: Removed "Hide form name and description" form setting as it was a common source or confusion
+- Fixed: Site cache being flushed when it shouldn't have been, affecting performance in some scenarios
+- Fixed: Country, state, months and days not properly exposed to i18n
+- Fixed: CSV export dates not properly using i18n
+- Fixed: WPForms custom post types omitting labels
+- Fixed: Smart Tag value encoding issues with email notifications
+- Fixed: Infinite recursion issue when using Dynamic Values option
+- Fixed: PHP notice in form builder
+
+= 1.4.2.2 =
+- Changed: Announcement feed data
+
+= 1.4.2.1 =
+- Added: Setting to hide Announcement feed
+
 = 1.4.2 =
 - Added: Import your old Ninja Forms or Contact Form 7 forms! (WPForms > Tools > Import)
 - Changed: Dropdown/Checkbox/Multiple Choice "Show Values" setting has been hidden by default to avoid confusion, can be re-enabled using the `wpforms_fields_show_options_setting` filter
@@ -34,6 +53,7 @@
 - Added: Non-dismissible Dashboard page admin only notice about PHP 5.2.
 
 = 1.4.0 =
+- Added: Announcement feed
 - Changed: Core form templates are now displayed separate in the form builder from other custom templates
 - Changed: Refactored CSV exporting for better support
 - Fixed: Dynamic Choices large items modal render issue

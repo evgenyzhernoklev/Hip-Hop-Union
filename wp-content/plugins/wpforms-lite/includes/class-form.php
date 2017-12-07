@@ -38,7 +38,7 @@ class WPForms_Form_Handler {
 		$args = apply_filters(
 			'wpforms_post_type_args',
 			array(
-				'labels'              => array(),
+				'label'               => 'WPForms',
 				'public'              => false,
 				'exclude_from_search' => true,
 				'show_ui'             => false,
@@ -68,8 +68,8 @@ class WPForms_Form_Handler {
 		}
 
 		$args = array(
-			'id'     => 'wpform',
-			'title'  => 'WPForm',
+			'id'     => 'wpforms',
+			'title'  => __( 'WPForms', 'wpforms' ),
 			'href'   => admin_url( 'admin.php?page=wpforms-builder' ),
 			'parent' => 'new-content',
 		);
@@ -157,6 +157,7 @@ class WPForms_Form_Handler {
 			if ( class_exists( 'WPForms_Entry_Handler' ) ) {
 				wpforms()->entry->delete_by( 'form_id', $id );
 				wpforms()->entry_meta->delete_by( 'form_id', $id );
+				wpforms()->entry_fields->delete_by( 'form_id', $id );
 			}
 
 			if ( ! $form ) {
@@ -281,23 +282,30 @@ class WPForms_Form_Handler {
 			}
 		}
 
-		// Sanitize - don't allow tags for users who do not have appropriate cap
+		// Sanitize - don't allow tags for users who do not have appropriate cap.
 		if ( ! current_user_can( 'unfiltered_html' ) ) {
 			array_walk_recursive( $data, 'wp_strip_all_tags' );
 		}
 
-		// Sanitize notification names
+		// Sanitize notification names.
 		foreach ( $data['settings']['notifications'] as $id => &$notification ) {
-			$notification['notification_name'] = sanitize_text_field( $notification['notification_name'] );
+			if ( ! empty( $notification['notification_name'] ) ) {
+				$notification['notification_name'] = sanitize_text_field( $notification['notification_name'] );
+			}
 		}
 
-		$form    = array(
-			'ID'           => $form_id,
-			'post_title'   => esc_html( $title ),
-			'post_excerpt' => $desc,
-			'post_content' => wpforms_encode( $data ),
+		$form = apply_filters(
+			'wpforms_save_form_args',
+			array(
+				'ID'           => $form_id,
+				'post_title'   => esc_html( $title ),
+				'post_excerpt' => $desc,
+				'post_content' => wpforms_encode( $data ),
+			),
+			$data,
+			$args
 		);
-		$form    = apply_filters( 'wpforms_save_form_args', $form, $data, $args );
+
 		$form_id = wp_update_post( $form );
 
 		do_action( 'wpforms_save_form', $form_id, $form );

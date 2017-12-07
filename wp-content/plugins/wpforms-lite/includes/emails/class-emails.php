@@ -127,7 +127,7 @@ class WPForms_WP_Emails {
 		}
 
 		add_action( 'wpforms_email_send_before', array( $this, 'send_before' ) );
-		add_action( 'wpforms_email_send_after',  array( $this, 'send_after'  ) );
+		add_action( 'wpforms_email_send_after', array( $this, 'send_after' ) );
 	}
 
 	/**
@@ -158,7 +158,7 @@ class WPForms_WP_Emails {
 			$this->from_name = get_bloginfo( 'name' );
 		}
 
-		return apply_filters( 'wpforms_email_from_name', wp_specialchars_decode( $this->from_name ), $this );
+		return apply_filters( 'wpforms_email_from_name', wpforms_decode_string( $this->from_name ), $this );
 	}
 
 	/**
@@ -321,39 +321,39 @@ class WPForms_WP_Emails {
 	 * @param string $to The To address.
 	 * @param string $subject The subject line of the email.
 	 * @param string $message The body of the email.
-	 * @param string|array $attachments Attachments to the email.
+	 * @param array $attachments Attachments to the email.
 	 *
 	 * @return bool
 	 */
 	public function send( $to, $subject, $message, $attachments = array() ) {
 
 		if ( ! did_action( 'init' ) && ! did_action( 'admin_init' ) ) {
-			_doing_it_wrong( __FUNCTION__, __( 'You cannot send emails with WPForms_WP_Emails until init/admin_init has been reached', 'wpforms' ), null );
+			_doing_it_wrong( __FUNCTION__, __( 'You cannot send emails with WPForms_WP_Emails until init/admin_init has been reached.', 'wpforms' ), null );
 
 			return false;
 		}
 
-		// Don't send anything if emails have been disabled
+		// Don't send anything if emails have been disabled.
 		if ( $this->is_email_disabled() ) {
 			return false;
 		}
 
-		// Don't send if email address is invalid
+		// Don't send if email address is invalid.
 		if ( ! is_email( $to ) ) {
 			return false;
 		}
 
-		// Hooks before email is sent
+		// Hooks before email is sent.
 		do_action( 'wpforms_email_send_before', $this );
 
 		$message     = $this->build_email( $message );
 		$attachments = apply_filters( 'wpforms_email_attachments', $attachments, $this );
-		$subject     = wp_specialchars_decode( $this->process_tag( $subject ) );
+		$subject     = wpforms_decode_string( $this->process_tag( $subject ) );
 
-		// Let's do this
+		// Let's do this.
 		$sent = wp_mail( $to, $subject, $message, $this->get_headers(), $attachments );
 
-		// Hooks after the email is sent
+		// Hooks after the email is sent.
 		do_action( 'wpforms_email_send_after', $this );
 
 		return $sent;
@@ -417,7 +417,7 @@ class WPForms_WP_Emails {
 
 		$tag = apply_filters( 'wpforms_process_smart_tags', $string, $this->form_data, $this->fields, $this->entry_id );
 
-		$tag = stripslashes( wp_specialchars_decode( $tag ) );
+		$tag = wpforms_decode_string( $tag );
 
 		if ( $sanitize ) {
 			if ( $linebreaks ) {
@@ -452,7 +452,7 @@ class WPForms_WP_Emails {
 			// HTML emails ---------------------------------------------------//
 			ob_start();
 
-			// Hooks into the email field
+			// Hooks into the email field.
 			do_action( 'wpforms_email_field', $this );
 
 			$this->get_template_part( 'field', $this->get_template(), true );
@@ -477,7 +477,7 @@ class WPForms_WP_Emails {
 					$field_item = str_replace( 'border-top:1px solid #dddddd;', '', $field_item );
 				}
 				$field_item  = str_replace( '{field_name}', $field_name, $field_item );
-				$field_value = apply_filters( 'wpforms_html_field_value', stripslashes( wp_specialchars_decode( $field_val ) ), $field, $this->form_data, 'email-html' );
+				$field_value = apply_filters( 'wpforms_html_field_value', wpforms_decode_string( $field_val ), $field, $this->form_data, 'email-html' );
 				$field_item  = str_replace( '{field_value}', $field_value, $field_item );
 
 				$message .= wpautop( $field_item );
@@ -492,12 +492,11 @@ class WPForms_WP_Emails {
 					continue;
 				}
 
-				$field_val  = empty( $field['value'] ) && '0' !== $field['value'] ? __( '(empty)', 'wpforms' ) : $field['value'];
-				$field_name = ! empty( $field['name'] ) ? $field['name'] : __( 'Field ID #', 'wpforms' ) . absint( $field['id'] );
-
-				$message .= '--- ' . wp_specialchars_decode( $field_name ) . " ---\r\n";
-				$field_value = stripslashes( wp_specialchars_decode( $field_val ) ) . "\r\n\r\n";
-				$message .= apply_filters( 'wpforms_plaintext_field_value', $field_value, $field, $this->form_data );
+				$field_val   = empty( $field['value'] ) && '0' !== $field['value'] ? __( '(empty)', 'wpforms' ) : $field['value'];
+				$field_name  = ! empty( $field['name'] ) ? $field['name'] : __( 'Field ID #', 'wpforms' ) . absint( $field['id'] );
+				$message    .= '--- ' . wpforms_decode_string( $field_name ) . " ---\r\n\r\n";
+				$field_value = wpforms_decode_string( $field_val ) . "\r\n\r\n";
+				$message    .= apply_filters( 'wpforms_plaintext_field_value', $field_value, $field, $this->form_data );
 			}
 		}
 

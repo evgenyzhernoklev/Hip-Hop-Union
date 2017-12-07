@@ -24,6 +24,8 @@
 		<div class="contentIn">
 			<?php twentysixteen_the_custom_logo(); ?>
 
+			<a href="http://daexit.wixsite.com/daexit" class="logoDaexit">Da Exit</a>
+
 			<?php if ( has_nav_menu( 'primary' ) ) : ?>
 				<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'twentysixteen' ); ?></button>
 

@@ -176,7 +176,7 @@ class WPForms_Builder {
 			'jquery-confirm',
 			WPFORMS_PLUGIN_URL . 'assets/css/jquery-confirm.min.css',
 			null,
-			'3.2.3'
+			'3.3.2'
 		);
 
 		wp_enqueue_style(
@@ -218,7 +218,7 @@ class WPForms_Builder {
 			'jquery-confirm',
 			WPFORMS_PLUGIN_URL . 'assets/js/jquery.jquery-confirm.min.js',
 			array( 'jquery' ),
-			'3.2.3'
+			'3.3.2'
 		);
 
 		wp_enqueue_script(

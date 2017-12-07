@@ -14,7 +14,8 @@ class WPForms_Tools {
 	 * The current active tab.
 	 *
 	 * @since 1.3.9
-	 * @var array
+	 *
+	 * @var string
 	 */
 	public $view;
 
@@ -22,6 +23,7 @@ class WPForms_Tools {
 	 * Template code if generated.
 	 *
 	 * @since 1.3.9
+	 *
 	 * @var string
 	 */
 	private $template = false;
@@ -30,6 +32,7 @@ class WPForms_Tools {
 	 * Registered importers.
 	 *
 	 * @since 1.4.2
+	 *
 	 * @var array
 	 */
 	public $importers = array();
@@ -38,6 +41,7 @@ class WPForms_Tools {
 	 * Available forms for a specific importer.
 	 *
 	 * @since 1.4.2
+	 *
 	 * @var array
 	 */
 	public $importer_forms = array();
@@ -46,9 +50,19 @@ class WPForms_Tools {
 	 * The available forms.
 	 *
 	 * @since 1.3.9
+	 *
 	 * @var array
 	 */
 	public $forms = false;
+
+	/**
+	 * The core views.
+	 *
+	 * @since 1.4.3
+	 *
+	 * @var array
+	 */
+	public $views = array();
 
 	/**
 	 * Primary class constructor.
@@ -68,6 +82,15 @@ class WPForms_Tools {
 	 */
 	public function init() {
 
+		// Define the core views for the tools tab.
+		$this->views = apply_filters( 'wpforms_tools_views',
+			array(
+				esc_html__( 'Import', 'wpforms' )      => array( 'import', 'importer' ),
+				esc_html__( 'Export', 'wpforms' )      => array( 'export' ),
+				esc_html__( 'System Info', 'wpforms' ) => array( 'system' ),
+			)
+		);
+
 		// Check what page we are on.
 		$page = isset( $_GET['page'] ) ? $_GET['page'] : '';
 
@@ -75,7 +98,12 @@ class WPForms_Tools {
 		if ( 'wpforms-tools' === $page ) {
 
 			// Determine the current active settings tab.
-			$this->view = isset( $_GET['view'] ) ? esc_html( $_GET['view'] ) : 'import';
+			$this->view = ! empty( $_GET['view'] ) ? esc_html( $_GET['view'] ) : 'import';
+
+			// If the user tries to load a invalid view fallback to import.
+			if ( ! in_array( $this->view, call_user_func_array( 'array_merge', $this->views ) ) && ! has_action( 'wpforms_tools_display_tab_' . sanitize_key( $this->view ) ) ) {
+				$this->view = 'import';
+			}
 
 			if ( in_array( $this->view, array( 'import', 'importer' ), true ) ) {
 				// If we're on the an import related tab, then build a list of
@@ -112,13 +140,34 @@ class WPForms_Tools {
 	 */
 	public function output() {
 
+		$show_nav = false;
+		foreach ( $this->views as $view ) {
+			if ( in_array( $this->view, (array) $view, true ) ) {
+				$show_nav = true;
+				break;
+			}
+		}
 		?>
+
 		<div id="wpforms-tools" class="wrap wpforms-admin-wrap">
-			<ul class="wpforms-admin-tabs">
-				<li><a href="<?php echo admin_url( 'admin.php?page=wpforms-tools&view=import' ); ?>" class="<?php echo in_array( $this->view, array( 'import', 'importer' ), true ) ? 'active' : ''; ?>"><?php _e( 'Import', 'wpforms' ); ?></a></li>
-				<li><a href="<?php echo admin_url( 'admin.php?page=wpforms-tools&view=export' ); ?>" class="<?php echo 'export' === $this->view ? 'active' : ''; ?>"><?php _e( 'Export', 'wpforms' ); ?></a></li>
-				<li><a href="<?php echo admin_url( 'admin.php?page=wpforms-tools&view=system' ); ?>" class="<?php echo 'system' === $this->view ? 'active' : ''; ?>"><?php _e( 'System Info', 'wpforms' ); ?></a></li>
-			</ul>
+
+			<?php
+			if ( $show_nav ) {
+				echo '<ul class="wpforms-admin-tabs">';
+				foreach ( $this->views as $label => $view ) {
+					$view  = (array) $view;
+					$class = in_array( $this->view, $view, true ) ? ' class="active"' : '';
+					echo '<li>';
+						printf( '<a href="%s"%s>%s</a>',
+							admin_url( 'admin.php?page=wpforms-tools&view=' . sanitize_key( $view[0] ) ),
+							$class,
+							esc_html( $label )
+						);
+					echo '</li>';
+				}
+				echo '</ul>';
+			}
+			?>
 
 			<h1 class="wpforms-h1-placeholder"></h1>
 
@@ -134,14 +183,22 @@ class WPForms_Tools {
 
 			<div class="wpforms-admin-content wpforms-admin-settings">
 				<?php
-				if ( 'system' === $this->view ) {
-					$this->system_info_tab();
-				} elseif ( 'export' === $this->view ) {
-					$this->export_tab();
-				} elseif ( 'importer' === $this->view ) {
-					$this->importer_tab();
-				} else {
-					$this->import_tab();
+				switch ( $this->view ) {
+					case 'system':
+						$this->system_info_tab();
+						break;
+					case 'export':
+						$this->export_tab();
+						break;
+					case 'importer':
+						$this->importer_tab();
+						break;
+					case 'import':
+						$this->import_tab();
+						break;
+					default:
+						do_action( 'wpforms_tools_display_tab_' . sanitize_key( $this->view ) );
+						break;
 				}
 				?>
 			</div>
@@ -155,7 +212,6 @@ class WPForms_Tools {
 	 * @since 1.4.2
 	 */
 	public function import_tab() {
-
 		?>
 
 		<div class="wpforms-setting-row tools">
@@ -300,7 +356,7 @@ class WPForms_Tools {
 				<p><?php esc_html_e( 'One or more of your forms contain fields that are not available in WPForms Lite. To properly impor tthese fields, we recommend upgrading to WPForms Pro.', 'wpforms' ); ?></p>
 				<p><?php esc_html_e( 'You can continue with the import without upgrading, and we will do our best to match the fields. However, some of them will be omitted due to compatibility issues.', 'wpforms' ); ?></p>
 				<p>
-					<a href="<?php echo wpforms_admin_upgrade_link(); ?>" target="_blank" rel="noopener noreferrer" class="wpforms-btn wpforms-btn-md wpforms-btn-orange"><?php esc_html_e( 'Upgrade to WPForms Pro', 'wpforms' ); ?></a>
+					<a href="<?php echo wpforms_admin_upgrade_link(); ?>" target="_blank" rel="noopener noreferrer" class="wpforms-btn wpforms-btn-md wpforms-btn-orange wpforms-upgrade-modal"><?php esc_html_e( 'Upgrade to WPForms Pro', 'wpforms' ); ?></a>
 					<a href="#" class="wpforms-btn wpforms-btn-md wpforms-btn-light-grey" id="wpforms-importer-continue-submit"><?php esc_html_e( 'Continue Import without Upgrading', 'wpforms' ); ?></a>
 				</p>
 				<hr>
@@ -416,7 +472,7 @@ class WPForms_Tools {
 				<# if ( ! _.isEmpty( data.upgrade_plain ) || ! _.isEmpty( data.upgrade_omit ) ) { #>
 				<p>
 					<?php _e( 'Upgrade to the PRO plan to import these fields.' ); ?><br><br>
-					<a href="<?php echo wpforms_admin_upgrade_link(); ?>" class="wpforms-btn wpforms-btn-orange wpforms-btn-md" target="_blank" rel="noopener noreferrer">
+					<a href="<?php echo wpforms_admin_upgrade_link(); ?>" class="wpforms-btn wpforms-btn-orange wpforms-btn-md wpforms-upgrade-modal" target="_blank" rel="noopener noreferrer">
 						<?php _e( 'Upgrade Now', 'wpforms' ); ?>
 					</a>
 				</p>

@@ -41,7 +41,7 @@ function wpforms_admin_styles() {
 		'jquery-confirm',
 		WPFORMS_PLUGIN_URL . 'assets/css/jquery-confirm.min.css',
 		array(),
-		'3.2.3'
+		'3.3.2'
 	);
 
 	// Minicolors (color picker).
@@ -89,7 +89,7 @@ function wpforms_admin_scripts() {
 		'jquery-confirm',
 		WPFORMS_PLUGIN_URL . 'assets/js/jquery.jquery-confirm.min.js',
 		array( 'jquery' ),
-		'3.2.3',
+		'3.3.2',
 		false
 	);
 
@@ -158,8 +158,25 @@ function wpforms_admin_scripts() {
 		'provider_delete_confirm'         => __( 'Are you sure you want to disconnect this account?', 'wpforms' ),
 		'provider_auth_error'             => __( 'Could not authenticate with the provider.', 'wpforms' ),
 		'save_refresh'                    => __( 'Save and Refresh', 'wpforms' ),
+		'upgrade_completed'               => __( 'Upgrade was successfully completed!', 'wpforms' ),
 		'upload_image_title'              => __( 'Upload or Choose Your Image', 'wpforms' ),
 		'upload_image_button'             => __( 'Use Image', 'wpforms' ),
+		/* translators: %1$s - opening link tag; %2$s - closing link tag; %3$s - opening link tag; %4$s - closing link tag. */
+		'upgrade_modal'                   => sprintf(
+												wp_kses(
+													__( '<p>Thanks for your interest in WPForms Pro!<br>If you have any questions or issues just %1$slet us know%2$s.</p><p>After purchasing WPForms Pro, you\'ll need to <strong>download and install the Pro version of the plugin</strong>, and then <strong>remove the free plugin</strong>.<br>(Don\'t worry, all your forms and settings will be preserved.)</p><p>Check out %3$sour documentation%4$s for step-by-step instructions.</p>', 'wpforms' ),
+													array(
+														'br'     => array(),
+														'strong' => array(),
+														'p'      => array(),
+														'a'      => array( 'href', 'rel', 'target' ),
+													)
+												),
+												'<a href="https://wpforms.com/contact/" target="_blank" rel="noopener noreferrer">',
+												'</a>',
+												'<a href="https://wpforms.com/docs/upgrade-wpforms-lite-paid-license/" target="_blank" rel="noopener noreferrer">',
+												'</a>'
+											),
 	);
 	$strings = apply_filters( 'wpforms_admin_strings', $strings );
 

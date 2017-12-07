@@ -35,6 +35,12 @@ a {
 	max-width: 720px;
 }
 
+@media (max-width: 1280px) {
+	.contentWrapper {
+		padding-top: 90px;
+	}
+}
+
 
 
 // titles

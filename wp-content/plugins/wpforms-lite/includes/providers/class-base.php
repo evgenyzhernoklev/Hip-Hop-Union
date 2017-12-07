@@ -139,7 +139,7 @@ abstract class WPForms_Provider {
 	 *
 	 * @return array
 	 */
-	function register_provider( $providers = array() ) {
+	public function register_provider( $providers = array() ) {
 
 		$providers[ $this->slug ] = $this->name;
 
@@ -153,10 +153,10 @@ abstract class WPForms_Provider {
 	 */
 	public function process_ajax() {
 
-		// Run a security check
+		// Run a security check.
 		check_ajax_referer( 'wpforms-builder', 'nonce' );
 
-		// Check for permissions
+		// Check for permissions.
 		if ( ! current_user_can( apply_filters( 'wpforms_manage_cap', 'manage_options' ) ) ) {
 			wp_send_json_error(
 				array(
@@ -166,7 +166,7 @@ abstract class WPForms_Provider {
 		}
 
 		// --------------------------------------------------------------------//
-		// Create new connection
+		// Create new connection.
 		// --------------------------------------------------------------------//
 
 		if ( 'new_connection' === $_POST['task'] ) {
@@ -186,7 +186,7 @@ abstract class WPForms_Provider {
 		}
 
 		// --------------------------------------------------------------------//
-		// Create new Provider account
+		// Create new Provider account.
 		// --------------------------------------------------------------------//
 
 		if ( 'new_account' === $_POST['task'] ) {
@@ -218,7 +218,7 @@ abstract class WPForms_Provider {
 		}
 
 		// --------------------------------------------------------------------//
-		// Select/Toggle Provider accounts
+		// Select/Toggle Provider accounts.
 		// --------------------------------------------------------------------//
 
 		if ( 'select_account' === $_POST['task'] ) {
@@ -249,7 +249,7 @@ abstract class WPForms_Provider {
 		}
 
 		// --------------------------------------------------------------------//
-		// Select/Toggle Provider account lists
+		// Select/Toggle Provider account lists.
 		// --------------------------------------------------------------------//
 
 		if ( 'select_list' === $_POST['task'] ) {
@@ -363,7 +363,7 @@ abstract class WPForms_Provider {
 	 */
 	public function get_form_fields( $form = false, $whitelist = array() ) {
 
-		// Accept form (post) object or form ID
+		// Accept form (post) object or form ID.
 		if ( is_object( $form ) ) {
 			$form = wpforms_decode( $form->post_content );
 		} elseif ( is_numeric( $form ) ) {
@@ -379,7 +379,7 @@ abstract class WPForms_Provider {
 			return false;
 		}
 
-		// White list of field types to allow
+		// White list of field types to allow.
 		$allowed_form_fields = array(
 			'text',
 			'textarea',
@@ -431,10 +431,10 @@ abstract class WPForms_Provider {
 
 		$formatted = array();
 
-		// Include only specific field types
+		// Include only specific field types.
 		foreach ( $form_fields as $id => $form_field ) {
 
-			// Email
+			// Email.
 			if (
 				'email' === $form_field_type &&
 				! in_array( $form_field['type'], array( 'text', 'email' ), true )
@@ -442,7 +442,7 @@ abstract class WPForms_Provider {
 				unset( $form_fields[ $id ] );
 			}
 
-			// Address
+			// Address.
 			if (
 				'address' === $form_field_type &&
 				! in_array( $form_field['type'], array( 'address' ), true )
@@ -451,10 +451,10 @@ abstract class WPForms_Provider {
 			}
 		}
 
-		// Format
+		// Format.
 		foreach ( $form_fields as $id => $form_field ) {
 
-			// Complex Name field
+			// Complex Name field.
 			if ( 'name' === $form_field['type'] ) {
 
 				// Full Name.
@@ -502,10 +502,8 @@ abstract class WPForms_Provider {
 						'label'         => sprintf( _x( '%s (Last)', 'Name field label', 'wpforms'), $form_field['label'] ),
 					);
 				}
-
-				// All other fields
 			} else {
-
+				// All other fields.
 				$formatted[] = array(
 					'id'            => $form_field['id'],
 					'key'           => 'value',
@@ -528,6 +526,8 @@ abstract class WPForms_Provider {
 
 	/**
 	 * Authenticate with the provider API.
+	 *
+	 * @since 1.0.0
 	 *
 	 * @param array $data
 	 * @param string $form_id
@@ -583,7 +583,6 @@ abstract class WPForms_Provider {
 	public function api_fields( $connection_id = '', $account_id = '', $list_id = '' ) {
 	}
 
-
 	// ************************************************************************//
 	//
 	// Output methods - these methods generally return HTML for the builder.
@@ -621,12 +620,12 @@ abstract class WPForms_Provider {
 
 		$output .= $this->output_accounts( $connection_id, $connection );
 
-		$lists  = $this->output_lists( $connection_id, $connection );
+		$lists   = $this->output_lists( $connection_id, $connection );
 		$output .= ! is_wp_error( $lists ) ? $lists : '';
 
 		$output .= $this->output_groups( $connection_id, $connection );
 
-		$fields = $this->output_fields( $connection_id, $connection, $form );
+		$fields  = $this->output_fields( $connection_id, $connection, $form );
 		$output .= ! is_wp_error( $fields ) ? $fields : '';
 
 		$output .= $this->output_conditionals( $connection_id, $connection, $form );
@@ -704,7 +703,7 @@ abstract class WPForms_Provider {
 		$output .= sprintf( '<select name="providers[%s][%s][account_id]">', $this->slug, $connection_id );
 		foreach ( $providers[ $this->slug ] as $key => $provider_details ) {
 			$selected = ! empty( $connection['account_id'] ) ? $connection['account_id'] : '';
-			$output   .= sprintf(
+			$output  .= sprintf(
 				'<option value="%s" %s>%s</option>',
 				$key,
 				selected( $selected, $key, false ),
@@ -886,7 +885,7 @@ abstract class WPForms_Provider {
 			foreach ( $options as $option ) {
 				$value    = sprintf( '%d.%s.%s', $option['id'], $option['key'], $option['provider_type'] );
 				$selected = ! empty( $connection['fields'][ $provider_field['tag'] ] ) ? selected( $connection['fields'][ $provider_field['tag'] ], $value, false ) : '';
-				$output   .= sprintf( '<option value="%s" %s>%s</option>', esc_attr( $value ), $selected, esc_html( $option['label'] ) );
+				$output  .= sprintf( '<option value="%s" %s>%s</option>', esc_attr( $value ), $selected, esc_html( $option['label'] ) );
 			}
 
 			$output .= '</select>';
@@ -996,7 +995,7 @@ abstract class WPForms_Provider {
 
 					if (
 						! empty( $connection['account_id'] ) &&
-						$connection['account_id'] == $account_id
+						$connection['account_id'] === $account_id
 					) {
 						echo $this->output_connection( $connection_id, $connection, $form_data );
 					}
@@ -1307,10 +1306,9 @@ abstract class WPForms_Provider {
 	 * @param string $message
 	 * @param string $parent
 	 *
-	 * @return object
+	 * @return WP_Error
 	 */
 	public function error( $message = '', $parent = '0' ) {
-
 		return new WP_Error( $this->slug . '-error', $message );
 	}
 }

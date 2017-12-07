@@ -95,7 +95,7 @@ function wpforms_settings_license_callback( $args ) {
 	// Lite users don't need to worry about license keys.
 	if ( ! wpforms()->pro || ! class_exists( 'WPForms_License' ) ) {
 		$output  = '<p>' . __( 'You\'re using WPForms Lite - no license needed. Enjoy!', 'wpforms') . ' 🙂</p>';
-		$output .= '<p>' . sprintf( __( 'To unlock more features consider <a href="%s" target="_blank" rel="noopener noreferrer">upgrading to Pro</a>.</p>', 'wpforms' ), wpforms_admin_upgrade_link() );
+		$output .= '<p>' . sprintf( __( 'To unlock more features consider <a href="%s" target="_blank" rel="noopener noreferrer" class="wpforms-upgrade-modal">upgrading to Pro</a>.</p>', 'wpforms' ), wpforms_admin_upgrade_link() );
 		return $output;
 	}
 

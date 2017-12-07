@@ -104,13 +104,6 @@ class WPForms_Builder_Panel_Settings extends WPForms_Builder_Panel {
 			__( 'Form Description', 'wpforms' )
 		);
 		wpforms_panel_field(
-			'checkbox',
-			'settings',
-			'hide_title_desc',
-			$this->form_data,
-			__( 'Hide form name and description area', 'wpforms' )
-		);
-		wpforms_panel_field(
 			'text',
 			'settings',
 			'form_class',

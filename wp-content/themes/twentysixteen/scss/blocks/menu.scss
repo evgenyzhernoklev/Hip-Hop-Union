@@ -80,6 +80,23 @@
 	background-image: url('/wp-content/uploads/icons/arrow_dropdown_hover.svg');
 }
 
+@media (max-width: 1280px) {
+	.navigationWrapper {
+		max-width: 740px;
+		padding-top: 20px;
+	}
+
+	.menu-item {
+		a {
+			padding-left: 10px;
+			padding-right: 10px;
+			font-size: 18px;
+		}
+	}
+}
+
+
+
 /* sub menu */
 .sub-menu,
 .current-menu-parent .sub-menu.toggled-on {

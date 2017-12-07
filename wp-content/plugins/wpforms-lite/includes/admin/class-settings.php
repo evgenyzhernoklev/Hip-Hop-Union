@@ -268,6 +268,12 @@ class WPForms_Settings {
 					'desc'    => __( 'Check this if you would like to load WPForms assets site-wide. Only check if your site is having compatibility issues or instructed to by support.', 'wpforms' ),
 					'type'    => 'checkbox',
 				),
+				'hide-announcements' => array(
+					'id'      => 'hide-announcements',
+					'name'    => __( 'Hide Announcements', 'wpforms' ),
+					'desc'    => __( 'Check this if you would like to hide plugin announcements and update details.', 'wpforms' ),
+					'type'    => 'checkbox',
+				),
 			),
 			// Email settings tab.
 			'email' => array(
@@ -496,7 +502,7 @@ class WPForms_Settings {
 			<p>
 				<?php _e( 'WPForms custom captcha addon allows you to add custom questions captcha or math questions captcha to your WordPress forms. Since we know spam is a huge problem for contact forms, WPForms goes above and beyond to help you protect your forms.', 'wpforms' ); ?>
 				<br><br>
-				<a href="<?php echo wpforms_admin_upgrade_link(); ?>" class="wpforms-btn wpforms-btn-md wpforms-btn-orange" target="_blank" rel="noopener noreferrer"><?php _e( 'Click here to Upgrade', 'wpforms' ); ?></a>
+				<a href="<?php echo wpforms_admin_upgrade_link(); ?>" class="wpforms-btn wpforms-btn-md wpforms-btn-orange wpforms-upgrade-modal" target="_blank" rel="noopener noreferrer"><?php _e( 'Click here to Upgrade', 'wpforms' ); ?></a>
 			</p>
 		</div>
 		<?php

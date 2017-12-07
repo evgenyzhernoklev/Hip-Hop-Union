@@ -134,6 +134,12 @@ class WPForms_Review {
 			return;
 		}
 
+		// Only proceed with displaying if the user created at least one form.
+		$form_count = wp_count_posts( 'wpforms' );
+		if ( empty( $form_count->publish ) ) {
+			return;
+		}
+
 		// Check if the Constant Contact notice is displaying.
 		$cc = get_option( 'wpforms_constant_contact', false );
 

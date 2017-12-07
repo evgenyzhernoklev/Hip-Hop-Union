@@ -244,7 +244,7 @@ class WPForms_Welcome {
 								<span class="amount">199</span><br>
 								<span class="term"><?php _e( 'per year', 'wpforms' ); ?></span>
 							</div>
-							<a href="<?php echo wpforms_admin_upgrade_link(); ?>" class="wpforms-btn wpforms-btn-block wpforms-btn-lg wpforms-btn-orange" rel="noopener noreferrer" target="_blank"><?php _e( 'Upgrade Now', 'wpforms' ); ?></a>
+							<a href="<?php echo wpforms_admin_upgrade_link(); ?>" class="wpforms-btn wpforms-btn-block wpforms-btn-lg wpforms-btn-orange wpforms-upgrade-modal" rel="noopener noreferrer" target="_blank"><?php _e( 'Upgrade Now', 'wpforms' ); ?></a>
 						</div>
 
 					</div>
@@ -282,7 +282,7 @@ class WPForms_Welcome {
 								<a href="<?php echo admin_url( 'admin.php?page=wpforms-builder' ); ?>" class="wpforms-btn wpforms-btn-block wpforms-btn-lg wpforms-btn-orange"><?php _e( 'Create Your First Form', 'wpforms' ); ?></a>
 							</div>
 							<div class="right">
-								<a href="<?php echo wpforms_admin_upgrade_link(); ?>" class="wpforms-btn wpforms-btn-block wpforms-btn-lg wpforms-btn-trans-green" rel="noopener noreferrer" target="_blank"><span class="underline"><?php _e( 'Upgrade to WPForms Pro', 'wpforms' ); ?> <span class="dashicons dashicons-arrow-right"></span></span></a>
+								<a href="<?php echo wpforms_admin_upgrade_link(); ?>" class="wpforms-btn wpforms-btn-block wpforms-btn-lg wpforms-btn-trans-green wpforms-upgrade-modal" rel="noopener noreferrer" target="_blank"><span class="underline"><?php _e( 'Upgrade to WPForms Pro', 'wpforms' ); ?> <span class="dashicons dashicons-arrow-right"></span></span></a>
 							</div>
 						</div>
 

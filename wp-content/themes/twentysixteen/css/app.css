@@ -90,6 +90,11 @@ a {
 .contentIn--small {
   max-width: 720px;
 }
+@media (max-width: 1280px) {
+  .contentWrapper {
+    padding-top: 90px;
+  }
+}
 .titlePage {
   padding: 70px 0 75px;
   font: 60px/72px 'ProximaNova-Bold', Arial, sans-serif;
@@ -777,31 +782,68 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
   -webkit-transition: width 0.3s linear, height 0.3s linear;
   transition: width 0.3s linear, height 0.3s linear;
 }
-#menu-main-menu .menu-item-object-custom {
+.logoDaexit {
   position: absolute;
   top: 50%;
-  margin-top: -47px;
-  left: -14%;
-  opacity: 0.8;
-  -webkit-transition: margin 0.3s linear;
-  transition: margin 0.3s linear;
-}
-.is-scrolled #menu-main-menu .menu-item-object-custom {
-  margin-top: -34px;
-}
-#menu-main-menu .menu-item-object-custom a {
+  left: 13.5%;
+  margin-top: -30px;
   display: inline-block;
   width: 60px;
   height: 60px;
   font-size: 0;
   background: url('/wp-content/uploads/2017/12/daexit_logo.png') no-repeat center center;
   background-size: cover;
-  -webkit-transition: width 0.3s linear, height 0.3s linear;
-  transition: width 0.3s linear, height 0.3s linear;
+  opacity: 0.8;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
-.is-scrolled #menu-main-menu .menu-item-object-custom a {
+.logoDaexit:hover {
+  opacity: 1;
+}
+.is-scrolled .logoDaexit {
   width: 40px;
   height: 40px;
+  margin-top: -20px;
+}
+@media (max-width: 1440px) {
+  .logoDaexit {
+    left: 150px;
+  }
+  .is-scrolled .logoDaexit {
+    left: 110px;
+  }
+}
+@media (max-width: 1280px) {
+  .header {
+    height: 90px;
+  }
+  .header .custom-logo-link {
+    margin-top: 0;
+    top: 15px;
+    left: 15px;
+  }
+  .header .custom-logo {
+    width: 60px !important;
+    height: 60px !important;
+  }
+  .header.is-scrolled .custom-logo-link {
+    margin-top: 0;
+  }
+  .header.is-scrolled .custom-logo {
+    width: 60px !important;
+    height: 60px !important;
+  }
+  .logoDaexit {
+    width: 40px;
+    height: 40px;
+    margin-top: 0;
+    top: 25px;
+    left: 85px;
+  }
+  .is-scrolled .logoDaexit {
+    margin-top: 0;
+    left: 85px;
+  }
 }
 /* social nav */
 .social-navigation.social-navigation-header {
@@ -874,6 +916,17 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
 }
 .menu-item:hover > .dropdown-toggle {
   background-image: url('/wp-content/uploads/icons/arrow_dropdown_hover.svg');
+}
+@media (max-width: 1280px) {
+  .navigationWrapper {
+    max-width: 740px;
+    padding-top: 20px;
+  }
+  .menu-item a {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 18px;
+  }
 }
 /* sub menu */
 .sub-menu, .current-menu-parent .sub-menu.toggled-on {
@@ -1847,6 +1900,9 @@ article.post {
   height: 40px;
   padding: 6px;
 }
+.search__icon:hover .circle {
+  border-color: #226bd3;
+}
 .circle {
   height: 28px;
   width: 28px;
@@ -1856,9 +1912,6 @@ article.post {
   z-index: 1;
   transition: transform 0.3s ease, border-color 0.3s ease;
   transition: transform 0.3s ease, -webkit-transform 0.3s ease, border-color 0.3s ease;
-}
-.search__icon:hover .circle {
-  border-color: #226bd3;
 }
 .is-active .circle {
   -webkit-transform: scale(0.02);
@@ -1904,6 +1957,11 @@ article.post {
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
+@media (max-width: 1280px) {
+  .searchHeader {
+    margin-top: -25px;
+  }
+}
 .searchHeader .search-form {
   position: relative;
   float: right;
@@ -1931,4 +1989,5 @@ article.post {
 }
 .navigationWrapper.is-active .search-form {
   width: 100%;
+  padding-left: 10px;
 }

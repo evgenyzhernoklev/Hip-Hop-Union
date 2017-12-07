@@ -370,8 +370,8 @@ class WPForms_Preview {
 		}
 
 		// Customize the page content
-		$title     = sanitize_text_field( $form['settings']['form_title'] );
-		$shortcode = '[wpforms id="' . absint( $form['id'] ) . '"]';
+		$title     = ! empty( $form['settings']['form_title'] ) ? sanitize_text_field( $form['settings']['form_title'] ) : __( 'Form', 'wpforms' );
+		$shortcode = ! empty( $form['id'] ) ? '[wpforms id="' . absint( $form['id'] ) . '"]' : '';
 		$content   = __( 'This is a preview of your form. This page is not publicly accessible.', 'wpforms' );
 		if ( ! empty( $_GET['new_window'] ) ) {
 			$content .= ' <a href="javascript:window.close();">' . __( 'Close this window', 'wpforms' ) . '.</a>';

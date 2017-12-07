@@ -56,8 +56,9 @@ class WPForms_Template_Contact extends WPForms_Template {
 			'settings' => array(
 				'notifications'               => array(
 					'1' => array(
+						'replyto'        => '{field_id="1"}',
 						'sender_name'    => '{field_id="0"}',
-						'sender_address' => '{field_id="1"}',
+						'sender_address' => '{admin_email}',
 					),
 				),
 				'honeypot'                    => '1',

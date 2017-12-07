@@ -182,10 +182,10 @@
 	.is-scrolled & {
 		margin-top: -25px;
 	}
-}
 
-.navigationWrapper.is-active .searchHeader {
-	z-index: 3;
+	.navigationWrapper.is-active & {
+		z-index: 3;
+	}
 }
 
 .circle,
@@ -207,6 +207,12 @@
 	width: 40px;
 	height: 40px;
 	padding: 6px;
+
+	&:hover {
+		.circle {
+			border-color: $blue;
+		}
+	}
 }
 
 .circle {
@@ -218,21 +224,17 @@
 	z-index: 1;
 	transition: transform .3s ease,border-color .3s ease;
 	transition: transform .3s ease,-webkit-transform .3s ease,border-color .3s ease;
-}
 
-.search__icon:hover .circle {
-	border-color: $blue;
-}
-
-.is-active .circle {
-	-webkit-transform: scale(.02);
-	-ms-transform: scale(.02);
-	transform: scale(.02);
-	-webkit-transform-origin: 30% 40%;
-	-ms-transform-origin: 30% 40%;
-	transform-origin: 30% 40%;
-	background: $blue!important;
-	border-color: $blue!important;
+	.is-active & {
+		-webkit-transform: scale(.02);
+		-ms-transform: scale(.02);
+		transform: scale(.02);
+		-webkit-transform-origin: 30% 40%;
+		-ms-transform-origin: 30% 40%;
+		transform-origin: 30% 40%;
+		background: $blue!important;
+		border-color: $blue!important;
+	}
 }
 
 .handle {
@@ -265,16 +267,24 @@
 	transition: -webkit-transform .3s ease,background-color .3s ease;
 	transition: transform .3s ease,background-color .3s ease;
 	transition: transform .3s ease,-webkit-transform .3s ease,background-color .3s ease;
+
+	.is-active & {
+		-webkit-transform-origin: center center;
+		-ms-transform-origin: center center;
+		transform-origin: center center;
+		-webkit-transform: rotate(90deg);
+		-ms-transform: rotate(90deg);
+		transform: rotate(90deg);
+	}
 }
 
-.is-active .handle:after {
-	-webkit-transform-origin: center center;
-	-ms-transform-origin: center center;
-	transform-origin: center center;
-	-webkit-transform: rotate(90deg);
-	-ms-transform: rotate(90deg);
-	transform: rotate(90deg);
+@media (max-width: 1280px) {
+	.searchHeader {
+    margin-top: -25px;
+	}
 }
+
+
 
 .searchHeader {
 	.search-form {
@@ -309,4 +319,5 @@
 
 .navigationWrapper.is-active .search-form {
 	width: 100%;
+	padding-left: 10px;
 }

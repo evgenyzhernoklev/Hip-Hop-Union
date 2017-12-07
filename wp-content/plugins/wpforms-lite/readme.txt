@@ -2,7 +2,7 @@
 Contributors: wpforms, jaredatch, smub, slaFFik
 Tags: contact form, contact form plugin, forms, form builder, custom form, contact button, contact me, custom contact form, form manager, form, forms builder, forms creator, captcha, recaptcha, Akismet, email form, web form, feedback form, payment form, survey form, donation form, email submit form, message form, mailchimp, mailchimp form, aweber, aweber form, paypal, paypal form, stripe, stripe form, getresponse, getresponse form, email subscription, contact form widget, user registration form, wordpress registration, wordpress login form
 Requires at least: 4.6
-Tested up to: 4.8.2
+Tested up to: 4.9.1
 Stable tag: trunk
 Requires PHP: 5.2.4
 License: GNU General Public License v2.0 or later
@@ -210,6 +210,25 @@ Syed Balkhi
 
 == Changelog ==
 
+= 1.4.3 =
+- Added: Early filter for form data before form output, `wpforms_frontend_form_data`
+- Changed: Standardize and tweak modal window button styles
+- Changed: Default mail notification settings are now sent "from" the site administrator email; user email is used in Reply-To where applicable (to hopefully improve email deliverability)
+- Changed: Removed "Hide form name and description" form setting as it was a common source or confusion
+- Fixed: Site cache being flushed when it shouldn't have been, affecting performance in some scenarios
+- Fixed: Country, state, months and days not properly exposed to i18n
+- Fixed: CSV export dates not properly using i18n
+- Fixed: WPForms custom post types omitting labels
+- Fixed: Smart Tag value encoding issues with email notifications
+- Fixed: Infinite recursion issue when using Dynamic Values option
+- Fixed: PHP notice in form builder
+
+= 1.4.2.2 =
+- Changed: Announcement feed data
+
+= 1.4.2.1 =
+- Added: Setting to hide Announcement feed
+
 = 1.4.2 =
 - Added: Import your old Ninja Forms or Contact Form 7 forms! (WPForms > Tools > Import)
 - Changed: Dropdown/Checkbox/Multiple Choice "Show Values" setting has been hidden by default to avoid confusion, can be re-enabled using the `wpforms_fields_show_options_setting` filter
@@ -247,6 +266,7 @@ Syed Balkhi
 - Fixed: CSV exports missing line breaks
 
 = 1.4.0 =
+- Added: Announcement feed
 - Changed: Core form templates are now displayed separate in the form builder from other custom templates
 - Changed: Refactored CSV exporting for better support
 - Fixed: Dynamic Choices large items modal render issue
@@ -257,121 +277,5 @@ Syed Balkhi
 - Fixed: Settings page typos
 - Fixed: Tools page export description text typo
 - Fixed: Widget state not displayed correctly when adding via Customizer, without forcing user to select a form
-
-= 1.3.9.1 =
-- Changed: Template Export excludes array items with empty strings
-- Fixed: Admin notices displaying on plugin Welcome/activation screen
-- Fixed: WPForms admin pages displaying blank due to conflicts with a few other plugins
-
-= 1.3.9 =
-- Added: Complete redesign and refactor of admin area
-- Added: New Settings API
-- Added: Entry print preview compact mode
-- Added: Entry print preview view entry notes
-- Added: Dynamic field choices nest hierarchical items
-- Added: Form import/export to Tools sub page
-- Added: Form template export to Tools sub page
-- Changed: System Info content to new Tools sub-page
-- Changed: Shortcode provided in form builder now includes title/description arguments
-
-= 1.3.8 =
-- Changed: Available conditional logic rules/functionality with Providers have been updated
-- Changed: Updated form builder modals (jquery-confirm.js)
-- Changed: Many Form Builder performance enhancements
-- Fixed: Number field validation message not saving
-- Fixed: Email confirmation setting not displaying correctly with Small field size
-
-= 1.3.7.4 =
-- Added: Marketing tab in the form builder shows all possible providers.
-
-= 1.3.7.3 =
-- Fixed: Required setting checkbox getting out of sync when duplicating fields
-- Fixed: CSS class name typo in the form builder layout selector
-- Fixed: Smart Tag `field_id` stripping line breaks
-- Fixed: Form JS settings `wpforms_settings` missing due to some caching plugins
-- Fixed: Empty classes causing `array` string to be printed in some use cases
-
-= 1.3.7.2 =
-- Fixed: Error for some users with PHP 5.4 and below
-
-= 1.3.7.1 =
-- Fixed: Issue sending form notifications using email fields that had confirmation enabled
-
-= 1.3.7 =
-- Added: Google Invisible reCAPTCHA support
-- Added: Custom field validation messages (see WPForms Settings page)
-- Added: Bulk add choices for Checkbox, Multiple Choice, and Dropdown fields
-- Added: Filter to allow email notifications to include empty fields, `wpforms_email_display_empty_fields`
-- Added: Field CSS layout selector
-- Changed: Leverage `wp_json_encode` instead of native PHP function
-- Changed: Various WordPress coding standard improvements (work in progress)
-- Changed: Refactored form front-end code to allow for more customizations
-- Changed: Refactored text, textarea, email, number, nand ame fields to allow for more customizations (more coming next release)
-- Fixed: Welcome page typo
-- Fixed: SmartTag selectors getting off sync inside form builder
-
-= 1.3.6.2 =
-- Changed: Improved messaging on Entries page (Lite)
-
-= 1.3.6.1 =
-- Added: Option to disable activation welcome screen, `wpforms_activation_redirect`
-
-= 1.3.6 =
-- Added: Constant Contact integration
-- Changed: Don't strip tags from plain text emails
-- Fixed: Form builder javascript conflict with Clef plugin
-- Fixed: Form builder logo URL double slash
-- Fixed: Form builder embed code field not being selectable
-
-= 1.3.5 =
-- Fixed: Some browers allowing unexpected characters inside number input fields
-- Fixed: Issue with Dropdown field placeholder text
-- Fixed: Other plugins loading conflicting scripts in form builder
-
-= 1.3.4 =
-- Added: reCAPTCHA improvements; reCAPTCHA now required if turned on
-- Fixed: Date/Time Smart Tag not using WordPress time zone settings
-- Fixed: Name field defaults not processing Smart Tags
-
-= 1.3.3 =
-- Added: Default value support in the email field
-- Added: Various new hooks and filters for improved extendibility
-- Fixed: Possible errors if web host had `set_time_limit()` disabled
-
-= 1.3.2 =
-- Added: New form class, `.inline-fields`, to apply single line form layout
-- Changed: All Smart Tags now available for Email Subject field in form notifications
-- Fixed: Email addresses reporting as invalid of the domain contained capitalization
-- Fixed: Author related Smart Tags not working in form notification fields
-- Fixed: Typo on settings page related to Carbon Copy
-- Fixed: PHP 7.1 warning messages inside the form builder
-
-= 1.3.1.2 =
-- Fixed: Plugin name to correctly indicate Lite for Lite release
-
-= 1.3.1.1 =
-- Fixed: Error with 1.3.1 Lite release
-
-= 1.3.1 =
-- Added: Smart Tags for author ID, email, and name
-- Added: Carbon Copy (CC) support for form notifications; enable in WPForms Settings
-- Fixed: Field duplication issues
-- Fixed: TinyMCE "Add Form" button not opening modal with dynamic TinyMCE instances
-- Fixed: Email formatting issues when using plain text formatting
-- Fixed: Number field validation tripping when number submitted is zero
-- Fixed: reCAPTCHA validation passing when reCAPTCHA left blank
-- Fixed: Dropdown field size not reflecting in builder
-
-= 1.3.0 =
-- Added: Email field confirmantion
-- Added: Support for Visual Composer
-- Added: Field class to force elements to full-width on mobile devices, `wpforms-mobile-full`
-- Changed: Placeholders are added/updated in real-time for Dropdown fields in the form builder
-- Changed: Add empty value to select element placeholders when displaying form for better markup validation
-- Fixed: Multiple instances of reCAPTCHA on a page not correctly loading
-- Fixed: Field choice defaults not restoring in form builder
-- Fixed: Field alignment issues in the form builder when dragging field more than once
-- Fixed: PHP fatal erroring if form notification email address provided is not valid upon sending
-- Fixed: Compatibility issuses when network activated on a Multisite install
 
 [See changelog for all versions](http://plugins.svn.wordpress.org/wpforms-lite/trunk/changelog.txt).

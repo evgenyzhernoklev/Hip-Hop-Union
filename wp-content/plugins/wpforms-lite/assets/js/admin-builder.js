@@ -130,9 +130,6 @@
 			// Hide/Show reCAPTCHA in form
 			WPFormsBuilder.recaptchaToggle();
 
-			// Hide/Show title area
-			WPFormsBuilder.titleAreaToggle();
-
 			// Confirmation settings
 			WPFormsBuilder.confirmationToggle();
 
@@ -2037,11 +2034,6 @@
 				WPFormsBuilder.recaptchaToggle();
 			});
 
-			// Toggle form title area
-			$(document).on('change', '#wpforms-panel-field-settings-hide_title_desc', function() {
-				WPFormsBuilder.titleAreaToggle();
-			});
-
 			// Toggle form confirmation setting fields
 			$(document).on('change', '#wpforms-panel-field-settings-confirmation_type', function() {
 				WPFormsBuilder.confirmationToggle();
@@ -2115,20 +2107,6 @@
 				$('.wpforms-field-recaptcha').show();
 			} else {
 				$('.wpforms-field-recaptcha').hide();
-			}
-		},
-
-		/**
-		 * Toggle displaying the form title area.
-		 *
-		 * @since 1.0.0
-		 */
-		titleAreaToggle: function() {
-
-			if ($('#wpforms-panel-field-settings-hide_title_desc').is(':checked')) {
-				$('.wpforms-title-desc').hide();
-			} else {
-				$('.wpforms-title-desc').show();
 			}
 		},
 

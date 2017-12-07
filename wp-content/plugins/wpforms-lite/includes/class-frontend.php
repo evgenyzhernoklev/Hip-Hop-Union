@@ -84,7 +84,7 @@ class WPForms_Frontend {
 		}
 
 		// Basic information.
-		$form_data   = wpforms_decode( $form->post_content );
+		$form_data   = apply_filters( 'wpforms_frontend_form_data', wpforms_decode( $form->post_content ) );
 		$form_id     = absint( $form->ID );
 		$settings    = $form_data['settings'];
 		$action      = esc_url_raw( remove_query_arg( 'wpforms' ) );
