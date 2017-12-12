@@ -41,6 +41,14 @@ a {
 	}
 }
 
+@media (max-width: 992px) {
+	body {
+		&.menu-opened {
+			overflow: hidden;
+		}
+	}
+}
+
 
 
 // titles

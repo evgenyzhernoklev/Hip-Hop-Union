@@ -18,23 +18,40 @@
 
 
     // menu
-    var scrollTop = 0,
-        indentTop = 200;
+    var indentTop = 200;
 
-    $window.on('load scroll resize', function() {
-      scrollTop = $window.scrollTop();
+    function checkHeaderScroll() {
+      var scrollTop = $window.scrollTop();
 
       if (scrollTop > indentTop) {
         $headerContainer.addClass('is-scrolled');
       } else {
         $headerContainer.removeClass('is-scrolled');
       }
-    });
+    }
+
+    checkHeaderScroll();
+    $window.on('scroll resize', checkHeaderScroll);
 
     $('.hamburger').on('click', function() {
-      console.log('ffgfdg');
       $(this).toggleClass('is-active');
       $('.main-navigation').toggleClass('is-active');
+      $('body').toggleClass('menu-opened');
+    });
+
+    var $dropdownToggle = $('.dropdown-toggle'),
+        $submenu = $('.sub-menu'),
+        slidingTime = 300;
+
+    $dropdownToggle.on('click', function (e) {
+      // debugger;
+      $(this).next('.sub-menu').stop().slideToggle(slidingTime);
+    });
+
+    $window.on('resize', function () {
+      if ($(window).width() > 992) {
+        $submenu.show();
+      }
     });
 
 
