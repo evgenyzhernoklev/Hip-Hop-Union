@@ -1045,6 +1045,9 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
     top: 10px;
     left: 20px;
   }
+  .header .sub-menu .menu-item .dropdown-toggle {
+    top: -1px;
+  }
   .primary-menu:after {
     display: none;
   }
@@ -1093,7 +1096,7 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
   color: #226bd3;
 }
 @media (max-width: 992px) {
-  .sub-menu {
+  .sub-menu, .current-menu-parent .sub-menu.toggled-on {
     display: none;
     position: relative;
     top: auto;
@@ -1102,10 +1105,10 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
     opacity: 1;
     visibility: visible;
   }
-  .sub-menu ul {
+  .sub-menu ul, .current-menu-parent .sub-menu.toggled-on ul {
     left: 0;
   }
-  .sub-menu .menu-item.menu-item-has-children a {
+  .sub-menu .menu-item.menu-item-has-children a, .current-menu-parent .sub-menu.toggled-on .menu-item.menu-item-has-children a {
     margin-left: 25px;
   }
 }

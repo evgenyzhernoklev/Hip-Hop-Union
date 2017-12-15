@@ -140,6 +140,14 @@
 				left: 20px;
 			}
 		}
+
+		.sub-menu {
+			.menu-item {
+				.dropdown-toggle {
+					top: -1px;
+				}
+			}
+		}
 	}
 
 	.primary-menu {
@@ -210,7 +218,8 @@
 }
 
 @media (max-width: 992px) {
-	.sub-menu {
+	.sub-menu,
+	.current-menu-parent .sub-menu.toggled-on {
 		display: none;
 		position: relative;
 		top: auto;
