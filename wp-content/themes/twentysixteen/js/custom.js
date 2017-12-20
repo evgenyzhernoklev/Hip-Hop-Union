@@ -44,7 +44,6 @@
         slidingTime = 300;
 
     $dropdownToggle.on('click', function (e) {
-      // debugger;
       $(this).next('.sub-menu').stop().slideToggle(slidingTime);
     });
 

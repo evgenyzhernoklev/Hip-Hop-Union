@@ -7,6 +7,9 @@ Template Name: Шаблон главной страницы
 <?php get_header(); ?>
 
 <main class="contentIn contentIn--full" role="main">
+
+	<?php echo do_shortcode('[smartslider3 slider=2]'); ?>
+
 	<?php
 	// запрос
 	$wpb_all_query = new WP_Query(array(

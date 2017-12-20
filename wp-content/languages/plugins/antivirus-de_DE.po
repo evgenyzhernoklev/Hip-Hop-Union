@@ -1,0 +1,116 @@
+# Translation of Plugins - AntiVirus - Stable (latest release) in German
+# This file is distributed under the same license as the Plugins - AntiVirus - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-03-17 17:28:31+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: de\n"
+"Project-Id-Version: Plugins - AntiVirus - Stable (latest release)\n"
+
+#. Author URI of the plugin/theme
+msgid "http://pluginkollektiv.org"
+msgstr "http://pluginkollektiv.org"
+
+#. Author of the plugin/theme
+msgid "pluginkollektiv"
+msgstr "pluginkollektiv"
+
+#. Description of the plugin/theme
+msgid "Security plugin to protect your blog or website against exploits and spam injections."
+msgstr "Kostenfreie Sicherheitslösung als Plugin zur Früherkennung und Warnung vor bösartigen Injektionen."
+
+#. Plugin URI of the plugin/theme
+msgid "https://wordpress.org/plugins/antivirus/"
+msgstr "https://de.wordpress.org/plugins/antivirus/"
+
+#. Plugin Name of the plugin/theme
+msgid "AntiVirus"
+msgstr "AntiVirus"
+
+#: antivirus.php:1287
+msgid "Save Changes"
+msgstr "Änderungen speichern"
+
+#: antivirus.php:1279
+msgid "If the field is empty, the blog admin will be notified"
+msgstr "Bleibt das Eingabefeld leer, wird der Admin benachrichtigt"
+
+#: antivirus.php:1275
+msgid "Email address for notifications"
+msgstr "E-Mail-Adresse für Benachrichtigungen"
+
+#: antivirus.php:1267
+msgid "Diagnosis and notification in suspicion case"
+msgstr "Diagnose und Benachrichtigung im Verdachtsfall"
+
+#: antivirus.php:1263
+msgid "Malware detection by Google Safe Browsing"
+msgstr "Malware-Erkennung durch Google Safe Browsing"
+
+#: antivirus.php:1251
+msgid "Next Run"
+msgstr "Nächste Ausführung"
+
+#: antivirus.php:1244
+msgid "Check the theme templates for malware"
+msgstr "Überprüfung der Theme-Templates auf Malware"
+
+#: antivirus.php:1238
+msgid "Daily malware scan"
+msgstr "Tägliche Prüfung auf Malware"
+
+#: antivirus.php:1221
+msgid "Scan the theme templates now"
+msgstr "Theme-Templates jetzt prüfen"
+
+#: antivirus.php:1201
+msgid "Settings saved."
+msgstr "Einstellungen gespeichert."
+
+#: antivirus.php:1157 antivirus.php:1215
+msgid "Manual malware scan"
+msgstr "Manuelle Prüfung auf Malware"
+
+#: antivirus.php:598
+msgid "Scan finished"
+msgstr "Prüfung abgeschlossen"
+
+#: antivirus.php:597
+msgid "View line"
+msgstr "Zeige Zeile"
+
+#: antivirus.php:596
+msgid "There is no virus"
+msgstr "Keinen Virus gefunden."
+
+#: antivirus.php:522
+msgid "http://wpantivirus.com"
+msgstr "http://wpantivirus.de"
+
+#: antivirus.php:521
+msgid "Notify message by AntiVirus for WordPress"
+msgstr "Benachrichtigung von AntiVirus für WordPress"
+
+#: antivirus.php:477 antivirus.php:1150
+msgid "The daily antivirus scan of your blog suggests alarm."
+msgstr "Die tägliche AntiVirus-Prüfung des Blogs schlägt Alarm."
+
+#: antivirus.php:474 antivirus.php:1149
+msgid "Virus suspected"
+msgstr "Virusverdacht"
+
+#: antivirus.php:450
+msgid "Please check the Google Safe Browsing diagnostic page:"
+msgstr "Für weitere Details die Google Safe Browsing Diagnoseseite aufsuchen:"
+
+#: antivirus.php:447
+msgid "Safe Browsing Alert"
+msgstr "Safe Browsing Alarm"
+
+#: antivirus.php:202
+msgid "Settings"
+msgstr "Einstellungen"
