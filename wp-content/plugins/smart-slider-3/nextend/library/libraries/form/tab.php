@@ -105,7 +105,7 @@ class N2Tab {
 
     function decorateGroupStart() {
         echo "<table>";
-        echo N2Html::tag('colgroup', array(), N2Html::tag('col', array('class' => 'n2-label-col')) . N2Html::tag('col', array('class' => 'n2-element-col')));
+        echo N2Html::tag('colgroup', array(), N2Html::tag('col', array('class' => 'n2-label-col'), '', false) . N2Html::tag('col', array('class' => 'n2-element-col'), '', false));
     }
 
     function decorateGroupEnd() {

@@ -182,18 +182,20 @@ class N2SmartsliderBackendSlidersController extends N2SmartSliderController {
     
     }
 
-    public function actionHidePromoLike() {
-        if ($this->validateToken()) {
-            $this->appType->app->storage->set('free', 'promoLike', 1);
-        }
-        $this->redirectToSliders();
-    }
-
     public function actionHidePromoUpgrade() {
         if ($this->validateToken()) {
             $this->appType->app->storage->set('free', 'promoUpgrade', 1);
         }
     
+        $this->redirectToSliders();
+    }
+
+    public function actionHideReview() {
+
+        if ($this->validateToken()) {
+            $this->appType->app->storage->set('free', 'review', 1);
+        }
+
         $this->redirectToSliders();
     }
 }

@@ -3800,8 +3800,11 @@
         target.fontFamily = families.join(',');
     };
     NextendFontRenderer.prototype.getFamily = function (family) {
-        $(window).trigger('n2Family', [family]);
-        return "'" + family + "'";
+        var translatedFamily = $(window).triggerHandler('n2Family', [family]);
+        if (translatedFamily === undefined) {
+            translatedFamily = family;
+        }
+        return "'" + translatedFamily + "'";
     };
 
     NextendFontRenderer.prototype.makeStylelineheight = function (value, target) {
@@ -4869,14 +4872,17 @@ N2Require('Icons', [], [], function ($, scope, undefined) {
     }
 
     NextendFontServiceGoogle.prototype.loadFamily = function (e, family) {
-        family = family.toLowerCase()
-        if (typeof this.fonts[family] !== 'undefined') {
+        var familyLower = family.toLowerCase();
+        if (typeof this.fonts[familyLower] !== 'undefined') {
             $('<link />').attr({
                 rel: 'stylesheet',
                 type: 'text/css',
-                href: '//fonts.googleapis.com/css?family=' + encodeURIComponent(this.fonts[family] + ':' + this.style) + '&subset=' + encodeURIComponent(this.subset)
+                href: '//fonts.googleapis.com/css?family=' + encodeURIComponent(this.fonts[familyLower] + ':' + this.style) + '&subset=' + encodeURIComponent(this.subset)
             }).appendTo($('head'));
+
+            return this.fonts[familyLower];
         }
+        return family;
     };
 
     scope.NextendFontServiceGoogle = NextendFontServiceGoogle;

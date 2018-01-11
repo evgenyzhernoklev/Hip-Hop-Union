@@ -92,20 +92,24 @@ N2Require('SmartSliderMainAnimationSimple', ['SmartSliderMainAnimationAbstract']
      * @private
      */
     SmartSliderMainAnimationSimple.prototype._hideSlide = function (slide) {
-        var obj = {};
-        obj[nextend.rtl.left] = '-100000px';
-        NextendTween.set(slide.$element, obj);
+        NextendTween.set(slide.$element, {
+            x: -100000 * nextend.rtl.modifier
+        });
         if (slide.backgroundImage) {
-            NextendTween.set(slide.backgroundImage.element, obj);
+            NextendTween.set(slide.backgroundImage.element, {
+                x: -100000 * nextend.rtl.modifier
+            });
         }
     };
 
     SmartSliderMainAnimationSimple.prototype._showSlide = function (slide) {
-        var obj = {};
-        obj[nextend.rtl.left] = 0;
-        NextendTween.set(slide.$element.get(0), obj);
+        NextendTween.set(slide.$element.get(0), {
+            x: 0
+        });
         if (slide.backgroundImage) {
-            NextendTween.set(slide.backgroundImage.element, obj);
+            NextendTween.set(slide.backgroundImage.element, {
+                x: 0
+            });
         }
     };
 
@@ -433,11 +437,15 @@ N2Require('SmartSliderMainAnimationSimple', ['SmartSliderMainAnimationAbstract']
             parallaxProperty = '';
 
         if (direction == 'horizontal') {
-            property = nextend.rtl.left;
+            property = 'x';
             parallaxProperty = 'width';
             originalPropertyValue = propertyValue = this.slider.dimensions.slideouter.width;
+
+            if (nextend.rtl.isRtl) {
+                reversed = !reversed;
+            }
         } else if (direction == 'vertical') {
-            property = 'top';
+            property = 'y';
             parallaxProperty = 'height';
             originalPropertyValue = propertyValue = this.slider.dimensions.slideouter.height;
         }
@@ -469,9 +477,14 @@ N2Require('SmartSliderMainAnimationSimple', ['SmartSliderMainAnimationAbstract']
                     currentSlide.backgroundImage.element.css('zIndex', 24);
                 }
                 propertyValue *= parallax;
-                nextSlide.$element.css(property, propertyValue);
+
+                var o1 = {};
+                o1[property] = propertyValue;
+                NextendTween.set(nextSlide.$element, o1);
                 if (nextSlide.backgroundImage) {
-                    nextSlide.backgroundImage.element.css(property, propertyValue);
+                    var o2 = {};
+                    o2[property] = propertyValue;
+                    NextendTween.set(nextSlide.backgroundImage.element, o2);
                 }
 
                 nextSlide.$element.addClass('n2-ss-parallax-clip');
@@ -511,11 +524,17 @@ N2Require('SmartSliderMainAnimationSimple', ['SmartSliderMainAnimationAbstract']
                 currentSlideToImage[property] = -propertyValue;
             }
         } else {
-            nextSlide.$element.css(property, propertyValue);
+            var o3 = {};
+            o3[property] = propertyValue;
+            NextendTween.set(nextSlide.$element, o3);
             if (nextSlide.backgroundImage) {
-                nextSlide.backgroundImage.element.css(property, propertyValue);
+                var o4 = {};
+                o4[property] = propertyValue;
+                NextendTween.set(nextSlide.backgroundImage.element, o4);
             }
+
             nextSlideFrom[property] = propertyValue;
+            nextSlideFromImage[property] = propertyValue;
 
             currentSlideTo[property] = -propertyValue;
             currentSlideToImage[property] = -propertyValue;
@@ -719,6 +738,13 @@ N2Require('SmartSliderFrontendBackgroundAnimation', ['SmartSliderMainAnimationSi
         this.isReverseAllowed = false;
 
         this.bgAnimationElement = this.sliderElement.find('.n2-ss-background-animation');
+
+        if (this.slider.parameters.perspective > 0) {
+            NextendTween.set(this.bgAnimationElement, {
+                perspective: this.slider.parameters.perspective
+            });
+        }
+
         this.backgroundAnimations = $.extend({
             global: 0,
             speed: 'normal'
@@ -885,7 +911,7 @@ N2Require('SmartSliderResponsiveSimple', ['SmartSliderResponsive'], [], function
             if (parallax != 1) {
                 this.addHorizontalElement(backgroundImages[i].element, ['width'], 'w');
                 this.addVerticalElement(backgroundImages[i].element, ['height'], 'h');
-                
+
                 this.addHorizontalElement(backgroundImages[i].$mask, ['width'], 'w');
                 this.addVerticalElement(backgroundImages[i].$mask, ['height'], 'h');
             }
@@ -894,11 +920,16 @@ N2Require('SmartSliderResponsiveSimple', ['SmartSliderResponsive'], [], function
 
         var video = this.sliderElement.find('.n2-ss-slider-background-video');
         if (video.length) {
-            if (video[0].videoWidth > 0) {
-                this.videoPlayerReady(video);
+            var isVideoAutoplaySupported = !(/Mobi/.test(navigator.userAgent)) || ('playsInline' in document.createElement('video') || ('webkit-playsinline' in document.createElement('video'))) || (navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./) && parseInt(navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./)[2]) >= 53);
+            if (isVideoAutoplaySupported) {
+                if (video[0].videoWidth > 0) {
+                    this.videoPlayerReady(video);
+                } else {
+                    video[0].addEventListener('error', $.proxy(this.videoPlayerError, this, video), true);
+                    video[0].addEventListener('canplay', $.proxy(this.videoPlayerReady, this, video));
+                }
             } else {
-                video[0].addEventListener('error', $.proxy(this.videoPlayerError, this, video), true);
-                video[0].addEventListener('canplay', $.proxy(this.videoPlayerReady, this, video));
+                this.videoPlayerError(video);
             }
         }
     };

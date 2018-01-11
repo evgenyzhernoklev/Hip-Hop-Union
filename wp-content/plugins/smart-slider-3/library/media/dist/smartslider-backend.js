@@ -11878,7 +11878,7 @@ N2Require('ContentAbstract', ['LayerContainer', 'ComponentAbstract'], ['smartSli
 
     ContentAbstract.prototype._syncbgThrottled = function () {
         var background = '',
-            image = this.getProperty('bgimage');
+            image = nextend.smartSlider.generator.fill(this.getProperty('bgimage'));
         if (image != '') {
             var x = parseInt(this.getProperty('bgimagex'));
             if (!isFinite(x)) {
@@ -11894,7 +11894,7 @@ N2Require('ContentAbstract', ['LayerContainer', 'ComponentAbstract'], ['smartSli
             gradient = this.getProperty('bgcolorgradient'),
             colorend = this.getProperty('bgcolorgradientend');
 
-        if (N2Color.hex2alpha(color) != 0 || (gradient != 'off' && N2Color.hex2alpha(colorend) != 0 )) {
+        if (N2Color.hex2alpha(color) != 0 || (gradient != 'off' && N2Color.hex2alpha(colorend) != 0)) {
             var after = '';
             if (background != '') {
                 after = ',' + background;
@@ -13296,7 +13296,7 @@ N2Require('Row', ['LayerContainer', 'ComponentAbstract'], ['smartSlider'], funct
 
     Row.prototype._syncbgThrottled = function () {
         var background = '',
-            image = this.getProperty('bgimage');
+            image = nextend.smartSlider.generator.fill(this.getProperty('bgimage'));
         if (image != '') {
             var x = parseInt(this.getProperty('bgimagex'));
             if (!isFinite(x)) {
@@ -13647,7 +13647,8 @@ N2Require('ComponentSettings', [], ['smartSlider'], function ($, scope, smartSli
             bgcolorgradient: $('#layercontent-background-gradient'),
             bgcolorgradientend: $('#layercontent-background-color-end'),
             opened: $('#layercontent-opened')
-        }
+        };
+        smartSlider.generator.registerField(this.forms.component.content.bgimage);
 
         this.forms.component.row = {
             padding: $('#layerrow-padding'),
@@ -13666,7 +13667,8 @@ N2Require('ComponentSettings', [], ['smartSlider'], function ($, scope, smartSli
             borderradius: $('#layerrow-border-radius'),
             boxshadow: $('#layerrow-boxshadow'),
             opened: $('#layerrow-opened')
-        }
+        };
+        smartSlider.generator.registerField(this.forms.component.row.bgimage);
 
         this.forms.component.col = {
             maxwidth: $('#layercol-maxwidth'),
@@ -13688,8 +13690,10 @@ N2Require('ComponentSettings', [], ['smartSlider'], function ($, scope, smartSli
             bordercolor: $('#layercol-border-color'),
             opened: $('#layercol-opened'),
             colwidth: $('#layercol-colwidth'),
-            order: $('#layercol-order'),
-        }
+            order: $('#layercol-order')
+        };
+        smartSlider.generator.registerField($('#col-linklayercol-link_0'));
+        smartSlider.generator.registerField(this.forms.component.col.bgimage);
     }
 
     ComponentSettings.prototype.changeActiveComponent = function (layer, componentType, placementType, properties) {

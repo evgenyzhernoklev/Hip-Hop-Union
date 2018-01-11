@@ -56,7 +56,7 @@ class NextendSmartSlider3VisualComposer {
         N2SSShortcodeInsert::addForced();
 
         return '<input name="' . $settings['param_name'] . '" class="wpb_vc_param_value wpb-textinput ' . $settings['param_name'] . ' ' . $settings['type'] . '" type="text" value="' . $value . '" style="width:100px;vertical-align:middle;"/>
-    <a href="#" onclick="return NextendSmartSliderSelectModal(jQuery(this).siblings(\'input\'));" class="vc_general vc_ui-button vc_ui-button-default vc_ui-button-shape-rounded vc_ui-button-fw" title="Select slider">Select slider</a>';
+    <a href="#" onclick="' . SmartSlider3::sliderSelectAction("jQuery(this).siblings('input')") . 'return false;" class="vc_general vc_ui-button vc_ui-button-default vc_ui-button-shape-rounded vc_ui-button-fw" title="Select slider">Select slider</a>';
     }
 }
 

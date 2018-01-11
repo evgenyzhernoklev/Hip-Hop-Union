@@ -49,7 +49,7 @@ class FW_Option_Type_SmartSliderChooser extends FW_Option_Type_Select {
         return N2Html::tag('div', array(), N2Html::link(n2_('Select slider'), '#', array(
                 'style'   => 'vertical-align:middle;',
                 'class'   => 'button button-primary',
-                'onclick' => 'return NextendSmartSliderSelectModal(jQuery(\'#fw-edit-options-modal-id\'));'
+                'onclick' => SmartSlider3::sliderSelectAction("jQuery('#fw-edit-options-modal-id')") . 'return false;'
             )) . '<span style="margin: 0 10px; vertical-align:middle;">' . n2_('OR') . '</span>' . parent::_render($id, $option, $data));
     }
 

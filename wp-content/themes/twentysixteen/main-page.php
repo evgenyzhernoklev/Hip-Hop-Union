@@ -14,7 +14,7 @@ Template Name: Шаблон главной страницы
 	// запрос
 	$wpb_all_query = new WP_Query(array(
 																	'post_type'				=>'post',
-																	'category_name'		=> 'медиа',
+																	'category_name'		=> 'Главные новости',
 																	'post_status'			=>'publish',
 																	'posts_per_page'	=> 6
 																)); ?>

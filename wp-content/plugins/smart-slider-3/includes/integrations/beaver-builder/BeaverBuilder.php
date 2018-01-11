@@ -83,7 +83,8 @@ function n2_fl_smart_slider_field($name, $value, $field) {
         ?>
     </select>
     <div style="line-height:2;padding:10px;"><?php n2_e('OR'); ?></div>
-    <a style="" href="#" onclick="return NextendSmartSliderSelectModal(jQuery(this).siblings('select'));" class="fl-builder-smart-slider-select fl-builder-button fl-builder-button-small fl-builder-button-primary" title="Select slider"><?php echo n2_('Select slider'); ?></a>
+
+    <a href="#" onclick="<?php echo SmartSlider3::sliderSelectAction("jQuery(this).siblings('select')"); ?>return false;" class="fl-builder-smart-slider-select fl-builder-button fl-builder-button-small fl-builder-button-primary" title="Select slider"><?php echo n2_('Select slider'); ?></a>
     <script type="text/javascript">
         (function ($) {
             var value = $('select[name="<?php echo $name; ?>"]').val();

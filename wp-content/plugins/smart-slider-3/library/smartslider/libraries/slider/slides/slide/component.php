@@ -260,7 +260,7 @@ abstract class  N2SSSlideComponent {
             $click = $this->data->get('click');
             if (!empty($click)) {
                 $this->attributes['data-click'] = $this->pluginAnimationParseEventCode($click, $sliderId);
-                $this->attributes['style'] .= 'cursor:pointer;';
+                $this->attributes['style']      .= 'cursor:pointer;';
             }
             $mouseenter = $this->data->get('mouseenter');
             if (!empty($mouseenter)) {
@@ -366,10 +366,10 @@ abstract class  N2SSSlideComponent {
 
     protected function renderBackground() {
         $background = '';
-        $image      = $this->data->get('bgimage');
+        $image      = $this->slide->fill($this->data->get('bgimage'));
         if ($image != '') {
-            $x = intval($this->data->get('bgimagex', 50));
-            $y = intval($this->data->get('bgimagey', 50));
+            $x          = intval($this->data->get('bgimagex', 50));
+            $y          = intval($this->data->get('bgimagey', 50));
             $background .= 'URL("' . N2ImageHelper::fixed($image) . '") ' . $x . '% ' . $y . '% / cover no-repeat' . ($this->data->get('bgimageparallax', 0) ? ' fixed' : '');
         }
 

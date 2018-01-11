@@ -1,4 +1,5 @@
 <?php
+
 namespace Elementor;
 
 if (!defined('ABSPATH')) {
@@ -113,7 +114,7 @@ add_action('elementor/controls/controls_registered', function ($controls_manager
             <div class="elementor-control-field">
 			<label class="elementor-control-title">{{{ data.label }}}</label>
 			<div class="elementor-control-input-wrapper">
-                <a style="margin-bottom:10px;" href="#" onclick="return NextendSmartSliderSelectModal(jQuery(this).siblings('input'));" class="button button-primary elementor-button elementor-button-smartslider" title="Select slider">Select slider</a>
+                <a style="margin-bottom:10px;" href="#" onclick="<?php echo \SmartSlider3::sliderSelectAction("jQuery(this).siblings('input')"); ?>return false;" class="button button-primary elementor-button elementor-button-smartslider" title="Select slider">Select slider</a>
 				<input type="{{ data.input_type }}" title="{{ data.title }}" data-setting="{{ data.name }}""/>
 			</div>
 		</div>

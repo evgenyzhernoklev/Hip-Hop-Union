@@ -20,6 +20,8 @@ class N2SmartsliderBackendSlidesController extends N2SmartSliderController {
             'Loop animation',
             'Out animation'
         ));
+
+        N2SS3::$forceDesktop = true;
     }
 
     private function initAdminSlider() {

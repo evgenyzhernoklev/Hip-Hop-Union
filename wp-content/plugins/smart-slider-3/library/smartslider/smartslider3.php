@@ -2,7 +2,7 @@
 
 class N2SS3 {
 
-    public static $version = '3.2.10';
+    public static $version = '3.2.12';
 
     public static $plan = 'pro';
 
@@ -11,6 +11,8 @@ class N2SS3 {
     public static $campaign = 'smartslider3';
 
     public static $source = '';
+
+    public static $forceDesktop = false;
 
     public static function shouldSkipLicenseModal() {
         return true;

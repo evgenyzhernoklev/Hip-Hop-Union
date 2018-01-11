@@ -120,6 +120,10 @@ $router = N2Base::getApplication('smartslider')
         echo N2Html::tag('div', array('class' => 'n2-box n2-box-full n2-box-template-library n2-h3 n2-uc'), N2Html::link(n2_('Template library'), '#', array(
             'class' => 'n2-ss-add-sample-slider n2-button n2-button-l n2-button-blue n2-radius-s n2-uc n2-h3'
         )));
+        if (count($sliders) > 2 && !N2Base::getApplication('smartslider')->storage->get('free', 'review')) {
+            include dirname(__FILE__) . '/review.phtml';
+        }
+    
 
         $parameters = array();
         if (N2Platform::$isWordpress) {
@@ -134,16 +138,6 @@ $router = N2Base::getApplication('smartslider')
 
         foreach ($sliders AS $sliderObj) {
             echo N2SmartsliderSlidersModel::box($sliderObj, $this->widget, $this->appType);
-        }
-
-        if (count($sliders) > 2 && !N2Base::getApplication('smartslider')->storage->get('free', 'promoLike')) {
-
-            echo N2Html::tag('div', array(
-                'class' => 'n2-box n2-box-promo n2-box-promo-light'
-            ), '<img src="' . N2ImageHelper::fixed('$ss$/admin/images/do-you-like.png') . '" /><a href="' . $this->appType->router->createUrl(array(
-                    'sliders/hidePromoLike',
-                    N2Form::tokenizeUrl()
-                )) . '" class="n2-close"></a><span>' . n2_('Do you like Smart Slider 3?') . '</span><div class="n2-box-promo-buttons"><a href="https://smartslider3.com/satisfied-customer/?utm_campaign=' . N2SS3::$campaign . '&utm_source=dashboard-satisfied&utm_medium=smartslider-' . N2Platform::getPlatform() . '-' . N2SS3::$plan . '" target="_blank" class="n2-button n2-button-normal n2-button-s n2-button-green n2-radius-s n2-uc n2-h5">' . n2_('Yes') . '</a><a href="https://smartslider3.com/suggestion/?utm_campaign=' . N2SS3::$campaign . '&utm_source=dashboard-not-satisfied&utm_medium=smartslider-' . N2Platform::getPlatform() . '-' . N2SS3::$plan . '" target="_blank" class="n2-button n2-button-normal n2-button-s n2-button-red n2-radius-s n2-uc n2-h5">' . n2_('No') . '</a></div>');
         }
         if (!N2Base::getApplication('smartslider')->storage->get('free', 'promoUpgrade')) {
             echo N2Html::tag('div', array(

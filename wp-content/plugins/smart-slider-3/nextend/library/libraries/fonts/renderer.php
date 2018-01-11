@@ -311,7 +311,7 @@ class N2FontStyle {
         $hex   = N2Color::hex82hex($v);
         $style = 'color: #' . $hex[0] . ';';
         if ($hex[1] != 'ff') {
-            $rgba = N2Color::hex2rgba($v);
+            $rgba  = N2Color::hex2rgba($v);
             $style .= 'color: RGBA(' . $rgba[0] . ',' . $rgba[1] . ',' . $rgba[2] . ',' . round($rgba[3] / 127, 2) . ');';
         }
 
@@ -447,11 +447,9 @@ class N2FontStyle {
     private function getFamily($family) {
         static $cache = array();
         if (!isset($cache[$family])) {
-            N2Pluggable::doAction('fontFamily', array($family));
-            $cache[$family] = '';
+            $cache[$family] = N2Pluggable::applyFilters('fontFamily', $family);
         }
-
-        return "'" . $family . "'";
+        return "'" . $cache[$family] . "'";
     }
 }
 

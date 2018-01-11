@@ -5766,6 +5766,10 @@ html[dir="rtl"] .n2-list li > .n2-actions {
     background: transparent;
 }
 
+.n2-box-promo-light {
+    background: #fff;
+}
+
 .n2-box-promo-overlay,
 .n2-box-promo-overlay:HOVER,
 .n2-box-promo-overlay:FOCUS,
@@ -5832,6 +5836,103 @@ html[dir="rtl"] .n2-list li > .n2-actions {
 
 .n2-box-promo-buttons .n2-button + .n2-button {
     margin-left: 20px;
+}
+
+.n2-box-review {
+    text-align: center;
+}
+
+.n2-box-review-bigstar {
+    width: 170px;
+    height: 105px;
+    margin: 0 auto;
+    background-image: url('../images/stars-big.png');
+}
+
+[data-stars="1"] .n2-box-review-bigstar {
+    background-position: 0 -105px;
+}
+
+[data-stars="2"] .n2-box-review-bigstar {
+    background-position: 0 -210px;
+}
+
+[data-stars="3"] .n2-box-review-bigstar {
+    background-position: 0 -315px;
+}
+
+[data-stars="4"] .n2-box-review-bigstar {
+    background-position: 0 -420px;
+}
+
+[data-stars="5"] .n2-box-review-bigstar {
+    background-position: 0 -525px;
+}
+
+.n2-box-review-label {
+    color: #7b8898;
+    font-size: 15px;
+    line-height: 22px;
+    height: 22px;
+    overflow: hidden;
+    display: none;
+}
+
+[data-stars="0"] .n2-box-review-label[data-star="0"],
+[data-stars="1"] .n2-box-review-label[data-star="1"],
+[data-stars="2"] .n2-box-review-label[data-star="2"],
+[data-stars="3"] .n2-box-review-label[data-star="3"],
+[data-stars="4"] .n2-box-review-label[data-star="4"],
+[data-stars="5"] .n2-box-review-label[data-star="5"] {
+    display: block;
+}
+
+.n2-box-review-stars-container {
+    width: 170px;
+    height: 34px;
+    margin: 0 auto;
+}
+
+.n2-box-review-star {
+    cursor: pointer;
+    transition: transform 0.4s;
+    vertical-align: top;
+    float: left;
+    width: 34px;
+    height: 34px;
+    background-image: url('../images/stars-small.png');
+}
+
+[data-stars="1"] .n2-box-review-star[data-star="1"],
+[data-stars="2"] .n2-box-review-star[data-star="1"],
+[data-stars="2"] .n2-box-review-star[data-star="2"],
+[data-stars="3"] .n2-box-review-star[data-star="1"],
+[data-stars="3"] .n2-box-review-star[data-star="2"],
+[data-stars="3"] .n2-box-review-star[data-star="3"],
+[data-stars="4"] .n2-box-review-star[data-star="1"],
+[data-stars="4"] .n2-box-review-star[data-star="2"],
+[data-stars="4"] .n2-box-review-star[data-star="3"],
+[data-stars="4"] .n2-box-review-star[data-star="4"],
+[data-stars="5"] .n2-box-review-star[data-star="1"],
+[data-stars="5"] .n2-box-review-star[data-star="2"],
+[data-stars="5"] .n2-box-review-star[data-star="3"],
+[data-stars="5"] .n2-box-review-star[data-star="4"],
+[data-stars="5"] .n2-box-review-star[data-star="5"] {
+    background-position: 0 -34px;
+    transform: scale(1.3);
+}
+
+.n2-modal-review-star-5 {
+    width: 560px;
+    height: 241px;
+    background: url(../images/star-5.png);
+}
+
+.n2-modal-review-details {
+    font-size: 14px;
+    line-height: 28px;
+    color: #7b8898;
+    text-align: center;
 }
 
 

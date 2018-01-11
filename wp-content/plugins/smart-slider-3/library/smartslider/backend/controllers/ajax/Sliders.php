@@ -50,4 +50,11 @@ class N2SmartsliderBackendSlidersControllerAjax extends N2SmartSliderControllerA
     public function actionListGroups() {
     }
 
+    public function actionHideReview() {
+        $this->validateToken();
+
+        $this->appType->app->storage->set('free', 'review', 1);
+
+        $this->response->respond();
+    }
 }

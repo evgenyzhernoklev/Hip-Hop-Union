@@ -192,7 +192,8 @@ class N2SmartSliderTypeSimple extends N2SmartSliderType {
                 'class'              => 'n2-ss-slider-background-video n2-ow',
                 'data-mode'          => $params->get('backgroundVideoMode', 'fill'),
                 'playsinline'        => 1,
-                'webkit-playsinline' => 1
+                'webkit-playsinline' => 1,
+                'data-keepplaying'   => 1
             ), N2Html::tag("source", array(
             "src"  => $mp4,
             "type" => "video/mp4"

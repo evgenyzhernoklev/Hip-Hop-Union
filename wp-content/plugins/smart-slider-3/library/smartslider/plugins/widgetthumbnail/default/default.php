@@ -200,10 +200,10 @@ class N2SSPluginWidgetThumbnailDefault extends N2SSPluginWidgetAbstract {
             }
 
             if ($showImage) {
-                $imgstyle = "width: {$width}px; height: {$height}px;";
+                $imgStyle = "width: {$width}px; height: {$height}px;";
                 $image    = N2Html::tag('div', array(
                     'class' => 'n2-ss-thumb-image n2-ow',
-                    'style' => "background-image: URL('" . $slider->features->optimize->optimizeThumbnail($slide->getThumbnail()) . "');" . $imgstyle . $thumbnailCode
+                    'style' => "background-image: URL('" . $slider->features->optimize->optimizeThumbnail($slide->getThumbnail()) . "');" . $imgStyle . $thumbnailCode
                 ), $slide->getThumbnailTypeHTML());
             }
 

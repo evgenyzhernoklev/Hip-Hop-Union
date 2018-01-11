@@ -8,6 +8,7 @@ class N2SmartSliderTypeGroup extends N2SmartSliderType {
 
         ob_start();
         $this->renderType();
+
         return ob_get_clean();
     }
 
@@ -16,9 +17,12 @@ class N2SmartSliderTypeGroup extends N2SmartSliderType {
         $xref = new N2SmartsliderSlidersXrefModel();
         $rows = $xref->getSliders($this->slider->data->get('id'));
         foreach ($rows AS $row) {
-            $slider = new N2SmartSliderManager($row['slider_id']);
-            echo $slider->render();
-            $this->earlier = min($slider->slider->getNextCacheRefresh(), $this->earlier);
+            $slider     = new N2SmartSliderManager($row['slider_id']);
+            $sliderHTML = $slider->render();
+            echo $sliderHTML;
+            if (!empty($sliderHTML)) {
+                $this->earlier = min($slider->slider->getNextCacheRefresh(), $this->earlier);
+            }
         }
     }
 

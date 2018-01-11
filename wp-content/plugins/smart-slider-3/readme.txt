@@ -4,7 +4,7 @@ Tags: slider, gallery slider, image slider, layer slider, responsive slider, sli
 Donate link: https://sites.fastspring.com/nextend/product/smartslider3donate
 Requires at least: 4.6
 Tested up to: 4.9
-Stable tag: 3.2.10
+Stable tag: 3.2.12
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -204,6 +204,21 @@ Of course! Smart Slider use protocol relative urls which works fine on http:// a
 9. Layer slider with layers styles. Made with FREE version.
 
 == Changelog ==
+
+= 3.2.12 - 14. December 2017. =
+* Feature: Smart Slider 3 in-app rating. Every feedback helps us to measure how we are doing :)
+* Feature: Custom Smart Slider field for Advanced Custom Fields plugin
+* Feature: Option to disable Slider shortcode when YOAST SEO generates XML sitemap
+* Feature: Images from subfolders date ordering
+* Feature: Web-Dorado Photo Gallery variables for non-images
+* Feature: Generator variables for Content, Row and Column backgrounds and URLs.
+* Feature: Simple type main animation now use transform for the animation
+* Fix: Background video and YouTube autoplays for supported mobiles (playsinline and muted)
+* Fix: Image from folder generator's ordering by file name
+* Fix: Proper loading of slider when fade on load setting disabled
+* Fix: Server side mobile detect fix in rare cases
+* Fix: Thumbnail border fix
+* Fix: Disable WordPress emoji in page builders preview
 
 = 3.2.10 - 23. November 2017. =
 * Feature: The Youtube and Vimeo layers will stop if you scroll away from them and they will continue when you scroll back

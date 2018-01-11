@@ -4,7 +4,7 @@ if (!defined('ABSPATH')) {
 }
 
 function Nextend_ET_Builder_Module_Smart_Slider_Field() {
-    $output = sprintf('<input type="button" class="button button-upload" value="%1$s" onclick="return NextendSmartSliderSelectModal(jQuery(this).siblings(\'.regular-text\'));" />', n2_('Select Slider'));
+    $output = sprintf('<input type="button" class="button button-upload" value="%1$s" onclick="' . SmartSlider3::sliderSelectAction("jQuery(this).siblings('.regular-text')") . 'return false;" />', n2_('Select Slider'));
 
     return $output;
 }

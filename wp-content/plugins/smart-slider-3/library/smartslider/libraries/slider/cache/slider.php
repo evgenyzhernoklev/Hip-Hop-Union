@@ -20,6 +20,18 @@ class N2CacheManifestSlider extends N2CacheManifest {
         }
         $fileName = $fileName . mt_rand(1, $variations);
 
+        if (N2SmartSliderSettings::get('serversidemobiledetect', '0') == '1') {
+            N2Loader::import('libraries.mobiledetect');
+
+            if (N2MobileDetect::$current['isMobile']) {
+                $fileName .= '-mobile';
+            } else if (N2MobileDetect::$current['isTablet']) {
+                $fileName .= '-tablet';
+            } else {
+                $fileName .= '-desktop';
+            }
+        }
+
         if ($this->exists($this->getManifestKey('data'))) {
             $data     = json_decode($this->get($this->getManifestKey('data')), true);
             $fileName = $this->extendFileName($fileName, $data);
@@ -46,7 +58,7 @@ class N2CacheManifestSlider extends N2CacheManifest {
         if ($this->isExtended) {
             return $fileName;
         }
-        
+
         $this->isExtended = true;
 
         $generators = $manifestData['generator'];

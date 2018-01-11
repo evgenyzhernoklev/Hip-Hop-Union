@@ -73,8 +73,12 @@ N2Require('SmartSliderWidgetThumbnailDefault', [], [], function ($, scope, undef
         }
 
         this.thumbnailDimension = {
+            widthLocal: this.dots.width(),
             width: this.dots.outerWidth(true),
-            height: this.dots.outerHeight(true)
+            height: this.dots.outerHeight(true),
+            widthBorder: parseInt(this.dots.css('borderLeftWidth')) + parseInt(this.dots.css('borderRightWidth')),
+            heightBorder: parseInt(this.dots.css('borderTopWidth')) + parseInt(this.dots.css('borderBottomWidth'))
+
         };
 
         this.thumbnailDimension.widthMargin = this.thumbnailDimension.width - this.dots.outerWidth();
@@ -215,12 +219,15 @@ N2Require('SmartSliderWidgetThumbnailDefault', [], [], function ($, scope, undef
 
         if (this.ratio != ratio) {
             var css = {};
-            css[variables.prop] = parseInt(this.thumbnailDimension[variables.prop] * ratio - this.thumbnailDimension[variables.prop + 'Margin']);
-            var scrollerDimension = css[variables.invProp] = parseInt((this.thumbnailDimension[variables.invProp] - this.parameters['captionSize'] - this.thumbnailDimension[variables.prop + 'Margin']) * ratio + this.parameters['captionSize']);
+            css[variables.prop] = parseInt(this.thumbnailDimension[variables.prop] * ratio - this.thumbnailDimension[variables.prop + 'Margin'] - this.thumbnailDimension[variables.prop + 'Border']);
+            css[variables.invProp] = parseInt((this.thumbnailDimension[variables.invProp] - this.parameters['captionSize']) * ratio - this.thumbnailDimension[variables.prop + 'Margin'] + this.parameters['captionSize'] - this.thumbnailDimension[variables.invProp + 'Border']);
             this.dots.css(css);
+
+            var localRatio = this.dots.width() / this.thumbnailDimension.widthLocal;
+
             css = {};
-            css[variables.prop] = parseInt(this.imageDimension[variables.prop] * ratio);
-            css[variables.invProp] = parseInt(this.imageDimension[variables.invProp] * ratio);
+            css[variables.prop] = Math.ceil(this.imageDimension[variables.prop] * localRatio);
+            css[variables.invProp] = Math.ceil(this.imageDimension[variables.invProp] * localRatio);
             this.images.css(css);
 
             this.bar.css(variables.invProp, 'auto');

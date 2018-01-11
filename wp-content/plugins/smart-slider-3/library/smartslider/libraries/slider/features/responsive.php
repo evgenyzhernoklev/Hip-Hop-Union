@@ -395,7 +395,7 @@ class N2SmartSliderFeatureResponsive {
         }
 
         $properties['responsive'] = array(
-            'desktop' => N2Platform::$isAdmin ? 1 : $this->desktop,
+            'desktop' => N2SS3::$forceDesktop ? 1 : $this->desktop,
             'tablet'  => $this->tablet,
             'mobile'  => $this->mobile,
 

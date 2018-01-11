@@ -238,6 +238,7 @@ class N2SmartSliderFeatureSlideBackground {
     }
 
     private function makeBackgroundVideo($slide) {
+
         return '';
     }
 }

@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Hueman package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-12-18 15:14:31+0000\n"
+"PO-Revision-Date: 2017-12-26 18:42:39+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,6 +19,10 @@ msgstr "El tema Hueman te ayuda a aumentar el tráfico y enganchar a sus visitan
 msgid "Hueman"
 msgstr "Hueman"
 
+#: functions/czr/czr-resources.php:607
+msgid "is always customized sitewide."
+msgstr "siempre está personalizado en todo el sitio."
+
 #: functions/admin/class-tgm-plugin-activation.php:1329
 msgid "It also includes some cool additional features like a %1$s and %2$s."
 msgstr "También incluye algunas características interesantes como %1$s y %2$s."
@@ -27,9 +31,17 @@ msgstr "También incluye algunas características interesantes como %1$s y %2$s.
 msgid "The Hueman Addons is a free plugin providing an enhanced customization interface for the Hueman theme."
 msgstr "Complementos Hueman (Hueman Addons) es un plugin gratuito que ofrece una interfaz de personalización mejorada para el tema Hueman."
 
+#: functions/admin/class-admin-page.php:143
+msgid "Thank you for using the %s theme for your website."
+msgstr "Gracias por usar el tema %s para tu sitio."
+
 #: functions/admin/class-admin-page.php:83
 msgid "Thank you for using %s %s :)"
 msgstr "Gracias por utilizar %s %s :)"
+
+#: functions/class-utils-settings-map.php:509
+msgid "When checked, this option loads a small javascript file ( 30 kb ) to detect if your site is being displayed by a mobile device like a phone or a tablet. It is recommended to check this option if you are using a cache plugin."
+msgstr "Cuando está marcada, esta opción carga un pequeño archivo Javascript (30 kb) para detectar si tu sitio se muestra en un dispositivo móvil, como un teléfono o una tableta. Se recomienda marcar esta opción si estás usando un plugin de caché."
 
 #: functions/class-utils-settings-map.php:506
 msgid "Mobile device detection"
@@ -43,9 +55,21 @@ msgstr "Descubra Hueman Pro."
 msgid "The Hueman Pro WordPress theme allows anyone to create a beautiful, professional and mobile friendly website in a few minutes. In the Pro version, you'll get all features included in the free version plus many conversion oriented ones, to help you attract and retain more visitors on your websites."
 msgstr "El tema de WordPress Hueman Pro permite a cualquier persona crear un sitio Web atractivo, profesional y apto para dispositivos móviles en cuestión de minutos. La versión Pro incluye todas las características de la versión gratuita más muchas otras enfocadas en la tasa de conversión de sitios Web que le ayudarán a atraer y retener a un mayor número de visitantes."
 
+#: functions/admin/class-admin-page.php:208
+msgid "Easily take your web design one step further"
+msgstr "Lleva tu diseño web un paso más allá de forma fácil"
+
+#: functions/admin/class-admin-page.php:204
+msgid "Go Hueman Pro"
+msgstr "Actualizar a Hueman Pro"
+
 #: functions/admin/class-admin-page.php:194
 msgid "Follow us"
 msgstr "Síguenos"
+
+#: functions/admin/class-admin-page.php:189
+msgid "If you are happy with the theme, say it on wordpress.org and give Hueman a nice review!"
+msgstr "Si estás contento con el tema, ¡escríbelo en WordPress.org y dale una buena reseña a Hueman!"
 
 #: functions/admin/class-admin-page.php:188
 msgid "Happy user of Hueman?"

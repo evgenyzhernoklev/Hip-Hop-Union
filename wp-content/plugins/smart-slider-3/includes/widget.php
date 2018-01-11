@@ -22,7 +22,7 @@ class N2SS3Widget extends WP_Widget {
         ), 10000000000);
 
         // Enable shortcodes for text widgets
-        add_filter( 'widget_text', 'do_shortcode' );
+        add_filter('widget_text', 'do_shortcode');
     }
 
     public static function register_widget() {
@@ -92,7 +92,7 @@ class N2SS3Widget extends WP_Widget {
                 Smart Slider:<br>
                 <input style="width:100px;vertical-align: top;" class="widefat" id="<?php echo $this->get_field_id('slider'); ?>" name="<?php echo $this->get_field_name('slider'); ?>" type="text" value="<?php echo esc_attr($instance['slider']); ?>">
 
-                <a style="vertical-align: top;" href="#" onclick="return NextendSmartSliderSelectModal(jQuery(this).siblings('input'));" class="button button-primary elementor-button elementor-button-smartslider fl-builder-button fl-builder-button-large" title="Select slider">Select slider</a>
+                <a style="vertical-align: top;" href="#" onclick="<?php echo SmartSlider3::sliderSelectAction("jQuery(this).siblings('input')"); ?>return false;" class="button button-primary elementor-button elementor-button-smartslider fl-builder-button fl-builder-button-large" title="Select slider">Select slider</a>
             </label>
         </p>
         <?php

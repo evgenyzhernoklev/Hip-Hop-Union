@@ -23,6 +23,8 @@ console.log(JSON.stringify(f));
         for ($i = 0; $i < count($lines); $i++) {
             self::$fonts[strtolower($lines[$i])] = $lines[$i];
         }
+        self::$fonts['droid sans']  = 'Noto Sans';
+        self::$fonts['droid serif'] = 'Noto Serif';
     }
 
 
@@ -111,12 +113,16 @@ console.log(JSON.stringify(f));
     }
 
     function onFontFamily($family) {
-        $family = strtolower($family);
-        if (isset(self::$fonts[$family])) {
+        $familyLower = strtolower($family);
+        if (isset(self::$fonts[$familyLower])) {
             foreach (self::$styles AS $style) {
-                N2GoogleFonts::addFont(self::$fonts[$family], $style);
+                N2GoogleFonts::addFont(self::$fonts[$familyLower], $style);
             }
+
+            return self::$fonts[$familyLower];
         }
+
+        return $family;
     }
 }
 

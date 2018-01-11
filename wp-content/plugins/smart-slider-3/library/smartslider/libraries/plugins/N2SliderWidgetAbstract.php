@@ -39,12 +39,16 @@ class N2SSPluginWidgetAbstract extends N2PluginBase {
         if ($mode == 'above') {
             return array(
                 'margin-bottom:' . $params->get($key . 'position-offset', 0) . 'px;',
-                array()
+                array(
+                    'data-position' => 'above'
+                )
             );
         } else if ($mode == 'below') {
             return array(
                 'margin-top:' . $params->get($key . 'position-offset', 0) . 'px;',
-                array()
+                array(
+                    'data-position' => 'below'
+                )
             );
         }
         $attributes = array();

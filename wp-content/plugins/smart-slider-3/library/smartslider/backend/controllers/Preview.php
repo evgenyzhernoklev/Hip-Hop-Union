@@ -17,6 +17,8 @@ class N2SmartsliderBackendPreviewController extends N2SmartSliderController
         ), 'smartslider');
 
         $this->sliderId = N2Request::getInt('sliderid');
+
+        N2SS3::$forceDesktop = true;
     }
 
     public function actionIndex() {

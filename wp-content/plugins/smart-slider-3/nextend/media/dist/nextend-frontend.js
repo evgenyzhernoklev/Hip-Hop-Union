@@ -101,21 +101,23 @@ try {
 } catch (e) {
 }
 
-nextend.triggerResize = (function ($) {
-    var delay = 100,
-        timeout = null,
-        $window = $(window);
+window.n2jQuery.ready(function () {
+    nextend.triggerResize = (function ($) {
+        var delay = 100,
+            timeout = null,
+            $window = $(window);
 
-    return function () {
-        if (timeout) {
-            clearTimeout(timeout);
-        }
-        timeout = setTimeout(function () {
-            $window.trigger('resize');
-            timeout = null;
-        }, delay);
-    };
-})(n2);
+        return function () {
+            if (timeout) {
+                clearTimeout(timeout);
+            }
+            timeout = setTimeout(function () {
+                $window.trigger('resize');
+                timeout = null;
+            }, delay);
+        };
+    })(n2);
+});
 
 
 nextend.shouldPreventClick = false;
