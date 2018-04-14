@@ -17,36 +17,48 @@
  */
 
 	$title = sprintf( __( '%1$s' ), single_term_title( '', false ) );
+	$post_type = get_post_type();
 
 get_header(); ?>
+
 
 
 <main class="contentIn contentIn--full" role="main">
 
 	<?php if ( have_posts() ) : ?>
+		<? if ( $post_type == 'encyclopedia' ) : ?>
+			<header class="page-header">
+				<h1 class="titlePage">Хип-Хоп библиотека</h1>
+			</header>
 
-		<header class="page-header">
-			<h1 class="titlePage"><?php echo $title; ?></h1>
-		</header>
+			<?php
+			while ( have_posts() ) : the_post();
+				get_template_part( 'template-parts/content', 'encyclopedia' );
+			endwhile;
+			?>
+		<? else : ?>
+			<header class="page-header">
+				<h1 class="titlePage"><?php echo $title; ?></h1>
+			</header>
 
-		<?php
-		echo '<div class="clear posts">';
-		// Start the Loop.
-		while ( have_posts() ) : the_post();
+			<?php
+			echo '<div class="clear posts">';
+			// Start the Loop.
+			while ( have_posts() ) : the_post();
 
-			/*
-			 * Include the Post-Format-specific template for the content.
-			 * If you want to override this in a child theme, then include a file
-			 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-			 */
-			get_template_part( 'template-parts/content', 'archive' );
+				/*
+				 * Include the Post-Format-specific template for the content.
+				 * If you want to override this in a child theme, then include a file
+				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+				 */
+				get_template_part( 'template-parts/content', 'archive' );
 
-		// End the loop.
-		endwhile;
-		echo '</div>';
+			// End the loop.
+			endwhile;
+			echo '</div>';
 
-		wp_pagenavi();
-
+			wp_pagenavi();
+		endif;
 	// If no content, include the "No posts found" template.
 	else :
 		get_template_part( 'template-parts/content', 'none' );

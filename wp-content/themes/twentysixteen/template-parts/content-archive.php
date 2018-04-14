@@ -8,6 +8,10 @@
  */
 ?>
 
+<?
+	$post_type = get_post_type();
+?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header postHeader">
 		<div class="postHeaderImg">
