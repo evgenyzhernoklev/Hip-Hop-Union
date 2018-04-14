@@ -1,0 +1,57 @@
+.glossary {
+
+}
+
+.glossary__in {
+
+}
+
+.glossary__title {
+
+}
+
+.glossary__link {
+  font-size: 20px;
+}
+
+
+
+.glossaryLetters {
+  margin: 0 -20px;
+  background-color: $white;
+  border-bottom: 1px solid #ddd;
+}
+
+.glossaryLetters__in {
+  height: 60px;
+  line-height: 60px;
+  text-align: justify;
+
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+.glossaryLetters__letter {
+  display: inline-block;
+  width: 20px;
+  height: 32px;
+  font: 16px/32px $nova-semibold;
+  text-align: center;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: all $transition-fast;
+
+  &:not(.is-disabled) {
+    &:hover {
+      font-size: 20px;
+      color: $red;
+    }
+  }
+
+  &.is-disabled {
+    cursor: default;
+  }
+}

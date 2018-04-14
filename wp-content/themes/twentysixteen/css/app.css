@@ -759,6 +759,41 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
 .gallery-columns-6 .gallery-caption, .gallery-columns-7 .gallery-caption, .gallery-columns-8 .gallery-caption, .gallery-columns-9 .gallery-caption {
   display: none;
 }
+.glossary__link {
+  font-size: 20px;
+}
+.glossaryLetters {
+  margin: 0 -20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+.glossaryLetters__in {
+  height: 60px;
+  line-height: 60px;
+  text-align: justify;
+}
+.glossaryLetters__in:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+.glossaryLetters__letter {
+  display: inline-block;
+  width: 20px;
+  height: 32px;
+  font: 16px/32px 'ProximaNova-Semibold', Arial, sans-serif;
+  text-align: center;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: all 0.1s linear;
+}
+.glossaryLetters__letter:not(.is-disabled):hover {
+  font-size: 20px;
+  color: #fe2f2f;
+}
+.glossaryLetters__letter.is-disabled {
+  cursor: default;
+}
 .hamburger {
   display: none;
   width: 60px;

@@ -450,16 +450,50 @@ add_action('save_post', ['Post_Meta_Boxes', 'save']);
 
 
 /******************************************************************************/
-/******************************* encyclopedia *********************************/
+/********************************* glossary ***********************************/
 /******************************************************************************/
 /**
- * Add custom fields for post types => encyclopedia
+ * Add custom post types => glossary
+*/
+add_action( 'init', 'create_post_type_glossary' );
+
+function create_post_type_glossary() {
+	register_post_type( 'glossary',
+  		array(
+          'labels' => array( // добавляем новые элементы в административную частьку
+              'name' => __( 'Библиотека' ),
+              'singular_name' => __( 'Библиотека' ),
+              'has_archive' => true,
+              'add_new' => 'Добавить новую запись',
+              'not_found' => 'Ничего не найдено',
+              'not_found_in_trash' => 'В корзине запиисей не найдено'
+          ),
+          'public' => true,
+					'menu_icon' => 'dashicons-book-alt',
+          'has_archive' => true,
+          'supports' => array( //добавляем элементы в редактор
+              'title',
+							'editor',
+							'excerpt',
+              'thumbnail',
+							'revisions',
+							'comments'
+          ),
+         'taxonomies' => array('category', 'post_tag') //добавляем к записям необходимый набор таксономий
+     	)
+	);
+}
+
+
+
+/**
+ * Add custom fields for post types => posts
 */
 abstract class Glossary_Meta_Boxes
 {
     public static function add()
     {
-        $screens = ['encyclopedia'];
+        $screens = ['glossary'];
         foreach ($screens as $screen) {
 						add_meta_box(
 								'glossary_author_id',        		// Unique ID
@@ -493,20 +527,6 @@ abstract class Glossary_Meta_Boxes
 add_action('add_meta_boxes', ['Glossary_Meta_Boxes', 'add']);
 add_action('save_post', ['Glossary_Meta_Boxes', 'save']);
 
-
-
-/**
- * Add custom thumbnails for post types => encyclopedia
-*/
-if (class_exists('MultiPostThumbnails')) {
-    new MultiPostThumbnails(
-        array(
-            'label' => 'Изображение записи',
-            'id' => 'post',
-            'post_type' => 'encyclopedia'
-        )
-    );
-}
 
 
 
