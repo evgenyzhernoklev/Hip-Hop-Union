@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Shortcodes Ultimate - Development (trunk) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2018-01-02 08:03:31+0000\n"
+"PO-Revision-Date: 2018-03-01 11:42:25+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,18 @@ msgstr ""
 "X-Generator: GlotPress/2.4.0-alpha\n"
 "Language: es\n"
 "Project-Id-Version: Plugins - Shortcodes Ultimate - Development (trunk)\n"
+
+#: inc/core/data.php:1839
+msgid "Add horizontal scrollbar if table width larger than page width"
+msgstr "Añadir barra de desplazamiento horizontal si el ancho de la tabla es mayor que el ancho de la página"
+
+#: inc/core/data.php:1495
+msgid "Plays inline"
+msgstr "Reproducir vídeos integrados"
+
+#: inc/core/data.php:1496
+msgid "This parameter controls whether videos play inline or fullscreen in an HTML5 player on iOS"
+msgstr "Este parámetro controla si los vídeos se reproducen integrados en la web o a pantalla completa en un reproductor HTML5 en iOS"
 
 #: inc/core/data.php:826
 msgid "Button ID"
@@ -364,7 +376,7 @@ msgstr "Prefijo de Shortcodes"
 msgid "Examples"
 msgstr "Ejemplos"
 
-#. #-#-#-#-#  shortcodes-ultimate-code.pot (Shortcodes Ultimate 5.0.2) 
+#. #-#-#-#-#  shortcodes-ultimate-code.pot (Shortcodes Ultimate 5.0.3) 
 #. #-#-#-#-#
 #. Author of the plugin/theme
 #: admin/partials/notices/rate.php:5
@@ -1501,14 +1513,14 @@ msgstr "Programador"
 msgid "Time"
 msgstr "Tiempo"
 
-#: inc/core/data.php:3077
-msgid "In this field you can specify one or more time ranges. Every day at this time the content of shortcode will be visible. %s %s %s - show content from 9:00 to 18:00 %s - show content from 9:00 to 13:00 and from 14:00 to 18:00 %s - example with minutes (content will be visible each day, 45 minutes) %s - example with seconds"
-msgstr "En este campo puedes especificar un o más rangos de tiempo. Cada día a esas horas se hará visible el contenido del shortcode. %s %s %s - muestra el contenido desde las  9:00 a las 18:00 %s - muestra contenido desde 9:00 a 13:00 y desde 14:00 a 18:00 %s - ejemplo con minutos (el contenido será visible todos los días durante 45 ) %s - ejemplo con segundos"
-
 #: inc/core/data.php:3077 inc/core/data.php:3082 inc/core/data.php:3087
 #: inc/core/data.php:3092 inc/core/data.php:3097
 msgid "Examples (click to set)"
 msgstr "Ejemplos (pincha para configurar)"
+
+#: inc/core/data.php:3077
+msgid "In this field you can specify one or more time ranges. Every day at this time the content of shortcode will be visible. %s %s %s - show content from 9:00 to 18:00 %s - show content from 9:00 to 13:00 and from 14:00 to 18:00 %s - example with minutes (content will be visible each day, 45 minutes) %s - example with seconds"
+msgstr "En este campo puedes especificar un o más rangos de tiempo. Cada día a esas horas se hará visible el contenido del shortcode. %s %s %s - muestra el contenido desde las  9:00 a las 18:00 %s - muestra contenido desde 9:00 a 13:00 y desde 14:00 a 18:00 %s - ejemplo con minutos (el contenido será visible todos los días durante 45 ) %s - ejemplo con segundos"
 
 #: inc/core/data.php:3081
 msgid "Days of the week"
@@ -3173,7 +3185,7 @@ msgstr "Puedes usar un ancla única con esta pestaña para acceder a ella con el
 msgid "Documentation"
 msgstr "Documentación"
 
-#. #-#-#-#-#  shortcodes-ultimate-code.pot (Shortcodes Ultimate 5.0.2) 
+#. #-#-#-#-#  shortcodes-ultimate-code.pot (Shortcodes Ultimate 5.0.3) 
 #. #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: admin/class-shortcodes-ultimate-admin-shortcodes.php:60

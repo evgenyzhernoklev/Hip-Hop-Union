@@ -130,8 +130,8 @@ function evc_wall_post_check_box() {
 	?>
 	<div class="misc-pub-section">
 		<p>
-			<input type="checkbox" <?php checked( $options['wall_post_flag'], true ); ?> name="evc_wall_post"/> Опубликовать на стене ВКонтакте /
-			<small>EVC</small>
+			<label><input type="checkbox" <?php checked( $options['wall_post_flag'], true ); ?> name="evc_wall_post"/> Принудительно опубликовать на стене ВКонтакте /
+			<small>EVC</small></label>
 		</p>
 
 		<?php
@@ -251,6 +251,8 @@ function evc_wall_post( $id, $post ) {
 		//'message' => $message,
 		// if no attachments - 'message' is available
 		//'attachments' => $attachments
+		//'v'=> '5.2'
+		'v'=> '5.73'
 
 	);
 
@@ -418,9 +420,11 @@ function evc_upload_photo( $id, $post ) {
 
 	$params = array(
 		'access_token' => $options['access_token'],
-		'gid'          => abs( $options['page_id'] ), // Removed minus sign
+		//'gid'          => abs( $options['page_id'] ), // Removed minus sign // Рабочий
 		//'group_id' => $options['page_id'], // Removed minus sign
-		//'v' => '5.26'
+		'group_id'          => abs( $options['page_id'] ), // Removed minus sign
+		//'v' => '5.2'
+		'v' => '5.73'
 	);
 
 	// Get Wall Upload Server
@@ -493,13 +497,15 @@ function evc_upload_photo( $id, $post ) {
 	$params = array();
 	$params = array(
 		'access_token' => $options['access_token'],
-		'gid'          => abs( $options['page_id'] ), // Removed minus sign
+		//'gid'          => abs( $options['page_id'] ), // Removed minus sign // Рабочий
+		'group_id'          => abs( $options['page_id'] ), // Removed minus sign
 		//'group_id' => $options['page_id'], // Removed minus sign
 		'server'       => $resp['server'],
 		'photo'        => $resp['photo'],
 		//'photo' => json_encode($resp['photo']),
 		'hash'         => $resp['hash'],
-		//'v' => '5.26'
+		//'v' => '5.2'
+		'v' => '5.73'
 	);
 	$query  = http_build_query( $params );
 	//$data = wp_remote_get(EVC_API_URL.'photos.saveWallPhoto?'.$query, array('sslverify' => false));
@@ -530,11 +536,14 @@ function evc_upload_photo( $id, $post ) {
 	if ( ! $resp['response'] ) {
 		return false;
 	}
-	//print__r($resp);
+	//evc_add_log( 'photos.saveWallPhoto:Response ' . print_r($resp['response'],1) );
 
 	foreach ( $resp['response'] as $r ) {
-		$attachments[] = $r['id'];
+		//$attachments[] = $r['id']; // рабочий
+		$attachments[] = 'photo'.$r['owner_id'].'_'.$r['id'];
 	}
+
+
 
 	return array( 'i' => $attachments );
 }

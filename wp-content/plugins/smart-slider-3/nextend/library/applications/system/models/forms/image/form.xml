@@ -5,7 +5,7 @@
             <param label="Width" type="number" style="width: 40px;">
                 <unit>px</unit>
             </param>
-            <param label="Width" type="number" style="width: 40px;">
+            <param label="Height" type="number" style="width: 40px;">
                 <unit>px</unit>
             </param>
         </param>

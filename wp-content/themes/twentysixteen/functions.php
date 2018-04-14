@@ -450,6 +450,67 @@ add_action('save_post', ['Post_Meta_Boxes', 'save']);
 
 
 /******************************************************************************/
+/******************************* encyclopedia *********************************/
+/******************************************************************************/
+/**
+ * Add custom fields for post types => encyclopedia
+*/
+abstract class Glossary_Meta_Boxes
+{
+    public static function add()
+    {
+        $screens = ['encyclopedia'];
+        foreach ($screens as $screen) {
+						add_meta_box(
+								'glossary_author_id',        		// Unique ID
+								'Автор', 												// Box title
+								[self::class, 'html_link'],   	// Content callback, must be of type callable
+								$screen                 				// Post type
+						);
+        }
+    }
+
+    public static function save($post_id)
+    {
+				if (array_key_exists('glossary_author_field', $_POST)) {
+						update_post_meta(
+								$post_id,
+								'_glossary_author_meta_key',
+								$_POST['glossary_author_field']
+						);
+				}
+    }
+
+		public static function html_link($post)
+    {
+				$valueLink = get_post_meta($post->ID, '_glossary_author_meta_key', true);
+        ?>
+				<input type="text" name="glossary_author_field" id="glossary_author_field" value="<?php echo $valueLink ?>" style="width: 100%;" />
+        <?php
+    }
+}
+
+add_action('add_meta_boxes', ['Glossary_Meta_Boxes', 'add']);
+add_action('save_post', ['Glossary_Meta_Boxes', 'save']);
+
+
+
+/**
+ * Add custom thumbnails for post types => encyclopedia
+*/
+if (class_exists('MultiPostThumbnails')) {
+    new MultiPostThumbnails(
+        array(
+            'label' => 'Изображение записи',
+            'id' => 'post',
+            'post_type' => 'encyclopedia'
+        )
+    );
+}
+
+
+
+/******************************************************************************/
 /********************************** Persons ***********************************/
 /******************************************************************************/
 /**

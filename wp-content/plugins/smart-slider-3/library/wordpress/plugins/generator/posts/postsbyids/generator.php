@@ -88,7 +88,7 @@ class N2GeneratorPostsPostsByIDs extends N2GeneratorAbstract
                                 $record[$k] = $v['url'];
                             } else if(is_array($v)){
                                 foreach($v AS $v_v => $k_k){
-                                    if(isset($k_k['url'])){
+                                    if(is_array($k_k) && isset($k_k['url'])){
                                         $record[$k . $v_v] = $k_k['url'];
                                     }
                                 }

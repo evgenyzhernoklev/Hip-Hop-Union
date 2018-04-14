@@ -58,10 +58,10 @@ class Nextend_Widget_SmartSlider extends \Elementor\Widget_Base {
         ]);
 
         $this->add_control('smartsliderid', [
-            'label'   => 'Slider ID',
+            'label'   => 'Slider ID or Alias',
             'type'    => 'smartsliderfield',
             'default' => '',
-            'title'   => 'Slider ID',
+            'title'   => 'Slider ID or Alias',
         ]);
 
         $this->end_controls_section();
@@ -72,7 +72,12 @@ class Nextend_Widget_SmartSlider extends \Elementor\Widget_Base {
         if (\Elementor\Plugin::instance()->editor->is_edit_mode() || \Elementor\Plugin::instance()->preview->is_preview_mode()) {
             echo \N2SS3Shortcode::renderIframe($this->get_settings('smartsliderid'));
         } else {
-            echo do_shortcode('[smartslider3 slider=' . $this->get_settings('smartsliderid') . ']');
+            $sliderIDorAlias = $this->get_settings('smartsliderid');
+            if(is_numeric($sliderIDorAlias)) {
+	            echo do_shortcode( '[smartslider3 slider=' . $sliderIDorAlias . ']' );
+            }else{
+	            echo do_shortcode( '[smartslider3 alias="' . $sliderIDorAlias . '"]' );
+            }
         }
     }
 
@@ -81,7 +86,7 @@ class Nextend_Widget_SmartSlider extends \Elementor\Widget_Base {
     }
 
     protected function _content_template() {
-        echo \N2SS3Shortcode::renderIframe('{{{ settings.smartsliderid }}}');
+        echo \N2SS3Shortcode::renderIframe('{{{settings.smartsliderid}}}');
     }
 
 }

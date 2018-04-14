@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Hueman package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-11-14 19:22:25+0000\n"
+"PO-Revision-Date: 2018-02-24 07:09:19+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,6 +18,10 @@ msgstr "Hueman テーマはサイトのトラフィックを増加させ、訪�
 #. Theme Name of the plugin/theme
 msgid "Hueman"
 msgstr "Hueman"
+
+#: functions/admin/class-admin-update-notification.php:118
+msgid "If you like %1$s please leave us a %2$s rating. A huge thanks in advance!"
+msgstr "%1$s を気に入って頂けたなら、%2$s レートを頂けますと幸いです !"
 
 #: functions/czr/czr-resources.php:607
 msgid "is always customized sitewide."
@@ -39,11 +43,11 @@ msgstr "%s テーマをご選択頂きありがとうございます。"
 msgid "Thank you for using %s %s :)"
 msgstr "%s %s をお使いいただきありがとうございます。"
 
-#: functions/class-utils-settings-map.php:509
+#: functions/class-utils-settings-map.php:511
 msgid "When checked, this option loads a small javascript file ( 30 kb ) to detect if your site is being displayed by a mobile device like a phone or a tablet. It is recommended to check this option if you are using a cache plugin."
 msgstr "これが有効化されている場合、モバイル端末 (携帯やタブレット) からのアクセスのときに小さい容量の Javascript ファイル (30kb) を読み込むようになります。キャッシュプラグインを利用中であれば使用を推奨します。"
 
-#: functions/class-utils-settings-map.php:506
+#: functions/class-utils-settings-map.php:508
 msgid "Mobile device detection"
 msgstr "モバイル端末検知機能"
 
@@ -91,15 +95,15 @@ msgstr "https://wordpress.org/"
 msgid "Powered by WordPress"
 msgstr "Powered by WordPress"
 
-#: functions/class-utils-settings-map.php:177
+#: functions/class-utils-settings-map.php:178
 msgid "The site title is displayed when there is no logo uploaded"
 msgstr "ロゴ画像が設定されていないときにのみサイト名は表示されます。"
 
-#: functions/class-utils-settings-map.php:454
+#: functions/class-utils-settings-map.php:456
 msgid "This option is good if you want to display a perfect font-size for your headings on any mobile devices. Note : it might override the css rules previously set in your custom stylesheet."
 msgstr "この設定は、モバイル端末で見出しを常に最適なフォントサイズで出力させたい場合に使用するといいでしょう。注: これはカスタムスタイルシートで設定された CSS ルールを上書きする可能性があります。"
 
-#: functions/class-utils-settings-map.php:451
+#: functions/class-utils-settings-map.php:453
 msgid "Make font sizes flexible. Enable this option to achieve scalable headlines that fill the width of a parent element."
 msgstr "柔軟なフォントサイズ設定を使う。見出しに親要素の幅にフィットするような順応性を持たせるにはこの設定を使います。"
 
@@ -115,39 +119,39 @@ msgstr "投稿 / 固定ページのコンテンツ"
 msgid "No menu has been assigned for mobile devices yet. You can set it from the live customizer"
 msgstr "まだモバイル端末用のメニューが割り当てられていません。カスタマイザーから設定できます"
 
-#: functions/init-front.php:1751
+#: functions/init-front.php:1795
 msgid "a short guide here."
 msgstr "簡単なガイドをご用意しました。"
 
-#: functions/init-front.php:1749
+#: functions/init-front.php:1793
 msgid "To help you getting started with Hueman, we have published"
 msgstr "Hueman を使いはじめる皆さんをお手伝いするために、"
 
-#: functions/init-front.php:1746
+#: functions/init-front.php:1790
 msgid "Hueman Demo 2"
 msgstr "Hueman デモ 2"
 
-#: functions/init-front.php:1744
+#: functions/init-front.php:1788
 msgid "Hueman Demo 1"
 msgstr "Hueman デモ 1"
 
-#: functions/init-front.php:1742
+#: functions/init-front.php:1786
 msgid "If you need inspiration, you can visit our online demos"
 msgstr "インスピレーションが必要であれば、オンラインデモをご覧ください。"
 
-#: functions/init-front.php:1739
+#: functions/init-front.php:1783
 msgid "to let you create the best possible websites."
 msgstr "それらを活用し、最高のウェブサイトを作ることができます。"
 
-#: functions/init-front.php:1738
+#: functions/init-front.php:1782
 msgid "of customization options"
 msgstr "幅広いカスタマイズオプションを備えています。"
 
-#: functions/init-front.php:1736
+#: functions/init-front.php:1780
 msgid "The theme offers a wide range"
 msgstr "このテーマは、"
 
-#: functions/init-front.php:1733
+#: functions/init-front.php:1777
 msgid "Welcome in the Hueman theme"
 msgstr "Hueman テーマにようこそ"
 
@@ -159,59 +163,59 @@ msgstr "モバイル端末。モバイル端末向けに別のメニューを設
 msgid "Topbar"
 msgstr "トップバー"
 
-#: functions/class-utils-settings-map.php:1608
+#: functions/class-utils-settings-map.php:1610
 msgid "Mobile Devices"
 msgstr "モバイル端末"
 
-#: functions/class-utils-settings-map.php:1243
+#: functions/class-utils-settings-map.php:1245
 msgid "Decide if your sidebars should be sticky on tablets and smartphones devices."
 msgstr "モバイル / タブレットでサイドバーを追従させるかを決める"
 
-#: functions/class-utils-settings-map.php:1157
+#: functions/class-utils-settings-map.php:1159
 msgid "Post navigation"
 msgstr "投稿ナビゲーション"
 
-#: functions/class-utils-settings-map.php:1141
+#: functions/class-utils-settings-map.php:1143
 msgid "Related posts"
 msgstr "関連記事"
 
-#: functions/class-utils-settings-map.php:758
+#: functions/class-utils-settings-map.php:760
 msgid "If the selected menu location has no menu assigned, the theme will try to assign another menu in this order : topbar, mobile, header."
 msgstr "選択されたメニュー位置にメニューが割り当てられていない場合、テーマはこの順番で他のメニューを割り当てます: トップバー、モバイル、ヘッダー "
 
-#: functions/class-utils-settings-map.php:753
+#: functions/class-utils-settings-map.php:755
 msgid "Specific Mobile Menu"
 msgstr "特定のモバイルメニュー"
 
-#: functions/class-utils-settings-map.php:636
+#: functions/class-utils-settings-map.php:638
 msgid "Set your logo, title and tagline"
 msgstr "ロゴとタイトル、キャッチフレーズを設定"
 
-#: functions/class-utils-settings-map.php:630
+#: functions/class-utils-settings-map.php:632
 msgid "Display your logo or site title, and tagline on top of the header image"
 msgstr "ヘッダー画像の上にロゴかサイトタイトルとキャッチフレーズを表示する"
 
-#: functions/class-utils-settings-map.php:607
+#: functions/class-utils-settings-map.php:609
 msgid "Apply a semi-transparent filter to the topbar and mobile menu on scroll"
 msgstr "スクロール時にトップバーとモバイルメニューを半透明にする"
 
-#: functions/class-utils-settings-map.php:467
+#: functions/class-utils-settings-map.php:469
 msgid "Include images in search results"
 msgstr "画像を検索結果に含める"
 
-#: functions/class-utils-settings-map.php:222
+#: functions/class-utils-settings-map.php:223
 msgid "(in pixels)"
 msgstr "(単位: ピクセル)"
 
-#: functions/class-utils-settings-map.php:203
+#: functions/class-utils-settings-map.php:204
 msgid "Logo for mobiles"
 msgstr "モバイル用のロゴ"
 
-#: functions/class-utils-settings-map.php:202
+#: functions/class-utils-settings-map.php:203
 msgid "Use a specific logo for mobile devices"
 msgstr "モバイル端末用に別のロゴを使用する"
 
-#: functions/class-utils-settings-map.php:174
+#: functions/class-utils-settings-map.php:175
 msgid "Display the site title in the header"
 msgstr "サイトタイトルをヘッダーに表示"
 
@@ -255,62 +259,62 @@ msgstr "問題を解決するには"
 msgid "Default sitewide value."
 msgstr "デフォルトのサイド幅。"
 
-#: functions/class-utils-settings-map.php:1636
+#: functions/class-utils-settings-map.php:1638
 msgid "Go Pro"
 msgstr "Pro へ"
 
-#: functions/class-utils-settings-map.php:1546
+#: functions/class-utils-settings-map.php:1548
 msgid "Header Menus : mobile settings, scroll behaviour, search button"
 msgstr "ヘッダーメニュー : モバイル設定・スクロール時の動作・検索ボタン"
 
-#: functions/class-utils-settings-map.php:1158
+#: functions/class-utils-settings-map.php:1160
 msgid "Post navigation in single posts"
 msgstr "投稿ページのポストナビゲーション"
 
-#: functions/class-utils-settings-map.php:736
+#: functions/class-utils-settings-map.php:738
 msgid "Display a search field in the header menu"
 msgstr "ヘッダーメニューの中に検索フィールドを表示"
 
-#: functions/class-utils-settings-map.php:735
+#: functions/class-utils-settings-map.php:737
 msgid "Display a search field in the top menu"
 msgstr "トップメニューの中に検索フィールドを表示"
 
-#: functions/class-utils-settings-map.php:734
+#: functions/class-utils-settings-map.php:736
 msgid "No search field"
 msgstr "検索フィールドなし"
 
-#: functions/class-utils-settings-map.php:730
-#: functions/class-utils-settings-map.php:800
+#: functions/class-utils-settings-map.php:732
+#: functions/class-utils-settings-map.php:802
 msgid "display a search field"
 msgstr "検索フィールドを表示"
 
-#: functions/class-utils-settings-map.php:719
-#: functions/class-utils-settings-map.php:775
+#: functions/class-utils-settings-map.php:721
+#: functions/class-utils-settings-map.php:777
 msgid "Always visible"
 msgstr "常に表示"
 
-#: functions/class-utils-settings-map.php:718
-#: functions/class-utils-settings-map.php:774
+#: functions/class-utils-settings-map.php:720
+#: functions/class-utils-settings-map.php:776
 msgid "Reveal on scroll up"
 msgstr "上スクロール時に表示"
 
-#: functions/class-utils-settings-map.php:717
-#: functions/class-utils-settings-map.php:773
+#: functions/class-utils-settings-map.php:719
+#: functions/class-utils-settings-map.php:775
 msgid "Not visible when scrolling the page"
 msgstr "スクロール時に非表示"
 
-#: functions/class-utils-settings-map.php:713
-#: functions/class-utils-settings-map.php:769
+#: functions/class-utils-settings-map.php:715
+#: functions/class-utils-settings-map.php:771
 msgid "top menu visibility on scroll"
 msgstr "スクロール時のトップメニューの表示/非表示設定"
 
-#: functions/class-utils-settings-map.php:712
-#: functions/class-utils-settings-map.php:746
+#: functions/class-utils-settings-map.php:714
+#: functions/class-utils-settings-map.php:748
 msgid "Menus settings for"
 msgstr "メニュー設定: "
 
-#: functions/admin/class-admin-update-notification.php:103
-#: functions/class-utils-settings-map.php:1635
+#: functions/admin/class-admin-update-notification.php:104
+#: functions/class-utils-settings-map.php:1637
 msgid "Upgrade to Hueman Pro"
 msgstr "Hueman Pro にアップグレード"
 
@@ -322,27 +326,27 @@ msgstr "知識ベース"
 msgid "Slider button"
 msgstr "スライダーのボタン"
 
-#: functions/class-utils-settings-map.php:1531
+#: functions/class-utils-settings-map.php:1533
 msgid "Header Design : colors and others"
 msgstr "ヘッダーデザイン: 色とその他"
 
-#: functions/class-utils-settings-map.php:757
+#: functions/class-utils-settings-map.php:759
 msgid "When your visitors are using a smartphone or a tablet, the header becomes a thin bar on top, where the menu is revealed when clicking on the hamburger button. This option let you choose which menu will be displayed."
 msgstr "サイト訪問者がスマートフォンやタブレットを使っている場合、ヘッダーは上部の細いバーになり、その状態でハンバーガーボタンをクリックするとメニューが表示されます。このオプションを使用することで表示させるメニューを選択できます。"
 
-#: functions/class-utils-settings-map.php:669
+#: functions/class-utils-settings-map.php:671
 msgid "This will display your widget zone on devices with a width smaller than 720 pixels : tablets, smartphones."
 msgstr "このウィジェットゾーンは 720px 以下の横幅のタブレットやスマートフォンに表示されます。"
 
-#: functions/class-utils-settings-map.php:666
+#: functions/class-utils-settings-map.php:668
 msgid "Display the header widget zone on mobile devices"
 msgstr "モバイル用のヘッダーウィジェットゾーンを表示"
 
-#: functions/class-utils-settings-map.php:661
+#: functions/class-utils-settings-map.php:663
 msgid "This will display your widget zone on devices with a width greater than 720 pixels : laptops and desktops."
 msgstr "このウィジェットゾーンは 720px 以上の横幅を持ったノートパソコンやデスクトップに表示されます。"
 
-#: functions/class-utils-settings-map.php:658
+#: functions/class-utils-settings-map.php:660
 msgid "Display the header widget zone on desktop devices"
 msgstr "デスクトップ用のヘッダーウィジェットゾーンを表示"
 
@@ -354,68 +358,68 @@ msgstr "メニューをたたむ"
 msgid "Expand menu"
 msgstr "メニューを展開"
 
-#: functions/init-front.php:387 functions/init-front.php:393
+#: functions/init-front.php:431 functions/init-front.php:437
 msgid "Home page"
 msgstr "ホームページ"
 
-#: functions/class-utils-settings-map.php:1555
+#: functions/class-utils-settings-map.php:1557
 msgid "Column layout for the main content"
 msgstr "メインコンテンツ用のカラムレイアウト"
 
-#: functions/class-utils-settings-map.php:1235
+#: functions/class-utils-settings-map.php:1237
 msgid "Glues your website's sidebars on top of the page, making them permanently visible when scrolling up and down. Useful when a sidebar is too tall or too short compared to the rest of the content."
 msgstr "サイドバーが上下スクロール時に追従するようになります。この設定はコンテンツに比べてサイドバーが長すぎる、もしくは短すぎる場合に有効です。"
 
-#: functions/class-utils-settings-map.php:1232
-#: functions/class-utils-settings-map.php:1240
+#: functions/class-utils-settings-map.php:1234
+#: functions/class-utils-settings-map.php:1242
 msgid "make sidebars sticky on scroll"
 msgstr "サイドバーをスクロールに追従させる"
 
-#: functions/class-utils-settings-map.php:222
-#: functions/class-utils-settings-map.php:712
-#: functions/class-utils-settings-map.php:713
-#: functions/class-utils-settings-map.php:730
-#: functions/class-utils-settings-map.php:1232
+#: functions/class-utils-settings-map.php:223
+#: functions/class-utils-settings-map.php:714
+#: functions/class-utils-settings-map.php:715
+#: functions/class-utils-settings-map.php:732
+#: functions/class-utils-settings-map.php:1234
 msgid "Desktop devices"
 msgstr "デスクトップデバイス"
 
-#: functions/class-utils-settings-map.php:839
+#: functions/class-utils-settings-map.php:841
 msgid "Columns layout for"
 msgstr "カラムレイアウト: "
 
-#: functions/class-utils-settings-map.php:790
+#: functions/class-utils-settings-map.php:792
 msgid "Simple"
 msgstr "シンプル"
 
-#: functions/class-utils-settings-map.php:789
+#: functions/class-utils-settings-map.php:791
 msgid "Animated"
 msgstr "アニメーション付き"
 
-#: functions/class-utils-settings-map.php:785
+#: functions/class-utils-settings-map.php:787
 msgid "Style of the mobile menu button"
 msgstr "モバイルのメニューボタンスタイル"
 
-#: functions/class-utils-settings-map.php:754
+#: functions/class-utils-settings-map.php:756
 msgid "Topbar and header menus, logo centered"
 msgstr "トップバーとヘッダーメニュー、ロゴの中心"
 
-#: functions/class-utils-settings-map.php:752
+#: functions/class-utils-settings-map.php:754
 msgid "Topbar Menu"
 msgstr "トップバーメニュー"
 
-#: functions/class-utils-settings-map.php:747
+#: functions/class-utils-settings-map.php:749
 msgid "Select the menu(s) to use for mobile devices"
 msgstr "モバイル用に使うメニューを選択"
 
-#: functions/class-utils-settings-map.php:597
+#: functions/class-utils-settings-map.php:599
 msgid "Mobile Menu Background"
 msgstr "モバイルメニューの背景"
 
-#: functions/class-utils-settings-map.php:700
+#: functions/class-utils-settings-map.php:702
 msgid "Topbar menu"
 msgstr "トップバーメニュー"
 
-#: functions/class-utils-settings-map.php:695
+#: functions/class-utils-settings-map.php:697
 msgid "The Hueman theme supports up to two menu locations in your header."
 msgstr "Hueman テーマはヘッダー内に2つまでのメニューを設置できます。"
 
@@ -591,15 +595,15 @@ msgstr "次の現在のカスタマイズをリセット"
 msgid "Options for"
 msgstr "オプション:"
 
-#: functions/class-utils-settings-map.php:257
+#: functions/class-utils-settings-map.php:258
 msgid "This option sets the default font size applied to any text element of your website, when no font size is already applied."
 msgstr "このオプションで設定されたフォントサイズは、フォントサイズが別で既に設定されている要素を除くすべてのテキスト要素に適応されます。"
 
-#: functions/class-utils-settings-map.php:250
+#: functions/class-utils-settings-map.php:251
 msgid "Set your website default font size in pixels."
 msgstr "フォントサイズ設定 (単位: px)"
 
-#: functions/class-utils-settings-map.php:193
+#: functions/class-utils-settings-map.php:194
 msgid "Set your logo below or"
 msgstr "画面下部から設定する か"
 
@@ -607,7 +611,7 @@ msgstr "画面下部から設定する か"
 msgid "Customize now"
 msgstr "カスタマイズする"
 
-#: footer.php:143 functions/init-front.php:264 sidebar.php:18
+#: footer.php:143 functions/init-front.php:266 sidebar.php:18
 msgid "You can set your social links here from the live customizer"
 msgstr "カスタマイザーからここにソーシャルリンクを設定できます"
 
@@ -615,39 +619,39 @@ msgstr "カスタマイザーからここにソーシャルリンクを設定で
 msgid "Press return or enter to open this panel"
 msgstr "Return か enter でこのパネルを開く"
 
-#: functions/class-utils-settings-map.php:1422
+#: functions/class-utils-settings-map.php:1424
 msgid "Performances, SEO, CSS, Scroll"
 msgstr "パフォーマンス、SEO、CSS、スクロール"
 
-#: functions/class-utils-settings-map.php:1414
+#: functions/class-utils-settings-map.php:1416
 msgid "Logo, Layout, Menu"
 msgstr "ロゴ、レイアウト、メニュー"
 
-#: functions/class-utils-settings-map.php:1413
+#: functions/class-utils-settings-map.php:1415
 msgid "Footer Design"
 msgstr "フッターデザイン"
 
-#: functions/class-utils-settings-map.php:1400
+#: functions/class-utils-settings-map.php:1402
 msgid "Layout, Sidebars, Blog Posts, Thumbnails"
 msgstr "レイアウト、サイドバー、ブログ投稿、サムネイル"
 
-#: functions/class-utils-settings-map.php:1399
+#: functions/class-utils-settings-map.php:1401
 msgid "Main Body Design"
 msgstr "メイン部分のデザイン"
 
-#: functions/class-utils-settings-map.php:1392
+#: functions/class-utils-settings-map.php:1394
 msgid "Header Image, Menu, Widget"
 msgstr "ヘッダーイメージ、メニュー、ウィジェット"
 
-#: functions/class-utils-settings-map.php:1391
+#: functions/class-utils-settings-map.php:1393
 msgid "Header Design"
 msgstr "ヘッダーデザイン"
 
-#: functions/class-utils-settings-map.php:1384
+#: functions/class-utils-settings-map.php:1386
 msgid "Title, Logo, Fonts, Colors, Background, Socials, Links"
 msgstr "タイトル、ロゴ、フォント、色、背景、ソーシャル、リンク"
 
-#: functions/class-utils-settings-map.php:1383
+#: functions/class-utils-settings-map.php:1385
 msgid "Web Page Design"
 msgstr "Web ページデザイン"
 
@@ -659,7 +663,7 @@ msgstr "ヘッダーパネル"
 msgid "The menu currently displayed in your header is a default page menu, you can disable it in the %s."
 msgstr "現在メニューには固定ページの一覧が表示されています。%s 無効化することが可能です。"
 
-#: functions/class-utils-settings-map.php:1565
+#: functions/class-utils-settings-map.php:1567
 msgid "Post Lists Design and Content : Blog, Archives, Search Results"
 msgstr "投稿一覧のデザインとコンテンツ: ブログ・アーカイブ・検索結果"
 
@@ -708,41 +712,41 @@ msgstr "投稿ページや固定ページを表示しない"
 msgid "Front Page Content"
 msgstr "フロントページのコンテンツ"
 
-#: functions/class-utils-settings-map.php:751
+#: functions/class-utils-settings-map.php:753
 msgid "Header Menu"
 msgstr "ヘッダーメニュー"
 
-#: functions/class-utils-settings-map.php:680
-#: functions/class-utils-settings-map.php:1275
+#: functions/class-utils-settings-map.php:682
+#: functions/class-utils-settings-map.php:1277
 msgid "You can create menus and set their locations %s."
 msgstr "%s メニューを作成したり、場所を設定できます。"
 
-#: functions/class-utils-settings-map.php:1001
+#: functions/class-utils-settings-map.php:1003
 msgid "custom excerpt"
 msgstr "カスタム抜粋"
 
-#: functions/class-utils-settings-map.php:1000
+#: functions/class-utils-settings-map.php:1002
 msgid "The WordPress Excerpt is the summary or description of a post. By default, it will be the first words of a post, but you can write a %s if you want. You can set the number of words you want to display with this option."
 msgstr "WordPress の抜粋は、投稿の概要または説明です。デフォルトでは投稿の最初の語句ですが、ご希望なら%sを書くこともできます。このオプションで表示する文字数を設定できます。"
 
-#: functions/class-utils-settings-map.php:992
+#: functions/class-utils-settings-map.php:994
 msgid "Post Summary"
 msgstr "投稿の要約"
 
-#: functions/class-utils-settings-map.php:977
+#: functions/class-utils-settings-map.php:979
 msgid "Post List Design"
 msgstr "投稿のリストデザイン"
 
-#: functions/class-utils-settings-map.php:700
-#: functions/class-utils-settings-map.php:1301
+#: functions/class-utils-settings-map.php:702
+#: functions/class-utils-settings-map.php:1303
 msgid "Use a default page menu if no menu has been assigned."
 msgstr "メニューが設定されていない場合、デフォルトのページメニューを使用します。"
 
-#: functions/class-utils-settings-map.php:622
+#: functions/class-utils-settings-map.php:624
 msgid "Use a header banner image"
 msgstr "ヘッダーバナー画像を使用する"
 
-#: functions/class-utils-settings-map.php:187
+#: functions/class-utils-settings-map.php:188
 msgid "Display a logo in the header"
 msgstr "ヘッダーにロゴを表示"
 
@@ -893,41 +897,41 @@ msgstr "スライドのタイトル"
 msgid "Page %s"
 msgstr "固定ページ %s"
 
-#: functions/class-utils-settings-map.php:1603
+#: functions/class-utils-settings-map.php:1605
 msgid "Smooth Scroll"
 msgstr "スムーズスクロール"
 
-#: functions/class-utils-settings-map.php:501
+#: functions/class-utils-settings-map.php:503
 msgid "Check this option to delay the loading of non visible images. Images below the viewport will be loaded dynamically on scroll. This can really boost speed performances by reducing the weight of long pages that include many images."
 msgstr "このオプションにチェックを入れると見えていない画像のロードを遅らせます。ビューポートの下の画像はスクロール時に動的に読み込まれるようになります。多くの画像を含む長いページの重さを減らすことが出来、パフォーマンスの向上に繋がります。"
 
-#: functions/class-utils-settings-map.php:498
+#: functions/class-utils-settings-map.php:500
 msgid "Load images on scroll"
 msgstr "スクロール時画像を表示"
 
-#: functions/class-utils-settings-map.php:428
+#: functions/class-utils-settings-map.php:430
 msgid "This option enables a smoother page scroll."
 msgstr "このオプションでスムーズなページスクロールを有効にします。"
 
-#: functions/class-utils-settings-map.php:425
+#: functions/class-utils-settings-map.php:427
 msgid "Enable Smooth Scrolling"
 msgstr "スムーズスクロールを有効化"
 
-#: functions/class-utils-settings-map.php:355
+#: functions/class-utils-settings-map.php:356
 msgid "Open external links in a new tab"
 msgstr "外部リンクを新しいタブで表示"
 
-#: functions/class-utils-settings-map.php:348
-#: functions/class-utils-settings-map.php:358
+#: functions/class-utils-settings-map.php:349
+#: functions/class-utils-settings-map.php:359
 msgid "This will be applied to the links included in post or page content only."
 msgstr "投稿および固定ページのリンクにのみ適用"
 
-#: functions/class-utils-settings-map.php:345
+#: functions/class-utils-settings-map.php:346
 msgid "Display an icon next to external links"
 msgstr "外部リンクの後にアイコンを表示"
 
-#: functions/class-utils-settings-map.php:192
-#: functions/class-utils-settings-map.php:635
+#: functions/class-utils-settings-map.php:193
+#: functions/class-utils-settings-map.php:637
 #: functions/czr/tmpl/modules/body_bg-module-tmpl.php:102
 msgid "here"
 msgstr "こちら"
@@ -1128,19 +1132,19 @@ msgstr "フォローする"
 msgid "Select a social icon"
 msgstr "ソーシャルアイコンを選択"
 
-#: functions/class-utils-settings-map.php:1296
+#: functions/class-utils-settings-map.php:1298
 msgid "This zone is located before the other footer widgets and takes 100% of the width. Very appropriate to display a Google Map or an advertisement banner."
 msgstr "このウィジェットエリアは他のフッターウィジェットの上に追加され、常に100%の幅になります。Google Map や広告バナーの設置に適しています。"
 
-#: functions/class-utils-settings-map.php:1293
+#: functions/class-utils-settings-map.php:1295
 msgid "Display a full width widget area in your footer"
 msgstr "全幅のウィジェットエリアをフッターに追加"
 
-#: functions/class-utils-settings-map.php:1064
+#: functions/class-utils-settings-map.php:1066
 msgid "By default, your featured posts display the first words of their content ( the \"excerpt\"). Check this box to display the full content."
 msgstr "デフォルトではおすすめ投稿には投稿の最初の文字（\"excerpt\"）が表示されます。このオプションを有効化すると投稿内容を全て表示するようになります。"
 
-#: functions/class-utils-settings-map.php:1061
+#: functions/class-utils-settings-map.php:1063
 msgid "Display the full post content"
 msgstr "投稿コンテンツをすべて表示"
 
@@ -1172,59 +1176,59 @@ msgstr "全幅ウィジェットゾーン。右サイドバーに3列で表示�
 msgid "Full width widget zone. Located in the left sidebar in a 3 columns layout. Can be on the right of a 2 columns sidebar when content is on the left."
 msgstr "全幅ウィジェットゾーン。3カラムレイアウトで左サイドバーに表示されます。コンテンツが左にある時、2カラムレイアウトで右側に配置されます。"
 
-#: functions/class-utils-settings-map.php:1623
+#: functions/class-utils-settings-map.php:1625
 msgid "Hueman Admin Settings"
 msgstr "Hueman の管理者設定"
 
-#: functions/class-utils-settings-map.php:1618
+#: functions/class-utils-settings-map.php:1620
 msgid "Performances and SEO"
 msgstr "パフォーマンスと SEO"
 
-#: functions/class-utils-settings-map.php:535
+#: functions/class-utils-settings-map.php:537
 msgid "This button links to the \"About Hueman\" page."
 msgstr "このボタンは「Hueman について」ページへのリンクです。"
 
-#: functions/class-utils-settings-map.php:532
+#: functions/class-utils-settings-map.php:534
 msgid "Display a Help button in the admin bar"
 msgstr "ツールバーをヘルプ下に表示する"
 
-#: functions/class-utils-settings-map.php:527
+#: functions/class-utils-settings-map.php:529
 msgid "This page is intended to provide informations about the Hueman theme : changelog, release note, documentation link. It also display informations about your current install that can be useful if you need to report an issue."
 msgstr "このページは、変更履歴、リリースノート、ドキュメンテーションリンクといった Hueman テーマに関する情報を提供することを目的としています。 また、現在のインストールされているバーションに関する情報が表示され、問題を報告する必要がある場合に役立ちます。"
 
-#: functions/class-utils-settings-map.php:524
+#: functions/class-utils-settings-map.php:526
 msgid "Display the \"About Hueman\" page in the \"Appearance\" admin menu"
 msgstr "「外観」メニューに「Hueman について」というオプションを追加します"
 
-#: functions/class-utils-settings-map.php:493
+#: functions/class-utils-settings-map.php:495
 msgid "\"Structured data markup\" is a standard way to annotate your content so machines can understand it. Implementing it will help your website rank higher in search engines."
 msgstr "\"構造化マークアップ\" は機械が理解できるように投稿に注釈をつける標準的な方法です。これを実装することで検索エンジンでのあなたのサイトランクを上げるのに役に立ちます。"
 
-#: functions/class-utils-settings-map.php:490
+#: functions/class-utils-settings-map.php:492
 msgid "Use Structured Data Markup for your posts"
 msgstr "構造化マークアップを投稿ページに使用"
 
-#: functions/class-utils-settings-map.php:485
+#: functions/class-utils-settings-map.php:487
 msgid "Unchecking this option is not recommended. Minifying css stylesheets improves performance for your website overall by decreasing the load time."
 msgstr "チェックを入れない状態で使用することは推奨されません。圧縮された CSS を使うことでパフォーマンスの向上やサイト全体の高速化に繋がります。"
 
-#: functions/class-utils-settings-map.php:482
+#: functions/class-utils-settings-map.php:484
 msgid "Use a minified stylesheet"
 msgstr "圧縮したスタイルシートを使用する"
 
-#: functions/class-utils-settings-map.php:1333
+#: functions/class-utils-settings-map.php:1335
 msgid "Footer Background"
 msgstr "フッターの背景"
 
-#: functions/class-utils-settings-map.php:1347
+#: functions/class-utils-settings-map.php:1349
 msgid "Note : Html is allowed."
 msgstr "注: HTML を使用できます。"
 
-#: functions/class-utils-settings-map.php:965
+#: functions/class-utils-settings-map.php:967
 msgid "Your blog sub-heading. Html is allowed. Note : write a blank space to hide the default content."
 msgstr "サブヘッディングに表示される文字列。HTML を使用できます。注: 空白文字を設定することで非表示に出来ます。"
 
-#: functions/class-utils-settings-map.php:950
+#: functions/class-utils-settings-map.php:952
 msgid "Your blog heading. Html is allowed. Note : write a blank space to hide the default content."
 msgstr "見出しに表示される文字列。HTML を使用できます。注: 空白文字を設定することで非表示に出来ます。"
 
@@ -1248,11 +1252,11 @@ msgstr "メインサイドバー（3カラムレイアウトの左側）"
 msgid "Blog Page"
 msgstr "ブログページ"
 
-#: functions/class-utils-settings-map.php:1032
+#: functions/class-utils-settings-map.php:1034
 msgid "If no specific category is selected, the featured posts block will display your latest post(s) from all categories."
 msgstr "カテゴリーが指定されていない場合、おすすめ記事には全てのカテゴリーから記事が選ばれます。"
 
-#: functions/class-utils-settings-map.php:1028
+#: functions/class-utils-settings-map.php:1030
 msgid "Select a category to feature"
 msgstr "おすすめのカテゴリーを選択"
 
@@ -1297,27 +1301,27 @@ msgstr "これはカスタマイザー設定画面のデフォルト設定を上
 msgid "Select a widget zone for the left sidebar."
 msgstr "左サイドバーに表示するウィジェットゾーンを選択してください。"
 
-#: functions/init-front.php:229
+#: functions/init-front.php:231
 msgid "Add widgets to the zone :"
 msgstr "ウィジェットをこのゾーンに追加: "
 
-#: functions/init-front.php:223
+#: functions/init-front.php:225
 msgid "You can change or disable this setting by editing the options of the current post / page."
 msgstr "現在の投稿やページのオプションからこの設定を変更または無効にすることが出来ます。"
 
-#: functions/init-front.php:222
+#: functions/init-front.php:224
 msgid "in this post or page options."
 msgstr "この投稿またはページの設定にて"
 
-#: functions/init-front.php:220
+#: functions/init-front.php:222
 msgid "You have already assigned the following widget zone here : "
 msgstr "既に次のウィジェットゾーンが割り当てられています: "
 
-#: functions/init-front.php:192
+#: functions/init-front.php:194
 msgid "You can add Widget Areas here from the customizer, in the <strong>Dynamic Sidebars and Widgets</strong> panel, or you can change the layout to remove this sidebar in <strong>Content &raquo; Layout Options for the main content</strong>."
 msgstr "ウィジェットエリアはカスタマイザーの<strong>ダイナミックサイドバーとウィジェット</strong>パネルから追加出来ます。または、<strong>メインコンテンツのコンテンツ &raquo; レイアウトオプション</strong>にてサイドバーを削除するレイアウトを変更出来ます。"
 
-#: functions/init-front.php:191
+#: functions/init-front.php:193
 msgid "No widget zones available in this sidebar."
 msgstr "このサイドバーにはウィジェットゾーンがありません。"
 
@@ -1329,7 +1333,7 @@ msgstr "Hueman テーマへのヘルプが必要ですか？ここをクリッ�
 msgid "404 Error Pages"
 msgstr "404 エラーページ"
 
-#: functions/class-utils-settings-map.php:1613
+#: functions/class-utils-settings-map.php:1615
 #: functions/init-sidebars-widgets.php:138
 msgid "Search Results"
 msgstr "検索結果"
@@ -1346,7 +1350,7 @@ msgstr "アーカイブ"
 msgid "Single Posts"
 msgstr "個別投稿"
 
-#: functions/init-front.php:1518 functions/init-sidebars-widgets.php:134
+#: functions/init-front.php:1562 functions/init-sidebars-widgets.php:134
 msgid "Pages"
 msgstr "ページ"
 
@@ -1398,113 +1402,113 @@ msgstr "サブ"
 msgid "Primary"
 msgstr "メイン"
 
-#: functions/init-core.php:84
+#: functions/init-core.php:85
 msgid "Theme Options [OLD]"
 msgstr "テーマオプション [旧]"
 
-#: functions/class-utils-settings-map.php:1744
+#: functions/class-utils-settings-map.php:1746
 msgid "4 Columns"
 msgstr "4カラム"
 
-#: functions/class-utils-settings-map.php:1740
+#: functions/class-utils-settings-map.php:1742
 msgid "3 Columns"
 msgstr "3カラム"
 
-#: functions/class-utils-settings-map.php:1736
+#: functions/class-utils-settings-map.php:1738
 msgid "2 Columns"
 msgstr "2カラム"
 
-#: functions/class-utils-settings-map.php:1710
+#: functions/class-utils-settings-map.php:1712
 msgid "Inherit Global Layout"
 msgstr "全般レイアウトを継承"
 
-#: functions/class-utils-settings-map.php:1702
+#: functions/class-utils-settings-map.php:1704
 msgid "3 Columns - Content Right"
 msgstr "3カラム - 右コンテンツ"
 
-#: functions/class-utils-settings-map.php:1698
+#: functions/class-utils-settings-map.php:1700
 msgid "3 Columns - Content Left"
 msgstr "3カラム - 左コンテンツ"
 
-#: functions/class-utils-settings-map.php:1694
+#: functions/class-utils-settings-map.php:1696
 msgid "3 Columns - Content Middle"
 msgstr "3カラム - 中央コンテンツ"
 
-#: functions/class-utils-settings-map.php:1690
+#: functions/class-utils-settings-map.php:1692
 msgid "2 Columns - Content Right"
 msgstr "2カラム - 右コンテンツ"
 
-#: functions/class-utils-settings-map.php:1686
+#: functions/class-utils-settings-map.php:1688
 msgid "2 Columns - Content Left"
 msgstr "2カラム - 左コンテンツ"
 
-#: functions/class-utils-settings-map.php:1682
-#: functions/class-utils-settings-map.php:1732
+#: functions/class-utils-settings-map.php:1684
+#: functions/class-utils-settings-map.php:1734
 msgid "1 Column"
 msgstr "1カラム"
 
-#: functions/class-utils-settings-map.php:1663
+#: functions/class-utils-settings-map.php:1665
 msgid "Choose one "
 msgstr "1つ選択"
 
-#: functions/class-utils-settings-map.php:1592
+#: functions/class-utils-settings-map.php:1594
 msgid "Footer Design : Logo, layout, ..."
 msgstr "フッターデザイン : ロゴ、レイアウト..."
 
-#: functions/class-utils-settings-map.php:1577
+#: functions/class-utils-settings-map.php:1579
 msgid "Thumbnails Settings"
 msgstr "サムネイル設定"
 
-#: functions/class-utils-settings-map.php:1571
+#: functions/class-utils-settings-map.php:1573
 msgid "Single Posts Settings"
 msgstr "個別投稿設定"
 
-#: functions/class-utils-settings-map.php:1560
+#: functions/class-utils-settings-map.php:1562
 msgid "Sidebars : Design and Mobile Settings"
 msgstr "サイドバー : デザインとモバイル設定"
 
-#: functions/class-utils-settings-map.php:1541
+#: functions/class-utils-settings-map.php:1543
 msgid "Header Advertisement Widget"
 msgstr "ヘッダー広告ウィジェット"
 
-#: functions/class-utils-settings-map.php:746
-#: functions/class-utils-settings-map.php:769
-#: functions/class-utils-settings-map.php:800
-#: functions/class-utils-settings-map.php:1240
+#: functions/class-utils-settings-map.php:748
+#: functions/class-utils-settings-map.php:771
+#: functions/class-utils-settings-map.php:802
+#: functions/class-utils-settings-map.php:1242
 msgid "Mobile devices"
 msgstr "モバイル端末"
 
-#: functions/class-utils-settings-map.php:1520
+#: functions/class-utils-settings-map.php:1522
 msgid "Social links"
 msgstr "ソーシャルリンク"
 
-#: functions/class-utils-settings-map.php:1515
+#: functions/class-utils-settings-map.php:1517
 msgid "General Design Options : Font, Colors, ..."
 msgstr "全般デザイン設定: フォント、色、…"
 
-#: functions/class-utils-settings-map.php:1505
+#: functions/class-utils-settings-map.php:1507
 msgid "Site Identity : Logo, Title, Tagline and Site Icon"
 msgstr "サイト情報: ロゴ、タイトル、タグライン、サイトアイコン"
 
-#: functions/class-utils-settings-map.php:690
-#: functions/class-utils-settings-map.php:1285
+#: functions/class-utils-settings-map.php:692
+#: functions/class-utils-settings-map.php:1287
 msgid "in the menu panel"
 msgstr "メニューパネルにて"
 
-#: functions/class-utils-settings-map.php:691
-#: functions/class-utils-settings-map.php:1286
+#: functions/class-utils-settings-map.php:693
+#: functions/class-utils-settings-map.php:1288
 msgid "create/edit menus"
 msgstr "メニュー作成／編集"
 
-#: functions/class-utils-settings-map.php:1423
+#: functions/class-utils-settings-map.php:1425
 msgid "Advanced settings for the Hueman theme."
 msgstr "Hueman テーマの拡張設定"
 
-#: functions/class-utils-settings-map.php:1421
+#: functions/class-utils-settings-map.php:1423
 msgid "Advanced options"
 msgstr "詳細設定"
 
-#: functions/class-utils-settings-map.php:1415
+#: functions/class-utils-settings-map.php:1417
 msgid "Footer settings for the Hueman theme."
 msgstr "Hueman テーマのためのフッター設定"
 
@@ -1512,11 +1516,11 @@ msgstr "Hueman テーマのためのフッター設定"
 msgid "Footer"
 msgstr "フッター"
 
-#: functions/class-utils-settings-map.php:1401
+#: functions/class-utils-settings-map.php:1403
 msgid "Content settings for the Hueman theme."
 msgstr "Hueman テーマのコンテンツ設定"
 
-#: functions/class-utils-settings-map.php:1393
+#: functions/class-utils-settings-map.php:1395
 msgid "Header settings for the Hueman theme."
 msgstr "Hueman テーマのヘッダー設定"
 
@@ -1524,285 +1528,285 @@ msgstr "Hueman テーマのヘッダー設定"
 msgid "Header"
 msgstr "ヘッダー"
 
-#: functions/class-utils-settings-map.php:1385
+#: functions/class-utils-settings-map.php:1387
 msgid "General settings for the Hueman theme : design, comments, mobile, ..."
 msgstr "Hueman テーマのための全般設定：デザイン、コメント、モバイル、…"
 
-#: functions/class-utils-settings-map.php:1352
+#: functions/class-utils-settings-map.php:1354
 msgid "Footer credit text"
 msgstr "フッタークレジットテキスト"
 
-#: functions/class-utils-settings-map.php:1343
+#: functions/class-utils-settings-map.php:1345
 msgid "Replace the footer copyright text"
 msgstr "フッターの著作権テキストを置き換える"
 
-#: functions/class-utils-settings-map.php:1317
+#: functions/class-utils-settings-map.php:1319
 msgid "Upload your custom logo image"
 msgstr "カスタムロゴ画像をアップロード"
 
-#: functions/class-utils-settings-map.php:1313
+#: functions/class-utils-settings-map.php:1315
 msgid "Recommended number of columns : 3"
 msgstr "おすすめのカラム数: 3"
 
-#: functions/class-utils-settings-map.php:1309
+#: functions/class-utils-settings-map.php:1311
 msgid "Select columns to enable footer widgets"
 msgstr "フッターウィジェットエリアのカラム数を設定"
 
-#: functions/class-utils-settings-map.php:1258
+#: functions/class-utils-settings-map.php:1260
 msgid "Control how the sidebar content is displayed on smartphone mobile devices (320px). Note : on smartphones the sidebars are displayed below the content."
 msgstr "サイドバーをスマートフォン端末 (320px) でどのように表示するか設定します。注: スマートフォンではコンテンツの下にサイドバーが表示されます。"
 
-#: functions/class-utils-settings-map.php:1256
+#: functions/class-utils-settings-map.php:1258
 msgid "Hide both sidebars"
 msgstr "両方のサイドバーを隠す"
 
-#: functions/class-utils-settings-map.php:1255
+#: functions/class-utils-settings-map.php:1257
 msgid "Hide secondary sidebar"
 msgstr "セカンダリーサイドバーを非表示"
 
-#: functions/class-utils-settings-map.php:1254
+#: functions/class-utils-settings-map.php:1256
 msgid "Hide primary sidebar"
 msgstr "メインサイドバーを非表示"
 
-#: functions/class-utils-settings-map.php:1253
+#: functions/class-utils-settings-map.php:1255
 msgid "Display both sidebars"
 msgstr "両方のサイドバーを表示する"
 
-#: functions/class-utils-settings-map.php:1248
+#: functions/class-utils-settings-map.php:1250
 msgid "Mobile Sidebar Content"
 msgstr "モバイルサイドバーコンテンツ"
 
-#: functions/class-utils-settings-map.php:1226
+#: functions/class-utils-settings-map.php:1228
 msgid "Display boxes at the top of the sidebars"
 msgstr "サイドバーの上にボックスを表示する"
 
-#: functions/class-utils-settings-map.php:1223
+#: functions/class-utils-settings-map.php:1225
 #: functions/init-plugins-compat.php:431
 msgid "Sidebar Top Boxes"
 msgstr "サイドバートップボックス"
 
-#: functions/class-utils-settings-map.php:1198
+#: functions/class-utils-settings-map.php:1200
 msgid "Display comment count on thumbnails"
 msgstr "サムネイル画像の上にコメント数を表示"
 
-#: functions/class-utils-settings-map.php:1195
+#: functions/class-utils-settings-map.php:1197
 msgid "Thumbnail Comment Count"
 msgstr "サムネイル画像のコメント数"
 
-#: functions/class-utils-settings-map.php:1190
+#: functions/class-utils-settings-map.php:1192
 msgid "Display featured image placeholders if no featured image is set"
 msgstr "アイキャッチ画像が設定されていない場合、テーマで用意したデフォルト画像を使用します"
 
-#: functions/class-utils-settings-map.php:1187
+#: functions/class-utils-settings-map.php:1189
 msgid "Thumbnail Placeholder"
 msgstr "サムネイル画像のプレースホルダー"
 
-#: functions/class-utils-settings-map.php:1168
+#: functions/class-utils-settings-map.php:1170
 msgid "Display links to the next and previous article"
 msgstr "前後の投稿ページへのリンクを表示します"
 
-#: functions/class-utils-settings-map.php:1166
+#: functions/class-utils-settings-map.php:1168
 msgid "Below content"
 msgstr "コンテンツの下"
 
-#: functions/class-utils-settings-map.php:1151
+#: functions/class-utils-settings-map.php:1153
 msgid "Display randomized related articles below the post"
 msgstr "関連する記事を投稿の下にランダム表示する"
 
-#: functions/class-utils-settings-map.php:1149
+#: functions/class-utils-settings-map.php:1151
 msgid "Related by tags"
 msgstr "タグによって関連付ける"
 
-#: functions/class-utils-settings-map.php:1148
+#: functions/class-utils-settings-map.php:1150
 msgid "Related by categories"
 msgstr "カテゴリーによって関連付ける"
 
-#: functions/class-utils-settings-map.php:1147
-#: functions/class-utils-settings-map.php:1163
-#: functions/class-utils-settings-map.php:1728
+#: functions/class-utils-settings-map.php:1149
+#: functions/class-utils-settings-map.php:1165
+#: functions/class-utils-settings-map.php:1730
 msgid "Disable"
 msgstr "無効化"
 
-#: functions/class-utils-settings-map.php:1142
+#: functions/class-utils-settings-map.php:1144
 msgid "Single - Related Posts"
 msgstr "投稿ページ - 関連記事"
 
-#: functions/class-utils-settings-map.php:1135
+#: functions/class-utils-settings-map.php:1137
 msgid "Display post author description, if it exists"
 msgstr "投稿者プロフィールが設定されている場合、投稿者情報を表示します"
 
-#: functions/class-utils-settings-map.php:1131
+#: functions/class-utils-settings-map.php:1133
 msgid "Single - Author Bio"
 msgstr "投稿ページ - 投稿者情報"
 
-#: functions/class-utils-settings-map.php:1110
+#: functions/class-utils-settings-map.php:1112
 msgid "If this box is checked, your featured posts will be displayed both in the featured slider and in the post list below. Usually not recommended because a given post might appear two times on the same page."
 msgstr "このオプションを有効化すると、おすすめ投稿に表示された記事も下のポストリストにも表示されるようになります。特定の投稿を同じページに2度表示する必要はないので、通常はおすすめしません。"
 
-#: functions/class-utils-settings-map.php:1107
+#: functions/class-utils-settings-map.php:1109
 msgid "Display the featured posts also in the list of posts"
 msgstr "おすすめ記事と投稿一覧の両方に記事を表示"
 
-#: functions/class-utils-settings-map.php:1096
+#: functions/class-utils-settings-map.php:1098
 msgid "Speed of the automatic slideshow animation"
 msgstr "自動スライドショーアニメーションの速さ"
 
-#: functions/class-utils-settings-map.php:1090
+#: functions/class-utils-settings-map.php:1092
 msgid "Featured Slideshow Speed"
 msgstr "注目スライドショーの速さ"
 
-#: functions/class-utils-settings-map.php:1078
+#: functions/class-utils-settings-map.php:1080
 msgid "Enables the automatic animation of the featured posts carousel."
 msgstr "おすすめ投稿のカルーセルのアニメーションを有効化します。"
 
-#: functions/class-utils-settings-map.php:1075
+#: functions/class-utils-settings-map.php:1077
 msgid "Animate your featured posts with a slideshow"
 msgstr "おすすめ投稿のスライドショーをアニメーションする"
 
-#: functions/class-utils-settings-map.php:1050
+#: functions/class-utils-settings-map.php:1052
 msgid "Max number of featured posts to display. <br /><i>Set to 1 and it will show it without any slider script</i><br /><i>Set it to 0 to disable</i>"
 msgstr "表示されるおすすめ投稿の最大記事数を指定します。<br /><i>1に設定するとスライダースクリプトは無効化されて表示されます。</i><br /><i>0に設定すると無効化されます。</i>"
 
-#: functions/class-utils-settings-map.php:1044
+#: functions/class-utils-settings-map.php:1046
 msgid "Featured Post Count"
 msgstr "おすすめ投稿数"
 
-#: functions/class-utils-settings-map.php:1017
+#: functions/class-utils-settings-map.php:1019
 msgid "Check this box to display a selection of posts with a slideshow, on top of your blog."
 msgstr "このボックスにチェックを入れると、ブログの上にスライドショー付きが表示されます。"
 
-#: functions/class-utils-settings-map.php:1014
+#: functions/class-utils-settings-map.php:1016
 msgid "Feature posts on top of your blog"
 msgstr "おすすめ投稿を一番上に表示する"
 
-#: functions/class-utils-settings-map.php:1012
+#: functions/class-utils-settings-map.php:1014
 msgid "Featured posts"
 msgstr "おすすめ投稿"
 
-#: functions/class-utils-settings-map.php:981
+#: functions/class-utils-settings-map.php:983
 msgid "While the default blog design is a grid of posts, you can check this option and display one post per row, whith the thumbnail beside the text."
 msgstr "デフォルトのデザインはグリットになっていますが、このオプションにチェックを入れるとテキストの横にサムネイル画像が表示され、一行に一つ投稿が表示されるようになります。"
 
-#: functions/class-utils-settings-map.php:978
+#: functions/class-utils-settings-map.php:980
 msgid "Display your blog posts as a standard list."
 msgstr "スタンダードリストを使用"
 
-#: functions/class-utils-settings-map.php:994
+#: functions/class-utils-settings-map.php:996
 msgid "Excerpt Length"
 msgstr "抜粋の長さ"
 
-#: functions/class-utils-settings-map.php:962
+#: functions/class-utils-settings-map.php:964
 msgid "Blog Sub-Heading"
 msgstr "ブログのサブ見出し"
 
-#: functions/class-utils-settings-map.php:960 functions/init-front.php:532
+#: functions/class-utils-settings-map.php:962 functions/init-front.php:576
 msgid "Blog"
 msgstr "ブログ"
 
-#: functions/class-utils-settings-map.php:933
-#: functions/class-utils-settings-map.php:947
+#: functions/class-utils-settings-map.php:935
+#: functions/class-utils-settings-map.php:949
 msgid "Blog Heading"
 msgstr "ブログの見出し"
 
-#: functions/class-utils-settings-map.php:934
+#: functions/class-utils-settings-map.php:936
 msgid "Display a custom heading for your blog."
 msgstr "ブログのカスタム見出しを表示します。"
 
-#: functions/class-utils-settings-map.php:919
+#: functions/class-utils-settings-map.php:921
 msgid "[ <strong>is_page</strong> ] Default page layout - If a page has a set layout, it will override this."
 msgstr "[ <strong>is_page</strong> ] 固定ページのレイアウト - 固定ページ自体にレイアウトが設定されている場合はそちらが優先されます。"
 
-#: functions/class-utils-settings-map.php:915
+#: functions/class-utils-settings-map.php:917
 msgid "Default Page"
 msgstr "デフォルトページ"
 
-#: functions/class-utils-settings-map.php:910
+#: functions/class-utils-settings-map.php:912
 msgid "[ <strong>is_404</strong> ] Error 404 page layout"
 msgstr "[ <strong>is_404</strong> ] エラー404ページレイアウト"
 
-#: functions/class-utils-settings-map.php:906
+#: functions/class-utils-settings-map.php:908
 msgid "Error 404"
 msgstr "404 エラー"
 
-#: functions/class-utils-settings-map.php:901
+#: functions/class-utils-settings-map.php:903
 msgid "[ <strong>is_search</strong> ] Search page layout"
 msgstr "[ <strong>is_search</strong> ] 検索ページのレイアウト"
 
-#: functions/class-utils-settings-map.php:897
+#: functions/class-utils-settings-map.php:899
 msgid "Search"
 msgstr "検索"
 
-#: functions/class-utils-settings-map.php:892
+#: functions/class-utils-settings-map.php:894
 msgid "[ <strong>is_category</strong> ] Category archive layout"
 msgstr "[ <strong>is_category</strong> ] カテゴリーのレイアウト"
 
-#: functions/class-utils-settings-map.php:888
+#: functions/class-utils-settings-map.php:890
 msgid "Archive - Category"
 msgstr "アーカイブ - カテゴリー"
 
-#: functions/class-utils-settings-map.php:883
+#: functions/class-utils-settings-map.php:885
 msgid "[ <strong>is_archive</strong> ] Category, date, tag and author archive layout"
 msgstr "[ <strong>is_archive</strong> ] カテゴリー、日付、タグ、アーカイブのレイアウト"
 
-#: functions/class-utils-settings-map.php:879
+#: functions/class-utils-settings-map.php:881
 msgid "Archive"
 msgstr "アーカイブ"
 
-#: functions/class-utils-settings-map.php:870
+#: functions/class-utils-settings-map.php:872
 msgid "[ <strong>is_single</strong> ] Single post layout - If a post has a set layout, it will override this."
 msgstr "[ <strong>is_single</strong> ] 投稿ページのレイアウト - 投稿ページ自体にレイアウトが設定されている場合はそちらが優先されます。"
 
-#: functions/class-utils-settings-map.php:866
+#: functions/class-utils-settings-map.php:868
 msgid "Single"
 msgstr "シングル"
 
-#: functions/class-utils-settings-map.php:857
+#: functions/class-utils-settings-map.php:859
 msgid "[ <strong>is_home</strong> ] Posts homepage layout"
 msgstr "[ <strong>is_home</strong> ] サイトトップページのレイアウト"
 
-#: functions/class-utils-settings-map.php:853 functions/init-front.php:1470
+#: functions/class-utils-settings-map.php:855 functions/init-front.php:1514
 #: functions/init-sidebars-widgets.php:132
 msgid "Home"
 msgstr "ホーム"
 
-#: functions/class-utils-settings-map.php:848
+#: functions/class-utils-settings-map.php:850
 msgid "Other layouts will override this option if they are set"
 msgstr "他の設定がセットされている場合そちらが優先されます"
 
-#: functions/class-utils-settings-map.php:844
+#: functions/class-utils-settings-map.php:846
 msgid "Global Layout"
 msgstr "全般レイアウト"
 
-#: functions/class-utils-settings-map.php:653
+#: functions/class-utils-settings-map.php:655
 msgid "Header widget area, perfect to insert advertisements. Note : this feature is not available when a header image is being displayed."
 msgstr "このエリアは広告の表示に最適です。注: このエリアはヘッダー画像が有効化されている状態では表示されません。"
 
-#: functions/class-utils-settings-map.php:650
+#: functions/class-utils-settings-map.php:652
 msgid "Display a widget in your header"
 msgstr "ヘッダーにウィジェットを表示"
 
-#: functions/class-utils-settings-map.php:625
+#: functions/class-utils-settings-map.php:627
 msgid "Upload a header image (supported formats : .jpg, .png, .gif, svg, svgz). This will disable header title/logo, site description, header ads widget"
 msgstr "ヘッダー画像をアップロード（ .jpg, .png, .gif, svg, svgz をサポート）これはヘッダータイトル、ロゴ、サイト説明、ヘッダー広告ウィジェットを無効化します。"
 
-#: functions/class-utils-settings-map.php:1536
+#: functions/class-utils-settings-map.php:1538
 msgid "Header Image"
 msgstr "ヘッダー画像"
 
-#: functions/class-utils-settings-map.php:558
+#: functions/class-utils-settings-map.php:560
 msgid "The description that appears next to your logo"
 msgstr "ロゴの次に表示される説明"
 
-#: functions/class-utils-settings-map.php:555
+#: functions/class-utils-settings-map.php:557
 msgid "Display your site's description (tagline)"
 msgstr "サイト情報（タグライン）を表示"
 
-#: functions/class-utils-settings-map.php:222
+#: functions/class-utils-settings-map.php:223
 msgid "Header Logo Image Max-height"
 msgstr "ヘッダーロゴ画像の最大高さ"
 
-#: functions/class-utils-settings-map.php:215
-#: functions/class-utils-settings-map.php:1328
+#: functions/class-utils-settings-map.php:216
+#: functions/class-utils-settings-map.php:1330
 #: functions/czr/class-czr-init.php:114
 msgid "Upload your custom logo image. Supported formats : .jpg, .png, .gif, svg, svgz"
 msgstr "カスタムロゴをアップロードする。サポート形式 : .jpg, .png, .gif, svg, svgz"
@@ -1811,107 +1815,107 @@ msgstr "カスタムロゴをアップロードする。サポート形式 : .jp
 msgid "Custom Header Logo"
 msgstr "カスタムヘッダーロゴ"
 
-#: functions/class-utils-settings-map.php:381
+#: functions/class-utils-settings-map.php:382
 msgid "Create and organize your social links"
 msgstr "ソーシャルリンクの作成と整理"
 
-#: functions/class-utils-settings-map.php:446
+#: functions/class-utils-settings-map.php:448
 msgid "Hueman is a mobile friendly WordPress theme out of the box. This means that it will adapt and render nicely on any devices : desktops, laptops, tablets, smartphones. <br/>If you uncheck this box, this adaptive (or reponsive) behaviour will not be working anymore. In most of the cases, you won't need to disable this option, and it is not recommended."
 msgstr "Hueman はモバイルフレンドリーの WordPress テーマです。つまりこれは、デスクトップ、ノートパソコン、タブレット、スマートフォン等のあらゆるデバイスでうまく適応しレンダリングされることを意味します。<br/>このチェックを外すとこの適応性の機能は機能しなくなります。ほとんどの場合このオプションを無効化する必要はなく、推奨されません。"
 
-#: functions/class-utils-settings-map.php:443
+#: functions/class-utils-settings-map.php:445
 msgid "Enable the Mobile Friendly (or Responsive) layout"
 msgstr "モバイルフレンドリー（レスポンシブ）レイアウトを有効化"
 
-#: functions/class-utils-settings-map.php:411
+#: functions/class-utils-settings-map.php:413
 msgid "Comments on pages"
 msgstr "ページへのコメント"
 
-#: functions/class-utils-settings-map.php:408
+#: functions/class-utils-settings-map.php:410
 msgid "Pages Comments"
 msgstr "固定ページのコメント"
 
-#: functions/class-utils-settings-map.php:402
+#: functions/class-utils-settings-map.php:404
 msgid "Comments on posts"
 msgstr "投稿へのコメント"
 
-#: functions/class-utils-settings-map.php:399
+#: functions/class-utils-settings-map.php:401
 msgid "Posts Comments"
 msgstr "投稿コメント"
 
-#: functions/class-utils-settings-map.php:320
+#: functions/class-utils-settings-map.php:321
 msgid "Set the website background color"
 msgstr "サイト全体の背景色を設定"
 
-#: functions/class-utils-settings-map.php:319
+#: functions/class-utils-settings-map.php:320
 msgid "Body Background"
 msgstr "Body の背景色"
 
-#: functions/class-utils-settings-map.php:340
+#: functions/class-utils-settings-map.php:341
 msgid "Give your thumbnails and layout images rounded corners"
 msgstr "サムネイル画像や投稿画像などの全ての画像の角が丸くなります"
 
-#: functions/class-utils-settings-map.php:334
+#: functions/class-utils-settings-map.php:335
 msgid "Image Border Radius"
 msgstr "画像の角丸"
 
-#: functions/class-utils-settings-map.php:587
+#: functions/class-utils-settings-map.php:589
 msgid "Header Menu Background"
 msgstr "ヘッダーメニューの背景"
 
-#: functions/class-utils-settings-map.php:577
+#: functions/class-utils-settings-map.php:579
 msgid "Header Background"
 msgstr "ヘッダーの背景"
 
-#: functions/class-utils-settings-map.php:567
+#: functions/class-utils-settings-map.php:569
 msgid "Topbar Background"
 msgstr "トップバーの背景"
 
-#: functions/class-utils-settings-map.php:308
+#: functions/class-utils-settings-map.php:309
 msgid "Secondary Color"
 msgstr "サブカラー"
 
-#: functions/class-utils-settings-map.php:298
+#: functions/class-utils-settings-map.php:299
 msgid "Primary Color"
 msgstr "プライマリーカラー"
 
-#: functions/class-utils-settings-map.php:289
+#: functions/class-utils-settings-map.php:290
 msgid "Change left and right sidebars padding"
 msgstr "サイドバーの左右余白を変更"
 
-#: functions/class-utils-settings-map.php:287
+#: functions/class-utils-settings-map.php:288
 msgid "20px padding for widgets"
 msgstr "ウィジェットに 20px の余白"
 
-#: functions/class-utils-settings-map.php:286
+#: functions/class-utils-settings-map.php:287
 msgid "30px padding for widgets"
 msgstr "ウィジェットに 30px の余白"
 
-#: functions/class-utils-settings-map.php:282
+#: functions/class-utils-settings-map.php:283
 msgid "Sidebar Width"
 msgstr "サイドバーの幅"
 
-#: functions/class-utils-settings-map.php:269
+#: functions/class-utils-settings-map.php:270
 msgid "Max-width of the container. If you use 2 sidebars, your container should be at least 1200px.<br /><i>Note: For 720px content (default) use <strong>1380px</strong> for 2 sidebars and <strong>1120px</strong> for 1 sidebar. If you use a combination of both, try something inbetween.</i>"
 msgstr "コンテナの最大幅を指定します。2つのサイドバーを使う場合、最大幅は1200px以上である必要があります。<br /><i>注: 720pxのコンテンツ（デフォルト設定）の場合、2つのサイドバーでは<strong>1380px</strong>、1つのサイドバーでは<strong>1120px</strong>を使用します。両方の組み合わせを使用する場合はその間になにか挟んでみてください。</i>"
 
-#: functions/class-utils-settings-map.php:263
+#: functions/class-utils-settings-map.php:264
 msgid "Website Max-width"
 msgstr "ウェブサイトの最大幅"
 
-#: functions/class-utils-settings-map.php:245
+#: functions/class-utils-settings-map.php:246
 msgid "Select a font for your website"
 msgstr "サイトに使うフォントを選択"
 
-#: functions/class-utils-settings-map.php:240
+#: functions/class-utils-settings-map.php:241
 msgid "Font"
 msgstr "フォント"
 
-#: functions/class-utils-settings-map.php:277
+#: functions/class-utils-settings-map.php:278
 msgid "Use a boxed layout"
 msgstr "ボックスレイアウトを使用する"
 
-#: functions/class-utils-settings-map.php:274
+#: functions/class-utils-settings-map.php:275
 msgid "Boxed Layout"
 msgstr "ボックスレイアウト"
 
@@ -2045,13 +2049,9 @@ msgstr "色"
 msgid "Press return or enter to open this section"
 msgstr "リターンキーまたはエンターキーを押して、このセクションを開く"
 
-#: functions/admin/class-admin-update-notification.php:110
+#: functions/admin/class-admin-update-notification.php:111
 msgid "close"
 msgstr "閉じる"
-
-#: functions/admin/class-admin-update-notification.php:109
-msgid "I already know what's new thanks !"
-msgstr "最新情報について知っています．"
 
 #: functions/admin/class-admin-update-notification.php:101
 msgid "Read the latest release notes"
@@ -2144,6 +2144,10 @@ msgstr "詳細情報はこちら"
 #: functions/admin/class-admin-page.php:37
 msgid "<h2>As per the WordPress themes guidelines (%1$s), all the Hueman theme options have been moved to the %2$s.</h2>"
 msgstr "<h2>WordPress のテーマガイドライン (%1$s) に従って Hueman テーマオプションは %2$s に移動しました。</h2>"
+
+#: functions/admin/class-admin-update-notification.php:119
+msgid "the Hueman theme"
+msgstr "Hueman テーマ"
 
 #: functions/czr/czr-resources.php:539
 msgid "Your favicon is currently handled with an old method and will not be properly displayed on all devices. You might consider to re-upload your favicon with the new control below."
@@ -2368,12 +2372,12 @@ msgstr "別の検索をお試しください: "
 msgid "For the term"
 msgstr "次の検索結果を表示"
 
-#: functions/class-utils-settings-map.php:1769
+#: functions/class-utils-settings-map.php:1771
 #: option-tree/includes/ot-functions-option-types.php:235
 msgid "No Sidebars"
 msgstr "サイドバーなし"
 
-#: functions/class-utils-settings-map.php:1774
+#: functions/class-utils-settings-map.php:1776
 #: option-tree/includes/ot-functions-option-types.php:230
 msgid "Choose Sidebar"
 msgstr "サイドバーを選択"
@@ -2412,11 +2416,11 @@ msgstr "編集"
 msgid "Name"
 msgstr "名前"
 
-#: functions/class-utils-settings-map.php:1165
+#: functions/class-utils-settings-map.php:1167
 msgid "Right Sidebar"
 msgstr "右サイドバー"
 
-#: functions/class-utils-settings-map.php:1164
+#: functions/class-utils-settings-map.php:1166
 msgid "Left Sidebar"
 msgstr "左サイドバー"
 
@@ -2464,43 +2468,43 @@ msgstr "前の記事"
 msgid "Next story"
 msgstr "次の記事"
 
-#: functions/init-front.php:515
+#: functions/init-front.php:559
 msgid "Yearly Archive:"
 msgstr "年別アーカイブ:"
 
-#: functions/init-front.php:510
+#: functions/init-front.php:554
 msgid "Monthly Archive:"
 msgstr "月別アーカイブ:"
 
-#: functions/init-front.php:505
+#: functions/init-front.php:549
 msgid "Daily Archive:"
 msgstr "日付アーカイブ:"
 
-#: functions/init-front.php:490
+#: functions/init-front.php:534
 msgid "Tagged:"
 msgstr "タグ:"
 
-#: functions/init-front.php:485
+#: functions/init-front.php:529
 msgid "Category:"
 msgstr "カテゴリー:"
 
-#: functions/init-front.php:471
+#: functions/init-front.php:515
 msgid "Author:"
 msgstr "作成者:"
 
-#: functions/init-front.php:459
+#: functions/init-front.php:503
 msgid "Page not found!"
 msgstr "ページが見つかりません。"
 
-#: functions/init-front.php:458
+#: functions/init-front.php:502
 msgid "Error 404."
 msgstr "エラー404"
 
-#: functions/init-front.php:447
+#: functions/init-front.php:491
 msgid "Search results"
 msgstr "検索結果"
 
-#: functions/init-front.php:445
+#: functions/init-front.php:489
 msgid "Search result"
 msgstr "検索結果"
 
@@ -2734,7 +2738,7 @@ msgstr "All Rights Reserved."
 msgid "Pingbacks"
 msgstr "ピンバック"
 
-#: comments.php:10 functions/class-utils-settings-map.php:1582
+#: comments.php:10 functions/class-utils-settings-map.php:1584
 msgid "Comments"
 msgstr "コメント"
 

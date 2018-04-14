@@ -92,12 +92,31 @@ $this->renderInline("tutorial-free");
                         url: NextendAjaxHelper.makeAjaxUrl(window.location.href),
                         data: $('#smartslider-form').serialize(),
                         dataType: 'json'
-                    }).done(function () {
+                    }).done(function (response) {
                         var heading = $('.n2-heading-bar .n2-heading');
                         $('.n2-heading-bar .n2-heading').html($('#slidertitle').val() + '<span>' + heading.find('span').html() + '</span>');
                         $('dt.n2-ss-slide2-list > a > span').eq(0).html($('#slidertitle').val());
                         nextend.askToSave = true;
                         n2('#smartslider-form').trigger('saved');
+
+                        if(response && response.data && response.data.changedFields){
+                        	for(var k in response.data.changedFields){
+                        		$('#'+k).val(response.data.changedFields[k]);
+                            }
+                            if(typeof response.data.changedFields['slideralias'] !== 'undefined'){
+                        	    var newAlias = response.data.changedFields[k],
+                                    $aliasCode = $('.n2-ss-slider-shortcode-alias');
+                        	    if(!$aliasCode.length){
+                                    $aliasCode = $('<div class="n2-code n2-ss-slider-shortcode-alias" onclick="return selectText(this);"></div>').appendTo($('.n2-ss-slider-shortcode-id').parent());
+                                }
+
+                                if(newAlias){
+									$aliasCode.html('[smartslider3 alias="'+newAlias+'"]');
+                                }else{
+									$aliasCode.remove();
+                                }
+                            }
+                        }
                     });
                 }
             });

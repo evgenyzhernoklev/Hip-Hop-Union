@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WP Statistics - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-11-28 11:47:13+0000\n"
+"PO-Revision-Date: 2018-02-26 14:04:56+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,123 @@ msgstr ""
 "X-Generator: GlotPress/2.4.0-alpha\n"
 "Language: ru\n"
 "Project-Id-Version: Plugins - WP Statistics - Stable (latest release)\n"
+
+#: includes/classes/class-wp-statistics-frontend.php:111
+msgid "Hits: %s"
+msgstr "Просмотров: %s"
+
+#: includes/templates/welcomes/last-version.php:140
+msgid "External Libraries"
+msgstr "Внешние библиотеки"
+
+#: includes/templates/welcomes/last-version.php:134
+msgid "Pedro Mendonça"
+msgstr "Pedro Mendonça"
+
+#: includes/templates/welcomes/last-version.php:129
+msgid "Farhad Sakhaei"
+msgstr "Farhad Sakhaei"
+
+#: includes/templates/welcomes/last-version.php:124
+msgid "Greg Ross"
+msgstr "Greg Ross"
+
+#: includes/templates/welcomes/last-version.php:116
+msgid "Mostafa Soufi"
+msgstr "Mostafa Soufi"
+
+#: includes/templates/welcomes/last-version.php:112
+msgid "Project Leaders"
+msgstr "Лидеры проекта"
+
+#: includes/templates/welcomes/last-version.php:67
+msgid "New Add-Ons!"
+msgstr "Новые дополнения!"
+
+#: includes/templates/welcomes/last-version.php:18
+msgid "You can see the new changes of WP-Statistics on this page."
+msgstr "Вы можете ознакомиться со новыми изменениями WP-Statistics на этой странице."
+
+#: includes/templates/welcomes/last-version.php:17
+msgid "Welcome to the WP-Statistics!"
+msgstr "Добро пожаловать в WP-Statistics!"
+
+#: includes/templates/welcomes/last-version.php:12
+msgid "Changelog"
+msgstr "Журнал изменений"
+
+#: includes/templates/welcomes/last-version.php:11
+msgid "Credits"
+msgstr "Благодарности"
+
+#: includes/templates/welcomes/last-version.php:6
+msgid "Version %s"
+msgstr "Версия %s"
+
+#: includes/templates/welcomes/last-version.php:5
+msgid "Thank you for updating to the latest version!"
+msgstr "Спасибо за обновление до последней версии!"
+
+#: includes/templates/welcomes/last-version.php:3
+msgid "Welcome to WP-Statistics&nbsp;%s"
+msgstr "Добро пожаловать в WP-Statistics&nbsp;%s"
+
+#: includes/settings/tabs/wps-general.php:328
+msgid "After Content"
+msgstr "После содержимого"
+
+#: includes/settings/tabs/wps-general.php:323
+msgid "Before Content"
+msgstr "Над содержимым"
+
+#: includes/settings/tabs/wps-general.php:314
+msgid "Display position"
+msgstr "Место отображения"
+
+#: includes/settings/tabs/wps-general.php:294
+msgid "Show hits in posts/pages in the site"
+msgstr "Показывать количество просмотров на страницах/записях сайта"
+
+#: includes/settings/tabs/wps-general.php:218
+msgid "Pages and Posts"
+msgstr "Страницы и записи"
+
+#: includes/log/page-statistics.php:58
+msgid "Select Page"
+msgstr "Выбор страницы"
+
+#. Author URI of the plugin/theme
+msgid "http://veronalabs.com/"
+msgstr "http://veronalabs.com/"
+
+#: includes/log/widgets/searched.phrases.php:13
+msgid "Phrase"
+msgstr "Фраза"
+
+#: includes/log/searched-phrases.php:119
+msgid "Searched Phrase: %s"
+msgstr "Поисковая фраза: %s"
+
+#: includes/log/searched-phrases.php:74 includes/log/searched-phrases.php:121
+msgid "Top Searched Phrases"
+msgstr "Самые частые поисковые фразы"
+
+#: includes/classes/class-wp-statistics-network-admin.php:90
+msgid "Searched Phrases"
+msgstr "Поисковые фразы"
+
+#. Author of the plugin/theme
+msgid "Verona Labs"
+msgstr "Verona Labs"
+
+#: includes/classes/class-wp-statistics-admin-pages.php:48
+#: includes/classes/class-wp-statistics-dashboard.php:190
+msgid "Top Searched Phrases (30 Days)"
+msgstr "Самые частые фразы поиска (за 30 дней)"
+
+#. Description of the plugin/theme
+msgid "Complete WordPress Analytics and Statistics for your site!"
+msgstr "Полная аналитика и статистика для вашего сайта на WordPress!"
 
 #: includes/templates/postbox.php:4
 msgid "Subscribe to Newsletter"
@@ -31,7 +148,7 @@ msgstr "Подпишитесь на нашу рассылку, чтобы пол
 msgid "IP location services provided by data created by %s."
 msgstr "Услуги определения местоположения, предоставляемые данными, созданными %s."
 
-#: includes/log/widgets/about.php:39 includes/settings/tabs/wps-about.php:16
+#: includes/settings/tabs/wps-about.php:17
 msgid "This product includes GeoLite2 data created by %s."
 msgstr "Этот продукт включает в себя сведения GeoLite2, созданные %s."
 
@@ -39,13 +156,9 @@ msgstr "Этот продукт включает в себя сведения Ge
 msgid "Platforms"
 msgstr "Платформы"
 
-#: includes/classes/class-wp-statistics-updates.php:67
+#: includes/classes/class-wp-statistics-updates.php:85
 msgid "Error setting permissions of the GeoIP database directory, make sure your web server has permissions to write to directories in : %s"
 msgstr "Ошибка при настройке разрешений в каталоге базы данных GeoIP, убедитесь, что ваш веб-сервер имеет права на запись в каталоги: %s"
-
-#: includes/classes/class-wp-statistics-updates.php:26
-msgid "Error the download_url() or gzopen() functions do not exist!"
-msgstr "Ошибка в download_url(), либо функция gzopen() не существует!"
 
 #: includes/classes/class-wp-statistics-admin-pages.php:170
 msgid "Add-On deactivated."
@@ -55,60 +168,60 @@ msgstr "Дополнение деактивировано."
 msgid "Add-On activated."
 msgstr "Дополнение активировано."
 
-#: includes/classes/class-wp-statistics-admin.php:655
-#: includes/classes/class-wp-statistics-admin.php:656
+#: includes/classes/class-wp-statistics-admin.php:548
+#: includes/classes/class-wp-statistics-admin.php:549
 msgid "Add-Ons"
 msgstr "Дополнения"
 
-#: includes/classes/class-wp-statistics-admin.php:592
-#: includes/classes/class-wp-statistics-admin.php:593
+#: includes/classes/class-wp-statistics-admin.php:485
+#: includes/classes/class-wp-statistics-admin.php:486
 msgid "Authors"
 msgstr "Авторы"
 
-#: includes/classes/class-wp-statistics-admin.php:582
-#: includes/classes/class-wp-statistics-admin.php:583
+#: includes/classes/class-wp-statistics-admin.php:475
+#: includes/classes/class-wp-statistics-admin.php:476
 msgid "Tags"
 msgstr "Метки"
 
-#: includes/classes/class-wp-statistics-admin.php:572
-#: includes/classes/class-wp-statistics-admin.php:573
+#: includes/classes/class-wp-statistics-admin.php:465
+#: includes/classes/class-wp-statistics-admin.php:466
 msgid "Categories"
 msgstr "Рубрики"
 
-#: includes/classes/class-wp-statistics-admin.php:300
+#: includes/classes/class-wp-statistics-admin.php:193
 msgid "Database updates are required, please go to %soptimization page%s and update the following: %s"
 msgstr "Требуется обновление базы данных, перейдите на %sстраницу оптимизации%s и обновите следующее: %s"
 
-#: includes/classes/class-wp-statistics.php:1286
+#: includes/classes/class-wp-statistics.php:1401
 msgid "Please contact your hosting provider to upgrade to a supported version or disable WP Statistics to remove this message."
 msgstr "Пожалуйста, свяжитесь с вашим провайдером для обновления до поддерживаемой версии или отключите статистику WP, чтобы удалить это сообщение."
 
-#: includes/classes/class-wp-statistics.php:1278
+#: includes/classes/class-wp-statistics.php:1393
 msgid "WP Statistics has detected PHP version %s which is unsupported, WP Statistics requires PHP Version %s or higher!"
 msgstr "Плагин обнаружил не поддерживаемую PHP версию %s. Для плагина WP Statistics требуется PHP версии %s или выше!"
 
-#: includes/classes/class-wp-statistics.php:1269
+#: includes/classes/class-wp-statistics.php:1384
 msgid "&#151; You are running an unsupported version of PHP."
 msgstr "&#151; Вы используете не поддерживаемую версию PHP."
 
-#: includes/classes/class-wp-statistics.php:1266
+#: includes/classes/class-wp-statistics.php:1381
 msgid "WP Statistics Disabled"
 msgstr "WP Statistics отключен"
 
 #: includes/classes/class-wp-statistics-widget.php:82
 #: includes/classes/class-wp-statistics-widget.php:310
 msgid "Last 365 Days Visits"
-msgstr "Визитов за последние 365 дней"
+msgstr "Просмотров за последние 365 дней"
 
 #: includes/classes/class-wp-statistics-widget.php:75
 #: includes/classes/class-wp-statistics-widget.php:303
 msgid "Last 30 Days Visits"
-msgstr "Визитов за последние 30 дней"
+msgstr "Просмотров за последние 30 дней"
 
 #: includes/classes/class-wp-statistics-widget.php:68
 #: includes/classes/class-wp-statistics-widget.php:296
 msgid "Last 7 Days Visits"
-msgstr "Визитов за последние 7 дней"
+msgstr "Просмотров за последние 7 дней"
 
 #: includes/templates/plugins.php:95
 msgid "Submit Add-on"
@@ -147,6 +260,7 @@ msgid "Version:"
 msgstr "Версия:"
 
 #: includes/templates/plugins.php:7
+#: includes/templates/welcomes/last-version.php:68
 msgid "These extensions add functionality to your WP-Statistics."
 msgstr "Эти дополнения расширяют функциональность WP-Statistics."
 
@@ -155,7 +269,7 @@ msgid "Extensions for WP-Statistics"
 msgstr "Дополнения для WP-Statistics"
 
 #: includes/settings/tabs/wps-removal.php:105
-msgid "Reset the plugin options to the defaults.  This will remove all user and global settings but will keep all other data.  This action cannot be undone.  Note: For multi-site installs this will reset all sites to the defaults."
+msgid "Reset the plugin options to the defaults. This will remove all user and global settings but will keep all other data. This action cannot be undone. Note: For multisite installs this will reset all sites to the defaults."
 msgstr "Сбросьте параметры плагина до значений по умолчанию. Это приведет к удалению всех пользовательских и глобальных параметров, но сохранит все остальные данные. Это действие не может быть отменено. Примечание: Для мультисайтовых установок это приведет к сбросу всех сайтов на значения по умолчанию."
 
 #: includes/settings/tabs/wps-removal.php:103
@@ -166,22 +280,22 @@ msgstr "Сброс"
 msgid "Reset options"
 msgstr "Сбросить настройки"
 
-#: includes/classes/class-wp-statistics-admin.php:745
 #: includes/classes/class-wp-statistics-widget.php:40
 #: includes/classes/class-wp-statistics-widget.php:268
+#: includes/classes/class-wp-statistics.php:1481
 #: includes/settings/tabs/wps-notifications.php:289
 msgid "Today's Visits"
 msgstr "Визитов сегодня"
 
-#: includes/classes/class-wp-statistics-admin.php:737
 #: includes/classes/class-wp-statistics-widget.php:47
 #: includes/classes/class-wp-statistics-widget.php:275
+#: includes/classes/class-wp-statistics.php:1473
 #: includes/settings/tabs/wps-notifications.php:287
 msgid "Today's Visitors"
 msgstr "Посетителей сегодня"
 
-#: includes/classes/class-wp-statistics-admin.php:725
-#: includes/settings/tabs/wps-general.php:99
+#: includes/classes/class-wp-statistics.php:1461
+#: includes/settings/tabs/wps-general.php:101
 #: includes/settings/tabs/wps-notifications.php:285
 msgid "Online User"
 msgstr "Пользователей онлайн"
@@ -223,39 +337,39 @@ msgstr "Список IP-адресов и масок подсети (по одн
 msgid "See the %sWordPress Roles and Capabilities page%s for details on capability levels."
 msgstr "Посетите %sстраницу Роли и Возможности WordPress%s для получения подробной информации об уровнях доступа."
 
-#: includes/settings/tabs/wps-about.php:151
+#: includes/settings/tabs/wps-about.php:152
 msgid "Then please open a new thread on the %sWordPress.org support forum%s and we'll respond as soon as possible."
 msgstr "Затем, пожалуйста, откройте новую тему %sфоруме поддержки WordPress.org %s, и мы ответим как можно скорее."
 
-#: includes/settings/tabs/wps-about.php:143
+#: includes/settings/tabs/wps-about.php:144
 msgid "Did you view the source for the page and check for any fatal errors?"
 msgstr "Просматривали ли вы исходный код страницы и проверяли на какие-либо фатальные ошибки?"
 
-#: includes/settings/tabs/wps-about.php:138
+#: includes/settings/tabs/wps-about.php:139
 msgid "Are you getting a blank or incomplete page displayed in your browser?"
 msgstr "Вы получаете пустую или неполную страницу, отображаемую в браузере?"
 
-#: includes/settings/tabs/wps-about.php:116
+#: includes/settings/tabs/wps-about.php:117
 msgid "Have you search the %ssupport forum%s for a similar issue?"
 msgstr "Вы искали в %sфорумах поддержки%s аналогичную проблему?"
 
-#: includes/settings/tabs/wps-about.php:111
+#: includes/settings/tabs/wps-about.php:112
 msgid "Documentation"
 msgstr "Документация"
 
-#: includes/settings/tabs/wps-about.php:109
+#: includes/settings/tabs/wps-about.php:110
 msgid "Have you read the %sdocumentation%s?"
 msgstr "Вы читали %sdocumentation%s?"
 
-#: includes/settings/tabs/wps-about.php:102
+#: includes/settings/tabs/wps-about.php:103
 msgid "Have you read the %sFAQs%s?"
 msgstr "Вы читали %sFAQs%s?"
 
-#: includes/settings/tabs/wps-about.php:80
+#: includes/settings/tabs/wps-about.php:81
 msgid "WP Statistics supports internationalization. Please visit %sWP Statistics translations page%s to help translation."
 msgstr "WP Statistics поддерживает интернационализацию. Пожалуйста, посетите %sстраницу перевода WP Statistics%s, чтобы помочь переводу."
 
-#: includes/settings/tabs/wps-about.php:64
+#: includes/settings/tabs/wps-about.php:65
 msgid "Thanks for installing WP Statistics, we encourage you to submit a %srating and review%s over at WordPress.org. Your feedback is greatly appreciated!"
 msgstr "Спасибо за установку WP Statistics, мы рекомендуем вам добавить %sрейтинг и обзор%s на WordPress.org. Ваше мнение очень ценно!"
 
@@ -295,15 +409,15 @@ msgstr "PHP IPv6 включен"
 msgid "Bytes"
 msgstr "Байт"
 
-#: includes/log/widgets/summary.php:126
+#: includes/log/widgets/summary.php:125
 msgid "Last 365 Days"
 msgstr " Последние 365 дней"
 
-#: includes/log/widgets/summary.php:104
+#: includes/log/widgets/summary.php:103
 msgid "Last 30 Days"
 msgstr "Последние 30 дней"
 
-#: includes/log/widgets/summary.php:82
+#: includes/log/widgets/summary.php:81
 msgid "Last 7 Days"
 msgstr "Последние 7 дней"
 
@@ -358,23 +472,23 @@ msgstr "Страница %1$s из %2$s"
 msgid "AJAX Request"
 msgstr "AJAX запрос"
 
-#: includes/log/categories.php:210
+#: includes/log/categories.php:212
 msgid "Category Posts Sorted by Hits"
 msgstr "Записи рубрики отсортированы по просмотрам"
 
-#: includes/log/categories.php:176
+#: includes/log/categories.php:178
 msgid "Number of posts in category"
 msgstr "Количество записей в рубрике"
 
-#: includes/log/categories.php:157
+#: includes/log/categories.php:159
 msgid "Category Statistics Summary"
 msgstr "Общая статистика рубрики"
 
-#: includes/log/categories.php:95
+#: includes/log/categories.php:97
 msgid "Category Statistics Chart"
 msgstr "Диаграмма статистики по рубрикам"
 
-#: includes/log/categories.php:35
+#: includes/log/categories.php:37
 msgid "Select Category"
 msgstr "Выберите рубрику"
 
@@ -382,7 +496,7 @@ msgstr "Выберите рубрику"
 msgid "Category Statistics"
 msgstr "Статистика рубрики"
 
-#: includes/log/authors.php:241 includes/log/categories.php:224
+#: includes/log/authors.php:241 includes/log/categories.php:226
 #: includes/log/tags.php:237
 msgid "Post Title"
 msgstr "Заголовок записи"
@@ -391,12 +505,12 @@ msgstr "Заголовок записи"
 msgid "Author Posts Sorted by Hits"
 msgstr "Авторы записей отсортированы по показам"
 
-#: includes/log/authors.php:205 includes/log/categories.php:188
+#: includes/log/authors.php:205 includes/log/categories.php:190
 #: includes/log/tags.php:201
 msgid "All Time Visits Total"
-msgstr "Визитов за все время"
+msgstr "Просмотров за все время"
 
-#: includes/log/authors.php:199 includes/log/categories.php:182
+#: includes/log/authors.php:199 includes/log/categories.php:184
 #: includes/log/tags.php:195
 msgid "Chart Visits Total"
 msgstr "Всего посещений"
@@ -405,7 +519,7 @@ msgstr "Всего посещений"
 msgid "Number of posts by author"
 msgstr "Количество записей по автору"
 
-#: includes/log/authors.php:189 includes/log/categories.php:172
+#: includes/log/authors.php:189 includes/log/categories.php:174
 #: includes/log/tags.php:185 includes/log/widgets/searched.phrases.php:14
 msgid "Count"
 msgstr "Подсчёт"
@@ -418,8 +532,8 @@ msgstr "Общая статистика по автору"
 msgid "Author Statistics Chart"
 msgstr "Диаграмма статистики по автору"
 
-#: includes/log/authors.php:60 includes/log/categories.php:43
-#: includes/log/tags.php:57
+#: includes/log/authors.php:60 includes/log/categories.php:45
+#: includes/log/page-statistics.php:60 includes/log/tags.php:57
 msgid "Select"
 msgstr "Выбрать"
 
@@ -434,12 +548,12 @@ msgstr "Статистика автора"
 #: includes/log/all-browsers.php:89 includes/log/all-browsers.php:144
 #: includes/log/all-browsers.php:270 includes/log/authors.php:115
 #: includes/log/authors.php:177 includes/log/authors.php:230
-#: includes/log/categories.php:98 includes/log/categories.php:160
-#: includes/log/categories.php:213 includes/log/exclusions.php:181
-#: includes/log/exclusions.php:249 includes/log/hit-statistics.php:61
-#: includes/log/hit-statistics.php:135 includes/log/last-search.php:67
+#: includes/log/categories.php:100 includes/log/categories.php:162
+#: includes/log/categories.php:215 includes/log/exclusions.php:181
+#: includes/log/exclusions.php:249 includes/log/hit-statistics.php:62
+#: includes/log/hit-statistics.php:136 includes/log/last-search.php:67
 #: includes/log/last-visitor.php:104 includes/log/online.php:20
-#: includes/log/page-statistics.php:60 includes/log/search-statistics.php:63
+#: includes/log/page-statistics.php:73 includes/log/search-statistics.php:63
 #: includes/log/searched-phrases.php:125 includes/log/tags.php:111
 #: includes/log/tags.php:173 includes/log/tags.php:226
 #: includes/log/top-countries.php:40 includes/log/top-pages.php:62
@@ -453,40 +567,40 @@ msgctxt "Country"
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: includes/classes/class-wp-statistics.php:968
-#: includes/classes/class-wp-statistics.php:1002
+#: includes/classes/class-wp-statistics.php:1082
+#: includes/classes/class-wp-statistics.php:1116
 msgctxt "Search Engine"
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: includes/classes/class-wp-statistics.php:739
-#: includes/classes/class-wp-statistics.php:751
+#: includes/classes/class-wp-statistics.php:852
+#: includes/classes/class-wp-statistics.php:864
 msgctxt "Version"
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: includes/classes/class-wp-statistics.php:738
-#: includes/classes/class-wp-statistics.php:748
+#: includes/classes/class-wp-statistics.php:851
+#: includes/classes/class-wp-statistics.php:861
 msgctxt "Platform"
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: includes/classes/class-wp-statistics.php:737
-#: includes/classes/class-wp-statistics.php:745
+#: includes/classes/class-wp-statistics.php:850
+#: includes/classes/class-wp-statistics.php:858
 msgctxt "Browser"
 msgid "Unknown"
 msgstr "Неизвестно"
 
 #: includes/classes/class-wp-statistics-dashboard.php:268
-#: includes/classes/class-wp-statistics-editor.php:123 includes/log/log.php:86
+#: includes/classes/class-wp-statistics-editor.php:123 includes/log/log.php:87
 msgid "More Details"
 msgstr "Подробнее"
 
 #: includes/classes/class-wp-statistics-dashboard.php:264
 #: includes/classes/class-wp-statistics-dashboard.php:274
 #: includes/classes/class-wp-statistics-editor.php:119
-#: includes/classes/class-wp-statistics-editor.php:129 includes/log/log.php:82
-#: includes/log/log.php:91
+#: includes/classes/class-wp-statistics-editor.php:129 includes/log/log.php:83
+#: includes/log/log.php:92
 msgid "Reload"
 msgstr "Перезагрузить"
 
@@ -496,7 +610,7 @@ msgid "Reloading..."
 msgstr "Перезагрузка..."
 
 #: includes/classes/class-wp-statistics-dashboard.php:358
-#: includes/classes/class-wp-statistics-editor.php:90 includes/log/log.php:52
+#: includes/classes/class-wp-statistics-editor.php:90 includes/log/log.php:53
 msgid "Loading..."
 msgstr "Загрузка..."
 
@@ -508,51 +622,39 @@ msgstr "ОШИБКА: Виджет не найден!"
 msgid "No matching widget found!"
 msgstr "Не найдено соответствующих виджетов!"
 
-#: includes/classes/class-wp-statistics-updates.php:464
+#. Plugin URI of the plugin/theme
+msgid "https://wp-statistics.com/"
+msgstr "https://wp-statistics.com/"
+
+#: includes/classes/class-wp-statistics-updates.php:251
 msgid "Browscap.ini update on"
 msgstr "Browscap.ini обновлен"
 
-#: includes/classes/class-wp-statistics-updates.php:446
-msgid "browscap already at current version!"
-msgstr "данные о возможностях браузера уже текущей версии!"
-
-#: includes/classes/class-wp-statistics-updates.php:404
-msgid "browscap database updated failed!  New browscap.ini is mis-identifing user agents as crawlers, reverting to previous browscap.ini."
-msgstr "обновление базы данных возможностей браузера не удалось! Новый файл browscap.ini имеет неверную структуру юзерагентов, возврат к предыдущей версии browscap.ini."
-
-#: includes/classes/class-wp-statistics-updates.php:391
-msgid "browscap database updated failed!  Cache file too large, reverting to previous browscap.ini."
-msgstr "обновление базы данных возможностей браузера не удалось! Файл кеша слишком большой, возврат к предыдущей версии browscap.ini."
-
-#: includes/classes/class-wp-statistics-updates.php:380
-msgid "browscap database updated successfully!"
+#: includes/classes/class-wp-statistics-updates.php:232
+msgid "Browscap database updated successfully!"
 msgstr "база данных возможностей браузера успешно обновлена!"
 
-#: includes/classes/class-wp-statistics-updates.php:236
-msgid "Error downloading browscap database from: %s - %s"
-msgstr "Ошибка загрузки базы данных возможностей браузера из: %s - %s"
-
-#: includes/classes/class-wp-statistics-updates.php:156
+#: includes/classes/class-wp-statistics-updates.php:180
 msgid "GeoIP update on"
 msgstr "GeoIP обновлен"
 
-#: includes/classes/class-wp-statistics-updates.php:124
+#: includes/classes/class-wp-statistics-updates.php:148
 msgid "GeoIP Database updated successfully!"
 msgstr "База данных GeoIP успешно обновлена!"
 
-#: includes/classes/class-wp-statistics-updates.php:106
+#: includes/classes/class-wp-statistics-updates.php:130
 msgid "Error could not open destination GeoIP database for writing %s"
 msgstr "Ошибка: не удалось открыть целевую базу данных GeoIP для записи %s"
 
-#: includes/classes/class-wp-statistics-updates.php:97
+#: includes/classes/class-wp-statistics-updates.php:119
 msgid "Error could not open downloaded GeoIP database for reading: %s"
 msgstr "Ошибка: не удалось открыть загруженную базу данных GeoIP для чтения: %s"
 
-#: includes/classes/class-wp-statistics-updates.php:83
+#: includes/classes/class-wp-statistics-updates.php:103
 msgid "Error downloading GeoIP database from: %s - %s"
 msgstr "Ошибка при загрузке GeoIP базы данных: %s - %s"
 
-#: includes/classes/class-wp-statistics-updates.php:52
+#: includes/classes/class-wp-statistics-updates.php:70
 msgid "Error creating GeoIP database directory, make sure your web server has permissions to create directories in : %s"
 msgstr "Ошибка при создании директории базы данных GeoIP, убедитесь, что ваш вебсервер имеет достаточно прав на создание директорий в : %s"
 
@@ -566,7 +668,7 @@ msgstr "Следующие таблицы плагина не существую
 msgid "You do not have sufficient permissions to access this page."
 msgstr "У вас нет достаточных прав для доступа к этой странице."
 
-#: includes/classes/class-wp-statistics-admin.php:771
+#: includes/classes/class-wp-statistics.php:1507
 msgid "View Stats"
 msgstr "Статистика"
 
@@ -578,115 +680,115 @@ msgstr "Параметры"
 msgid "Site"
 msgstr "Сайт"
 
-#: includes/classes/class-wp-statistics-admin.php:639
-#: includes/classes/class-wp-statistics-admin.php:640
+#: includes/classes/class-wp-statistics-admin.php:532
+#: includes/classes/class-wp-statistics-admin.php:533
 #: includes/classes/class-wp-statistics-network-admin.php:98
 #: includes/optimization/wps-optimization.php:242
 msgid "Optimization"
 msgstr "Оптимизация"
 
-#: includes/classes/class-wp-statistics-admin.php:612
-#: includes/classes/class-wp-statistics-admin.php:613
+#: includes/classes/class-wp-statistics-admin.php:505
+#: includes/classes/class-wp-statistics-admin.php:506
 #: includes/classes/class-wp-statistics-network-admin.php:96
 msgid "Top Visitors Today"
 msgstr "Топ посетителей за сегодня"
 
-#: includes/classes/class-wp-statistics-admin.php:512
-#: includes/classes/class-wp-statistics-admin.php:513
+#: includes/classes/class-wp-statistics-admin.php:405
+#: includes/classes/class-wp-statistics-admin.php:406
 #: includes/classes/class-wp-statistics-network-admin.php:89
 msgid "Search Words"
 msgstr "Поисковые слова"
 
-#: includes/classes/class-wp-statistics-admin.php:502
-#: includes/classes/class-wp-statistics-admin.php:503
+#: includes/classes/class-wp-statistics-admin.php:395
+#: includes/classes/class-wp-statistics-admin.php:396
 #: includes/classes/class-wp-statistics-network-admin.php:88
 msgid "Referrers"
 msgstr "Источники"
 
-#: includes/classes/class-wp-statistics-admin.php:492
-#: includes/classes/class-wp-statistics-admin.php:493
+#: includes/classes/class-wp-statistics-admin.php:385
+#: includes/classes/class-wp-statistics-admin.php:386
 #: includes/classes/class-wp-statistics-network-admin.php:87
 msgid "Online"
 msgstr "Онлайн"
 
-#: includes/classes/class-wp-statistics-admin.php:473
-#: includes/classes/class-wp-statistics-admin.php:474
+#: includes/classes/class-wp-statistics-admin.php:366
+#: includes/classes/class-wp-statistics-admin.php:367
 #: includes/classes/class-wp-statistics-network-admin.php:35
 #: includes/classes/class-wp-statistics-network-admin.php:36
 #: includes/classes/class-wp-statistics-network-admin.php:85
 msgid "Overview"
 msgstr "Обзор"
 
-#: includes/classes/class-wp-statistics-admin.php:436
+#: includes/classes/class-wp-statistics-admin.php:329
 msgid "WP Statistics - Hits"
 msgstr "WP Statistics - Просмотры"
 
-#: includes/classes/class-wp-statistics-admin.php:362
+#: includes/classes/class-wp-statistics-admin.php:255
 msgid "Rate this plugin"
 msgstr "Оценить этот плагин"
 
-#: includes/classes/class-wp-statistics-admin.php:359
+#: includes/classes/class-wp-statistics-admin.php:252
 msgid "Click here to rate and review this plugin on WordPress.org"
 msgstr "Нажмите здесь, чтобы оценить и оставить свой отзыв о плагине на WordPress.org"
 
-#: includes/classes/class-wp-statistics-admin.php:356
+#: includes/classes/class-wp-statistics-admin.php:249
 msgid "Visit WordPress.org page"
 msgstr "Посетите страницы WordPress.org"
 
-#: includes/classes/class-wp-statistics-admin.php:353
+#: includes/classes/class-wp-statistics-admin.php:246
 msgid "Click here to visit the plugin on WordPress.org"
 msgstr "Нажмите здесь, чтобы посетить на WordPress.org плагин"
 
-#: includes/classes/class-wp-statistics-admin.php:331
-#: includes/classes/class-wp-statistics-admin.php:647
-#: includes/classes/class-wp-statistics-admin.php:648
+#: includes/classes/class-wp-statistics-admin.php:224
+#: includes/classes/class-wp-statistics-admin.php:540
+#: includes/classes/class-wp-statistics-admin.php:541
 #: includes/classes/class-wp-statistics-network-admin.php:99
 #: includes/settings/wps-settings.php:23
 msgid "Settings"
 msgstr "Настройки"
 
-#: includes/classes/class-wp-statistics-frontend.php:100
+#: includes/classes/class-wp-statistics-admin.php:665
 msgid "WP Statistics %s installed on"
 msgstr "WP Statistics %s установлен"
 
-#: includes/classes/class-wp-statistics-admin.php:289
+#: includes/classes/class-wp-statistics-admin.php:182
 msgid "visit database index"
 msgstr "индекс таблицы посещений"
 
-#: includes/classes/class-wp-statistics-admin.php:288
+#: includes/classes/class-wp-statistics-admin.php:181
 msgid "countries database index"
 msgstr "индекс таблицы стран"
 
-#: includes/classes/class-wp-statistics-admin.php:279
+#: includes/classes/class-wp-statistics-admin.php:172
 msgid "search table"
 msgstr "таблица поисковых запросов"
 
-#: includes/classes/class-wp-statistics-admin.php:267
-#: includes/classes/class-wp-statistics-admin.php:306
+#: includes/classes/class-wp-statistics-admin.php:160
+#: includes/classes/class-wp-statistics-admin.php:199
 msgid ","
 msgstr ","
 
-#: includes/classes/class-wp-statistics-admin.php:261
+#: includes/classes/class-wp-statistics-admin.php:154
 msgid "The following features are disabled, please go to %ssettings page%s and enable them: %s"
 msgstr "Следующие функции отключены, перейдите на %sстраницу настроек%s и включите их: %s"
 
-#: includes/classes/class-wp-statistics-admin.php:256
+#: includes/classes/class-wp-statistics-admin.php:149
 msgid "geoip collection"
 msgstr "сбор geoip данных"
 
-#: includes/classes/class-wp-statistics-admin.php:253
+#: includes/classes/class-wp-statistics-admin.php:146
 msgid "visitor tracking"
 msgstr "отслеживание посетителей"
 
-#: includes/classes/class-wp-statistics-admin.php:250
+#: includes/classes/class-wp-statistics-admin.php:143
 msgid "hit tracking"
 msgstr "отслеживание переходов"
 
-#: includes/classes/class-wp-statistics-admin.php:247
+#: includes/classes/class-wp-statistics-admin.php:140
 msgid "online user tracking"
 msgstr "отслеживание пользователей на сайте"
 
-#: includes/classes/class-wp-statistics-admin.php:213
+#: includes/classes/class-wp-statistics-admin.php:107
 msgid "WP Statistics has been removed, please disable and delete it."
 msgstr "Плагин WP-Statistics был удален, пожалуйста отключите его и удалите."
 
@@ -755,8 +857,8 @@ msgstr "Общее количество просмотров"
 msgid "Show site stats in sidebar."
 msgstr "Показать статистику сайта в боковой панели."
 
-#: includes/classes/class-wp-statistics-admin.php:462
-#: includes/classes/class-wp-statistics-admin.php:463
+#: includes/classes/class-wp-statistics-admin.php:355
+#: includes/classes/class-wp-statistics-admin.php:356
 #: includes/classes/class-wp-statistics-network-admin.php:24
 #: includes/classes/class-wp-statistics-network-admin.php:25
 #: includes/classes/class-wp-statistics-widget.php:11
@@ -971,7 +1073,7 @@ msgstr "Нет"
 #: includes/classes/class-wp-statistics-widget.php:317
 #: includes/settings/tabs/wps-notifications.php:297
 msgid "Total Visits"
-msgstr "Всего визитов"
+msgstr "Всего просмотров"
 
 #: includes/classes/class-wp-statistics-widget.php:96
 #: includes/classes/class-wp-statistics-widget.php:324
@@ -979,16 +1081,16 @@ msgstr "Всего визитов"
 msgid "Total Visitors"
 msgstr "Всего посетителей"
 
-#: includes/classes/class-wp-statistics-admin.php:763
 #: includes/classes/class-wp-statistics-widget.php:54
 #: includes/classes/class-wp-statistics-widget.php:282
+#: includes/classes/class-wp-statistics.php:1499
 #: includes/settings/tabs/wps-notifications.php:293
 msgid "Yesterday's Visits"
-msgstr "Вчерашние визиты"
+msgstr "Вчерашние просмотры"
 
-#: includes/classes/class-wp-statistics-admin.php:753
 #: includes/classes/class-wp-statistics-widget.php:61
 #: includes/classes/class-wp-statistics-widget.php:289
+#: includes/classes/class-wp-statistics.php:1489
 #: includes/settings/tabs/wps-notifications.php:291
 msgid "Yesterday's Visitors"
 msgstr "Вчерашние посетители"
@@ -1125,147 +1227,146 @@ msgstr "Ежедневное удаление устаревших данных"
 msgid "This will permanently delete data from the database each day, are you sure you want to enable this option?"
 msgstr "Это будет окончательно удалить данные из базы данных каждый день, вы уверены, что вы хотите включить эту опцию?"
 
-#: includes/settings/tabs/wps-general.php:406
+#: includes/settings/tabs/wps-general.php:460
 msgid "Add a total line to charts with multiple values, like the search engine referrals"
 msgstr "Добавить общая линия диаграммы с несколькими значениями, как двигатель поиска рефералов"
 
-#: includes/settings/tabs/wps-general.php:397
+#: includes/settings/tabs/wps-general.php:451
 msgid "Include totals"
 msgstr "Включить итоги"
 
-#: includes/settings/tabs/wps-general.php:392
+#: includes/settings/tabs/wps-general.php:446
 msgid "Charts"
 msgstr "Графики"
 
-#: includes/settings/tabs/wps-general.php:384
+#: includes/settings/tabs/wps-general.php:438
 msgid "Disable %s from data collection and reporting."
 msgstr "Отключите %s от сбора данных и отчетности."
 
-#: includes/settings/tabs/wps-general.php:378
+#: includes/settings/tabs/wps-general.php:432
 msgid "Disable"
 msgstr "Отключить"
 
-#: includes/settings/tabs/wps-general.php:356
+#: includes/settings/tabs/wps-general.php:410
 msgid "Disabling all search engines is not allowed, doing so will result in all search engines being active."
 msgstr "Отключение всех поисковых системах не допускается, так как это оставит все поисковые системы активными."
 
-#: includes/settings/tabs/wps-general.php:347
+#: includes/settings/tabs/wps-general.php:401
 msgid "If a search engine is identified as the referrer but it does not include the search query this option will substitute the page title in quotes preceded by \"~:\" as the search query to help identify what the user may have been searching for."
 msgstr "Если поисковая система зафиксировала переход, но не указала поисковый запрос, эта опция заменит поисковый запрос на заголовок страницы с \"~:\". Это позволяет предположить, что искал пользователь."
 
-#: includes/settings/tabs/wps-general.php:338
+#: includes/settings/tabs/wps-general.php:391
 msgid "Add page title to empty search words"
 msgstr "Добавлять заголовок страницы для пустых поисковых фраз"
 
-#: includes/classes/class-wp-statistics-admin.php:532
-#: includes/classes/class-wp-statistics-admin.php:533
-#: includes/settings/tabs/wps-general.php:333
+#: includes/classes/class-wp-statistics-admin.php:425
+#: includes/classes/class-wp-statistics-admin.php:426
+#: includes/settings/tabs/wps-general.php:386
 msgid "Search Engines"
 msgstr "Поисковики"
 
-#: includes/settings/tabs/wps-general.php:325
+#: includes/settings/tabs/wps-general.php:378
 msgid "By default WP Statistics displays an alert if any of the core features are disabled on every admin page, this option will disable these notices."
 msgstr "По умолчанию WP Statistics отображает предупреждение, если любая из основных функций отключена на каждой странице администратора. Этот параметр отключит эти уведомления."
 
-#: includes/settings/tabs/wps-general.php:315
+#: includes/settings/tabs/wps-general.php:368
 msgid "Hide admin notices about non active features"
 msgstr "Скрыть уведомления администратора о неактивных компонентах"
 
-#: includes/settings/tabs/wps-general.php:309
+#: includes/settings/tabs/wps-general.php:362
 msgid "Show stats in admin menu bar"
 msgstr "Показывать статистику в админ-баре"
 
 #: includes/optimization/tabs/wps-optimization-resources.php:248
 #: includes/optimization/tabs/wps-optimization-resources.php:267
-#: includes/settings/tabs/wps-general.php:303
+#: includes/settings/tabs/wps-general.php:356
 msgid "Yes"
 msgstr "Да"
 
 #: includes/optimization/tabs/wps-optimization-resources.php:250
 #: includes/optimization/tabs/wps-optimization-resources.php:269
-#: includes/settings/tabs/wps-general.php:299
+#: includes/settings/tabs/wps-general.php:352
 msgid "No"
 msgstr "Нет"
 
-#: includes/settings/tabs/wps-general.php:294
+#: includes/settings/tabs/wps-general.php:347
 msgid "Show stats in menu bar"
 msgstr "Показывать статистику в меню"
 
-#: includes/settings/tabs/wps-general.php:289
+#: includes/settings/tabs/wps-general.php:342
 msgid "Miscellaneous"
 msgstr "Разное"
 
-#: includes/settings/tabs/wps-general.php:275
+#: includes/settings/tabs/wps-general.php:278
 msgid "Disable hits column in post/pages list"
 msgstr "Отключить столбец посещений в списке записей/страниц"
 
-#: includes/settings/tabs/wps-general.php:264
+#: includes/settings/tabs/wps-general.php:267
 msgid "This will remove anything after the ? in a URL."
 msgstr "Удалять все после знака \"?\" в URL."
 
-#: includes/settings/tabs/wps-general.php:254
+#: includes/settings/tabs/wps-general.php:256
 msgid "Strip parameters from URI"
 msgstr "Обрезать параметры из URL"
 
-#: includes/settings/tabs/wps-general.php:236
+#: includes/settings/tabs/wps-general.php:238
 msgid "Track all pages"
 msgstr "Отслеживание всех страниц"
 
-#: includes/classes/class-wp-statistics-admin.php:542
-#: includes/classes/class-wp-statistics-admin.php:543
+#: includes/classes/class-wp-statistics-admin.php:435
+#: includes/classes/class-wp-statistics-admin.php:436
 #: includes/classes/class-wp-statistics-network-admin.php:92
-#: includes/settings/tabs/wps-general.php:216
-#: includes/settings/tabs/wps-general.php:221
+#: includes/settings/tabs/wps-general.php:223
 msgid "Pages"
 msgstr "Страницы"
 
-#: includes/settings/tabs/wps-general.php:209
+#: includes/settings/tabs/wps-general.php:211
 msgid "For each visit to account for several hits. Currently %s."
 msgstr "Для каждого визита за несколько посещений. Сейчас %s."
 
-#: includes/settings/tabs/wps-general.php:201
+#: includes/settings/tabs/wps-general.php:203
 msgid "Coefficient per visitor"
 msgstr "Коэффициент на посетителя"
 
-#: includes/settings/tabs/wps-general.php:195
+#: includes/settings/tabs/wps-general.php:197
 msgid "Only enabled for debugging"
 msgstr "Включено только для отладки"
 
-#: includes/settings/tabs/wps-general.php:186
+#: includes/settings/tabs/wps-general.php:188
 msgid "Store entire user agent string"
 msgstr "Сохранять данные user-agent'a"
 
-#: includes/settings/tabs/wps-general.php:139
+#: includes/settings/tabs/wps-general.php:141
 msgid "Ignores the exclusion settings and records all users that are online (including self referrals and robots).  Should only be used for troubleshooting."
 msgstr "Игнорировать настройки исключения и регистрировать всех пользователей, которые находятся в сети (в том числе рефералов и роботов). Следует использовать только для устранения неполадок."
 
-#: includes/settings/tabs/wps-general.php:130
+#: includes/settings/tabs/wps-general.php:132
 msgid "Record all user"
 msgstr "Записать всех пользователей"
 
-#: includes/settings/tabs/wps-general.php:122
+#: includes/settings/tabs/wps-general.php:124
 msgid "Time for the check accurate online user in the site. Now: %s Seconds"
 msgstr "Время для проверки точного количества пользователей онлайн на сайте. Сейчас: %s секунд"
 
-#: includes/settings/tabs/wps-general.php:120
+#: includes/settings/tabs/wps-general.php:122
 msgid "Seconds"
 msgstr "Секунд"
 
-#: includes/settings/tabs/wps-general.php:114
+#: includes/settings/tabs/wps-general.php:116
 msgid "Check for online users every"
 msgstr "Отметить каждого юзера онлайн"
 
-#: includes/settings/tabs/wps-general.php:108
-#: includes/settings/tabs/wps-general.php:161
-#: includes/settings/tabs/wps-general.php:180
-#: includes/settings/tabs/wps-general.php:230
-#: includes/settings/tabs/wps-general.php:245
-#: includes/settings/tabs/wps-general.php:284
+#: includes/settings/tabs/wps-general.php:110
+#: includes/settings/tabs/wps-general.php:163
+#: includes/settings/tabs/wps-general.php:182
+#: includes/settings/tabs/wps-general.php:232
+#: includes/settings/tabs/wps-general.php:247
+#: includes/settings/tabs/wps-general.php:288
 #: includes/settings/tabs/wps-notifications.php:171
 msgid "Enable or disable this feature"
 msgstr "Включить или отключить эту функцию"
 
-#: includes/settings/tabs/wps-general.php:86
+#: includes/settings/tabs/wps-general.php:88
 msgid "This feature will not store IP addresses in the database but instead used a unique hash.  The \"Store entire user agent string\" setting will be disabled if this is selected.  You will not be able to recover the IP addresses in the future to recover location information if this is enabled."
 msgstr "Данная функция будет сохранять в базе данных уникальный хэш вместо IP-адреса. Функция \"Сохранять user-агенты\" будет отключена. Так же вы не сможете использовать IP-адреса для определения информации о местоположении."
 
@@ -1326,7 +1427,7 @@ msgid "browscap usage"
 msgstr "Использовать возможности браузера"
 
 #: includes/settings/tabs/wps-externals.php:233
-msgid "browscap settings"
+msgid "Browscap settings"
 msgstr "Настройки расширенной идентификации браузеров"
 
 #: includes/settings/tabs/wps-externals.php:220
@@ -1592,19 +1693,20 @@ msgstr "Это будет записывать все исключенные х�
 #: includes/settings/tabs/wps-externals.php:282
 #: includes/settings/tabs/wps-externals.php:339
 #: includes/settings/tabs/wps-externals.php:384
-#: includes/settings/tabs/wps-general.php:84
-#: includes/settings/tabs/wps-general.php:106
-#: includes/settings/tabs/wps-general.php:137
-#: includes/settings/tabs/wps-general.php:159
-#: includes/settings/tabs/wps-general.php:178
-#: includes/settings/tabs/wps-general.php:193
-#: includes/settings/tabs/wps-general.php:228
-#: includes/settings/tabs/wps-general.php:243
-#: includes/settings/tabs/wps-general.php:262
-#: includes/settings/tabs/wps-general.php:282
-#: includes/settings/tabs/wps-general.php:323
-#: includes/settings/tabs/wps-general.php:345
-#: includes/settings/tabs/wps-general.php:404
+#: includes/settings/tabs/wps-general.php:86
+#: includes/settings/tabs/wps-general.php:108
+#: includes/settings/tabs/wps-general.php:139
+#: includes/settings/tabs/wps-general.php:161
+#: includes/settings/tabs/wps-general.php:180
+#: includes/settings/tabs/wps-general.php:195
+#: includes/settings/tabs/wps-general.php:230
+#: includes/settings/tabs/wps-general.php:245
+#: includes/settings/tabs/wps-general.php:265
+#: includes/settings/tabs/wps-general.php:286
+#: includes/settings/tabs/wps-general.php:301
+#: includes/settings/tabs/wps-general.php:376
+#: includes/settings/tabs/wps-general.php:399
+#: includes/settings/tabs/wps-general.php:458
 #: includes/settings/tabs/wps-maintenance.php:50
 #: includes/settings/tabs/wps-maintenance.php:93
 #: includes/settings/tabs/wps-notifications.php:93
@@ -1633,7 +1735,7 @@ msgstr "Страница-приманка WP Statistics"
 #: includes/settings/tabs/wps-access-level.php:129
 #: includes/settings/tabs/wps-exclusions.php:442
 #: includes/settings/tabs/wps-externals.php:419
-#: includes/settings/tabs/wps-general.php:416
+#: includes/settings/tabs/wps-general.php:470
 #: includes/settings/tabs/wps-maintenance.php:127
 #: includes/settings/tabs/wps-notifications.php:305
 #: includes/settings/tabs/wps-overview-display.php:106
@@ -1666,81 +1768,81 @@ msgstr "Требуемый уровень пользователя для про
 msgid "Access Levels"
 msgstr "Уровни доступа"
 
-#: includes/settings/tabs/wps-about.php:150
+#: includes/settings/tabs/wps-about.php:151
 msgid "Still not having any luck?"
 msgstr "Все еще не повезло?"
 
-#: includes/settings/tabs/wps-about.php:147
+#: includes/settings/tabs/wps-about.php:148
 msgid "Have you checked your PHP and web server error logs?"
 msgstr "Вы проверили вашу PHP и веб-журналы ошибок сервера?"
 
-#: includes/settings/tabs/wps-about.php:137
+#: includes/settings/tabs/wps-about.php:138
 msgid "Do you have all the required PHP extensions installed?"
 msgstr "У вас есть все необходимые расширения PHP установлены?"
 
-#: includes/settings/tabs/wps-about.php:136
+#: includes/settings/tabs/wps-about.php:137
 msgid "Have you double checked the plugin settings?"
 msgstr "Вы дважды проверили настройки плагина?"
 
-#: includes/settings/tabs/wps-about.php:135
+#: includes/settings/tabs/wps-about.php:136
 msgid "Have you tried using the default WordPress theme?"
 msgstr "Пробовали ли вы с помощью WordPress тема по умолчанию?"
 
-#: includes/settings/tabs/wps-about.php:131
+#: includes/settings/tabs/wps-about.php:132
 msgid "Have you tried disabling any other plugins you may have installed?"
 msgstr "Вы пробовали отключить другие плагины, которые вы можете установить?"
 
-#: includes/settings/tabs/wps-about.php:130
+#: includes/settings/tabs/wps-about.php:131
 msgid "How's your memory_limit in php.ini?"
 msgstr "Как это ваш memory_limit в php.ini?"
 
-#: includes/settings/tabs/wps-about.php:127
+#: includes/settings/tabs/wps-about.php:128
 msgid "And a few things to double-check:"
 msgstr "И кое-что проверить:"
 
-#: includes/settings/tabs/wps-about.php:124
+#: includes/settings/tabs/wps-about.php:125
 msgid "Make sure you have access to your PHP error logs."
 msgstr "Убедитесь, что у вас есть доступ к журналам ошибок PHP."
 
-#: includes/settings/tabs/wps-about.php:120
+#: includes/settings/tabs/wps-about.php:121
 msgid "Have you search the Internet for any error messages you are receiving?"
 msgstr "У вас искать в Интернете для сообщения об ошибке, которую вы получаете?"
 
-#: includes/settings/tabs/wps-about.php:104
+#: includes/settings/tabs/wps-about.php:105
 msgid "FAQs"
 msgstr "Часто задаваемые вопросы"
 
-#: includes/settings/tabs/wps-about.php:95
+#: includes/settings/tabs/wps-about.php:96
 msgid "We're sorry you're having problem with WP Statistics and we're happy to help out.  Here are a few things to do before contacting us:"
 msgstr "Нам очень жаль вас возникли проблемы с WP Statistics и мы будем рады помочь. Вот несколько вещей, чтобы сделать, прежде чем связаться с нами:"
 
-#: includes/settings/tabs/wps-about.php:90
+#: includes/settings/tabs/wps-about.php:91
 msgid "Support"
 msgstr "Поддержка"
 
-#: includes/settings/tabs/wps-about.php:75
+#: includes/settings/tabs/wps-about.php:76
 msgid "Translations"
 msgstr "Переводы"
 
-#: includes/settings/tabs/wps-about.php:59
+#: includes/settings/tabs/wps-about.php:60
 msgid "Rate and Review at WordPress.org"
 msgstr "Оценить и проанализировать на WordPress.org"
 
-#: includes/settings/tabs/wps-about.php:49
+#: includes/settings/tabs/wps-about.php:50
 msgid "Come visit our great new %swebsite%s and keep up to date on the latest news about WP Statistics."
 msgstr "Посетите наш новый новый %sвебсайт%s и ознакомьтесь с последними новостями о WP Statistics."
 
-#: includes/settings/tabs/wps-about.php:44
+#: includes/settings/tabs/wps-about.php:45
 msgid "Visit Us Online"
 msgstr "Посетите нас в Интернете"
 
-#: includes/settings/tabs/wps-about.php:34
+#: includes/settings/tabs/wps-about.php:35
 msgid "Fell like showing us how much you enjoy WP Statistics? Drop by our %sdonation%s page and show us some love!"
 msgstr "Покажите насколько вам нравится WP Statistics. Перейдите на страницу %sпожертвования%s и покажите нам вашу любовь!"
 
-#: includes/classes/class-wp-statistics-admin.php:663
-#: includes/classes/class-wp-statistics-admin.php:664
-#: includes/settings/tabs/wps-about.php:29
+#: includes/classes/class-wp-statistics-admin.php:556
+#: includes/classes/class-wp-statistics-admin.php:557
+#: includes/settings/tabs/wps-about.php:30
 msgid "Donate"
 msgstr "Пожертвовать"
 
@@ -1785,12 +1887,12 @@ msgid "Replace IP addresses in the database with hash values, you will not be ab
 msgstr "Заменить IP-адресов в базе данных с хеш-значения, вы не сможете восстановить IP-адреса в будущем для заполнения информации о местоположении потом и это может занять некоторое время"
 
 #: includes/optimization/tabs/wps-optimization-updates.php:42
-#: includes/settings/tabs/wps-general.php:77
+#: includes/settings/tabs/wps-general.php:79
 msgid "Hash IP Addresses"
 msgstr "Хэш IP-адреса"
 
 #: includes/optimization/tabs/wps-optimization-updates.php:37
-#: includes/settings/tabs/wps-general.php:72
+#: includes/settings/tabs/wps-general.php:74
 msgid "IP Addresses"
 msgstr "IP-адреса"
 
@@ -1999,32 +2101,32 @@ msgstr "Использование памяти в PHP"
 msgid "Resources"
 msgstr "Ресурсы"
 
-#: includes/optimization/tabs/wps-optimization-purging.php:308
+#: includes/optimization/tabs/wps-optimization-purging.php:309
 msgid "All visitor data will be lost for this platform type."
 msgstr "Будут удалены все данные по посещениям с этой платформой."
 
-#: includes/optimization/tabs/wps-optimization-purging.php:292
+#: includes/optimization/tabs/wps-optimization-purging.php:293
 msgid "Delete Platforms"
 msgstr "Удаление платформ"
 
-#: includes/optimization/tabs/wps-optimization-purging.php:282
-#: includes/optimization/tabs/wps-optimization-purging.php:313
+#: includes/optimization/tabs/wps-optimization-purging.php:283
+#: includes/optimization/tabs/wps-optimization-purging.php:314
 msgid "Delete now!"
 msgstr "Удалить!"
 
-#: includes/optimization/tabs/wps-optimization-purging.php:277
+#: includes/optimization/tabs/wps-optimization-purging.php:278
 msgid "All visitor data will be lost for this agent type."
 msgstr "Будут удалены все данные по посещениям с этим User Agent."
 
-#: includes/optimization/tabs/wps-optimization-purging.php:261
+#: includes/optimization/tabs/wps-optimization-purging.php:262
 msgid "Delete Agents"
 msgstr "Удалить!"
 
-#: includes/optimization/tabs/wps-optimization-purging.php:256
+#: includes/optimization/tabs/wps-optimization-purging.php:257
 msgid "Delete User Agent Types"
 msgstr "Удаление User Agent`ов"
 
-#: includes/optimization/tabs/wps-optimization-purging.php:242
+#: includes/optimization/tabs/wps-optimization-purging.php:243
 msgid "Delete user statistics data where the user has more than the defined number of hits in a day.  This can be useful to clear up old data when your site has been hit by a bot.  This will remove the visitor and their hits to the site, however it will not remove individual page hits as that data is not recorded on a per use basis.  Minimum value is 10 hits."
 msgstr "Удалит данные о посетителях, которые имеют количество просмотров за день больше указанного количества. Это необходимо для удаления старых данных, например, после множественного посещения ботами. Это удалит посетителя и его просмотры на сайте, но не удалит индивидуальную страницу просмотров. Минимальное значение - 10 просмотров."
 
@@ -2034,7 +2136,7 @@ msgid "Purge visitors with more than"
 msgstr "Удалить посетителей с более чем"
 
 #: includes/optimization/tabs/wps-optimization-purging.php:224
-#: includes/optimization/tabs/wps-optimization-purging.php:247
+#: includes/optimization/tabs/wps-optimization-purging.php:248
 msgid "Purge now!"
 msgstr "Удалить!"
 
@@ -2078,16 +2180,16 @@ msgstr "Историческое количество посещений сай�
 msgid "Number of historical number of visitors to the site (current value is %s)."
 msgstr "Историческое количество посетителей сайта (текущее значение %s)."
 
-#: includes/classes/class-wp-statistics-admin.php:552
-#: includes/classes/class-wp-statistics-admin.php:553
+#: includes/classes/class-wp-statistics-admin.php:445
+#: includes/classes/class-wp-statistics-admin.php:446
 #: includes/classes/class-wp-statistics-network-admin.php:93
 #: includes/classes/class-wp-statistics-shortcode.php:159
-#: includes/log/hit-statistics.php:79 includes/log/hit-statistics.php:148
-#: includes/log/widgets/hits.php:30 includes/log/widgets/quickstats.php:26
-#: includes/log/widgets/summary.php:26
+#: includes/log/hit-statistics.php:80 includes/log/hit-statistics.php:149
+#: includes/log/widgets/hits.php:30 includes/log/widgets/quickstats.php:25
+#: includes/log/widgets/summary.php:25
 #: includes/optimization/tabs/wps-optimization-historical.php:29
-#: includes/settings/tabs/wps-general.php:166
-#: includes/settings/tabs/wps-general.php:171
+#: includes/settings/tabs/wps-general.php:168
+#: includes/settings/tabs/wps-general.php:173
 msgid "Visitors"
 msgstr "Посетителей"
 
@@ -2126,8 +2228,9 @@ msgstr "Выберите исходную таблицу."
 #: includes/optimization/tabs/wps-optimization-export.php:18
 #: includes/optimization/tabs/wps-optimization-export.php:38
 #: includes/optimization/tabs/wps-optimization-purging.php:190
-#: includes/optimization/tabs/wps-optimization-purging.php:266
-#: includes/optimization/tabs/wps-optimization-purging.php:297
+#: includes/optimization/tabs/wps-optimization-purging.php:267
+#: includes/optimization/tabs/wps-optimization-purging.php:298
+#: includes/settings/tabs/wps-general.php:319
 #: includes/settings/tabs/wps-notifications.php:187
 #: includes/settings/tabs/wps-notifications.php:230
 msgid "Please select"
@@ -2205,8 +2308,8 @@ msgstr "Прежние версии WP Statistics позволяли дубли�
 msgid "Update Now!"
 msgstr "Обновить сейчас!"
 
-#: includes/classes/class-wp-statistics-admin.php:562
-#: includes/classes/class-wp-statistics-admin.php:563
+#: includes/classes/class-wp-statistics-admin.php:455
+#: includes/classes/class-wp-statistics-admin.php:456
 #: includes/classes/class-wp-statistics-network-admin.php:94
 #: includes/optimization/tabs/wps-optimization-database.php:31
 #: includes/optimization/tabs/wps-optimization-updates.php:21
@@ -2246,58 +2349,58 @@ msgstr "User Agent"
 msgid "IP"
 msgstr "IP"
 
-#: includes/classes/class-wp-statistics-admin.php:404
-#: includes/classes/class-wp-statistics-admin.php:482
-#: includes/classes/class-wp-statistics-admin.php:483
+#: includes/classes/class-wp-statistics-admin.php:297
+#: includes/classes/class-wp-statistics-admin.php:375
+#: includes/classes/class-wp-statistics-admin.php:376
 #: includes/classes/class-wp-statistics-network-admin.php:86
-#: includes/log/authors.php:242 includes/log/categories.php:225
+#: includes/log/authors.php:242 includes/log/categories.php:227
 #: includes/log/tags.php:238 includes/log/widgets/top.visitors.php:21
-#: includes/optimization/tabs/wps-optimization-purging.php:240
+#: includes/optimization/tabs/wps-optimization-purging.php:241
 #: includes/settings/tabs/wps-maintenance.php:116
 msgid "Hits"
 msgstr "Просмотры"
 
-#: includes/log/widgets/quickstats.php:266 includes/log/widgets/summary.php:266
+#: includes/log/widgets/quickstats.php:265 includes/log/widgets/summary.php:265
 msgid "Time: %s"
 msgstr "Время: %s"
 
-#: includes/log/widgets/quickstats.php:257 includes/log/widgets/summary.php:257
+#: includes/log/widgets/quickstats.php:256 includes/log/widgets/summary.php:256
 msgid "Date: %s"
 msgstr "Дата: %s"
 
-#: includes/log/widgets/quickstats.php:248 includes/log/widgets/summary.php:248
+#: includes/log/widgets/quickstats.php:247 includes/log/widgets/summary.php:247
 msgid "(Adjustment)"
 msgstr "(Корректировка)"
 
-#: includes/log/widgets/quickstats.php:247 includes/log/widgets/summary.php:247
+#: includes/log/widgets/quickstats.php:246 includes/log/widgets/summary.php:246
 msgid "Current Time and Date"
 msgstr "Текущее дата и время"
 
-#: includes/log/widgets/quickstats.php:223 includes/log/widgets/summary.php:223
+#: includes/log/widgets/quickstats.php:222 includes/log/widgets/summary.php:222
 msgid "Daily Total"
 msgstr "Всего за день"
 
-#: includes/log/widgets/quickstats.php:126
+#: includes/log/widgets/quickstats.php:125
 msgid "Last 365 Days (Year)"
 msgstr "Последние 365 дней (год)"
 
-#: includes/log/widgets/quickstats.php:104
+#: includes/log/widgets/quickstats.php:103
 msgid "Last 30 Days (Month)"
 msgstr "Последние 30 дней (месяц)"
 
-#: includes/log/widgets/quickstats.php:82
+#: includes/log/widgets/quickstats.php:81
 msgid "Last 7 Days (Week)"
 msgstr "Последние 7 дней (неделя)"
 
-#: includes/log/widgets/quickstats.php:60
-#: includes/log/widgets/quickstats.php:195 includes/log/widgets/summary.php:60
-#: includes/log/widgets/summary.php:195
+#: includes/log/widgets/quickstats.php:59
+#: includes/log/widgets/quickstats.php:194 includes/log/widgets/summary.php:59
+#: includes/log/widgets/summary.php:194
 msgid "Yesterday"
 msgstr "Вчера"
 
-#: includes/log/widgets/quickstats.php:38
-#: includes/log/widgets/quickstats.php:194 includes/log/widgets/summary.php:38
-#: includes/log/widgets/summary.php:194
+#: includes/log/widgets/quickstats.php:37
+#: includes/log/widgets/quickstats.php:193 includes/log/widgets/summary.php:37
+#: includes/log/widgets/summary.php:193
 msgid "Today"
 msgstr "Сегодня"
 
@@ -2325,7 +2428,7 @@ msgstr "Оценить и оставить отзыв"
 msgid "Website"
 msgstr "Сайт"
 
-#: includes/log/log.php:40
+#: includes/log/log.php:41
 msgid "About WP Statistics Version %s"
 msgstr "О WP Statistics версии %s"
 
@@ -2346,14 +2449,14 @@ msgid "To be added soon"
 msgstr "Скоро будут добавлены"
 
 #: includes/classes/class-wp-statistics-shortcode.php:158
-#: includes/log/authors.php:132 includes/log/categories.php:115
-#: includes/log/hit-statistics.php:89 includes/log/hit-statistics.php:147
+#: includes/log/authors.php:132 includes/log/categories.php:117
+#: includes/log/hit-statistics.php:90 includes/log/hit-statistics.php:148
 #: includes/log/tags.php:128 includes/log/top-pages.php:178
 #: includes/log/widgets/hits.php:40 includes/log/widgets/pages.php:36
-#: includes/log/widgets/quickstats.php:31 includes/log/widgets/summary.php:31
+#: includes/log/widgets/quickstats.php:30 includes/log/widgets/summary.php:30
 #: includes/optimization/tabs/wps-optimization-historical.php:48
-#: includes/settings/tabs/wps-general.php:147
-#: includes/settings/tabs/wps-general.php:152
+#: includes/settings/tabs/wps-general.php:149
+#: includes/settings/tabs/wps-general.php:154
 msgid "Visits"
 msgstr "Посещений"
 
@@ -2404,9 +2507,13 @@ msgstr "Топ стран"
 msgid "Search Engine Referral Statistics"
 msgstr "Статистика переходов из поисковых систем"
 
-#: includes/log/page-statistics.php:57
+#: includes/log/page-statistics.php:70
 msgid "Page Trend"
 msgstr "Тренд страница"
+
+#: includes/log/page-statistics.php:64
+msgid "Page Trend for Post ID %s"
+msgstr "Страница тренда для записи с ID %s"
 
 #: includes/log/online.php:142
 msgid "Currently there are no users online in the site."
@@ -2417,19 +2524,19 @@ msgstr "В настоящее время на сайт нет пользоват
 #: includes/classes/class-wp-statistics-widget.php:261
 #: includes/log/online.php:10 includes/log/online.php:17
 #: includes/log/widgets/quickstats.php:12 includes/log/widgets/summary.php:12
-#: includes/settings/tabs/wps-general.php:94
+#: includes/settings/tabs/wps-general.php:96
 msgid "Online Users"
 msgstr "Сейчас на сайте"
 
-#: includes/log/log.php:26
+#: includes/log/log.php:27
 msgid "Close"
 msgstr "Закрыть"
 
-#: includes/log/log.php:24
+#: includes/log/log.php:25
 msgid "Donate Now!"
 msgstr "Пожертвовать сейчас!"
 
-#: includes/log/log.php:22
+#: includes/log/log.php:23
 msgid "Have you thought about donating to WP Statistics?"
 msgstr "Задумывались ли вы о пожертвовании в пользу WP Statistics?"
 
@@ -2466,27 +2573,27 @@ msgstr "Статистика последних поисковых фраз"
 msgid "All"
 msgstr "Все"
 
-#: includes/log/hit-statistics.php:58
+#: includes/log/hit-statistics.php:59
 msgid "Hits Statistics Chart"
 msgstr "Диаграммы статистики просмотров"
 
-#: includes/log/exclusions.php:271 includes/log/hit-statistics.php:160
+#: includes/log/exclusions.php:271 includes/log/hit-statistics.php:161
 msgid "All Time Total"
 msgstr "За все время"
 
-#: includes/log/exclusions.php:265 includes/log/hit-statistics.php:152
+#: includes/log/exclusions.php:265 includes/log/hit-statistics.php:153
 msgid "Chart Total"
 msgstr "Изображено на графике"
 
-#: includes/classes/class-wp-statistics-admin.php:622
-#: includes/classes/class-wp-statistics-admin.php:623
+#: includes/classes/class-wp-statistics-admin.php:515
+#: includes/classes/class-wp-statistics-admin.php:516
 #: includes/classes/class-wp-statistics-network-admin.php:97
 #: includes/log/exclusions.php:261 includes/settings/tabs/wps-exclusions.php:77
 #: includes/settings/wps-settings.php:49
 msgid "Exclusions"
 msgstr "Исключения"
 
-#: includes/log/exclusions.php:246 includes/log/hit-statistics.php:132
+#: includes/log/exclusions.php:246 includes/log/hit-statistics.php:133
 msgid "Hits Statistics Summary"
 msgstr "Общая статистика просмотров"
 
@@ -2532,9 +2639,9 @@ msgid "GeoIP"
 msgstr "GeoIP"
 
 #: includes/log/exclusions.php:102 includes/log/search-statistics.php:101
-#: includes/log/widgets/quickstats.php:148
-#: includes/log/widgets/quickstats.php:231 includes/log/widgets/search.php:56
-#: includes/log/widgets/summary.php:148 includes/log/widgets/summary.php:231
+#: includes/log/widgets/quickstats.php:147
+#: includes/log/widgets/quickstats.php:230 includes/log/widgets/search.php:56
+#: includes/log/widgets/summary.php:147 includes/log/widgets/summary.php:230
 msgid "Total"
 msgstr "Всего"
 
@@ -2577,8 +2684,8 @@ msgid "Platform"
 msgstr "Платформа"
 
 #: includes/classes/class-wp-statistics-admin-pages.php:112
-#: includes/classes/class-wp-statistics-admin.php:602
-#: includes/classes/class-wp-statistics-admin.php:603
+#: includes/classes/class-wp-statistics-admin.php:495
+#: includes/classes/class-wp-statistics-admin.php:496
 #: includes/classes/class-wp-statistics-network-admin.php:95
 #: includes/log/all-browsers.php:86 includes/log/all-browsers.php:105
 #: includes/log/widgets/browsers.php:46
@@ -2617,11 +2724,11 @@ msgstr "Не найдено посетителей для удаления."
 msgid "%s records purged successfully."
 msgstr "%s записей успешно удалено."
 
-#: includes/classes/class-wp-statistics-updates.php:561
+#: includes/classes/class-wp-statistics-updates.php:350
 msgid "Updated %s GeoIP records in the visitors database."
 msgstr "Обновлено %s GeoIP записей в базе данных посетителей."
 
-#: includes/classes/class-wp-statistics-updates.php:527
+#: includes/classes/class-wp-statistics-updates.php:316
 msgid "Unable to load the GeoIP database, make sure you have downloaded it in the settings page."
 msgstr "Не удается загрузить базу данных GeoIP, убедитесь, что вы загрузили её на странице настроек."
 
@@ -2710,8 +2817,8 @@ msgstr "Baidu"
 msgid "Ask.com"
 msgstr "Ask.com"
 
-#: includes/log/authors.php:148 includes/log/categories.php:131
-#: includes/log/exclusions.php:219 includes/log/hit-statistics.php:106
+#: includes/log/authors.php:148 includes/log/categories.php:133
+#: includes/log/exclusions.php:219 includes/log/hit-statistics.php:107
 #: includes/log/tags.php:144 includes/log/widgets/hits.php:60
 msgid "Hits in the last %s days"
 msgstr "Просмотры за последние %s дней"
@@ -2739,7 +2846,7 @@ msgstr "Общие данные"
 #: includes/classes/class-wp-statistics-dashboard.php:156
 #: includes/classes/class-wp-statistics-widget.php:111
 #: includes/classes/class-wp-statistics-widget.php:338
-#: includes/log/widgets/quickstats.php:186 includes/log/widgets/summary.php:186
+#: includes/log/widgets/quickstats.php:185 includes/log/widgets/summary.php:185
 msgid "Search Engine Referrals"
 msgstr "Топ поисковых систем"
 

@@ -1410,10 +1410,11 @@ Base64._utf8_decode = function (utftext) {
             }
 
             var touchTimeout = null,
+                leaveTimeout = null,
                 mouseenter = function (e) {
                     if (!_suppress) {
-                        suppress();
                         if (e.type == 'touchstart') {
+                            suppress();
                             if (leaveOnSecond) {
                                 if (touchTimeout) {
                                     el.trigger('universal_leave');
@@ -1439,10 +1440,14 @@ Base64._utf8_decode = function (utftext) {
 
                             }
                         } else {
+                            if(leaveTimeout) clearTimeout(leaveTimeout);
                             handleObj.handler.apply(this, arguments);
                             el.on('mouseleave.universalleave', function () {
-                                el.off('.universalleave')
-                                    .trigger('universalleave');
+                                el.off('.universalleave');
+                                leaveTimeout = setTimeout(function(){
+                                    el.trigger('universalleave');
+                                    leaveTimeout = null;
+                                }, 800);
                             });
                         }
                     }
@@ -2309,68 +2314,36 @@ if (!Array.prototype.indexOf) {
 
     var hookProperties = {};
 
-    function CSS() {
-        this.clearStack();
-    }
+    function CSS() {}
 
     CSS.prototype.set = function (elements, property, value, unit) {
 
         if (!elements.length) {
             elements = [elements];
         }
+
+		value = value + unit;
+
         for (var i = 0; i < elements.length; i++) {
             var element = elements[i];
 
-            var index = $.inArray(element, this.elements);
-            if (index == -1) {
-                index = this.elements.push(element) - 1;
-                this.stack[index] = {};
-            }
-            if (unit != '') {
-                value += unit;
-            }
-            this.stack[index][property] = value;
-        }
-        if (!this.registeredToTick) {
-            var that = this;
-            N2A.RAF.addPostTick(function () {
-                that.flush();
-            });
-            this.registeredToTick = true;
-            if (!N2A.RAF._isTicking) {
-                N2A.RAF.postTick();
-            }
+			this.applyStyles(element, property, value);
         }
     };
 
-    CSS.prototype.flush = function () {
-        //Flush the CSS modifications to the elements
-        for (var j = 0; j < this.elements.length; j++) {
-            var element = this.elements[j];
-            for (var property in this.prepareStack(element, this.stack[j])) {
-                var prefixed = nModernizr.prefixed(property);
-                if (prefixed) {
-                    element.style[prefixed] = this.stack[j][property];
-                }
-            }
-        }
+    CSS.prototype.applyStyles = function (element, property, value) {
+    	var styles = {};
+		styles[property] = value;
+		if (typeof hookProperties[property] !== 'undefined') {
+			hookProperties[property](element).prepare(styles);
+		}
 
-        this.clearStack();
-    };
-
-    CSS.prototype.prepareStack = function (element, styles) {
-        for (var property in styles) {
-            if (typeof hookProperties[property] !== 'undefined') {
-                hookProperties[property](element).prepare(styles);
-            }
-        }
-        return styles;
-    };
-
-    CSS.prototype.clearStack = function () {
-        this.registeredToTick = false;
-        this.elements = [];
-        this.stack = [];
+		for (var prop in styles) {
+			var prefixed = nModernizr.prefixed(prop);
+			if (prefixed) {
+				element.style[prefixed] = styles[prop];
+			}
+		}
     };
 
     var cache = [];
@@ -2544,6 +2517,7 @@ if (!Array.prototype.indexOf) {
         return element.n2Transform;
     }
 
+	hookProperties['transform'] = getTransformObject;
     hookProperties['x'] = getTransformObject;
     hookProperties['y'] = getTransformObject;
     hookProperties['z'] = getTransformObject;
@@ -2555,20 +2529,22 @@ if (!Array.prototype.indexOf) {
     hookProperties['scaleY'] = getTransformObject;
     hookProperties['scaleZ'] = getTransformObject;
 
+	var defaultTransformData = {
+		x: 0,
+		y: 0,
+		z: 0,
+		rotationX: 0,
+		rotationY: 0,
+		rotationZ: 0,
+		scaleX: 1,
+		scaleY: 1,
+		scaleZ: 1,
+		scale: 1
+	};
+
     function transform(element) {
-        this.data = {
-            x: 0,
-            y: 0,
-            z: 0,
-            rotationX: 0,
-            rotationY: 0,
-            rotationZ: 0,
-            scaleX: 1,
-            scaleY: 1,
-            scaleZ: 1,
-            scale: 1
-        };
-    };
+        this.data = $.extend({}, defaultTransformData);
+    }
 
     transform.prototype.get = function (property) {
         return this.data[property];
@@ -2577,6 +2553,10 @@ if (!Array.prototype.indexOf) {
 
     var rad = Math.PI / 180;
     transform.prototype.prepare = function (styles) {
+
+		if(typeof styles.transform !== 'undefined' && styles.transform === 'none'){
+			this.data = $.extend({}, defaultTransformData);
+		}
 
         if (typeof styles['scale'] !== 'undefined') {
             styles['scaleX'] = styles['scale'];
@@ -2723,7 +2703,6 @@ if (!Array.prototype.indexOf) {
             var tween = this._tweenContainer[k];
             css.set(this._target, k, N2A.easings[this.ease](this._progress, tween.startValue, tween.range * this._progress, 1), tween.unit);
         }
-        //this._target.css(this._property, this._range * this._progress);
         N2A.Animation.prototype._onUpdate.call(this);
     };
 

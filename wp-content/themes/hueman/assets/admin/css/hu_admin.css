@@ -1,11 +1,13 @@
 @font-face {
-  font-family: 'FontAwesome';
-  src:url('../../front/fonts/fontawesome-webfont.eot');
-  src:url('../../front/fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
-      url('../../front/fonts/fontawesome-webfont.woff2') format('woff2'),
-      url('../../front/fonts/fontawesome-webfont.woff') format('woff'),
-      url('../../front/fonts/fontawesome-webfont.ttf') format('truetype'),
-      url('../../front/fonts/fontawesome-webfont.svg#fontawesomeregular') format('svg');
+  font-family: 'Font Awesome\ 5 Free';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../front/webfonts/fa-regular-400.eot");
+  src: url("../../front/webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"),
+       url("../../front/webfonts/fa-regular-400.woff2") format("woff2"),
+       url("../../front/webfonts/fa-regular-400.woff") format("woff"),
+       url("../../front/webfonts/fa-regular-400.ttf") format("truetype"),
+       url("../../front/webfonts/fa-regular-400.svg#fontawesome") format("svg");
 }
 
 .about-wrap h3 {
@@ -68,7 +70,7 @@
     -------------------------------------------------- */
 h1.need-help-title:before,
 #wp-admin-bar-tc-hueman-help .ab-item:before, li#wp-admin-bar-tc-hueman-help a:before {
-  font-family: 'FontAwesome';
+  font-family: 'Font Awesome\ 5 Free';
   speak: none;
   font-weight: normal;
   font-variant: normal;
@@ -188,4 +190,53 @@ h1.need-help-title:before {
   text-shadow:none;
   -webkit-box-shadow: none;
   box-shadow: none;
+}
+
+/* UPDATE NOTICE */
+.czr-update-notice h3, .czr-update-notice h4 {
+  font-weight: normal;
+}
+.czr-update-notice .button {
+  font-weight: normal;
+}
+.czr-update-notice .button.upgrade-to-pro {
+/*  font-size: 15px;
+  line-height: 24px;*/
+  height: 30px;
+  padding: 1px 20px;
+  display: inline-block;
+  color: #de8200;
+  background: white;
+  border: 1px solid #eea236;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: 3px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-top: -4px;
+  font-weight: 400;
+  margin-left: 8px;
+  text-shadow : none;
+}
+.czr-update-notice .button.upgrade-to-pro:hover {
+    color: #fff;
+    background: #ed9c28;
+    border-color: #d58512;
+}
+/*a.czr-rating-link {
+    color: #eea236;
+}*/
+a.czr-rating-link:hover {
+    color: #eea236;
 }

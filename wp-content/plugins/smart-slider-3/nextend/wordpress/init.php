@@ -7,115 +7,74 @@ define('N2NATIVE', 0);
 
 class N2Wordpress {
 
-    private static $outputStarted = false;
-    public static $nextend_js = '', $nextend_css = '', $nextend_wp_head = false, $nextend_wp_footer = false;
+    private static $nextend_js = '';
+	private static $nextend_css = '';
 
     public static function init() {
 
-        add_action('after_setup_theme', 'N2Wordpress::afterSetupTheme');
+	    if (is_admin()) {
+		    add_action( 'admin_init', 'N2Wordpress::outputStart', 3000 );
+		    add_action('admin_footer', 'N2Wordpress::finalizeCssJs');
+	    }
 
-        if (is_admin()) {
-            add_action('admin_init', 'N2Wordpress::outputStart', 3000);
-            add_action('vc_admin_inline_editor', 'N2Wordpress::outputStart'); // Visual composer inline editor fix
-        } else if (N2Settings::get('safemode')) {
-            add_action('wp', 'N2Wordpress::outputStart', 30000);
-        } else {
-            add_action('plugins_loaded', 'N2Wordpress::plugins_loaded');
-        }
+	    add_action('template_redirect', 'N2Wordpress::outputStart', 10000);
+
+
+	    add_action('shutdown', 'N2Wordpress::closeOutputBuffers', -10000);
+	    add_action('pp_end_html', 'N2Wordpress::closeOutputBuffers', -10000); // ProPhoto 6 theme
+	    add_action('headway_html_close', 'N2Wordpress::closeOutputBuffers', -10000);
+
+
+	    add_action('headway_html_close', 'N2Wordpress::finalizeCssJs', -10000);
+	    add_action('wp_footer', 'N2Wordpress::finalizeCssJs', 11);
     }
 
-    public static function plugins_loaded() {
-        if (class_exists('CWS_PageLinksTo')) {
-            // Fix for an issue with https://wordpress.org/plugins/page-links-to/
-            add_action('wp_enqueue_scripts', 'N2Wordpress::outputStart', -10000);
-        } else if (class_exists('WPSEO_Frontend')) {
-            // Fix for an issue with Yoast SEO
-            add_action('template_redirect', 'N2Wordpress::outputStart');
-        } else if (class_exists('EDD_SL_Plugin_Updater')) {
-            //fix for Divi/Extra Layout Injector
-            add_action('template_redirect', 'N2Wordpress::outputStart');
-        } else if (class_exists('Gantry5\\Loader')) {
-            // Fix for Gantry 5 themes
-            add_action('template_redirect', 'N2Wordpress::outputStart');
-        } else {
-            $pri = 10;
-            if (class_exists('\\WPaaS\\Plugin', false)) {
-                //Godaddy plugin conflict
-                $pri = 1;
-            }
-            add_action('wp_enqueue_scripts', 'N2Wordpress::outputStart', $pri);
-            add_action('wp_head', 'N2Wordpress::outputStart', $pri);
-        }
-    }
-
-    public static function afterSetupTheme() {
-        if (class_exists('HeadwayDisplay', false)) {
-            add_action('headway_html_close', 'N2Wordpress::afterOutputEnd');
-        } else {
-            add_action('wp_footer', 'N2Wordpress::afterOutputEnd', 11);
-        }
-        add_action('admin_footer', 'N2Wordpress::afterOutputEnd');
+    public static function closeOutputBuffers(){
+	    $handlers = ob_list_handlers();
+	    if(in_array('N2Wordpress::platformRenderEnd', $handlers)){
+		    for($i = count($handlers)-1; $i >= 0; $i--){
+			    if($handlers[$i] === 'N2Wordpress::platformRenderEnd'){
+			    	self::finalizeCssJs();
+			    }
+			    ob_end_flush();
+			    if($handlers[$i] === 'N2Wordpress::platformRenderEnd'){
+				    break;
+			    }
+		    }
+	    }
     }
 
     public static function outputStart() {
-        if (self::$outputStarted) return;
-        self::$outputStarted = true;
-        if (class_exists('The_Neverending_Home_Page', false) && The_Neverending_Home_Page::got_infinity()) {
-            add_filter('infinite_scroll_results', "N2Wordpress::infiniteScrollRenderEnd", 1, 3);
-        } else {
-            self::$nextend_wp_head = true;
+	    static $started = false;
+	    if(!$started) {
+		    $started = true;
 
-            if (N2Settings::get('safemode') != 1) {
-                ob_start("N2Wordpress::platformRenderEnd");
-                ob_start();
-                if (class_exists('\\Warp\\Warp', false)) {
-                    ob_start();
-                }
-                if (class_exists('Roots\\Sage\\Container', false)) {
-                    ob_start();
-                    ob_start();
-                }
-            }
-        }
+		    ob_start( "N2Wordpress::platformRenderEnd" );
+	    }
     }
 
-    public static function infiniteScrollRenderEnd($results, $query_args, $wp_query) {
+    public static function finalizeCssJs() {
+        static $finalized = false;
+        if(!$finalized) {
+	        $finalized = true;
 
-        if (defined('N2LIBRARY')) {
-            ob_start();
+	        if ( defined( 'N2LIBRARY' ) ) {
+		        ob_start();
+		        do_action( 'nextend_css' );
+		        if ( class_exists( 'N2AssetsManager' ) ) {
+			        echo N2AssetsManager::getCSS();
+		        }
+		        self::$nextend_css = ob_get_clean();
 
-            do_action('nextend_css');
-            do_action('nextend_js');
-            if (class_exists('N2AssetsManager')) {
-                echo N2AssetsManager::getCSS();
-                echo N2AssetsManager::getJs();
-            }
-            $results['html'] = ob_get_clean() . $results['html'];
+		        ob_start();
+		        do_action( 'nextend_js' );
+		        if ( class_exists( 'N2AssetsManager' ) ) {
+			        echo N2AssetsManager::getJs();
+		        }
+		        self::$nextend_js = ob_get_clean();
+
+	        }
         }
-
-        return $results;
-    }
-
-    public static function afterOutputEnd() {
-        self::$nextend_wp_footer = true;
-
-        if (defined('N2LIBRARY')) {
-            ob_start();
-            do_action('nextend_css');
-            if (class_exists('N2AssetsManager')) {
-                echo N2AssetsManager::getCSS();
-            }
-            self::$nextend_css = ob_get_clean();
-
-            ob_start();
-            do_action('nextend_js');
-            if (class_exists('N2AssetsManager')) {
-                echo N2AssetsManager::getJs();
-            }
-            self::$nextend_js = ob_get_clean();
-
-        }
-        if (N2Settings::get('safemode') == 1) echo self::$nextend_js;
 
         return true;
     }
@@ -127,7 +86,7 @@ class N2Wordpress {
         }
 
         if (self::$nextend_css != '' || self::$nextend_js != '') {
-            $parts = preg_split('/<\/head>/', $buffer, 2);
+            $parts = preg_split('/<\/head[\s]*>/', $buffer, 2);
 
             return implode(self::$nextend_css . self::$nextend_js . '</head>', $parts);
         }

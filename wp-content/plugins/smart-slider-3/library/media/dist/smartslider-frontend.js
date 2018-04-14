@@ -955,8 +955,8 @@ N2Require('SmartSliderAbstract', [], [], function ($, scope, undefined) {
         var windowOffsetTop = $(window).scrollTop(),
             windowHeight = $(window).height(),
             sliderTop = this.sliderElement.offset().top,
-            middlePointTop = sliderTop + Math.min(this.sliderElement.height(), windowHeight) * this.parameters.playWhenVisibleAt,
-            middlePointBottom = sliderTop + Math.min(this.sliderElement.height(), windowHeight) * (1 - this.parameters.playWhenVisibleAt);
+            middlePointTop = sliderTop + Math.min(this.sliderElement.height(), windowHeight) * (1 - this.parameters.playWhenVisibleAt),
+            middlePointBottom = sliderTop + Math.min(this.sliderElement.height(), windowHeight) * this.parameters.playWhenVisibleAt;
 
         if (this.isAdmin || (middlePointTop >= windowOffsetTop && middlePointBottom <= windowOffsetTop + windowHeight)) {
             $(window).off('scroll.n2-ss-visible' + this.id + ' resize.n2-ss-visible' + this.id, $.proxy(this.checkIfVisible, this));
@@ -3613,6 +3613,7 @@ N2Require('SmartSliderControlScroll', [], [], function ($, scope, undefined) {
         this.slider = slider;
 
         slider.sliderElement.on('DOMMouseScroll mousewheel', $.proxy(this.onMouseWheel, this));
+        slider.sliderElement.on('mainAnimationComplete', $.proxy(this.clearScrollTimeout, this));
 
         slider.controls.scroll = this;
     }
@@ -3639,6 +3640,14 @@ N2Require('SmartSliderControlScroll', [], [], function ($, scope, undefined) {
         } else {
             this.preventScrollTimeout(e);
         }
+    };
+
+    SmartSliderControlScroll.prototype.clearScrollTimeout = function () {
+        if (this._preventScrollTimeout !== null) {
+            clearTimeout(this._preventScrollTimeout);
+        }
+        this.preventScroll = false;
+        this._preventScrollTimeout = null;
     };
 
     SmartSliderControlScroll.prototype.preventScrollTimeout = function (e) {
@@ -5513,7 +5522,7 @@ N2Require('SmartSliderResponsive', [], [], function ($, scope, undefined) {
     };
 
     SmartSliderResponsive.prototype.onResize = function (e) {
-        if (!this.slider.mainAnimation || this.slider.mainAnimation.getState() == 'ended') {
+        if (!this.slider.mainAnimation || this.slider.mainAnimation.getState() != 'playing') {
             this.doResize(e);
         } else if (!this.delayedResizeAdded) {
             this.delayedResizeAdded = true;
@@ -5631,6 +5640,7 @@ N2Require('SmartSliderResponsive', [], [], function ($, scope, undefined) {
     };
 
     SmartSliderResponsive.prototype.doResize = function (e, fixedMode, timeline, nextSlide, duration) {
+
         if (!this.disableTransitions) {
             this.disableTransitions = true;
             this.sliderElement.addClass('n2notransition');
@@ -5672,12 +5682,13 @@ N2Require('SmartSliderResponsive', [], [], function ($, scope, undefined) {
 
                 var windowWidth = customWidth > 0 ? customWidth : (document.body.clientWidth || document.documentElement.clientWidth),
                     outerEl = this.containerElement.parent(),
-                    outerElBoundingRect = outerEl[0].getBoundingClientRect(),
+                    outerElLeft = outerEl.offset().left,
                     outerElOffset;
+
                 if (nextend.rtl.isRtl) {
-                    outerElOffset = windowWidth - (outerElBoundingRect.left + outerEl.outerWidth());
+                    outerElOffset = windowWidth - (outerElLeft + outerEl.outerWidth());
                 } else {
-                    outerElOffset = outerElBoundingRect.left;
+                    outerElOffset = outerElLeft;
                 }
                 this.containerElement.css(nextend.rtl.marginLeft, -outerElOffset - parseInt(outerEl.css('paddingLeft')) - parseInt(outerEl.css('borderLeftWidth')) + adjustLeftOffset)
                     .width(windowWidth);
@@ -5808,7 +5819,7 @@ N2Require('SmartSliderResponsive', [], [], function ($, scope, undefined) {
         this._doResize(ratio, timeline, nextSlide, duration);
 
         if (this.slider.parameters.align == 'center') {
-            this.alignElement.css('maxWidth', this.responsiveDimensions.slider.width);
+            this.alignElement.css('maxWidth', this.responsiveDimensions.slider.width + this.staticSizes.paddingLeft + this.staticSizes.paddingRight + this.responsiveDimensions['startSliderMarginhorizontal']);
         }
     };
 
@@ -6010,7 +6021,7 @@ N2Require('SmartSliderResponsive', [], [], function ($, scope, undefined) {
                 }
 
                 if (backgroundImage.width > 0 && backgroundImage.height > 0) {
-                    var backgroundRatioModifier = (this.responsiveDimensions.startSlideWidth / backgroundImage.width) * ( backgroundImage.height / this.responsiveDimensions.startSlideHeight);
+                    var backgroundRatioModifier = (this.responsiveDimensions.startSlideWidth / backgroundImage.width) * (backgroundImage.height / this.responsiveDimensions.startSlideHeight);
                     if (backgroundRatioModifier != -1) {
                         ratios.slideH *= backgroundRatioModifier;
                         ratios.h *= backgroundRatioModifier;
@@ -6748,7 +6759,6 @@ N2Require('FrontendItemYouTube', [], [], function ($, scope, undefined) {
         if (this.parameters.controls != 1) {
             vars.autohide = 1;
             vars.controls = 0;
-            vars.showinfo = 0;
         }
 
         if (+(navigator.platform.toUpperCase().indexOf('MAC') >= 0 && navigator.userAgent.search("Firefox") > -1)) {

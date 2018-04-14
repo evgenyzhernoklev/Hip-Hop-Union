@@ -26,12 +26,12 @@ class N2SSItemButton extends N2SSItemAbstract {
             "class" => "n2-ss-button-container n2-ow " . $font . ($this->data->get('fullwidth', 0) ? ' n2-ss-fullwidth' : '') . ($this->data->get('nowrap', 1) ? ' n2-ss-nowrap' : '')
         ));
 
-        $content = '<span>' . $slide->fill($this->data->get("content")) . '</span>';
+        $content = '<div>' . $slide->fill($this->data->get("content")) . '</div>';
 
         $attrs = array();
 
         $style = N2StyleRenderer::render($this->data->get('style'), 'heading', $slider->elementId, 'div#' . $slider->elementId . ' ');
-        $html .= $this->getLink('<span>' . $content . '</span>', $attrs + array(
+        $html  .= $this->getLink('<div>' . $content . '</div>', $attrs + array(
                 "class" => "{$style} n2-ow {$this->data->get('class', '')}"
             ), true);
 

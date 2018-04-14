@@ -4,7 +4,7 @@ Donate link: https://wp-statistics.com/donate/
 Tags: analytics, wordpress analytics, stats, statistics, visit, visitors, hits, chart, browser, today, yesterday, week, month, year, total, post, page, sidebar, google, live visit, search word, agent, google analytics, webmasters, google webmasters, geoip, location
 Requires at least: 3.0
 Tested up to: 4.9
-Stable tag: 12.3.2
+Stable tag: 12.3.5
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -287,6 +287,16 @@ You may also downgrade to WP Statistics 10.3 as a temporary measure, but no new 
 This is a security fix, please update immediately.
 
 == Changelog ==
+= 12.3.5 =
+* Improvement: Isolation Browscap cache processes to reduce memory usage.
+* Improvement: Include `file.php` and `pluggable.php` in GeoIP downloader when is not exists.
+* Fixed: GeoIP database update problem. Added an alternative server for download database when impossible access to maxmind.com
+
+= 12.3.4 =
+* Updated: Browscap to v3.1.0 and fixed some issues.
+* Improvement: Memory usage in the plugin when the Browscap is enabled.
+* Improvement: Cache system and update Browscap database.
+
 = 12.3.2 =
 * Added: New feature! Show Hits on the single posts/pages.
 * Added: Pages Dropdown in the page stats.

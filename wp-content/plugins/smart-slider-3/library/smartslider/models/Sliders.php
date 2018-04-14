@@ -23,6 +23,12 @@ class N2SmartsliderSlidersModel extends N2Model {
         ));
     }
 
+	public function getByAlias($alias) {
+		return $this->db->queryRow("SELECT id FROM " . $this->getTable() . " WHERE alias = :alias", array(
+			":alias" => $alias
+		));
+	}
+
     public function getWithThumbnail($id) {
         $slidesModel = new N2SmartsliderSlidesModel();
 
@@ -96,6 +102,7 @@ class N2SmartsliderSlidersModel extends N2Model {
         $data['title']     = $slider['title'];
         $data['type']      = $slider['type'];
         $data['thumbnail'] = $slider['thumbnail'];
+	    $data['alias'] = isset($slider['alias']) ? $slider['alias'] : '';
 
         return self::editForm($data);
     }
@@ -146,6 +153,10 @@ class N2SmartsliderSlidersModel extends N2Model {
 
             $sliderID = $this->db->insertId();
 
+            if(isset($slider['alias'])){
+            	$this->updateAlias($sliderID, $slider['alias']);
+            }
+
             $this->xref->add($groupID, $sliderID);
 
             return $sliderID;
@@ -173,6 +184,10 @@ class N2SmartsliderSlidersModel extends N2Model {
                 ));
 
                 $sliderID = $this->db->insertId();
+
+	            if(isset($slider['alias'])){
+		            $this->updateAlias($sliderID, $slider['alias']);
+	            }
 
                 if ($groupID) {
                     $this->xref->add($groupID, $sliderID);
@@ -243,10 +258,15 @@ class N2SmartsliderSlidersModel extends N2Model {
 
     function save($id, $slider) {
         if (!isset($slider['title']) || $id <= 0) return false;
+        $response = array(
+        	'changedFields' => array()
+        );
         if ($slider['title'] == '') $slider['title'] = n2_('New slider');
 
         $title = $slider['title'];
         unset($slider['title']);
+		$alias = $slider['alias'];
+	    unset($slider['alias']);
         $type = $slider['type'];
         unset($slider['type']);
 
@@ -265,9 +285,92 @@ class N2SmartsliderSlidersModel extends N2Model {
             "id" => $id
         ));
 
+	    $aliasResult = $this->updateAlias($id, $alias);
+	    if($aliasResult !== false){
+	    	if($aliasResult['oldAlias'] !== $aliasResult['newAlias']) {
+	    		if($aliasResult['newAlias'] === null){
+				    N2Message::notice( n2_( 'Alias removed' ) );
+				    $response['changedFields']['slideralias'] = '';
+			    } else if($aliasResult['newAlias'] === ''){
+				    N2Message::error( n2_( 'Alias must contain one or more letters' ) );
+				    $response['changedFields']['slideralias'] = '';
+			    } else {
+				    N2Message::notice( sprintf( n2_( 'Alias updated to: %s' ), $aliasResult['newAlias'] ) );
+				    $response['changedFields']['slideralias'] = $aliasResult['newAlias'];
+			    }
+		    }
+	    }
+
         self::markChanged($id);
 
-        return $id;
+        return $response;
+    }
+
+    function updateAlias($sliderID, $alias){
+    	$isNull = false;
+    	if(empty($alias)){
+		    $isNull = true;
+	    }else {
+
+		    $alias = strtolower( $alias );
+		    $alias = preg_replace( '/&.+?;/', '', $alias ); // kill entities
+		    $alias = str_replace( '.', '-', $alias );
+
+		    $alias = preg_replace( '/[^%a-z0-9 _-]/', '', $alias );
+		    $alias = preg_replace( '/\s+/', '-', $alias );
+		    $alias = preg_replace( '|-+|', '-', $alias );
+		    $alias = preg_replace( '|^-*|', '', $alias );
+
+		    if(empty($alias)){
+			    $isNull = true;
+		    }
+	    }
+
+	    $slider = $this->get($sliderID);
+    	if($isNull){
+		    if($slider['alias'] == 'null'){
+		    }else {
+			    $this->db->query( 'UPDATE ' . $this->db->tableName . ' SET `alias` = NULL WHERE id = ' . intval( $sliderID ) );
+			    return array(
+				    'oldAlias' => $slider['alias'],
+				    'newAlias' => null
+			    );
+		    }
+	    } else {
+    		if(!is_numeric($alias)){
+			    if($slider['alias'] == $alias){
+				    return array(
+				    	'oldAlias' => $slider['alias'],
+					    'newAlias' => $alias
+				    );
+			    }else {
+			        $_alias = $alias;
+			        for($i = 2; $i < 12; $i++){
+					    $sliderWithAlias = $this->getByAlias( $_alias );
+					    if(!$sliderWithAlias) {
+						    $this->db->update(array(
+							    'alias'     => $_alias
+						    ), array(
+							    "id" => $sliderID
+						    ));
+						    return array(
+							    'oldAlias' => $slider['alias'],
+							    'newAlias' => $_alias
+						    );
+						    break;
+					    } else {
+						    $_alias = $alias . $i;
+					    }
+				    }
+			    }
+		    }
+		    return array(
+			    'oldAlias' => $slider['alias'],
+			    'newAlias' => ''
+		    );
+	    }
+
+	    return false;
     }
 
     function setThumbnail($id, $thumbnail) {
@@ -399,6 +502,12 @@ class N2SmartsliderSlidersModel extends N2Model {
                 'class' => 'n2-button n2-button-normal n2-button-xs n2-radius-s n2-button-grey n2-h5',
             ), '#' . $slider['id'])
         );
+        if(!empty($slider['alias'])){
+	        $lb[] = N2Html::tag('div', array(
+		        'class' => 'n2-button n2-button-normal n2-button-xs n2-radius-s n2-button-grey n2-h5',
+		        'style' => 'margin: 0 5px;'
+	        ), $slider['alias']);
+        }
 
 
         $attributes = array(
@@ -449,6 +558,12 @@ class N2SmartsliderSlidersModel extends N2Model {
                 'class' => 'n2-button n2-button-normal n2-button-xs n2-radius-s n2-button-grey n2-h5',
             ), '#' . $slider['id'])
         );
+	    if(!empty($slider['alias'])){
+		    $lb[] = N2Html::tag('div', array(
+			    'class' => 'n2-button n2-button-normal n2-button-xs n2-radius-s n2-button-grey n2-h5',
+			    'style' => 'margin: 0 5px;'
+		    ), $slider['alias']);
+	    }
 
 
         $attributes = array(
@@ -464,7 +579,11 @@ class N2SmartsliderSlidersModel extends N2Model {
                     )
                 )) . '";';
         } else {
-            $attributes['onclick'] = 'window.parent.postMessage("' . $slider['id'] . '", "*");';
+        	if(empty($slider['alias'])){
+		        $attributes['onclick'] = 'window.parent.postMessage(JSON.stringify({"action":"ss3embed","mode":"id","id":' . json_encode($slider['id']) . '}), "*");';
+	        } else {
+		        $attributes['onclick'] = 'window.parent.postMessage(JSON.stringify({"action":"ss3embed","mode":"alias","alias":' . json_encode($slider['alias']) . '}), "*");';
+	        }
         }
 
         $widget->init("box", array(
@@ -539,6 +658,7 @@ class N2SmartsliderSlidersModel extends N2Model {
         $data['title']     = $slider['title'];
         $data['type']      = $slider['type'];
         $data['thumbnail'] = $slider['thumbnail'];
+	    $data['alias'] = isset($slider['alias']) ? $slider['alias'] : '';
 
         return self::editGroupForm($data);
     }

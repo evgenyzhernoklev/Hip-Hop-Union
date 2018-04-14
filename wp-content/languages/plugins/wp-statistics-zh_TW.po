@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WP Statistics - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2018-01-09 08:46:57+0000\n"
+"PO-Revision-Date: 2018-01-18 11:44:26+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,123 +11,144 @@ msgstr ""
 "Language: zh_TW\n"
 "Project-Id-Version: Plugins - WP Statistics - Stable (latest release)\n"
 
-#: includes/templates/welcome.php:134
-msgid "Go to Stats → Overview"
-msgstr "至 統計 \t 總覽"
+#: includes/templates/welcomes/last-version.php:35
+msgid "And recent changes"
+msgstr "還有最近的異動"
 
-#: includes/templates/welcome.php:123
-msgid "Chart.js"
-msgstr "Chart.js"
+#: includes/templates/welcomes/last-version.php:24
+msgid "GeoIP & Browscap improvements"
+msgstr "GeoIP 和 Browscap 改善"
 
-#: includes/templates/welcome.php:121
-msgid "MaxMind"
-msgstr "MaxMind"
+#: includes/classes/class-wp-statistics-updates.php:38
+msgid "Error the gzopen() function do not exist!"
+msgstr "錯誤 gzopen() 功能不存在!"
 
-#: includes/templates/welcome.php:119
+#: includes/templates/welcomes/last-version.php:87
+msgid "Improvement Cache system and update Browscap database."
+msgstr "改善 Cache 系統和更新 Browscap 資料庫."
+
+#: includes/templates/welcomes/last-version.php:86
+msgid "Improvement Memory usage in the plugin when the Browscap is enabled."
+msgstr "當 Browscap 啟用時，插件記憶體使用率改善"
+
+#: includes/templates/welcomes/last-version.php:85
+msgid "Updated Browscap to v3.1.0 and fixed some issues."
+msgstr "更新 Browscap 到 v3.1.0 及修正一些問題."
+
+#: includes/templates/welcomes/last-version.php:10
+msgid "What&#8217;s New"
+msgstr "新功能"
+
+#: includes/settings/tabs/wps-general.php:334
+msgid "Choose the position to show Hits."
+msgstr "選擇顯示點閱數的位置"
+
+#: includes/classes/class-wp-statistics-welcome.php:30
+msgid "WP-Statistics Welcome"
+msgstr "WP-Statistics 歡迎"
+
+#: includes/classes/class-wp-statistics-updates.php:234
+msgid "Browscap database updated failed! %s"
+msgstr "Browscap 資料庫更新失敗! %s"
+
+#: includes/classes/class-wp-statistics-frontend.php:111
+msgid "Hits: %s"
+msgstr "點閱: %s"
+
+#: includes/templates/welcomes/last-version.php:140
 msgid "External Libraries"
 msgstr "外部程式庫"
 
-#: includes/templates/welcome.php:114
+#: includes/templates/welcomes/last-version.php:135
 msgid "Language Contributor"
 msgstr "語言貢獻者"
 
-#: includes/templates/welcome.php:113
+#: includes/templates/welcomes/last-version.php:134
 msgid "Pedro Mendonça"
 msgstr "Pedro Mendonça"
 
-#: includes/templates/welcome.php:104 includes/templates/welcome.php:109
+#: includes/templates/welcomes/last-version.php:125
+#: includes/templates/welcomes/last-version.php:130
 msgid "Core Contributor"
 msgstr "主要貢獻者"
 
-#: includes/templates/welcome.php:108
+#: includes/templates/welcomes/last-version.php:129
 msgid "Farhad Sakhaei"
 msgstr "Farhad Sakhaei"
 
-#: includes/templates/welcome.php:103
+#: includes/templates/welcomes/last-version.php:124
 msgid "Greg Ross"
 msgstr "Greg Ross"
 
-#: includes/templates/welcome.php:99
+#: includes/templates/welcomes/last-version.php:120
 msgid "Other Contributors"
 msgstr "其他貢獻者"
 
-#: includes/templates/welcome.php:96
+#: includes/templates/welcomes/last-version.php:117
 msgid "Original Author"
 msgstr "原作者"
 
-#: includes/templates/welcome.php:95
+#: includes/templates/welcomes/last-version.php:116
 msgid "Mostafa Soufi"
 msgstr "Mostafa Soufi"
 
-#: includes/templates/welcome.php:91
+#: includes/templates/welcomes/last-version.php:112
 msgid "Project Leaders"
 msgstr "專案領導者"
 
-#: includes/templates/welcome.php:70
+#: includes/templates/welcomes/last-version.php:91
 msgid "Fixed Issue to show date range in the charts."
 msgstr "修正圖表中顯示日期區間的問題"
 
-#: includes/templates/welcome.php:50
+#: includes/templates/welcomes/last-version.php:67
 msgid "New Add-Ons!"
 msgstr "新附加功能!"
 
-#: includes/templates/welcome.php:24
+#: includes/templates/welcomes/last-version.php:41
 msgid "New Feature!<br>Show Hits on the single posts/pages."
 msgstr "新功能!<br>在每個文章/頁面顯示瀏覽數"
 
-#: includes/templates/welcome.php:18
+#: includes/templates/welcomes/last-version.php:18
 msgid "You can see the new changes of WP-Statistics on this page."
 msgstr "你可以在此頁看到 WP-Statistics 新的變動"
 
-#: includes/templates/welcome.php:17
+#: includes/templates/welcomes/last-version.php:17
 msgid "Welcome to the WP-Statistics!"
 msgstr "歡迎來到 WP-Statistics!"
 
-#: includes/templates/welcome.php:12
+#: includes/templates/welcomes/last-version.php:12
 msgid "Changelog"
 msgstr "異動紀錄"
 
-#: includes/templates/welcome.php:11
+#: includes/templates/welcomes/last-version.php:11
 msgid "Credits"
 msgstr "名單"
 
-#: includes/templates/welcome.php:10
-msgid "What’s New"
-msgstr "新功能"
-
-#: includes/templates/welcome.php:6
+#: includes/templates/welcomes/last-version.php:6
 msgid "Version %s"
 msgstr "版本 %s"
 
-#: includes/templates/welcome.php:5
+#: includes/templates/welcomes/last-version.php:5
 msgid "Thank you for updating to the latest version!"
 msgstr "感謝升級至最新版本!"
 
-#: includes/templates/welcome.php:3
+#: includes/templates/welcomes/last-version.php:3
 msgid "Welcome to WP-Statistics&nbsp;%s"
 msgstr "歡迎使用 WP-Statistics&nbsp;%s"
 
-#: includes/settings/tabs/wps-general.php:332
-msgid "Choose the position hits."
-msgstr "選擇瀏覽位置"
-
-#: includes/settings/tabs/wps-general.php:326
+#: includes/settings/tabs/wps-general.php:328
 msgid "After Content"
 msgstr "文章之後"
 
-#: includes/settings/tabs/wps-general.php:321
+#: includes/settings/tabs/wps-general.php:323
 msgid "Before Content"
 msgstr "文章之前"
 
-#: includes/settings/tabs/wps-general.php:312
+#: includes/settings/tabs/wps-general.php:314
 msgid "Display position"
 msgstr "顯示位置"
 
-#: includes/settings/tabs/wps-general.php:301
-msgid "Enable or disable show hits after content"
-msgstr "在文章之後是否顯示點閱數"
-
-#: includes/settings/tabs/wps-general.php:292
+#: includes/settings/tabs/wps-general.php:294
 msgid "Show hits in posts/pages in the site"
 msgstr "網站的文章/頁面顯示點閱數"
 
@@ -138,10 +159,6 @@ msgstr "文章和頁面"
 #: includes/log/page-statistics.php:58
 msgid "Select Page"
 msgstr "選擇頁面"
-
-#: includes/classes/class-wp-statistics-frontend.php:150
-msgid "<p>Views: %s</p>"
-msgstr "<p>瀏覽數: %s</p>"
 
 #. Author URI of the plugin/theme
 msgid "http://veronalabs.com/"
@@ -159,10 +176,6 @@ msgstr "搜尋的詞語: %s"
 msgid "Top Searched Phrases"
 msgstr "最常搜尋的詞語"
 
-#: includes/log/log.php:11
-msgid "<div class=\"update-nag\" style=\"%s\">GeoIP collection is not enabled. Please go to <a href=\"%s\">setting page</a> to enable GeoIP for getting more information and location (country) from the visitor.</div>"
-msgstr "<div class=\"update-nag\" style=\"%s\">GeoIP 收集並未啟動. 請到<a href=\"%s\">設定頁</a> 以啟動 GeoIP 來獲得更多訪客資訊與區域(國家).</div>"
-
 #: includes/log/exclusions.php:112
 msgid "CronJob"
 msgstr "CronJob"
@@ -175,8 +188,8 @@ msgstr "搜尋的詞語"
 msgid "<a href=\"%s\">Click here</a> to see page stats."
 msgstr "<a href=\"%s\">按這裏</a> 看頁面統計."
 
-#: includes/classes/class-wp-statistics-admin.php:412
-#: includes/classes/class-wp-statistics-admin.php:413
+#: includes/classes/class-wp-statistics-admin.php:415
+#: includes/classes/class-wp-statistics-admin.php:416
 msgid "Top Search Words"
 msgstr "最常搜尋詞語"
 
@@ -213,7 +226,7 @@ msgstr "訂閱我們的郵寄名單以獲得任何 WP-Statistics 的新聞"
 msgid "IP location services provided by data created by %s."
 msgstr "IP 位置服務由%s產生資料提供"
 
-#: includes/settings/tabs/wps-about.php:16
+#: includes/settings/tabs/wps-about.php:17
 msgid "This product includes GeoLite2 data created by %s."
 msgstr "這個產品包含 GeoLite2 資料 (由 %s 產生)"
 
@@ -221,13 +234,9 @@ msgstr "這個產品包含 GeoLite2 資料 (由 %s 產生)"
 msgid "Platforms"
 msgstr "平台"
 
-#: includes/classes/class-wp-statistics-updates.php:67
+#: includes/classes/class-wp-statistics-updates.php:85
 msgid "Error setting permissions of the GeoIP database directory, make sure your web server has permissions to write to directories in : %s"
 msgstr "GeoIP 資料庫目錄權限設定錯誤，請確定您的網頁伺服器有寫入權限到 : %s"
-
-#: includes/classes/class-wp-statistics-updates.php:26
-msgid "Error the download_url() or gzopen() functions do not exist!"
-msgstr "錯誤： download_url() 或 gzopen() 功能不存在！"
 
 #: includes/classes/class-wp-statistics-admin-pages.php:170
 msgid "Add-On deactivated."
@@ -237,43 +246,43 @@ msgstr "附加功能已停用。"
 msgid "Add-On activated."
 msgstr "附加功能已啟用。"
 
-#: includes/classes/class-wp-statistics-admin.php:545
-#: includes/classes/class-wp-statistics-admin.php:546
+#: includes/classes/class-wp-statistics-admin.php:548
+#: includes/classes/class-wp-statistics-admin.php:549
 msgid "Add-Ons"
 msgstr "\t附加功能"
 
-#: includes/classes/class-wp-statistics-admin.php:482
-#: includes/classes/class-wp-statistics-admin.php:483
+#: includes/classes/class-wp-statistics-admin.php:485
+#: includes/classes/class-wp-statistics-admin.php:486
 msgid "Authors"
 msgstr "作者"
 
-#: includes/classes/class-wp-statistics-admin.php:472
-#: includes/classes/class-wp-statistics-admin.php:473
+#: includes/classes/class-wp-statistics-admin.php:475
+#: includes/classes/class-wp-statistics-admin.php:476
 msgid "Tags"
 msgstr "標籤"
 
-#: includes/classes/class-wp-statistics-admin.php:462
-#: includes/classes/class-wp-statistics-admin.php:463
+#: includes/classes/class-wp-statistics-admin.php:465
+#: includes/classes/class-wp-statistics-admin.php:466
 msgid "Categories"
 msgstr "分類"
 
-#: includes/classes/class-wp-statistics-admin.php:190
+#: includes/classes/class-wp-statistics-admin.php:193
 msgid "Database updates are required, please go to %soptimization page%s and update the following: %s"
 msgstr "需要更新資料庫，請到 %soptimization page%s 及更新下列： %s"
 
-#: includes/classes/class-wp-statistics.php:1399
+#: includes/classes/class-wp-statistics.php:1401
 msgid "Please contact your hosting provider to upgrade to a supported version or disable WP Statistics to remove this message."
 msgstr "請聯絡您的主機網站提供者，以升級到支援的版本或關掉 WP Statistics 以移除此訊息。"
 
-#: includes/classes/class-wp-statistics.php:1391
+#: includes/classes/class-wp-statistics.php:1393
 msgid "WP Statistics has detected PHP version %s which is unsupported, WP Statistics requires PHP Version %s or higher!"
 msgstr "WP Statistics 已經偵測到 PHP 版本 %s 不支援，WP Statistics 需要 PHP 版本 %s 或更高！"
 
-#: includes/classes/class-wp-statistics.php:1382
+#: includes/classes/class-wp-statistics.php:1384
 msgid "&#151; You are running an unsupported version of PHP."
 msgstr "&#151; 您正在執行不支援的 PHP 版本。"
 
-#: includes/classes/class-wp-statistics.php:1379
+#: includes/classes/class-wp-statistics.php:1381
 msgid "WP Statistics Disabled"
 msgstr "WP Statistics 停用"
 
@@ -328,17 +337,14 @@ msgstr "狀態："
 msgid "Version:"
 msgstr "版本："
 
-#: includes/templates/plugins.php:7 includes/templates/welcome.php:51
+#: includes/templates/plugins.php:7
+#: includes/templates/welcomes/last-version.php:68
 msgid "These extensions add functionality to your WP-Statistics."
 msgstr "這些擴充功能增加功能到您的 WP-Statistics 。"
 
 #: includes/templates/plugins.php:2
 msgid "Extensions for WP-Statistics"
 msgstr "WP-Statistics 擴充功能"
-
-#: includes/settings/tabs/wps-removal.php:105
-msgid "Reset the plugin options to the defaults.  This will remove all user and global settings but will keep all other data.  This action cannot be undone.  Note: For multi-site installs this will reset all sites to the defaults."
-msgstr "重設外掛功能到預設值.  將會移除所有使用者與整體設定但會保留其他資料. 這個操作無法回復.  注意: 針對多網站的安裝將會重設所有的網站到預設值."
 
 #: includes/settings/tabs/wps-removal.php:103
 msgid "Reset"
@@ -350,19 +356,19 @@ msgstr "重設選項"
 
 #: includes/classes/class-wp-statistics-widget.php:40
 #: includes/classes/class-wp-statistics-widget.php:268
-#: includes/classes/class-wp-statistics.php:1479
+#: includes/classes/class-wp-statistics.php:1481
 #: includes/settings/tabs/wps-notifications.php:289
 msgid "Today's Visits"
 msgstr "今日瀏覽次數"
 
 #: includes/classes/class-wp-statistics-widget.php:47
 #: includes/classes/class-wp-statistics-widget.php:275
-#: includes/classes/class-wp-statistics.php:1471
+#: includes/classes/class-wp-statistics.php:1473
 #: includes/settings/tabs/wps-notifications.php:287
 msgid "Today's Visitors"
 msgstr "今日瀏覽者數量"
 
-#: includes/classes/class-wp-statistics.php:1459
+#: includes/classes/class-wp-statistics.php:1461
 #: includes/settings/tabs/wps-general.php:101
 #: includes/settings/tabs/wps-notifications.php:285
 msgid "Online User"
@@ -405,39 +411,39 @@ msgstr "IP 位址和 subnet 遮罩清單  (每行一個) 來排除在統計之�
 msgid "See the %sWordPress Roles and Capabilities page%s for details on capability levels."
 msgstr "請見 %sWordPress 角色和能力 page%s 的能力詳細內容"
 
-#: includes/settings/tabs/wps-about.php:151
+#: includes/settings/tabs/wps-about.php:152
 msgid "Then please open a new thread on the %sWordPress.org support forum%s and we'll respond as soon as possible."
 msgstr "然後請開一個新的討論在 %sWordPress.org 支援討論區%s, 我們將盡可能盡速回答"
 
-#: includes/settings/tabs/wps-about.php:143
+#: includes/settings/tabs/wps-about.php:144
 msgid "Did you view the source for the page and check for any fatal errors?"
 msgstr "您有檢視頁面原始碼來檢查任何致命的錯誤嗎？"
 
-#: includes/settings/tabs/wps-about.php:138
+#: includes/settings/tabs/wps-about.php:139
 msgid "Are you getting a blank or incomplete page displayed in your browser?"
 msgstr "您在瀏覽器看到空白或不完整的頁面嗎？"
 
-#: includes/settings/tabs/wps-about.php:116
+#: includes/settings/tabs/wps-about.php:117
 msgid "Have you search the %ssupport forum%s for a similar issue?"
 msgstr "您已經搜尋 %ssupport forum%s 是否有類似的問題了嗎？"
 
-#: includes/settings/tabs/wps-about.php:111
+#: includes/settings/tabs/wps-about.php:112
 msgid "Documentation"
 msgstr "文件"
 
-#: includes/settings/tabs/wps-about.php:109
+#: includes/settings/tabs/wps-about.php:110
 msgid "Have you read the %sdocumentation%s?"
 msgstr "您已經閱讀 %sdocumentation%s 了嗎？"
 
-#: includes/settings/tabs/wps-about.php:102
+#: includes/settings/tabs/wps-about.php:103
 msgid "Have you read the %sFAQs%s?"
 msgstr "您已經閱讀 %sFAQs%s 了嗎？"
 
-#: includes/settings/tabs/wps-about.php:80
+#: includes/settings/tabs/wps-about.php:81
 msgid "WP Statistics supports internationalization. Please visit %sWP Statistics translations page%s to help translation."
 msgstr "WP Statistics 支援國際化。請訪問 %sWP Statistics translations page%s 來協助翻譯。"
 
-#: includes/settings/tabs/wps-about.php:64
+#: includes/settings/tabs/wps-about.php:65
 msgid "Thanks for installing WP Statistics, we encourage you to submit a %srating and review%s over at WordPress.org. Your feedback is greatly appreciated!"
 msgstr "感謝安裝 WP Statistics ，我們鼓勵您透過 WordPress.org 提交 %srating 和 review%s 。我們非常感謝您的意見反應！"
 
@@ -479,15 +485,15 @@ msgstr "PHP IPv6 啟動"
 msgid "Bytes"
 msgstr "位元組"
 
-#: includes/log/widgets/summary.php:126
+#: includes/log/widgets/summary.php:125
 msgid "Last 365 Days"
 msgstr "最近 365 天"
 
-#: includes/log/widgets/summary.php:104
+#: includes/log/widgets/summary.php:103
 msgid "Last 30 Days"
 msgstr "最近 30 天"
 
-#: includes/log/widgets/summary.php:82
+#: includes/log/widgets/summary.php:81
 msgid "Last 7 Days"
 msgstr "最近 7 天"
 
@@ -637,8 +643,8 @@ msgctxt "Country"
 msgid "Unknown"
 msgstr "未知"
 
-#: includes/classes/class-wp-statistics.php:1081
-#: includes/classes/class-wp-statistics.php:1115
+#: includes/classes/class-wp-statistics.php:1082
+#: includes/classes/class-wp-statistics.php:1116
 msgctxt "Search Engine"
 msgid "Unknown"
 msgstr "未知"
@@ -662,15 +668,15 @@ msgid "Unknown"
 msgstr "未知"
 
 #: includes/classes/class-wp-statistics-dashboard.php:268
-#: includes/classes/class-wp-statistics-editor.php:123 includes/log/log.php:86
+#: includes/classes/class-wp-statistics-editor.php:123 includes/log/log.php:87
 msgid "More Details"
 msgstr "更多詳細資料"
 
 #: includes/classes/class-wp-statistics-dashboard.php:264
 #: includes/classes/class-wp-statistics-dashboard.php:274
 #: includes/classes/class-wp-statistics-editor.php:119
-#: includes/classes/class-wp-statistics-editor.php:129 includes/log/log.php:82
-#: includes/log/log.php:91
+#: includes/classes/class-wp-statistics-editor.php:129 includes/log/log.php:83
+#: includes/log/log.php:92
 msgid "Reload"
 msgstr "重新載入"
 
@@ -680,7 +686,7 @@ msgid "Reloading..."
 msgstr "重新載入中..."
 
 #: includes/classes/class-wp-statistics-dashboard.php:358
-#: includes/classes/class-wp-statistics-editor.php:90 includes/log/log.php:52
+#: includes/classes/class-wp-statistics-editor.php:90 includes/log/log.php:53
 msgid "Loading..."
 msgstr "載入中..."
 
@@ -696,51 +702,31 @@ msgstr "找不到符合小工具！"
 msgid "https://wp-statistics.com/"
 msgstr "http://wp-statistics.com/"
 
-#: includes/classes/class-wp-statistics-updates.php:464
+#: includes/classes/class-wp-statistics-updates.php:251
 msgid "Browscap.ini update on"
 msgstr "Browscap.ini 更新於"
 
-#: includes/classes/class-wp-statistics-updates.php:446
-msgid "browscap already at current version!"
-msgstr "browscap 已經是目前最新的版本！"
-
-#: includes/classes/class-wp-statistics-updates.php:404
-msgid "browscap database updated failed!  New browscap.ini is mis-identifing user agents as crawlers, reverting to previous browscap.ini."
-msgstr "browscap 資料庫更新失敗！新版 browscap.ini 無法識別使用者的代理程式，無法還原前一版的 browscap.ini 。"
-
-#: includes/classes/class-wp-statistics-updates.php:391
-msgid "browscap database updated failed!  Cache file too large, reverting to previous browscap.ini."
-msgstr "browscap 資料庫更新失敗！快取檔案過大，無法還原前一版的 browscap.ini 。"
-
-#: includes/classes/class-wp-statistics-updates.php:380
-msgid "browscap database updated successfully!"
-msgstr "browscap 資料庫已成功更新 ！"
-
-#: includes/classes/class-wp-statistics-updates.php:236
-msgid "Error downloading browscap database from: %s - %s"
-msgstr "下載 browscap 資料庫時出錯： %s - %s"
-
-#: includes/classes/class-wp-statistics-updates.php:156
+#: includes/classes/class-wp-statistics-updates.php:180
 msgid "GeoIP update on"
 msgstr "GeoIP 更新於"
 
-#: includes/classes/class-wp-statistics-updates.php:124
+#: includes/classes/class-wp-statistics-updates.php:148
 msgid "GeoIP Database updated successfully!"
 msgstr "GeoIP 資料庫已成功更新 ！"
 
-#: includes/classes/class-wp-statistics-updates.php:106
+#: includes/classes/class-wp-statistics-updates.php:130
 msgid "Error could not open destination GeoIP database for writing %s"
 msgstr "錯誤不能打開target GeoIP 資料庫寫入 %s"
 
-#: includes/classes/class-wp-statistics-updates.php:97
+#: includes/classes/class-wp-statistics-updates.php:119
 msgid "Error could not open downloaded GeoIP database for reading: %s"
 msgstr "錯誤不能打開閱讀下載的 GeoIP 資料庫： %s"
 
-#: includes/classes/class-wp-statistics-updates.php:83
+#: includes/classes/class-wp-statistics-updates.php:103
 msgid "Error downloading GeoIP database from: %s - %s"
 msgstr "下載 GeoIP 資料庫時出錯： %s - %s"
 
-#: includes/classes/class-wp-statistics-updates.php:52
+#: includes/classes/class-wp-statistics-updates.php:70
 msgid "Error creating GeoIP database directory, make sure your web server has permissions to create directories in : %s"
 msgstr "創建 GeoIP 數據庫目錄時出錯，請確保您的Web服務器有權限在：%s 中創建目錄"
 
@@ -754,7 +740,7 @@ msgstr "以下外掛表不存在於資料庫中，請重新運行 %s 安裝例�
 msgid "You do not have sufficient permissions to access this page."
 msgstr "您沒有足夠權限存取此頁。"
 
-#: includes/classes/class-wp-statistics.php:1505
+#: includes/classes/class-wp-statistics.php:1507
 msgid "View Stats"
 msgstr "瀏覽統計"
 
@@ -766,115 +752,115 @@ msgstr "選項"
 msgid "Site"
 msgstr "站台"
 
-#: includes/classes/class-wp-statistics-admin.php:529
-#: includes/classes/class-wp-statistics-admin.php:530
+#: includes/classes/class-wp-statistics-admin.php:532
+#: includes/classes/class-wp-statistics-admin.php:533
 #: includes/classes/class-wp-statistics-network-admin.php:98
 #: includes/optimization/wps-optimization.php:242
 msgid "Optimization"
 msgstr "最佳化"
 
-#: includes/classes/class-wp-statistics-admin.php:502
-#: includes/classes/class-wp-statistics-admin.php:503
+#: includes/classes/class-wp-statistics-admin.php:505
+#: includes/classes/class-wp-statistics-admin.php:506
 #: includes/classes/class-wp-statistics-network-admin.php:96
 msgid "Top Visitors Today"
 msgstr "今日熱門瀏覽者"
 
-#: includes/classes/class-wp-statistics-admin.php:402
-#: includes/classes/class-wp-statistics-admin.php:403
+#: includes/classes/class-wp-statistics-admin.php:405
+#: includes/classes/class-wp-statistics-admin.php:406
 #: includes/classes/class-wp-statistics-network-admin.php:89
 msgid "Search Words"
 msgstr "搜尋關鍵字"
 
-#: includes/classes/class-wp-statistics-admin.php:392
-#: includes/classes/class-wp-statistics-admin.php:393
+#: includes/classes/class-wp-statistics-admin.php:395
+#: includes/classes/class-wp-statistics-admin.php:396
 #: includes/classes/class-wp-statistics-network-admin.php:88
 msgid "Referrers"
 msgstr "查閱者"
 
-#: includes/classes/class-wp-statistics-admin.php:382
-#: includes/classes/class-wp-statistics-admin.php:383
+#: includes/classes/class-wp-statistics-admin.php:385
+#: includes/classes/class-wp-statistics-admin.php:386
 #: includes/classes/class-wp-statistics-network-admin.php:87
 msgid "Online"
 msgstr "上線"
 
-#: includes/classes/class-wp-statistics-admin.php:363
-#: includes/classes/class-wp-statistics-admin.php:364
+#: includes/classes/class-wp-statistics-admin.php:366
+#: includes/classes/class-wp-statistics-admin.php:367
 #: includes/classes/class-wp-statistics-network-admin.php:35
 #: includes/classes/class-wp-statistics-network-admin.php:36
 #: includes/classes/class-wp-statistics-network-admin.php:85
 msgid "Overview"
 msgstr "總覽"
 
-#: includes/classes/class-wp-statistics-admin.php:326
+#: includes/classes/class-wp-statistics-admin.php:329
 msgid "WP Statistics - Hits"
 msgstr "WP Statistics - 點閱"
 
-#: includes/classes/class-wp-statistics-admin.php:252
+#: includes/classes/class-wp-statistics-admin.php:255
 msgid "Rate this plugin"
 msgstr "評價這個外掛"
 
-#: includes/classes/class-wp-statistics-admin.php:249
+#: includes/classes/class-wp-statistics-admin.php:252
 msgid "Click here to rate and review this plugin on WordPress.org"
 msgstr "按一下此處打分和評論這上好的外掛程式"
 
-#: includes/classes/class-wp-statistics-admin.php:246
+#: includes/classes/class-wp-statistics-admin.php:249
 msgid "Visit WordPress.org page"
 msgstr "瀏覽 WordPress.org 頁面"
 
-#: includes/classes/class-wp-statistics-admin.php:243
+#: includes/classes/class-wp-statistics-admin.php:246
 msgid "Click here to visit the plugin on WordPress.org"
 msgstr "點選這裡瀏覽外掛於 WordPress.org"
 
-#: includes/classes/class-wp-statistics-admin.php:221
-#: includes/classes/class-wp-statistics-admin.php:537
-#: includes/classes/class-wp-statistics-admin.php:538
+#: includes/classes/class-wp-statistics-admin.php:224
+#: includes/classes/class-wp-statistics-admin.php:540
+#: includes/classes/class-wp-statistics-admin.php:541
 #: includes/classes/class-wp-statistics-network-admin.php:99
 #: includes/settings/wps-settings.php:23
 msgid "Settings"
 msgstr "設定"
 
-#: includes/classes/class-wp-statistics-frontend.php:118
+#: includes/classes/class-wp-statistics-admin.php:665
 msgid "WP Statistics %s installed on"
 msgstr "WP Statistics %s  已安裝於"
 
-#: includes/classes/class-wp-statistics-admin.php:179
+#: includes/classes/class-wp-statistics-admin.php:182
 msgid "visit database index"
 msgstr "瀏覽索引資料庫"
 
-#: includes/classes/class-wp-statistics-admin.php:178
+#: includes/classes/class-wp-statistics-admin.php:181
 msgid "countries database index"
 msgstr "國家索引資料庫"
 
-#: includes/classes/class-wp-statistics-admin.php:169
+#: includes/classes/class-wp-statistics-admin.php:172
 msgid "search table"
 msgstr "搜尋表單"
 
-#: includes/classes/class-wp-statistics-admin.php:157
-#: includes/classes/class-wp-statistics-admin.php:196
+#: includes/classes/class-wp-statistics-admin.php:160
+#: includes/classes/class-wp-statistics-admin.php:199
 msgid ","
 msgstr ","
 
-#: includes/classes/class-wp-statistics-admin.php:151
+#: includes/classes/class-wp-statistics-admin.php:154
 msgid "The following features are disabled, please go to %ssettings page%s and enable them: %s"
 msgstr "以下功能被停用，請移至 %s設定頁面%s 並啟動它們： %s"
 
-#: includes/classes/class-wp-statistics-admin.php:146
+#: includes/classes/class-wp-statistics-admin.php:149
 msgid "geoip collection"
 msgstr "GeoIP 蒐集"
 
-#: includes/classes/class-wp-statistics-admin.php:143
+#: includes/classes/class-wp-statistics-admin.php:146
 msgid "visitor tracking"
 msgstr "瀏覽者追蹤"
 
-#: includes/classes/class-wp-statistics-admin.php:140
+#: includes/classes/class-wp-statistics-admin.php:143
 msgid "hit tracking"
 msgstr "點選追蹤"
 
-#: includes/classes/class-wp-statistics-admin.php:137
+#: includes/classes/class-wp-statistics-admin.php:140
 msgid "online user tracking"
 msgstr "線上使用者追蹤"
 
-#: includes/classes/class-wp-statistics-admin.php:104
+#: includes/classes/class-wp-statistics-admin.php:107
 msgid "WP Statistics has been removed, please disable and delete it."
 msgstr "WP Statistics 已被刪除，請停用並刪除它。"
 
@@ -943,8 +929,8 @@ msgstr "頁面瀏覽總數"
 msgid "Show site stats in sidebar."
 msgstr "在側邊欄中顯示網站的統計資料。"
 
-#: includes/classes/class-wp-statistics-admin.php:352
-#: includes/classes/class-wp-statistics-admin.php:353
+#: includes/classes/class-wp-statistics-admin.php:355
+#: includes/classes/class-wp-statistics-admin.php:356
 #: includes/classes/class-wp-statistics-network-admin.php:24
 #: includes/classes/class-wp-statistics-network-admin.php:25
 #: includes/classes/class-wp-statistics-widget.php:11
@@ -1167,14 +1153,14 @@ msgstr "總瀏覽者"
 
 #: includes/classes/class-wp-statistics-widget.php:54
 #: includes/classes/class-wp-statistics-widget.php:282
-#: includes/classes/class-wp-statistics.php:1497
+#: includes/classes/class-wp-statistics.php:1499
 #: includes/settings/tabs/wps-notifications.php:293
 msgid "Yesterday's Visits"
 msgstr "昨日瀏覽次數"
 
 #: includes/classes/class-wp-statistics-widget.php:61
 #: includes/classes/class-wp-statistics-widget.php:289
-#: includes/classes/class-wp-statistics.php:1487
+#: includes/classes/class-wp-statistics.php:1489
 #: includes/settings/tabs/wps-notifications.php:291
 msgid "Yesterday's Visitors"
 msgstr "昨日瀏覽者"
@@ -1311,81 +1297,81 @@ msgstr "每日清理舊資料"
 msgid "This will permanently delete data from the database each day, are you sure you want to enable this option?"
 msgstr "這將永久刪除每天的資料庫，您確定要啟用此選項嗎？"
 
-#: includes/settings/tabs/wps-general.php:457
+#: includes/settings/tabs/wps-general.php:460
 msgid "Add a total line to charts with multiple values, like the search engine referrals"
 msgstr "新增多重數值總時間表，例如推薦的搜尋引擎"
 
-#: includes/settings/tabs/wps-general.php:448
+#: includes/settings/tabs/wps-general.php:451
 msgid "Include totals"
 msgstr "包含總計"
 
-#: includes/settings/tabs/wps-general.php:443
+#: includes/settings/tabs/wps-general.php:446
 msgid "Charts"
 msgstr "圖表"
 
-#: includes/settings/tabs/wps-general.php:435
+#: includes/settings/tabs/wps-general.php:438
 msgid "Disable %s from data collection and reporting."
 msgstr "停用由 %s 來的收集和報告的資料。"
 
-#: includes/settings/tabs/wps-general.php:429
+#: includes/settings/tabs/wps-general.php:432
 msgid "Disable"
 msgstr "停用"
 
-#: includes/settings/tabs/wps-general.php:407
+#: includes/settings/tabs/wps-general.php:410
 msgid "Disabling all search engines is not allowed, doing so will result in all search engines being active."
 msgstr "無法停用所有搜尋引擎，這樣做會所有搜尋引擎同時被啟用。"
 
-#: includes/settings/tabs/wps-general.php:398
+#: includes/settings/tabs/wps-general.php:401
 msgid "If a search engine is identified as the referrer but it does not include the search query this option will substitute the page title in quotes preceded by \"~:\" as the search query to help identify what the user may have been searching for."
 msgstr "如果搜尋引擎設定為引用來源但不包含搜尋查詢功能，則此選項將以\"~:\"前面的引號替換網頁標題作為搜尋查詢功能，以協助使用者識別可能搜尋的內容。"
 
-#: includes/settings/tabs/wps-general.php:389
+#: includes/settings/tabs/wps-general.php:391
 msgid "Add page title to empty search words"
 msgstr "將頁面標題以清除關鍵字"
 
-#: includes/classes/class-wp-statistics-admin.php:422
-#: includes/classes/class-wp-statistics-admin.php:423
-#: includes/settings/tabs/wps-general.php:384
+#: includes/classes/class-wp-statistics-admin.php:425
+#: includes/classes/class-wp-statistics-admin.php:426
+#: includes/settings/tabs/wps-general.php:386
 msgid "Search Engines"
 msgstr "搜尋引擎"
 
-#: includes/settings/tabs/wps-general.php:376
+#: includes/settings/tabs/wps-general.php:378
 msgid "By default WP Statistics displays an alert if any of the core features are disabled on every admin page, this option will disable these notices."
 msgstr "預設情況下 WP Statistics 顯示一則提醒在每個管理員頁面上，如果任一核心功能被停用，此選項將會停用通知顯示。"
 
-#: includes/settings/tabs/wps-general.php:366
+#: includes/settings/tabs/wps-general.php:368
 msgid "Hide admin notices about non active features"
 msgstr "隱藏有關未啟動功能的管理員通知"
 
-#: includes/settings/tabs/wps-general.php:360
+#: includes/settings/tabs/wps-general.php:362
 msgid "Show stats in admin menu bar"
 msgstr "在管理選單列中顯示狀態"
 
 #: includes/optimization/tabs/wps-optimization-resources.php:248
 #: includes/optimization/tabs/wps-optimization-resources.php:267
-#: includes/settings/tabs/wps-general.php:354
+#: includes/settings/tabs/wps-general.php:356
 msgid "Yes"
 msgstr "是"
 
 #: includes/optimization/tabs/wps-optimization-resources.php:250
 #: includes/optimization/tabs/wps-optimization-resources.php:269
-#: includes/settings/tabs/wps-general.php:350
+#: includes/settings/tabs/wps-general.php:352
 msgid "No"
 msgstr "否"
 
-#: includes/settings/tabs/wps-general.php:345
+#: includes/settings/tabs/wps-general.php:347
 msgid "Show stats in menu bar"
 msgstr "在選單列中顯示狀態"
 
-#: includes/settings/tabs/wps-general.php:340
+#: includes/settings/tabs/wps-general.php:342
 msgid "Miscellaneous"
 msgstr "其他"
 
-#: includes/settings/tabs/wps-general.php:277
+#: includes/settings/tabs/wps-general.php:278
 msgid "Disable hits column in post/pages list"
 msgstr "停用文章/頁面中的點閱資料行列表"
 
-#: includes/settings/tabs/wps-general.php:266
+#: includes/settings/tabs/wps-general.php:267
 msgid "This will remove anything after the ? in a URL."
 msgstr "這將會移除在連結中 ? 的字元。"
 
@@ -1397,8 +1383,8 @@ msgstr "從連結中分離參數串"
 msgid "Track all pages"
 msgstr "追蹤所有頁面"
 
-#: includes/classes/class-wp-statistics-admin.php:432
-#: includes/classes/class-wp-statistics-admin.php:433
+#: includes/classes/class-wp-statistics-admin.php:435
+#: includes/classes/class-wp-statistics-admin.php:436
 #: includes/classes/class-wp-statistics-network-admin.php:92
 #: includes/settings/tabs/wps-general.php:223
 msgid "Pages"
@@ -1445,7 +1431,7 @@ msgstr "檢查線上使用者間隔"
 #: includes/settings/tabs/wps-general.php:182
 #: includes/settings/tabs/wps-general.php:232
 #: includes/settings/tabs/wps-general.php:247
-#: includes/settings/tabs/wps-general.php:286
+#: includes/settings/tabs/wps-general.php:288
 #: includes/settings/tabs/wps-notifications.php:171
 msgid "Enable or disable this feature"
 msgstr "啟用或停用這項功能"
@@ -1509,10 +1495,6 @@ msgstr "Browscap 資料庫將下載並偵測機器人。"
 #: includes/settings/tabs/wps-externals.php:238
 msgid "browscap usage"
 msgstr "browscap 使用量"
-
-#: includes/settings/tabs/wps-externals.php:233
-msgid "browscap settings"
-msgstr "browscap 設定"
 
 #: includes/settings/tabs/wps-externals.php:220
 msgid "PHP safe mode detected!  GeoIP collection is not supported with PHP's safe mode enabled!"
@@ -1785,12 +1767,12 @@ msgstr "這將會紀錄所有無論何種原因被排除並設在獨立表單的
 #: includes/settings/tabs/wps-general.php:195
 #: includes/settings/tabs/wps-general.php:230
 #: includes/settings/tabs/wps-general.php:245
-#: includes/settings/tabs/wps-general.php:264
-#: includes/settings/tabs/wps-general.php:284
-#: includes/settings/tabs/wps-general.php:299
-#: includes/settings/tabs/wps-general.php:374
-#: includes/settings/tabs/wps-general.php:396
-#: includes/settings/tabs/wps-general.php:455
+#: includes/settings/tabs/wps-general.php:265
+#: includes/settings/tabs/wps-general.php:286
+#: includes/settings/tabs/wps-general.php:301
+#: includes/settings/tabs/wps-general.php:376
+#: includes/settings/tabs/wps-general.php:399
+#: includes/settings/tabs/wps-general.php:458
 #: includes/settings/tabs/wps-maintenance.php:50
 #: includes/settings/tabs/wps-maintenance.php:93
 #: includes/settings/tabs/wps-notifications.php:93
@@ -1819,7 +1801,7 @@ msgstr "WP Statistics 蜜罐頁面"
 #: includes/settings/tabs/wps-access-level.php:129
 #: includes/settings/tabs/wps-exclusions.php:442
 #: includes/settings/tabs/wps-externals.php:419
-#: includes/settings/tabs/wps-general.php:467
+#: includes/settings/tabs/wps-general.php:470
 #: includes/settings/tabs/wps-maintenance.php:127
 #: includes/settings/tabs/wps-notifications.php:305
 #: includes/settings/tabs/wps-overview-display.php:106
@@ -1852,81 +1834,81 @@ msgstr "WP Statistics 需要擁有檢視級別的使用者"
 msgid "Access Levels"
 msgstr "存取層級"
 
-#: includes/settings/tabs/wps-about.php:150
+#: includes/settings/tabs/wps-about.php:151
 msgid "Still not having any luck?"
 msgstr "問題仍無法排除？"
 
-#: includes/settings/tabs/wps-about.php:147
+#: includes/settings/tabs/wps-about.php:148
 msgid "Have you checked your PHP and web server error logs?"
 msgstr "您是否已檢查過 PHP 與 網頁伺服器錯誤紀錄？"
 
-#: includes/settings/tabs/wps-about.php:137
+#: includes/settings/tabs/wps-about.php:138
 msgid "Do you have all the required PHP extensions installed?"
 msgstr "您是否已安裝所有必要的 PHP 延伸擴充？"
 
-#: includes/settings/tabs/wps-about.php:136
+#: includes/settings/tabs/wps-about.php:137
 msgid "Have you double checked the plugin settings?"
 msgstr "您是否已再次確認外掛設定？"
 
-#: includes/settings/tabs/wps-about.php:135
+#: includes/settings/tabs/wps-about.php:136
 msgid "Have you tried using the default WordPress theme?"
 msgstr "您是否已嘗試使用 WordPress 預設主題？"
 
-#: includes/settings/tabs/wps-about.php:131
+#: includes/settings/tabs/wps-about.php:132
 msgid "Have you tried disabling any other plugins you may have installed?"
 msgstr "您是否已嘗試停用過您已安裝的外掛？"
 
-#: includes/settings/tabs/wps-about.php:130
+#: includes/settings/tabs/wps-about.php:131
 msgid "How's your memory_limit in php.ini?"
 msgstr "您在 php.ini 的 memory_limit 狀態為何？"
 
-#: includes/settings/tabs/wps-about.php:127
+#: includes/settings/tabs/wps-about.php:128
 msgid "And a few things to double-check:"
 msgstr "還有以下幾件事情需要再次確認："
 
-#: includes/settings/tabs/wps-about.php:124
+#: includes/settings/tabs/wps-about.php:125
 msgid "Make sure you have access to your PHP error logs."
 msgstr "確認您是否有存取 PHP 錯誤紀錄的權限。"
 
-#: includes/settings/tabs/wps-about.php:120
+#: includes/settings/tabs/wps-about.php:121
 msgid "Have you search the Internet for any error messages you are receiving?"
 msgstr "您是否有在網路中搜尋您收到的錯誤訊息？"
 
-#: includes/settings/tabs/wps-about.php:104
+#: includes/settings/tabs/wps-about.php:105
 msgid "FAQs"
 msgstr "常見問題"
 
-#: includes/settings/tabs/wps-about.php:95
+#: includes/settings/tabs/wps-about.php:96
 msgid "We're sorry you're having problem with WP Statistics and we're happy to help out.  Here are a few things to do before contacting us:"
 msgstr "很抱歉您在 WP Statistics 中遇到問題，但我們樂意協助。請先完成以下幾件事情再與我們聯絡："
 
-#: includes/settings/tabs/wps-about.php:90
+#: includes/settings/tabs/wps-about.php:91
 msgid "Support"
 msgstr "支援"
 
-#: includes/settings/tabs/wps-about.php:75
+#: includes/settings/tabs/wps-about.php:76
 msgid "Translations"
 msgstr "翻譯"
 
-#: includes/settings/tabs/wps-about.php:59
+#: includes/settings/tabs/wps-about.php:60
 msgid "Rate and Review at WordPress.org"
 msgstr "在 WordPress.org 評分與檢閱"
 
-#: includes/settings/tabs/wps-about.php:49
+#: includes/settings/tabs/wps-about.php:50
 msgid "Come visit our great new %swebsite%s and keep up to date on the latest news about WP Statistics."
 msgstr "歡迎瀏覽我們超棒的新 %s站台%s 並保持關於 WP Statistics 最新消息。"
 
-#: includes/settings/tabs/wps-about.php:44
+#: includes/settings/tabs/wps-about.php:45
 msgid "Visit Us Online"
 msgstr "網路造訪我們"
 
-#: includes/settings/tabs/wps-about.php:34
+#: includes/settings/tabs/wps-about.php:35
 msgid "Fell like showing us how much you enjoy WP Statistics? Drop by our %sdonation%s page and show us some love!"
 msgstr "請讓我們知道您有多喜歡 WP Statistics 統計？透過 %s贊助%s 網頁告訴我們吧！"
 
-#: includes/classes/class-wp-statistics-admin.php:553
-#: includes/classes/class-wp-statistics-admin.php:554
-#: includes/settings/tabs/wps-about.php:29
+#: includes/classes/class-wp-statistics-admin.php:556
+#: includes/classes/class-wp-statistics-admin.php:557
+#: includes/settings/tabs/wps-about.php:30
 msgid "Donate"
 msgstr "捐獻"
 
@@ -2183,32 +2165,32 @@ msgstr "PHP 的記憶體使用量"
 msgid "Resources"
 msgstr "資源"
 
-#: includes/optimization/tabs/wps-optimization-purging.php:308
+#: includes/optimization/tabs/wps-optimization-purging.php:309
 msgid "All visitor data will be lost for this platform type."
 msgstr "此類平台將會讓所以瀏覽者的資料遺失。"
 
-#: includes/optimization/tabs/wps-optimization-purging.php:292
+#: includes/optimization/tabs/wps-optimization-purging.php:293
 msgid "Delete Platforms"
 msgstr "刪除平臺"
 
-#: includes/optimization/tabs/wps-optimization-purging.php:282
-#: includes/optimization/tabs/wps-optimization-purging.php:313
+#: includes/optimization/tabs/wps-optimization-purging.php:283
+#: includes/optimization/tabs/wps-optimization-purging.php:314
 msgid "Delete now!"
 msgstr "立即刪除！"
 
-#: includes/optimization/tabs/wps-optimization-purging.php:277
+#: includes/optimization/tabs/wps-optimization-purging.php:278
 msgid "All visitor data will be lost for this agent type."
 msgstr "這類的代理將會讓所有瀏覽者的資料遺失。"
 
-#: includes/optimization/tabs/wps-optimization-purging.php:261
+#: includes/optimization/tabs/wps-optimization-purging.php:262
 msgid "Delete Agents"
 msgstr "刪除代理"
 
-#: includes/optimization/tabs/wps-optimization-purging.php:256
+#: includes/optimization/tabs/wps-optimization-purging.php:257
 msgid "Delete User Agent Types"
 msgstr "刪除使用者代理類型"
 
-#: includes/optimization/tabs/wps-optimization-purging.php:242
+#: includes/optimization/tabs/wps-optimization-purging.php:243
 msgid "Delete user statistics data where the user has more than the defined number of hits in a day.  This can be useful to clear up old data when your site has been hit by a bot.  This will remove the visitor and their hits to the site, however it will not remove individual page hits as that data is not recorded on a per use basis.  Minimum value is 10 hits."
 msgstr "刪除超過每日點閱值得使用者統計資料。當您的網站遭到機器人點閱時，執行清理較舊的資料會有益於您的網站。這將會移除瀏覽者與網站的點閱，但不會移除特定無紀錄頁面的點閱。最低點閱設定值為 10 。"
 
@@ -2218,7 +2200,7 @@ msgid "Purge visitors with more than"
 msgstr "清理超過設定值的瀏覽者"
 
 #: includes/optimization/tabs/wps-optimization-purging.php:224
-#: includes/optimization/tabs/wps-optimization-purging.php:247
+#: includes/optimization/tabs/wps-optimization-purging.php:248
 msgid "Purge now!"
 msgstr "立即清理！"
 
@@ -2262,13 +2244,13 @@ msgstr "網站的歷史瀏覽次數（目前的設定值為 %s ）。"
 msgid "Number of historical number of visitors to the site (current value is %s)."
 msgstr "網站的歷史瀏覽者人次（目前的設定值為 %s ）。"
 
-#: includes/classes/class-wp-statistics-admin.php:442
-#: includes/classes/class-wp-statistics-admin.php:443
+#: includes/classes/class-wp-statistics-admin.php:445
+#: includes/classes/class-wp-statistics-admin.php:446
 #: includes/classes/class-wp-statistics-network-admin.php:93
 #: includes/classes/class-wp-statistics-shortcode.php:159
 #: includes/log/hit-statistics.php:80 includes/log/hit-statistics.php:149
-#: includes/log/widgets/hits.php:30 includes/log/widgets/quickstats.php:26
-#: includes/log/widgets/summary.php:26
+#: includes/log/widgets/hits.php:30 includes/log/widgets/quickstats.php:25
+#: includes/log/widgets/summary.php:25
 #: includes/optimization/tabs/wps-optimization-historical.php:29
 #: includes/settings/tabs/wps-general.php:168
 #: includes/settings/tabs/wps-general.php:173
@@ -2310,9 +2292,9 @@ msgstr "選擇匯出檔案的表單。"
 #: includes/optimization/tabs/wps-optimization-export.php:18
 #: includes/optimization/tabs/wps-optimization-export.php:38
 #: includes/optimization/tabs/wps-optimization-purging.php:190
-#: includes/optimization/tabs/wps-optimization-purging.php:266
-#: includes/optimization/tabs/wps-optimization-purging.php:297
-#: includes/settings/tabs/wps-general.php:317
+#: includes/optimization/tabs/wps-optimization-purging.php:267
+#: includes/optimization/tabs/wps-optimization-purging.php:298
+#: includes/settings/tabs/wps-general.php:319
 #: includes/settings/tabs/wps-notifications.php:187
 #: includes/settings/tabs/wps-notifications.php:230
 msgid "Please select"
@@ -2390,8 +2372,8 @@ msgstr "舊版的 WP Statistics 安裝允許瀏覽者表單資訊有重複項目
 msgid "Update Now!"
 msgstr "立即更新！"
 
-#: includes/classes/class-wp-statistics-admin.php:452
-#: includes/classes/class-wp-statistics-admin.php:453
+#: includes/classes/class-wp-statistics-admin.php:455
+#: includes/classes/class-wp-statistics-admin.php:456
 #: includes/classes/class-wp-statistics-network-admin.php:94
 #: includes/optimization/tabs/wps-optimization-database.php:31
 #: includes/optimization/tabs/wps-optimization-updates.php:21
@@ -2431,58 +2413,58 @@ msgstr "代理程式"
 msgid "IP"
 msgstr "IP"
 
-#: includes/classes/class-wp-statistics-admin.php:294
-#: includes/classes/class-wp-statistics-admin.php:372
-#: includes/classes/class-wp-statistics-admin.php:373
+#: includes/classes/class-wp-statistics-admin.php:297
+#: includes/classes/class-wp-statistics-admin.php:375
+#: includes/classes/class-wp-statistics-admin.php:376
 #: includes/classes/class-wp-statistics-network-admin.php:86
 #: includes/log/authors.php:242 includes/log/categories.php:227
 #: includes/log/tags.php:238 includes/log/widgets/top.visitors.php:21
-#: includes/optimization/tabs/wps-optimization-purging.php:240
+#: includes/optimization/tabs/wps-optimization-purging.php:241
 #: includes/settings/tabs/wps-maintenance.php:116
 msgid "Hits"
 msgstr "點閱"
 
-#: includes/log/widgets/quickstats.php:266 includes/log/widgets/summary.php:266
+#: includes/log/widgets/quickstats.php:265 includes/log/widgets/summary.php:265
 msgid "Time: %s"
 msgstr "時間： %s"
 
-#: includes/log/widgets/quickstats.php:257 includes/log/widgets/summary.php:257
+#: includes/log/widgets/quickstats.php:256 includes/log/widgets/summary.php:256
 msgid "Date: %s"
 msgstr "日期： %s"
 
-#: includes/log/widgets/quickstats.php:248 includes/log/widgets/summary.php:248
+#: includes/log/widgets/quickstats.php:247 includes/log/widgets/summary.php:247
 msgid "(Adjustment)"
 msgstr "（調整）"
 
-#: includes/log/widgets/quickstats.php:247 includes/log/widgets/summary.php:247
+#: includes/log/widgets/quickstats.php:246 includes/log/widgets/summary.php:246
 msgid "Current Time and Date"
 msgstr "目前的日期與時間"
 
-#: includes/log/widgets/quickstats.php:223 includes/log/widgets/summary.php:223
+#: includes/log/widgets/quickstats.php:222 includes/log/widgets/summary.php:222
 msgid "Daily Total"
 msgstr "每日總計"
 
-#: includes/log/widgets/quickstats.php:126
+#: includes/log/widgets/quickstats.php:125
 msgid "Last 365 Days (Year)"
 msgstr "最近 365 天（年）"
 
-#: includes/log/widgets/quickstats.php:104
+#: includes/log/widgets/quickstats.php:103
 msgid "Last 30 Days (Month)"
 msgstr "最近 30 天（月）"
 
-#: includes/log/widgets/quickstats.php:82
+#: includes/log/widgets/quickstats.php:81
 msgid "Last 7 Days (Week)"
 msgstr "最近 7 天（週）"
 
-#: includes/log/widgets/quickstats.php:60
-#: includes/log/widgets/quickstats.php:195 includes/log/widgets/summary.php:60
-#: includes/log/widgets/summary.php:195
+#: includes/log/widgets/quickstats.php:59
+#: includes/log/widgets/quickstats.php:194 includes/log/widgets/summary.php:59
+#: includes/log/widgets/summary.php:194
 msgid "Yesterday"
 msgstr "昨天"
 
-#: includes/log/widgets/quickstats.php:38
-#: includes/log/widgets/quickstats.php:194 includes/log/widgets/summary.php:38
-#: includes/log/widgets/summary.php:194
+#: includes/log/widgets/quickstats.php:37
+#: includes/log/widgets/quickstats.php:193 includes/log/widgets/summary.php:37
+#: includes/log/widgets/summary.php:193
 msgid "Today"
 msgstr "今天"
 
@@ -2510,7 +2492,7 @@ msgstr "評分與檢閱"
 msgid "Website"
 msgstr "網站"
 
-#: includes/log/log.php:40
+#: includes/log/log.php:41
 msgid "About WP Statistics Version %s"
 msgstr "關於 WP Statistics 版本 %s"
 
@@ -2535,7 +2517,7 @@ msgstr "即將加入"
 #: includes/log/hit-statistics.php:90 includes/log/hit-statistics.php:148
 #: includes/log/tags.php:128 includes/log/top-pages.php:178
 #: includes/log/widgets/hits.php:40 includes/log/widgets/pages.php:36
-#: includes/log/widgets/quickstats.php:31 includes/log/widgets/summary.php:31
+#: includes/log/widgets/quickstats.php:30 includes/log/widgets/summary.php:30
 #: includes/optimization/tabs/wps-optimization-historical.php:48
 #: includes/settings/tabs/wps-general.php:149
 #: includes/settings/tabs/wps-general.php:154
@@ -2610,15 +2592,15 @@ msgstr "目前沒有線上使用者在網站中。"
 msgid "Online Users"
 msgstr "線上使用者"
 
-#: includes/log/log.php:26
+#: includes/log/log.php:27
 msgid "Close"
 msgstr "關閉"
 
-#: includes/log/log.php:24
+#: includes/log/log.php:25
 msgid "Donate Now!"
 msgstr "立即捐獻！"
 
-#: includes/log/log.php:22
+#: includes/log/log.php:23
 msgid "Have you thought about donating to WP Statistics?"
 msgstr "您是否有考慮過捐獻給 WP Statistics ？"
 
@@ -2667,8 +2649,8 @@ msgstr "所有時段總計"
 msgid "Chart Total"
 msgstr "圖表總計"
 
-#: includes/classes/class-wp-statistics-admin.php:512
-#: includes/classes/class-wp-statistics-admin.php:513
+#: includes/classes/class-wp-statistics-admin.php:515
+#: includes/classes/class-wp-statistics-admin.php:516
 #: includes/classes/class-wp-statistics-network-admin.php:97
 #: includes/log/exclusions.php:261 includes/settings/tabs/wps-exclusions.php:77
 #: includes/settings/wps-settings.php:49
@@ -2721,9 +2703,9 @@ msgid "GeoIP"
 msgstr "GeoIP"
 
 #: includes/log/exclusions.php:102 includes/log/search-statistics.php:101
-#: includes/log/widgets/quickstats.php:148
-#: includes/log/widgets/quickstats.php:231 includes/log/widgets/search.php:56
-#: includes/log/widgets/summary.php:148 includes/log/widgets/summary.php:231
+#: includes/log/widgets/quickstats.php:147
+#: includes/log/widgets/quickstats.php:230 includes/log/widgets/search.php:56
+#: includes/log/widgets/summary.php:147 includes/log/widgets/summary.php:230
 msgid "Total"
 msgstr "總計"
 
@@ -2766,8 +2748,8 @@ msgid "Platform"
 msgstr "平臺"
 
 #: includes/classes/class-wp-statistics-admin-pages.php:112
-#: includes/classes/class-wp-statistics-admin.php:492
-#: includes/classes/class-wp-statistics-admin.php:493
+#: includes/classes/class-wp-statistics-admin.php:495
+#: includes/classes/class-wp-statistics-admin.php:496
 #: includes/classes/class-wp-statistics-network-admin.php:95
 #: includes/log/all-browsers.php:86 includes/log/all-browsers.php:105
 #: includes/log/widgets/browsers.php:46
@@ -2806,11 +2788,11 @@ msgstr "尚未發現需要清除瀏覽者。"
 msgid "%s records purged successfully."
 msgstr "%s 紀錄已完成清除。"
 
-#: includes/classes/class-wp-statistics-updates.php:561
+#: includes/classes/class-wp-statistics-updates.php:350
 msgid "Updated %s GeoIP records in the visitors database."
 msgstr "更新 %s GeoIP 瀏覽者資料庫的紀錄。"
 
-#: includes/classes/class-wp-statistics-updates.php:527
+#: includes/classes/class-wp-statistics-updates.php:316
 msgid "Unable to load the GeoIP database, make sure you have downloaded it in the settings page."
 msgstr "無法載入 GeoIP 資料庫，請確認您已在設定頁面中下載。"
 
@@ -2928,7 +2910,7 @@ msgstr "摘要"
 #: includes/classes/class-wp-statistics-dashboard.php:156
 #: includes/classes/class-wp-statistics-widget.php:111
 #: includes/classes/class-wp-statistics-widget.php:338
-#: includes/log/widgets/quickstats.php:186 includes/log/widgets/summary.php:186
+#: includes/log/widgets/quickstats.php:185 includes/log/widgets/summary.php:185
 msgid "Search Engine Referrals"
 msgstr "推薦的搜尋引擎"
 

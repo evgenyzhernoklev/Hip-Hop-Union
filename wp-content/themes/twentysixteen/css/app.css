@@ -710,12 +710,12 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
   }
 }
 .gallery {
-  margin: 0 -1.16667% 1.75em;
+  margin: 0 -1.1666667% 1.75em;
 }
 .gallery-item {
   display: inline-block;
   max-width: 33.33%;
-  padding: 0 1.14007% 2.28013%;
+  padding: 0 1.1400652% 2.2801304%;
   text-align: center;
   vertical-align: top;
   width: 100%;
@@ -753,8 +753,8 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
   font-size: 13px;
   font-size: 0.8125rem;
   font-style: italic;
-  line-height: 1.61538;
-  padding-top: 0.53846em;
+  line-height: 1.6153846154;
+  padding-top: 0.5384615385em;
 }
 .gallery-columns-6 .gallery-caption, .gallery-columns-7 .gallery-caption, .gallery-columns-8 .gallery-caption, .gallery-columns-9 .gallery-caption {
   display: none;
@@ -1122,9 +1122,9 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
   font-family: Montserrat, "Helvetica Neue", sans-serif;
   font-size: 13px;
   font-size: 0.8125rem;
-  line-height: 1.61538;
-  margin: 0 7.6923% 2.15385em;
-  padding: 1.07692em 0;
+  line-height: 1.6153846154;
+  margin: 0 7.6923% 2.1538461538em;
+  padding: 1.0769230769em 0;
 }
 .comment-navigation {
   margin-right: 0;
@@ -1141,7 +1141,7 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
   content: "\002f";
   display: inline-block;
   opacity: 0.7;
-  padding: 0 0.53846em;
+  padding: 0 0.538461538em;
 }
 .wp-pagenavi {
   position: relative;

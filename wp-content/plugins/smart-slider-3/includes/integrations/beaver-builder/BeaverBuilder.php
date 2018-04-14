@@ -38,24 +38,30 @@ function n2_fl_smart_slider_field($name, $value, $field) {
 
     $choices = array();
     foreach ($slidersModel->getAll(0) AS $slider) {
-        if ($slider['type'] == 'group') {
+	    if ($slider['type'] == 'group') {
 
-            $subChoices                = array();
-            $subChoices[$slider['id']] = n2_('Whole group') . ' - ' . $slider['title'] . ' #' . $slider['id'];
-            foreach ($slidersModel->getAll($slider['id']) AS $_slider) {
-                $subChoices[$_slider['id']] = $_slider['title'] . ' #' . $_slider['id'];
-            }
+		    $subChoices                = array();
+		    if(!empty($slider['alias'])){
+			    $subChoices[$slider['alias']] = n2_('Whole group') . ' - ' . $slider['title'] . ' #Alias: ' . $slider['alias'];
+		    }
+		    $subChoices[$slider['id']] = n2_('Whole group') . ' - ' . $slider['title'] . ' #' . $slider['id'];
+		    foreach ($slidersModel->getAll($slider['id']) AS $_slider) {
+			    if(!empty($_slider['alias'])){
+				    $subChoices[$_slider['alias']] = $_slider['title'] . ' #Alias: ' . $_slider['alias'];
+			    }
+			    $subChoices[$_slider['id']] = $_slider['title'] . ' #' . $_slider['id'];
+		    }
 
-            $choices[$slider['id']] = array(
-                'label'   => $slider['title'] . ' #' . $slider['id'],
-                'choices' => $subChoices
-            );
-
-
-        } else {
-            $choices[$slider['id']] = $slider['title'] . ' #' . $slider['id'];
-        }
-
+		    $choices[$slider['id']] = array(
+			    'label'   => $slider['title'] . ' #' . $slider['id'],
+			    'choices' => $subChoices
+		    );
+	    } else {
+		    if(!empty($slider['alias'])){
+			    $choices[$slider['alias']] = $slider['title'] . ' #Alias: ' . $slider['alias'];
+		    }
+		    $choices[$slider['id']] = $slider['title'] . ' #' . $slider['id'];
+	    }
     }
     ?>
     <select name="<?php echo $name; ?>">

@@ -14,6 +14,7 @@ class N2SmartsliderInstallModel extends N2Model {
 
         "CREATE TABLE IF NOT EXISTS `#__nextend2_smartslider3_sliders` (
           `id`     INT(11)      NOT NULL AUTO_INCREMENT,
+          `alias`  VARCHAR(255) NULL DEFAULT NULL,
           `title`  VARCHAR(100) NOT NULL,
           `type`   VARCHAR(30)  NOT NULL,
           `params` MEDIUMTEXT   NOT NULL,
@@ -63,6 +64,10 @@ class N2SmartsliderInstallModel extends N2Model {
         if (!$this->hasColumn('#__nextend2_smartslider3_sliders', 'ordering')) {
             $this->db->query($this->db->parsePrefix("ALTER TABLE `#__nextend2_smartslider3_sliders` ADD `ordering` INT NOT NULL DEFAULT '0'"));
         }
+
+	    if (!$this->hasColumn('#__nextend2_smartslider3_sliders', 'alias')) {
+		    $this->db->query($this->db->parsePrefix("ALTER TABLE `#__nextend2_smartslider3_sliders` ADD `alias` VARCHAR( 255 ) NULL DEFAULT NULL"));
+	    }
 
         N2Loader::import('install', 'smartslider.platform');
 

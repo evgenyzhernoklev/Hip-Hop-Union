@@ -16,6 +16,10 @@
         <param type="onoff" name="editor-icon" label="Show editor icon" default="1"/>
         <param type="onoff" name="wp-adminbar" label="Show in WordPress admin bar" default="1"/>
         <param type="onoff" name="yoast-sitemap" label="YOAST SEO sitemap - add images" default="1"/>
+        <param type="number" name="wordpress-widget-areas" label="WordPress - Create widget area" default="1" min="0"
+               style="width:40px;">
+            <unit>widget area(s)</unit>
+        </param>
         <param type="onoff" name="force-rtl-backend" label="Force Joomla RTL backend" default="0"/>
     </params>
     <params name="reponsive" label="Responsive mode">

@@ -7,6 +7,7 @@
 //$this->widget->init('topbar', array('expert' => false));
 
 $groupID = N2Request::getInt('groupID', 0);
+$group = false;
 
 if ($groupID > 0) {
     $slidersModel = new N2SmartsliderSlidersModel();
@@ -21,6 +22,7 @@ if ($groupID > 0) {
     <?php
     $this->renderInline("embedslidermanager", array(
         'groupID' => $groupID,
+        'group'   => $group,
         'mode'    => $mode
     ));
     ?>

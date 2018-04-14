@@ -66,11 +66,14 @@ class Nextend_ET_Builder_Module_Smart_Slider extends ET_Builder_Module {
     }
 
     function shortcode_callback($atts, $content = null, $function_name) {
-        $sliderId     = $this->shortcode_atts['slider'];
+        $sliderIdOrAlias     = $this->shortcode_atts['slider'];
         $module_class = '';
         $module_class = ET_Builder_Element::add_module_order_class($module_class, $function_name);
 
-        return '<div class="et_pb_module et-waypoint ' . $module_class . ' et_pb_animation_off">' . do_shortcode('[smartslider3 slider=' . $sliderId . ']') . '</div>';
+        if(!is_numeric($sliderIdOrAlias)){
+	        return '<div class="et_pb_module et-waypoint ' . $module_class . ' et_pb_animation_off">' . do_shortcode('[smartslider3 alias="' . $sliderIdOrAlias . '"]') . '</div>';
+        }
+        return '<div class="et_pb_module et-waypoint ' . $module_class . ' et_pb_animation_off">' . do_shortcode('[smartslider3 slider=' . $sliderIdOrAlias . ']') . '</div>';
     }
 }
 

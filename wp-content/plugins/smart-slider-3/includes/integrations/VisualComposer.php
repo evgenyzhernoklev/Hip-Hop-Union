@@ -27,7 +27,7 @@ class NextendSmartSlider3VisualComposer {
             "params"   => array(
                 array(
                     'type'        => 'smartslider',
-                    'heading'     => 'Slider ID',
+                    'heading'     => 'Slider ID or Alias',
                     'param_name'  => 'slider',
                     'save_always' => true,
                     'description' => 'Select a slider to add it to your post or page.',

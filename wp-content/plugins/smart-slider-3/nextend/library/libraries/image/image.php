@@ -246,7 +246,7 @@ class N2Image extends N2CacheImage {
         } else if ($extension == 'jpg') {
             $image = @imagecreatefromjpeg($imagePath);
             if (function_exists("exif_read_data")) {
-                $exif = exif_read_data($imagePath);
+                $exif = @exif_read_data($imagePath);
 
                 $rotated = $this->getOrientation($exif, $image);
                 if ($rotated) {

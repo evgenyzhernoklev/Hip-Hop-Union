@@ -3,8 +3,8 @@ Contributors: connectthink
 Tags: sass, scss, css
 Plugin URI: https://github.com/ConnectThink/WP-SCSS
 Requires at least: 3.0.1
-Tested up to: 4.7
-Stable tag: 1.2.2
+Tested up to: 4.9.2
+Stable tag: 1.2.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/copyleft/gpl.html
 
@@ -62,6 +62,10 @@ Make sure your directories are properly defined in the settings. Paths are defin
 If you are having issues with the plugin, create an issue on [github](https://github.com/ConnectThink/WP-SCSS), and we'll do our best to help.
 
 == Changelog ==
+= 1.2.3 =
+* Updated scssphp to version 0.7.2 [@hellerbenjamin](https://github.com/ConnectThink/WP-SCSS/pull/86)
+* Removed depricated screen_icon()
+
 = 1.2.2 =
 * Updated scssphp to version 0.6.6
 

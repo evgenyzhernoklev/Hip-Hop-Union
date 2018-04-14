@@ -8,6 +8,7 @@
     <params name="general" type="groupped" label="General">
       <params name="slider" label="Slider settings" hidetitle="1">
         <param name="title" type="text" label="Name" default="Slider" style="width:200px;"/>
+        <param name="alias" type="text" label="Alias" default="" style="width:200px;"/>
         <param label="Controls" type="group">
           <param name="controlsScroll" type="onoff" label="Mouse scroll" default="0"/>
           <param name="controlsDrag" type="onoff" label="Mouse drag" default="1"/>
@@ -133,8 +134,6 @@
       <params name="developer-options" hidetitle="1">
         <param name="overflow-hidden-page" type="onoff" label="Hide website&apos;s scrollbar" default="0" tip="You won&apos;t be able to scroll your website anymore."/>
         <param name="clear-both" type="onoff" label="Clear both before slider" tip="If your slider doesn&apos;t resize correctly, turn this option on." default="0"/>
-        <param name="remove-spaces-from-parents" type="text" label="Remove spaces from parents" tip="This option removes the margins and paddings from the given parents. Write the Xth number, which parent&apos;s margins and paddings should be removed. You can write multiple numbers separated by commas. Example: 1,2,3" default=""/>
-        <param name="hide-siblings" type="text" label="Hide siblings" tip="This option hides the given siblings. Write the Xth number, which sibling you want to hide. You can write multiple numbers separated by commas. Example: 1,2,3" default=""/>
         <param type="textarea" name="callbacks" label="JavaScript callbacks" style2="width:600px;height:600px;"/>
       </params>
     </params>

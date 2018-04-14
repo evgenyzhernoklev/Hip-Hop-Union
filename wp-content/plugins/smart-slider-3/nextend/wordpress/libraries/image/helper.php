@@ -2,18 +2,23 @@
 
 class N2ImageHelper extends N2ImageHelperAbstract {
 
-    public static function initLightbox() {
-        static $inited = false;
-        if (!$inited) {
-            wp_enqueue_media();
-            $inited = true;
-        }
-    }
+	public static function initLightbox() {
+		static $inited = false;
+		if ( ! $inited ) {
+			wp_enqueue_media();
+			$inited = true;
+		}
+	}
 
-    public static function getLightboxFunction() {
-        return 'function (callback) {
+	public static function getLightboxFunction() {
+		return 'function (callback) {
         nextend.context.addWindow("imagechooser");
-        var frame = new wp.media();
+        var frame = wp.media({
+			states: new wp.media.controller.Library({
+				filterable: "all",
+				priority:  20
+			})
+        });
 
         frame.on("select", $.proxy(function () {
             var attachment = frame.state().get("selection").first().toJSON();
@@ -30,13 +35,17 @@ class N2ImageHelper extends N2ImageHelperAbstract {
         });
         frame.open();
     }';
-    }
+	}
 
-    public static function getLightboxMultipleFunction() {
-        return 'function (callback) {
+	public static function getLightboxMultipleFunction() {
+		return 'function (callback) {
         nextend.context.addWindow("imagechooser");
-        var frame = new wp.media({
-            multiple: "add"
+        var frame = wp.media({
+			states: new wp.media.controller.Library({
+				filterable: "all",
+                multiple: "add",
+				priority:  20
+			})
         });
 
         frame.on("select", $.proxy(function () {
@@ -65,32 +74,32 @@ class N2ImageHelper extends N2ImageHelperAbstract {
             return false;
         });
     }';
-    }
+	}
 
-    public static function onImageUploaded($filename) {
-        // Check the type of file. We'll use this as the 'post_mime_type'.
-        $filetype = wp_check_filetype(basename($filename), null);
+	public static function onImageUploaded( $filename ) {
+		// Check the type of file. We'll use this as the 'post_mime_type'.
+		$filetype = wp_check_filetype( basename( $filename ), null );
 
-        // Get the path to the upload directory.
-        $wp_upload_dir = wp_upload_dir();
+		// Get the path to the upload directory.
+		$wp_upload_dir = wp_upload_dir();
 
-        // Prepare an array of post data for the attachment.
-        $attachment = array(
-            'guid'           => $wp_upload_dir['url'] . '/' . basename($filename),
-            'post_mime_type' => $filetype['type'],
-            'post_title'     => preg_replace('/\.[^.]+$/', '', basename($filename)),
-            'post_content'   => '',
-            'post_status'    => 'inherit'
-        );
+		// Prepare an array of post data for the attachment.
+		$attachment = array(
+			'guid'           => $wp_upload_dir['url'] . '/' . basename( $filename ),
+			'post_mime_type' => $filetype['type'],
+			'post_title'     => preg_replace( '/\.[^.]+$/', '', basename( $filename ) ),
+			'post_content'   => '',
+			'post_status'    => 'inherit'
+		);
 
-        // Insert the attachment.
-        $attach_id = wp_insert_attachment($attachment, $filename);
+		// Insert the attachment.
+		$attach_id = wp_insert_attachment( $attachment, $filename );
 
-        // Make sure that this file is included, as wp_generate_attachment_metadata() depends on it.
-        require_once(ABSPATH . 'wp-admin/includes/image.php');
+		// Make sure that this file is included, as wp_generate_attachment_metadata() depends on it.
+		require_once( ABSPATH . 'wp-admin/includes/image.php' );
 
-        // Generate the metadata for the attachment, and update the database record.
-        $attach_data = wp_generate_attachment_metadata($attach_id, $filename);
-        wp_update_attachment_metadata($attach_id, $attach_data);
-    }
+		// Generate the metadata for the attachment, and update the database record.
+		$attach_data = wp_generate_attachment_metadata( $attach_id, $filename );
+		wp_update_attachment_metadata( $attach_id, $attach_data );
+	}
 }

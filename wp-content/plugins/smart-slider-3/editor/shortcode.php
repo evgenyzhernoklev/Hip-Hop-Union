@@ -129,7 +129,15 @@ class N2SSShortcodeInsert {
 
                     window[eventMethod](eventMethod == "attachEvent" ? "onmessage" : "message", function (e) {
                         if (e.source == (iframe[0].contentWindow || iframe[0].contentDocument)) {
-                            callback(e[e.message ? "message" : "data"]);
+                        	var message = e[e.message ? "message" : "data"];
+                        	try{
+								message = JSON.parse(message);
+								if(message.action && message.action === 'ss3embed') {
+									callback(message);
+								}
+                            } catch(ex) {
+
+                            }
                             hide();
                         }
                     }, false);
@@ -138,16 +146,32 @@ class N2SSShortcodeInsert {
                     if (intval(N2SmartSliderSettings::get('editor-icon', 1))) {
                     ?>
                     window.NextendSmartSliderWPTinyMCEModal = function (ed) {
-                        callback = function (id) {
-                            ed.execCommand('mceInsertContent', false, '<div>[smartslider3 slider=' + id + ']</div>');
+                        callback = function (data) {
+                        	var shortcode = false;
+                        	if(data.mode === 'id'){
+                        	    shortcode = '<div>[smartslider3 slider=' + data.id + ']</div>';
+							}else if(data.mode === 'alias'){
+								shortcode = '<div>[smartslider3 alias="' + data.alias + '"]</div>';
+							}
+							if(shortcode) {
+								ed.execCommand('mceInsertContent', false, shortcode);
+							}
                         };
                         show();
                     };
 
                     if (typeof QTags !== 'undefined') {
                         QTags.addButton('smart-slider-3', 'Smart Slider', function () {
-                            callback = function (id) {
-                                QTags.insertContent('<div>[smartslider3 slider=' + id + ']</div>');
+                            callback = function (data) {
+								var shortcode = false;
+								if(data.mode === 'id'){
+									shortcode = '<div>[smartslider3 slider=' + data.id + ']</div>';
+								}else if(data.mode === 'alias'){
+									shortcode = '<div>[smartslider3 alias="' + data.alias + '"]</div>';
+								}
+								if(shortcode) {
+									QTags.insertContent("\n" + shortcode);
+								}
                             };
                             show();
                         });
@@ -157,11 +181,21 @@ class N2SSShortcodeInsert {
                     ?>
 
                     window.NextendSmartSliderSelectModal = function ($input) {
-                        callback = function (id) {
-                            if (typeof $input === 'function') {
-                                $input = $input();
-                            }
-                            $input.val(id).trigger('input').trigger('change');
+                        callback = function (data) {
+
+							var idOrAlias = false;
+							if(data.mode === 'id'){
+								idOrAlias = data.id;
+							}else if(data.mode === 'alias'){
+								idOrAlias = data.alias;
+							}
+
+							if(idOrAlias) {
+								if (typeof $input === 'function') {
+									$input = $input();
+								}
+								$input.val(idOrAlias).trigger('input').trigger('change');
+							}
                         };
                         show();
                         return false;

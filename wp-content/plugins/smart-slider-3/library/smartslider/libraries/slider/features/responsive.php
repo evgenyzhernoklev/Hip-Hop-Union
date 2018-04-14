@@ -429,10 +429,6 @@ class N2SmartSliderFeatureResponsive {
             'sliderWidthToDevice'    => $this->sliderWidthToDevice,
 
             'basedOn'                    => $this->basedOn,
-            'tabletPortraitScreenWidth'  => $this->tabletPortraitScreenWidth,
-            'mobilePortraitScreenWidth'  => $this->mobilePortraitScreenWidth,
-            'tabletLandscapeScreenWidth' => $this->tabletLandscapeScreenWidth,
-            'mobileLandscapeScreenWidth' => $this->mobileLandscapeScreenWidth,
             'orientationMode'            => $this->orientationMode,
 
             'scrollFix'          => intval($this->slider->params->get('scroll-fix', 0)),

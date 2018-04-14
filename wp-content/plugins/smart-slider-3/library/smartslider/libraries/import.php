@@ -25,6 +25,10 @@ class N2SmartSliderImport {
             if (!is_writable($folder)) {
                 $folder = N2Filesystem::getNotWebCachePath();
             }
+            if (!is_writable($folder)){
+                N2Message::error(sprintf(n2_('Slider can\'t be imported. The destination folder ( %s ) is not writable. Contact your host to fix the permission issue.'), $folder));
+                return false;
+            }
             $tmp = tempnam($folder, 'ss3');
             file_put_contents($tmp, $filePathOrData);
             $filePathOrData = $tmp;

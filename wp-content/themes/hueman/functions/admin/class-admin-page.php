@@ -204,13 +204,13 @@ if ( ! class_exists( 'HU_admin_page' ) ) :
                 <h3 style="text-align:left;font-size:1.3em;"><?php _e("Go Hueman Pro" ,'hueman') ?></h3>
 
                 <div class="feature-section images-stagger-right">
-                  <a class="" title="Go Pro" href="<?php echo esc_url( HU_WEBSITE . 'hueman-pro?ref=a' ); ?>" target="_blank"><img style="border:none;" alt="Hueman Pro" src="<?php echo HU_BASE_URL .'assets/admin/img/screenshot-300x225.png' ?>" class=""></a>
+                  <a class="" title="Go Pro" href="<?php echo esc_url( HU_WEBSITE . '/hueman-pro?ref=a' ); ?>" target="_blank"><img style="border:none;" alt="Hueman Pro" src="<?php echo HU_BASE_URL .'assets/admin/img/screenshot-300x225.png' ?>" class=""></a>
                   <h4 style="text-align: left;max-width:inherit"><?php _e('Easily take your web design one step further' ,'hueman') ?></h4></br>
 
                   <p style="text-align: lef;max-width:inherit"><?php _e("The Hueman Pro WordPress theme allows anyone to create a beautiful, professional and mobile friendly website in a few minutes. In the Pro version, you'll get all features included in the free version plus many conversion oriented ones, to help you attract and retain more visitors on your websites." , 'hueman') ?>
                   </p>
                   <p style="text-align:left;max-width:inherit">
-                      <a class="button-primary review-hueman hu-go-pro-btn" title="<?php _e("Discover Hueman Pro",'hueman') ?>" href="<?php echo esc_url( HU_WEBSITE . 'hueman-pro?ref=a' ); ?>" target="_blank"><?php _e("Discover Hueman Pro",'hueman') ?> &raquo;</a>
+                      <a class="button-primary review-hueman hu-go-pro-btn" title="<?php _e("Discover Hueman Pro",'hueman') ?>" href="<?php echo esc_url( HU_WEBSITE . '/hueman-pro?ref=a' ); ?>" target="_blank"><?php _e("Discover Hueman Pro",'hueman') ?> &raquo;</a>
                   </p>
                 </div>
               </div>
@@ -407,7 +407,7 @@ $mysql_ver =  ( ! empty( $wpdb->use_mysqli ) && $wpdb->use_mysqli ) ? @mysqli_ge
     */
     function hu_fix_wp_footer_link_style() {
       $screen = get_current_screen();
-      if ( 'appearance_page_welcome' != $screen-> id )
+      if ( ! is_object( $screen ) || 'appearance_page_welcome' != $screen-> id )
         return;
       ?>
         <style type="text/css" id="tc-fix-wp-footer-position">

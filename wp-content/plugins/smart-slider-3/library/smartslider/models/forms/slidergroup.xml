@@ -9,6 +9,7 @@
         <params name="general" type="groupped" label="General">
             <params name="slider" label="Group settings" hidetitle="1">
                 <param name="title" type="text" label="Name" default="Group" style="width:200px;"/>
+                <param name="alias" type="text" label="Alias" default="" style="width:200px;"/>
 
                 <param name="thumbnail" label="Thumbnail" type="image" default=""/>
                 <param name="type" type="hidden" default="group" class="n2-hidden"/>

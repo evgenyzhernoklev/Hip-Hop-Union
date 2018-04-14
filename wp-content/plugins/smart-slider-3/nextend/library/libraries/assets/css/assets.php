@@ -21,6 +21,8 @@ class N2AssetsCss extends N2AssetsAbstract {
                 )) . "\n";
         }
 
+        $needProtocol = !N2Settings::get('protocol-relative', '1');
+
         $mode = N2Settings::get('css-mode', 'normal');
         if (N2Platform::$isAdmin || $mode == 'normal') {
 
@@ -30,7 +32,7 @@ class N2AssetsCss extends N2AssetsAbstract {
                             'media' => 'all'
                         )) . "\n";
                 } else {
-                    $output .= N2Html::style(N2Uri::pathToUri($file, false) . '?' . filemtime($file), true, array(
+                    $output .= N2Html::style(N2Uri::pathToUri($file, $needProtocol) . '?' . filemtime($file), true, array(
                             'media' => 'all'
                         )) . "\n";
                 }
@@ -49,13 +51,13 @@ class N2AssetsCss extends N2AssetsAbstract {
             $combinedFile = $cssCombine->make();
 
             if ($mode == 'combine') {
-                $output .= N2Html::style(N2Uri::pathToUri($combinedFile, false), true, array(
+                $output .= N2Html::style(N2Uri::pathToUri($combinedFile, $needProtocol), true, array(
                         'media' => 'all'
                     )) . "\n";
             } else if ($mode == 'async') {
-                N2JS::addInline('window.n2CSS = "' . N2Uri::pathToUri($combinedFile, false) . '";', true, true);
+                N2JS::addInline('window.n2CSS = "' . N2Uri::pathToUri($combinedFile, $needProtocol) . '";', true, true);
             } else if ($mode == 'inline') {
-                $output .= N2Html::style(file_get_contents($combinedFile), false, array());
+                $output .= N2Html::style(file_get_contents($combinedFile), $needProtocol, array());
             }
         }
 

@@ -33,8 +33,13 @@ function evc_lock_shortcode ($atts = array(), $content = '') {
   if (!is_numeric($unlock)) {   
     return $unlock;
   }
-  $cookie = '<script type="text/javascript">vkUnLock.push('.$unlock.');</script>';   
-  return $content . $cookie;
+  $cookie = '<script type="text/javascript">vkUnLock.push('.$unlock.');</script>';
+
+  remove_filter('the_content', 'evc_buttons_the_content');
+  $out = apply_filters('the_content', $content) . $cookie;
+  add_filter('the_content', 'evc_buttons_the_content');
+
+  return $out;
 }
 
 function evc_lock_unlock ($url) {

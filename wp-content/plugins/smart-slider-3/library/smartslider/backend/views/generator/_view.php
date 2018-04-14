@@ -103,7 +103,7 @@ class N2SmartsliderBackendGeneratorView extends N2ViewBase {
                     "content" => N2Html::tag('div', array(
                         'class' => 'n2-button-menu'
                     ), N2Html::tag('div', array(
-                        'class' => 'n2-button-menu-inner n2-border-radius'
+                        'class' => 'n2-button-menu-inner n2-border-radius webkit-scroll-fix'
                     ), implode('', $actions)))
                 ));
                 $buttonMenu = ob_get_clean();

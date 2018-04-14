@@ -90,40 +90,7 @@ class N2SmartSliderFeatures {
         $this->layerMode       = new N2SmartSliderFeatureLayerMode($slider);
         $this->slideBackground = new N2SmartSliderFeatureSlideBackground($slider);
         $this->loadSpinner = new N2SmartSliderFeatureSpinner($slider);
-		$this->removeSpaces();
     }
-	
-	public function removeSpaces(){
-		$id = 'jQuery("#' . $this->slider->elementId . '-align")';
-		$parentlist = preg_replace('/\s+/', '', $this->slider->params->get('remove-spaces-from-parents', ''));
-		$js = '';
-		if(!empty($parentlist)){
-			$parents = array_map('intval', explode(',', $parentlist));
-			$js .= '(function(){';
-			foreach($parents AS $parent){
-				$js .= $id;
-				for($i = 0; $i < $parent; $i++){
-					$js .= '.parent()';
-				}
-				$js .= '.css({padding:0, margin:0});';
-			}
-		}
-		$siblinglist = preg_replace('/\s+/', '', $this->slider->params->get('hide-siblings', ''));
-		if(!empty($siblinglist)){
-			$siblings = array_map('intval', explode(',', $siblinglist));
-			if(empty($js)){
-				$js .= '(function(){';
-			}
-			foreach($siblings AS $sibling){
-				$sibling = $sibling - 1;
-				$js .= $id . '.siblings().eq(' . $sibling . ').hide(0);';
-			}
-		}
-		if(!empty($js)){			
-			$js .= '})();';
-			N2JS::addInline($js);
-		}
-	}
 
     public function generateJSProperties() {
 

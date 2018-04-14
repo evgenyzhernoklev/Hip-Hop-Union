@@ -266,4 +266,27 @@ class N2Html {
         return $attributes;
     }
 
+	/**
+	 * @param array $array1
+	 * @param array $array2 [optional]
+	 * @param array $_ [optional]
+	 * @return array the resulting array.
+	 * @since 4.0
+	 * @since 5.0
+	 */
+    public static function mergeAttributes($array1, $array2 = null, $_ = null){
+		$arguments = func_get_args();
+		$target = array_shift($arguments);
+		foreach($arguments AS $array){
+			if(isset($array['style'])){
+				if(!isset($target['style'])) $target['style'] = '';
+				$target['style'].=$array['style'];
+				unset($array['style']);
+			}
+			$target = array_merge($target, $array);
+		}
+
+		return $target;
+    }
+
 }

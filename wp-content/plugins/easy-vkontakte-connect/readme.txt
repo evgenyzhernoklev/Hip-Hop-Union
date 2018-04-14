@@ -2,8 +2,8 @@
 Contributors: alekseysolo
 Tags: vkontakte, vk, autopublish, post, social, share, wall, analytics, comments, polls, surveys, woocommerce
 Requires at least: 3.5
-Tested up to: 4.8
-Stable tag: 2.3.2
+Tested up to: 4.9
+Stable tag: 2.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -77,6 +77,14 @@ Requires WordPress 3.2 and PHP 5.
 
 == Changelog ==
 
+= 2.4.1 / 2018-03-05 =
+* Fixed error with v param in VK Group Analytics. / 2018-03-05 / 2.4.001
+
+= 2.4 / 2018-03-01 =
+* Fixed shortcodes inside vk_lock shortcode. / 2017-10-17 / 2.3.15
+* Fixed sidebars open times. / 2017-12-04 / 2.3.16
+* Fixed error with v param in VK requests. / 2018-03-01 / 2.3.17
+
 = 2.3.2 / 2017-13-10 =
 * Fixed php 7.1 compatibility. / 2017-06-22 / 2.3.07
 * Fixed installing additional plugins from ads. / 2017-06-22 / 2.3.08
@@ -84,8 +92,8 @@ Requires WordPress 3.2 and PHP 5.
 * Fixed idn_to_ascii url converting in wall_post attachments. / 2017-09-11 / 2.3.10
 * Added the ability to send up to 6 photos in post to VK. / 2017-09-15 / 2.3.11
 * Fixed VK Comments Widgets in pages. / 2017-09-27 / 2.3.12
-* Added responsive design in plugin settings pages. / 2017-13-10 / 2.3.13
-* Remove link to VK Group Analysis from admin bar. / 2017-13-10 / 2.3.14
+* Added responsive design in plugin settings pages. / 2017-10-13 / 2.3.13
+* Remove link to VK Group Analysis from admin bar. / 2017-10-13 / 2.3.14
 
 = 2.3.1 / 2017-06-19 =
 * VK Photo Albums ORDER BY date ASC - shows the sequence of photos as in VK. / 2017-02-08 / 2.3.03
@@ -240,3 +248,9 @@ Requires WordPress 3.2 and PHP 5.
 
 = 0.1 =
 * First stable release.
+
+
+== Upgrade Notice ==
+
+= 2.4.1 =
+Исправлена блокирующая ошибка в меню EVC - Анализ групп ВКонтакте.

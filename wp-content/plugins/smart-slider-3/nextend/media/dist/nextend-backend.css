@@ -5036,6 +5036,17 @@ html[dir="rtl"] .n2-button-menu-open .n2-button-menu {
     display: block;
 }
 
+/* scrollfix for mac*/
+.webkit-scroll-fix::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+.webkit-scroll-fix::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
 /**
 SIZE
 **/
@@ -5594,7 +5605,6 @@ html[dir="rtl"] .n2-list li > .n2-actions {
     position: absolute;
     left: 5px;
     bottom: 55px;
-    width: 50%;
 }
 
 .n2-box-small .n2-box-lb {

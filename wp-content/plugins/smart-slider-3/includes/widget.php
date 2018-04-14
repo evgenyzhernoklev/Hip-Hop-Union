@@ -78,21 +78,87 @@ class N2SS3Widget extends WP_Widget {
         N2SSShortcodeInsert::addForced();
 
         ?>
+
+        <p>
+            <?php
+            N2base::getApplication('smartslider')
+                  ->getApplicationType('backend');
+            N2Loader::import("models.Sliders", "smartslider");
+
+            $slidersModel = new N2SmartsliderSlidersModel();
+
+            $choices = array();
+            foreach ($slidersModel->getAll(0) AS $slider) {
+	            if ($slider['type'] == 'group') {
+
+		            $subChoices                = array();
+		            if(!empty($slider['alias'])){
+			            $subChoices[$slider['alias']] = n2_('Whole group') . ' - ' . $slider['title'] . ' #Alias: ' . $slider['alias'];
+		            }
+		            $subChoices[$slider['id']] = n2_('Whole group') . ' - ' . $slider['title'] . ' #' . $slider['id'];
+		            foreach ($slidersModel->getAll($slider['id']) AS $_slider) {
+			            if(!empty($_slider['alias'])){
+				            $subChoices[$_slider['alias']] = $_slider['title'] . ' #Alias: ' . $_slider['alias'];
+			            }
+			            $subChoices[$_slider['id']] = $_slider['title'] . ' #' . $_slider['id'];
+		            }
+
+		            $choices[$slider['id']] = array(
+			            'label'   => $slider['title'] . ' #' . $slider['id'],
+			            'choices' => $subChoices
+		            );
+	            } else {
+		            if(!empty($slider['alias'])){
+			            $choices[$slider['alias']] = $slider['title'] . ' #Alias: ' . $slider['alias'];
+		            }
+		            $choices[$slider['id']] = $slider['title'] . ' #' . $slider['id'];
+	            }
+
+            }
+            $value = $instance['slider'];
+
+            $_title = '';
+            ?>
+            <select id="<?php echo $this->get_field_id('slider'); ?>" onchange="jQuery('#<?php echo $this->get_field_id('temp-title'); ?>').val(jQuery(this).find('option:selected').text()).trigger('change');" name="<?php echo $this->get_field_name('slider'); ?>" class="widefat">
+                    <option value=""><?php n2_e('None'); ?></option>
+                <?php
+                foreach ($choices AS $id => $choice) {
+                    if (is_array($choice)) {
+                        ?>
+                        <optgroup label="<?php echo $choice['label']; ?>">
+                                <?php
+                                foreach ($choice['choices'] AS $_id => $_choice) {
+                                    ?>
+                                    <option <?php if ($_id == $value){
+                                            $_title = $_choice; ?>selected <?php } ?>value="<?php echo $_id; ?>"><?php echo $_choice; ?></option>
+                                    <?php
+                                }
+                                ?>
+                            </optgroup>
+                        <?php
+                    } else {
+                        ?>
+                        <option <?php if ($id == $value){
+                                $_title = $choice; ?>selected <?php } ?>value="<?php echo $id; ?>"><?php echo $choice; ?></option>
+                        <?php
+                    }
+                }
+                ?>
+                </select>
+        <input id="<?php echo $this->get_field_id('temp-title'); ?>"
+               name="<?php echo $this->get_field_name('temp-title'); ?>" type="hidden"
+               value="<?php echo $_title; ?>"/>
+
+        <span style="display:block;line-height:2;padding:10px;"><?php n2_e('OR'); ?></span>
+
+        <a style="vertical-align: top;" href="#" onclick="<?php echo SmartSlider3::sliderSelectAction('jQuery(\'#' . $this->get_field_id('slider') . '\')'); ?>return false;" class="button button-primary elementor-button elementor-button-smartslider fl-builder-button fl-builder-button-large" title="Select slider">Select slider</a>
+        </p>
         <p>
             <label for="<?php echo $this->get_field_id('title'); ?>">
                 Title:
                 <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>"
                        name="<?php echo $this->get_field_name('title'); ?>" type="text"
                        value="<?php echo esc_attr($title); ?>"/>
-            </label>
-        </p>
-
-        <p>
-            <label for="<?php echo $this->get_field_id('smartslider2'); ?>">
-                Smart Slider:<br>
-                <input style="width:100px;vertical-align: top;" class="widefat" id="<?php echo $this->get_field_id('slider'); ?>" name="<?php echo $this->get_field_name('slider'); ?>" type="text" value="<?php echo esc_attr($instance['slider']); ?>">
-
-                <a style="vertical-align: top;" href="#" onclick="<?php echo SmartSlider3::sliderSelectAction("jQuery(this).siblings('input')"); ?>return false;" class="button button-primary elementor-button elementor-button-smartslider fl-builder-button fl-builder-button-large" title="Select slider">Select slider</a>
             </label>
         </p>
         <?php

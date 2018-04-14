@@ -15,6 +15,10 @@ class N2Filesystem extends N2FilesystemAbstract {
 
         $wp_upload_dir = wp_upload_dir();
         $uploadPath    = rtrim(realpath($wp_upload_dir['basedir']), "/\\");
+        if (empty($uploadPath)) {
+            echo 'Error: Your upload path is not valid or does not exist: ' . $wp_upload_dir['basedir'];
+            $uploadPath = rtrim($wp_upload_dir['basedir'], "/\\");
+        }
         if (strpos($this->_basepath, $uploadPath) !== 0) {
             $this->paths[] = $uploadPath;
         }

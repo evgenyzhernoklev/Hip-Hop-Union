@@ -100,7 +100,7 @@ class N2SSPluginWidgetBarHorizontal extends N2SSPluginWidgetAbstract {
 
             $description = $slider->slides[$i]->getDescription();
             if ($showDescription && !empty($description)) {
-                $html .= N2Html::tag('span', array('class' => $fontDescription . ' n2-ow'), (!empty($html) ? $separator : '') . N2Translation::_($description));
+                $html .= N2Html::tag('span', array('class' => $fontDescription . ' n2-ow'), (!empty($html) ? $separator : '') . N2SmartSlider::addCMSFunctions(N2Translation::_($description)));
             }
 
             $slides[$i] = array(

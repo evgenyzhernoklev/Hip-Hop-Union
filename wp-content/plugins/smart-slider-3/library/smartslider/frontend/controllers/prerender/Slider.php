@@ -16,8 +16,9 @@ class N2SmartSliderFrontendSliderPreRenderController extends N2Controller {
 
     public function actionIframe() {
 
-        $sliderID = isset($_GET['sliderid']) ? intval($_GET['sliderid']) : false;
-        if (!$sliderID) throw new Exception('Slider ID is not valid.');
+	    $sliderIDorAlias = isset($_GET['sliderid']) ? $_GET['sliderid'] : false;
+
+        if (empty($sliderIDorAlias)) throw new Exception('Slider ID or alias is not valid.');
         N2CSS::addStaticGroup(N2LIBRARYASSETS . '/normalize.min.css', 'normalize');
     
 
@@ -25,7 +26,7 @@ class N2SmartSliderFrontendSliderPreRenderController extends N2Controller {
         $locale = setlocale(LC_NUMERIC, 0);
         setlocale(LC_NUMERIC, "C");
 
-        $sliderManager = new N2SmartSliderManager($sliderID);
+        $sliderManager = new N2SmartSliderManager($sliderIDorAlias);
         $slider        = $sliderManager->render(true);
 
         setlocale(LC_NUMERIC, $locale);

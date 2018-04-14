@@ -120,9 +120,10 @@ $router = N2Base::getApplication('smartslider')
         echo N2Html::tag('div', array('class' => 'n2-box n2-box-full n2-box-template-library n2-h3 n2-uc'), N2Html::link(n2_('Template library'), '#', array(
             'class' => 'n2-ss-add-sample-slider n2-button n2-button-l n2-button-blue n2-radius-s n2-uc n2-h3'
         )));
-        if (count($sliders) > 2 && !N2Base::getApplication('smartslider')->storage->get('free', 'review')) {
-            include dirname(__FILE__) . '/review.phtml';
+        if ( count( $sliders ) > 2 && ! N2Base::getApplication( 'smartslider' )->storage->get( 'free', 'review' ) ) {
+	        include dirname( __FILE__ ) . '/review.phtml';
         }
+    
     
 
         $parameters = array();

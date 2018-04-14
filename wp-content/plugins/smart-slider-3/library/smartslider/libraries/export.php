@@ -165,7 +165,7 @@ class N2SmartSliderExport {
                 echo $zip->file();
                 n2_exit(true);
             } else {
-                $file   = preg_replace('/[^a-zA-Z0-9_-]/', '', $this->backup->slider['title']) . '.ss3';
+                $file   = $this->sliderId . '-' . preg_replace('/[^a-zA-Z0-9_-]/', '', $this->backup->slider['title']) . '.ss3';
                 $folder = N2Platform::getPublicDir();
                 $folder .= '/export/';
                 if (!N2Filesystem::existsFolder($folder)) {

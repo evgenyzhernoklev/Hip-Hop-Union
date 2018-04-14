@@ -533,11 +533,11 @@ N2Require('SmartSliderMainAnimationSimple', ['SmartSliderMainAnimationAbstract']
                 NextendTween.set(nextSlide.backgroundImage.element, o4);
             }
 
-            nextSlideFrom[property] = propertyValue;
-            nextSlideFromImage[property] = propertyValue;
+            nextSlideFrom[property] = propertyValue + (/chrome/i.test( navigator.userAgent ) ? (propertyValue < 0 ? 2 : -2) : 0);
+            nextSlideFromImage[property] = propertyValue + (/chrome/i.test( navigator.userAgent ) ? (propertyValue < 0 ? 2 : -2) : 0);
 
-            currentSlideTo[property] = -propertyValue;
-            currentSlideToImage[property] = -propertyValue;
+            currentSlideTo[property] = -propertyValue + (/chrome/i.test( navigator.userAgent ) ? (propertyValue < 0 ? -2 : 2) : 0);
+            currentSlideToImage[property] = -propertyValue + (/chrome/i.test( navigator.userAgent ) ? (propertyValue < 0 ? -2 : 2) : 0);
         }
 
         nextSlide.$element.css('zIndex', 23);

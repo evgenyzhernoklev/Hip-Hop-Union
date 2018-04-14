@@ -3707,6 +3707,8 @@ N2Require('Generator', ['SlideAdmin'], ['smartSlider'], function ($, scope, smar
                 this.registerField($('#slidebackgroundAlt'));
                 this.registerField($('#slidebackgroundTitle'));
                 this.registerField($('#slidebackgroundVideoMp4'));
+				this.registerField($('#slidebackgroundColor'));
+				this.registerField($('#slidebackgroundColorEnd'));
                 this.registerField($('#linkslidelink_0'));
                 this.registerField($('#layergenerator-visible'));
                 this.registerField($('#layergroup-generator-visible'));
@@ -3904,6 +3906,12 @@ N2Require('Generator', ['SlideAdmin'], ['smartSlider'], function ($, scope, smar
         return s.replace(re, '');
     };
 
+    Generator.prototype.removelinebreaks = function (variable) {
+        var s = String(variable),
+            re = /\r?\n|\r/g;
+        return s.replace(re, '');
+    };
+
     Generator.prototype.registerField = function (field) {
     };
 
@@ -3931,7 +3939,8 @@ N2Require('Generator', ['SlideAdmin'], ['smartSlider'], function ($, scope, smar
                     findImageIndex: 1,
                     findLink: 0,
                     findLinkIndex: 1,
-                    removeVarLink: 0
+                    removeVarLink: 0,
+                    removelinebreaks: 0
                 },
                 getVariableString = function () {
                     var variable = active.key + '/' + active.group;
@@ -3943,6 +3952,9 @@ N2Require('Generator', ['SlideAdmin'], ['smartSlider'], function ($, scope, smar
                     }
                     if (active.removeVarLink) {
                         variable = 'removevarlink(' + variable + ')';
+                    }
+                    if (active.removelinebreaks) {
+                        variable = 'removelinebreaks(' + variable + ')';
                     }
                     if (active.filter != 'no') {
                         variable = active.filter + '(' + variable + ')';
@@ -3968,7 +3980,7 @@ N2Require('Generator', ['SlideAdmin'], ['smartSlider'], function ($, scope, smar
 
 
             content.append(NextendModal.prototype.createHeading(n2_('Choose the variable')));
-            var variableContainer = $('<div class="n2-variable-container" />').appendTo(content);
+            var variableContainer = $('<div class="n2-variable-container webkit-scroll-fix" />').appendTo(content);
 
             //content.append(NextendModal.prototype.createHeading('Functions'));
             var functionsContainer = $('<div class="n2-generator-functions-container n2-form-element-mixed" />')
@@ -4020,7 +4032,6 @@ N2Require('Generator', ['SlideAdmin'], ['smartSlider'], function ($, scope, smar
                 updateResult();
             }, this));
 
-
             $('<div class="n2-mixed-group"><div class="n2-mixed-label"><label>' + n2_('Find link') + '</label></div><div class="n2-mixed-element"><div class="n2-form-element-onoff"><div class="n2-onoff-slider"><div class="n2-onoff-no"><i class="n2-i n2-i-close"></i></div><div class="n2-onoff-round"></div><div class="n2-onoff-yes"><i class="n2-i n2-i-tick"></i></div></div><input type="hidden" autocomplete="off" value="0" id="n2-generator-function-findlink"></div><div class="n2-form-element-text n2-text-has-unit n2-border-radius"><div class="n2-text-sub-label n2-h5 n2-uc">' + n2_('Index') + '</div><input type="text" autocomplete="off" style="width: 22px;" class="n2-h5" value="1" id="n2-generator-function-findlink-index"></div></div></div>')
                 .appendTo(functionsContainer);
 
@@ -4047,6 +4058,20 @@ N2Require('Generator', ['SlideAdmin'], ['smartSlider'], function ($, scope, smar
             var removeVarLinkIndex = functionsContainer.find('#n2-generator-function-removevarlink-index');
             removeVarLinkIndex.on('change', $.proxy(function () {
                 active.removeVarLinkIndex = parseInt(removeVarLinkIndex.val());
+                updateResult();
+            }, this));
+
+            $('<div class="n2-mixed-group"><div class="n2-mixed-label"><label>' + n2_('Remove line breaks') + '</label></div><div class="n2-mixed-element"><div class="n2-form-element-onoff"><div class="n2-onoff-slider"><div class="n2-onoff-no"><i class="n2-i n2-i-close"></i></div><div class="n2-onoff-round"></div><div class="n2-onoff-yes"><i class="n2-i n2-i-tick"></i></div></div><input type="hidden" autocomplete="off" value="0" id="n2-generator-function-removelinebreaks"></div></div></div>')
+                .appendTo(functionsContainer);
+
+            var removelinebreaks = functionsContainer.find('#n2-generator-function-removelinebreaks');
+            removelinebreaks.on('nextendChange', $.proxy(function () {
+                active.removelinebreaks = parseInt(removelinebreaks.val());
+                updateResult();
+            }, this));
+             var removelinebreaksIndex = functionsContainer.find('#n2-generator-function-removelinebreaks-index');
+            removelinebreaksIndex.on('change', $.proxy(function () {
+                active.removelinebreaksIndex = parseInt(removelinebreaksIndex.val());
                 updateResult();
             }, this));
 
@@ -4089,7 +4114,7 @@ N2Require('Generator', ['SlideAdmin'], ['smartSlider'], function ($, scope, smar
                 zero: {
                     size: [
                         1000,
-                        group > 1 ? 560 : 490
+                        group > 1 ? 670 : 600
                     ],
                     title: n2_('Insert variable'),
                     back: false,
@@ -4102,6 +4127,7 @@ N2Require('Generator', ['SlideAdmin'], ['smartSlider'], function ($, scope, smar
                                 new N2Classes.FormElementOnoff("n2-generator-function-findimage");
                                 new N2Classes.FormElementOnoff("n2-generator-function-findlink");
                                 new N2Classes.FormElementOnoff("n2-generator-function-removevarlink");
+                                new N2Classes.FormElementOnoff("n2-generator-function-removelinebreaks");
                                 inited = true;
                             }
                             this.controls.find('.n2-button').on('click', $.proxy(function (e) {
@@ -4696,11 +4722,24 @@ N2Require('SlideSettings', ['SlideEditManager'], ['smartSlider'], function ($, s
             };
 
     SlideSettings.prototype.updateBackgroundColor = function () {
-        var backgroundColor = this.fields.backgroundColor.val(),
+        var backgroundColor = smartSlider.generator.fill(this.fields.backgroundColor.val()),
             gradient = this.fields.backgroundGradient.val();
+        if(backgroundColor.length && backgroundColor.charAt(0) == '#'){
+			backgroundColor = backgroundColor.substring(1);
+			if(backgroundColor.length == 6){
+				backgroundColor += 'ff';
+			}
+        }
         if (gradient != 'off') {
-            var backgroundColorEnd = this.fields.backgroundColorEnd.val(),
+            var backgroundColorEnd = smartSlider.generator.fill(this.fields.backgroundColorEnd.val()),
                 $slideMask = this.$slideMask.css({background: '', filter: ''});
+
+			if(backgroundColorEnd.length && backgroundColorEnd.charAt(0) == '#'){
+				backgroundColorEnd = backgroundColorEnd.substring(1);
+				if(backgroundColorEnd.length == 6){
+					backgroundColorEnd += 'ff';
+				}
+			}
 
             switch (gradient) {
                 case 'horizontal':
@@ -7712,6 +7751,12 @@ N2Require('PlacementAbsolute', ['PlacementAbstract'], ['smartSlider'], function 
 
     PlacementAbsolute.prototype.deActivated = function (newMode) {
 
+        var value = this.layer.getProperty('parentid');
+        if (value && value != '') {
+            this.$layer.removeAttr('data-parentid');
+            this.unSubscribeParent();
+        }
+
         this.$layer
             .removeAttr('data-align')
             .removeAttr('data-valign')
@@ -9651,11 +9696,11 @@ N2Require('Item', [], ['smartSlider'], function ($, scope, smartSlider, undefine
                     }
                     if (height > maxHeight) {
                         width = width * maxHeight / height;
-                        height = maxHeight;
+                        //height = maxHeight;
                     }
                     nextend.smartSlider.history.off();
                     layer.setProperty('width', width);
-                    layer.setProperty('height', height);
+                    layer.setProperty('height', 'auto');
                     nextend.smartSlider.history.on();
                 }
             });

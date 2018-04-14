@@ -4,6 +4,9 @@
  * Class WP_Statistics_Welcome
  */
 class WP_Statistics_Welcome {
+	/**
+	 * Initial
+	 */
 	public static function init() {
 		global $WP_Statistics;
 		if ( $WP_Statistics->get_option( 'show_welcome_page', false ) and ( strpos( $_SERVER['REQUEST_URI'], '/wp-admin/index.php' ) !== false or ( isset( $_GET['page'] ) and $_GET['page'] == 'wps_overview_page' ) ) ) {
@@ -24,7 +27,7 @@ class WP_Statistics_Welcome {
 	 * Register menu
 	 */
 	public static function menu() {
-		add_submenu_page( null, 'WP-Statistics Welcome', 'WP-Statistics Welcome', 'administrator', 'wps_welcome', 'WP_Statistics_Welcome::page_callback' );
+		add_submenu_page( __( 'WP-Statistics Welcome', 'wp-statistics' ), __( 'WP-Statistics Welcome', 'wp-statistics' ), __( 'WP-Statistics Welcome', 'wp-statistics' ), 'administrator', 'wps_welcome', 'WP_Statistics_Welcome::page_callback' );
 	}
 
 	/**
@@ -39,7 +42,7 @@ class WP_Statistics_Welcome {
 			'1.0'
 		);
 
-		include( WP_Statistics::$reg['plugin-dir'] . "includes/templates/welcome.php" );
+		include( WP_Statistics::$reg['plugin-dir'] . "includes/templates/welcomes/last-version.php" );
 	}
 
 	/**
@@ -61,6 +64,9 @@ class WP_Statistics_Welcome {
 		}
 	}
 
+	/**
+	 * Show change log
+	 */
 	public static function show_change_log() {
 		$response = wp_remote_get( 'https://api.github.com/repos/wp-statistics/wp-statistics/releases/latest' );
 

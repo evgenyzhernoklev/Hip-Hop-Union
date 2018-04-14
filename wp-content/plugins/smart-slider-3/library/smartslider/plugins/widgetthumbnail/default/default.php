@@ -220,7 +220,7 @@ class N2SSPluginWidgetThumbnailDefault extends N2SSPluginWidgetAbstract {
                 if ($showDescription && !empty($description)) {
                     $html .= N2Html::tag('div', array(
                         'class' => $descriptionFont . ' n2-ow'
-                    ), $description);
+                    ), N2SmartSlider::addCMSFunctions(N2Translation::_($description)));
                 }
 
                 $inner = N2Html::tag('div', array(

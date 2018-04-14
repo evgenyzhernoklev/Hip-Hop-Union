@@ -5764,7 +5764,9 @@ N2Require('FormElementColor', ['FormElement'], [], function ($, scope, undefined
         var current = this.getCurrent(),
             value = this.element.val();
         if (current != value) {
-            this.element.n2spectrum("set", value);
+            if(value.length > 0 && value.charAt(0) != '{') {
+				this.element.n2spectrum("set", value);
+			}
 
             this.triggerInsideChange();
             this.triggerOutsideChange();
