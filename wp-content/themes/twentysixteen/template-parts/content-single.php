@@ -9,7 +9,14 @@
 ?>
 
 <?php
-	$author = get_post_meta($post->ID, '_post_author_meta_key', true);
+	$post_type = get_post_type();
+	$author = '';
+
+	if ($post_type == 'glossary') :
+		$author = get_post_meta($post->ID, '_glossary_author_meta_key', true);
+	else :
+		$author = get_post_meta($post->ID, '_post_author_meta_key', true);
+	endif;
 
 	if (!$author) :
 		$author = get_the_author();

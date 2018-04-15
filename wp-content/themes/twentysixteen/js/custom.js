@@ -53,13 +53,33 @@
       }
     });
 
-
+    // glossary
+    $('.js-glossary').each(function () {
+      new Glossary(this);
+    });
 
     // scroll link in material
     $('.scroll-top').each(function () {
       new LinkScroll(this);
     });
   });
+
+
+
+  // glossary class
+  var Glossary = function (container) {
+    this.body = $('body');
+    this.container = $(container);
+    this.init();
+  };
+
+  Glossary.prototype.init = function () {
+    this.body.on('click', '.js-glossary-letter', this.scrollToLetter.bind(this));
+  }
+
+  Glossary.prototype.scrollToLetter = function (e) {
+    e.preventDefault();
+  }
 
 
 
