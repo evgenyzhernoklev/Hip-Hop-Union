@@ -71,31 +71,62 @@
     this.window = $(window);
     this.body = $('body');
     this.container = $(container);
+    this.catalogLinks = this.container.find('.js-glossary-catalog-letter');
+    this.catalogList = [];
+    this.postLetters = this.container.find('.js-glossary-post-letter');
+    this.postLettersList = [];
     this.init();
   };
 
   Glossary.prototype.init = function () {
     this.checkActiveCatalogLettes();
     this.body.on('click', '.js-glossary-catalog-letter', this.scrollToLetter.bind(this));
-    this.window.on('resize', this.updateOnResize.bind(this));
-    this.window.on('scroll', this.updateOnScroll.bind(this));
+    // this.window.on('resize', this.updateOnResize.bind(this));
+    // this.window.on('scroll', this.updateOnScroll.bind(this));
   }
 
   Glossary.prototype.checkActiveCatalogLettes = function () {
+    var self = this;
 
+    this.catalogLinks.each(function (index, element) {
+      self.catalogList.push($(element).text().toLowerCase());
+    });
+    this.postLetters.each(function (index, element) {
+      self.postLettersList.push($(element).text().toLowerCase());
+    });
+
+    for (var i = 0; i < this.catalogList.length; i++) {
+      var itemIndex = this.postLettersList.indexOf(this.catalogList[i]);
+
+      if (!~itemIndex) {
+        this.catalogLinks.eq(i).addClass('is-disabled');
+      }
+    }
   }
 
   Glossary.prototype.scrollToLetter = function (e) {
     e.preventDefault();
+    var letter = $(e.target).text().toLowerCase(),
+        targetIndex = this.postLettersList.indexOf(letter);
+
+    if (~targetIndex) {
+      var targetPosition = this.postLetters.eq(targetIndex)
+        .closest('.js-glossary-post')
+        .offset().top;
+
+      $('html, body').animate({
+        scrollTop: targetPosition
+      }, 700);
+    }
   }
 
-  Glossary.prototype.updateOnResize = function () {
-
-  }
-
-  Glossary.prototype.updateOnScroll = function () {
-
-  }
+  // Glossary.prototype.updateOnResize = function () {
+  //
+  // }
+  //
+  // Glossary.prototype.updateOnScroll = function () {
+  //
+  // }
 
 
 

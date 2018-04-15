@@ -821,6 +821,7 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
   color: #fe2f2f;
 }
 .glossaryCatalog__letter.is-disabled {
+  color: #bbb;
   cursor: default;
 }
 @media (max-width: 767px) {
@@ -832,8 +833,7 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
   padding-top: 70px;
 }
 .glossaryList__item {
-  margin: 0 0 40px;
-  padding: 0 20px;
+  padding: 40px 0 20px;
   border-bottom: 1px solid #ddd;
 }
 .glossaryList__item:last-child {

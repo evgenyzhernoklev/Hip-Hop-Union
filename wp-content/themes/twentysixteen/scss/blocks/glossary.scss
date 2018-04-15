@@ -80,6 +80,7 @@
   }
 
   &.is-disabled {
+    color: #bbbbbb;
     cursor: default;
   }
 }
@@ -97,8 +98,7 @@
 }
 
 .glossaryList__item {
-  margin: 0 0 40px;
-  padding: 0 20px;
+  padding: 40px 0 20px;
   border-bottom: 1px solid #ddd;
 
   &:last-child {
