@@ -91,9 +91,16 @@
     this.checkActiveLetter();
 
     this.body.on('click', '.js-glossary-catalog-letter', this.scrollToLetter.bind(this));
-    this.window.on('scroll', function() {
-      self.updateCatalogPosition();
-      self.checkActiveLetter();
+    this.window.on({
+      'scroll': function() {
+        self.updateCatalogPosition();
+        self.checkActiveLetter();
+      },
+      'resize': function() {
+        self.postPositions = [];
+        self.collectPostPositions();
+        self.checkActiveLetter();
+      }
     });
   }
 
