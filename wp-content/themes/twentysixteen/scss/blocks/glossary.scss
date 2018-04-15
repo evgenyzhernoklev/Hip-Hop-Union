@@ -100,6 +100,10 @@
   vertical-align: middle;
   transition: all $transition-fast;
 
+  &.is-active {
+    color: $red;
+  }
+
   &:not(.is-disabled) {
     &:hover {
       font-size: 20px;

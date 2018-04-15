@@ -850,6 +850,9 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
   vertical-align: middle;
   transition: all 0.1s linear;
 }
+.glossaryCatalog__letter.is-active {
+  color: #fe2f2f;
+}
 .glossaryCatalog__letter:not(.is-disabled):hover {
   font-size: 20px;
   color: #fe2f2f;

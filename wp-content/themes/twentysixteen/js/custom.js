@@ -75,16 +75,26 @@
     this.catalog = this.container.find('.js-glossary-catalog');
     this.catalogLinks = this.catalog.find('.js-glossary-catalog-letter');
     this.catalogList = [];
-    this.postLetters = this.container.find('.js-glossary-post-letter');
+    this.posts = this.container.find('.js-glossary-post');
+    this.postLetters = this.posts.find('.js-glossary-post-letter');
     this.postLettersList = [];
+    this.postPositions = [];
     this.init();
   };
 
   Glossary.prototype.init = function () {
+    var self = this;
+
     this.checkActiveCatalogLettes();
-    this.updateOnScroll();
+    this.updateCatalogPosition();
+    this.collectPostPositions();
+    this.checkActiveLetter();
+
     this.body.on('click', '.js-glossary-catalog-letter', this.scrollToLetter.bind(this));
-    this.window.on('scroll', this.updateOnScroll.bind(this));
+    this.window.on('scroll', function() {
+      self.updateCatalogPosition();
+      self.checkActiveLetter();
+    });
   }
 
   Glossary.prototype.checkActiveCatalogLettes = function () {
@@ -104,6 +114,10 @@
         this.catalogLinks.eq(i).addClass('is-disabled');
       }
     }
+
+    this.catalogLinksActive = this.catalogLinks.filter(function() {
+      return !$(this).hasClass('is-disabled');
+    });
   }
 
   Glossary.prototype.scrollToLetter = function (e) {
@@ -124,7 +138,7 @@
     }
   }
 
-  Glossary.prototype.updateOnScroll = function () {
+  Glossary.prototype.updateCatalogPosition = function () {
     var scrollTop = this.window.scrollTop(),
         headerHeight = this.header.innerHeight(),
         topPosition = this.container.offset().top,
@@ -132,6 +146,32 @@
 
     this.container.toggleClass('is-fixed', isFixed);
     this.body.toggleClass('with-catalog', isFixed);
+  }
+
+  Glossary.prototype.collectPostPositions = function () {
+    var self = this;
+
+    this.posts.each(function(index, element) {
+      var topPosition = $(element).offset().top,
+          elementHeight = $(element).innerHeight(),
+          elementPosition = [topPosition, topPosition + elementHeight];
+
+      self.postPositions.push(elementPosition);
+    });
+  }
+
+  Glossary.prototype.checkActiveLetter = function () {
+    var self = this,
+        arr = this.postPositions,
+        currentPosition = this.window.scrollTop() +
+          this.header.innerHeight() + this.catalog.innerHeight();
+
+    arr.forEach(function(item, i, arr) {
+      if (currentPosition >= item[0] && currentPosition < item[1]) {
+        self.catalogLinksActive.removeClass('is-active');
+        self.catalogLinksActive.eq(i).addClass('is-active');
+      }
+    });
   }
 
 
