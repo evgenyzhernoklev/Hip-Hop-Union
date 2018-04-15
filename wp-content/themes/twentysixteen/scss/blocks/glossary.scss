@@ -1,5 +1,6 @@
 .glossary {
-
+  margin: 0 -20px;
+  padding: 0 0 73px;
 }
 
 .glossary__in {
@@ -7,22 +8,49 @@
 }
 
 .glossary__title {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
 
+  &:last-child {
+    border-bottom: 0;
+  }
 }
 
 .glossary__link {
-  font-size: 20px;
+  display: inline-block;
+  padding: 12px 0 10px;
+  font: 21px/27px $nova-semibold;
+  color: $black;
+
+  &:hover {
+    color: $red;
+  }
+}
+
+@media (max-width: 767px) {
+  .glossary {
+    padding: 0 0 53px;
+  }
+
+  .glossary__title {
+    padding: 5px 0;
+  }
+
+  .glossary__link {
+    font-size: 18px;
+    line-height: 24px;
+  }
 }
 
 
 
-.glossaryLetters {
-  margin: 0 -20px;
+.glossaryCatalog {
+  padding: 0 20px;
   background-color: $white;
   border-bottom: 1px solid #ddd;
 }
 
-.glossaryLetters__in {
+.glossaryCatalog__in {
   height: 60px;
   line-height: 60px;
   text-align: justify;
@@ -34,7 +62,7 @@
   }
 }
 
-.glossaryLetters__letter {
+.glossaryCatalog__letter {
   display: inline-block;
   width: 20px;
   height: 32px;
@@ -53,5 +81,44 @@
 
   &.is-disabled {
     cursor: default;
+  }
+}
+
+@media (max-width: 767px) {
+  .glossaryCatalog {
+    display: none;
+  }
+}
+
+
+
+.glossaryList {
+  padding-top: 70px;
+}
+
+.glossaryList__item {
+  margin: 0 0 40px;
+  padding: 0 20px;
+  border-bottom: 1px solid #ddd;
+
+  &:last-child {
+    margin-bottom: 0;
+    border-bottom: 0;
+  }
+}
+
+.glossaryList__letter {
+  font: 36px/42px $nova-bold;
+  color: $red;
+}
+
+@media (max-width: 767px) {
+  .glossaryList {
+    padding-top: 0;
+  }
+
+  .glossaryList__letter {
+    font-size: 30px;
+    line-height: 36px;
   }
 }

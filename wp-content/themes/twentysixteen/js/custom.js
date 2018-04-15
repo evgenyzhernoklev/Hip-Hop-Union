@@ -74,7 +74,7 @@
   };
 
   Glossary.prototype.init = function () {
-    this.body.on('click', '.js-glossary-letter', this.scrollToLetter.bind(this));
+    this.body.on('click', '.js-glossary-catalog-letter', this.scrollToLetter.bind(this));
   }
 
   Glossary.prototype.scrollToLetter = function (e) {
