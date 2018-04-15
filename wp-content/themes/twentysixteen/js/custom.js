@@ -70,8 +70,10 @@
   var Glossary = function (container) {
     this.window = $(window);
     this.body = $('body');
+    this.header = $('.header');
     this.container = $(container);
-    this.catalogLinks = this.container.find('.js-glossary-catalog-letter');
+    this.catalog = this.container.find('.js-glossary-catalog');
+    this.catalogLinks = this.catalog.find('.js-glossary-catalog-letter');
     this.catalogList = [];
     this.postLetters = this.container.find('.js-glossary-post-letter');
     this.postLettersList = [];
@@ -80,9 +82,9 @@
 
   Glossary.prototype.init = function () {
     this.checkActiveCatalogLettes();
+    this.updateOnScroll();
     this.body.on('click', '.js-glossary-catalog-letter', this.scrollToLetter.bind(this));
-    // this.window.on('resize', this.updateOnResize.bind(this));
-    // this.window.on('scroll', this.updateOnScroll.bind(this));
+    this.window.on('scroll', this.updateOnScroll.bind(this));
   }
 
   Glossary.prototype.checkActiveCatalogLettes = function () {
@@ -110,9 +112,11 @@
         targetIndex = this.postLettersList.indexOf(letter);
 
     if (~targetIndex) {
-      var targetPosition = this.postLetters.eq(targetIndex)
-        .closest('.js-glossary-post')
-        .offset().top;
+      var menuHeight = this.header.innerHeight(),
+          catalogHeight = this.catalog .innerHeight(),
+          targetPosition = this.postLetters.eq(targetIndex)
+            .closest('.js-glossary-post')
+            .offset().top - menuHeight - catalogHeight;
 
       $('html, body').animate({
         scrollTop: targetPosition
@@ -120,13 +124,14 @@
     }
   }
 
-  // Glossary.prototype.updateOnResize = function () {
-  //
-  // }
-  //
-  // Glossary.prototype.updateOnScroll = function () {
-  //
-  // }
+  Glossary.prototype.updateOnScroll = function () {
+    var scrollTop = this.window.scrollTop(),
+        headerHeight = this.header.innerHeight(),
+        topPosition = this.container.offset().top,
+        isFixed = scrollTop + headerHeight >= topPosition;
+
+    this.container.toggleClass('is-fixed', isFixed);
+  }
 
 
 

@@ -19,7 +19,7 @@ Template Name: Шаблон страницы библиотеки
 		the_title( '<h1 class="titlePage contentIn contentIn--small">', '</h1>' );
 	?>
 
-	<div class="glossary js-glossary">
+	<div class="glossaryWrapper js-glossary">
 		<div class="glossary__catalog glossaryCatalog js-glossary-catalog">
 			<div class="glossaryCatalog__in contentIn contentIn--small">
 				<a class="glossaryCatalog__letter js-glossary-catalog-letter">А</a>
