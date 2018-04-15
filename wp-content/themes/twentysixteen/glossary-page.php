@@ -20,7 +20,7 @@ Template Name: Шаблон страницы библиотеки
 	?>
 
 	<div class="glossaryWrapper js-glossary">
-		<div class="glossary__catalog glossaryCatalog js-glossary-catalog">
+		<div class="content glossary__catalog glossaryCatalog js-glossary-catalog">
 			<div class="glossaryCatalog__in contentIn contentIn--small">
 				<a class="glossaryCatalog__letter js-glossary-catalog-letter">А</a>
 				<a class="glossaryCatalog__letter js-glossary-catalog-letter">Б</a>

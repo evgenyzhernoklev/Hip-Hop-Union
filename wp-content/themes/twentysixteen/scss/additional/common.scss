@@ -2,7 +2,14 @@ body {
 	color: $black;
 	background-color: #F1F1F1;
 	text-rendering: optimizeLegibility;
+	-moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+
+	&.with-catalog {
+		.header:after {
+			@include hide();
+		}
+	}
 }
 
 a {

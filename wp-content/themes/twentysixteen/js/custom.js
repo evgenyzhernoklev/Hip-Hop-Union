@@ -131,6 +131,7 @@
         isFixed = scrollTop + headerHeight >= topPosition;
 
     this.container.toggleClass('is-fixed', isFixed);
+    this.body.toggleClass('with-catalog', isFixed);
   }
 
 

@@ -7,11 +7,10 @@
 
     .glossaryCatalog {
       position: fixed;
-      z-index: 100;
+      z-index: 98;
       top: 90px;
       left: 0;
       right: 0;
-      background-color: $white;
 
       &:after {
         @include show();
@@ -40,7 +39,7 @@
   color: $black;
 
   &:hover {
-    color: $red;
+    color: $blue;
   }
 }
 
@@ -63,8 +62,8 @@
 
 .glossaryCatalog {
   padding: 0 20px;
+  background-color: $white;
   border-bottom: 1px solid #ddd;
-  transition: background-color $transition-normal;
 
   &:after {
     content: '';

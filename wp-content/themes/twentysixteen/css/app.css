@@ -64,7 +64,13 @@ body {
   color: #111;
   background-color: #f1f1f1;
   text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+}
+body.with-catalog .header:after {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s linear, visibility 0.3s linear;
 }
 a {
   -webkit-transition: color 0.3s linear, border-color 0.3s linear, background-color 0.3s linear;
@@ -768,11 +774,10 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
 }
 .glossaryWrapper.is-fixed .glossaryCatalog {
   position: fixed;
-  z-index: 100;
+  z-index: 98;
   top: 90px;
   left: 0;
   right: 0;
-  background-color: #fff;
 }
 .glossaryWrapper.is-fixed .glossaryCatalog:after {
   visibility: visible;
@@ -793,7 +798,7 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
   color: #111;
 }
 .glossary__link:hover {
-  color: #fe2f2f;
+  color: #226bd3;
 }
 @media (max-width: 767px) {
   .glossary {
@@ -809,8 +814,8 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
 }
 .glossaryCatalog {
   padding: 0 20px;
+  background-color: #fff;
   border-bottom: 1px solid #ddd;
-  transition: background-color 0.3s linear;
 }
 .glossaryCatalog:after {
   content: '';
