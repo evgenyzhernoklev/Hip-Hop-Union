@@ -16,7 +16,7 @@ Template Name: Шаблон страницы библиотеки
 																	'post_status'			=>'publish',
 																	'posts_per_page'	=> -1,
 																	'order' 					=> 'ASC',
-																	'orderby' 				=> 'menu_order'
+																	'orderby' 				=> 'title'
 																)); ?>
 
 	<?php if ( $wpb_all_query->have_posts() ) : ?>
