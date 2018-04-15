@@ -68,17 +68,33 @@
 
   // glossary class
   var Glossary = function (container) {
+    this.window = $(window);
     this.body = $('body');
     this.container = $(container);
     this.init();
   };
 
   Glossary.prototype.init = function () {
+    this.checkActiveCatalogLettes();
     this.body.on('click', '.js-glossary-catalog-letter', this.scrollToLetter.bind(this));
+    this.window.on('resize', this.updateOnResize.bind(this));
+    this.window.on('scroll', this.updateOnScroll.bind(this));
+  }
+
+  Glossary.prototype.checkActiveCatalogLettes = function () {
+
   }
 
   Glossary.prototype.scrollToLetter = function (e) {
     e.preventDefault();
+  }
+
+  Glossary.prototype.updateOnResize = function () {
+
+  }
+
+  Glossary.prototype.updateOnScroll = function () {
+
   }
 
 
