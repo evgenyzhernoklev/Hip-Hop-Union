@@ -754,6 +754,22 @@ add_filter('upload_mimes', 'my_myme_types', 1, 1);
 
 
 /******************************************************************************/
+/******************* checks if current page has special slug ******************/
+/******************************************************************************/
+function has_slug($slug) {
+	$url = $_SERVER["REQUEST_URI"];
+	$isSlug = strpos($url, $slug);
+
+	if ( $isSlug ) :
+		return true;
+	endif;
+
+	return false;
+}
+
+
+
+/******************************************************************************/
 /****************************** Add custom script *****************************/
 /******************************************************************************/
 wp_enqueue_script( 'script', get_template_directory_uri() . '/js/custom.js', array ( 'jquery' ), 1.1, true);
