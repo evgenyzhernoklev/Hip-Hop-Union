@@ -575,17 +575,23 @@ abstract class Person_Meta_Boxes
         $screens = ['person'];
         foreach ($screens as $screen) {
 						add_meta_box(
-								'person_link_id',        				// Unique ID
-								'Ссылка на контакты', 					// Box title
-								[self::class, 'html_link'],   	// Content callback, must be of type callable
-								$screen                 				// Post type
+								'person_link_id',        						// Unique ID
+								'Ссылка на контакты', 							// Box title
+								[self::class, 'html_link'],   			// Content callback, must be of type callable
+								$screen                 						// Post type
 						);
             add_meta_box(
-                'person_phone_id',        			// Unique ID
-                'Телефон', 											// Box title
-                [self::class, 'html_phone'],   	// Content callback, must be of type callable
-                $screen                 				// Post type
+                'person_phone_id',        					// Unique ID
+                'Телефон', 													// Box title
+                [self::class, 'html_phone'],   			// Content callback, must be of type callable
+                $screen                 						// Post type
             );
+						add_meta_box(
+								'person_name_english_id',       		// Unique ID
+								'Имя на английском', 								// Box title
+								[self::class, 'html_name_english'], // Content callback, must be of type callable
+								$screen                 						// Post type
+						);
         }
     }
 
@@ -605,6 +611,13 @@ abstract class Person_Meta_Boxes
                 $_POST['person_phone_field']
             );
         }
+				if (array_key_exists('person_name_english_field', $_POST)) {
+						update_post_meta(
+								$post_id,
+								'_person_name_english_meta_key',
+								$_POST['person_name_english_field']
+						);
+				}
     }
 
 		public static function html_link($post)
@@ -620,6 +633,14 @@ abstract class Person_Meta_Boxes
         $valuePhone = get_post_meta($post->ID, '_person_phone_meta_key', true);
         ?>
 				<input type="text" name="person_phone_field" id="person_phone_field" value="<?php echo $valuePhone ?>" style="width: 100%;" />
+        <?php
+    }
+
+		public static function html_name_english($post)
+    {
+        $valuePhone = get_post_meta($post->ID, '_person_name_english_meta_key', true);
+        ?>
+				<input type="text" name="person_name_english_field" id="person_name_english_field" value="<?php echo $valuePhone ?>" style="width: 100%;" />
         <?php
     }
 }
