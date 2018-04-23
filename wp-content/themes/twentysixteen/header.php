@@ -19,9 +19,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<?php
-	$isEn = has_slug('en');
-?>
+<?php $isEn = has_slug('en'); ?>
 
 <body <?php body_class(); ?>>
 	<header class="header content" role="banner">

@@ -171,6 +171,16 @@ function twentysixteen_widgets_init() {
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Информация в подвале на английском', 'twentysixteen' ),
+		'id'            => 'sidebar-3',
+		'description'   => __( 'Информация появляется в подвале.', 'twentysixteen' ),
+		'before_widget' => '<div class="widget %2$s" role="complementary">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
 }
 add_action( 'widgets_init', 'twentysixteen_widgets_init' );
 

@@ -13,9 +13,18 @@
 	<footer class="footer content" role="contentinfo">
 		<div class="contentIn">
 
-			<?php the_custom_logo(); ?>
+			<?php
+				$isEn = has_slug('en');
+				the_custom_logo();
+			?>
 
-			<?php get_sidebar( 'content-bottom' ); ?>
+			<?php
+				if ( $isEn ) :
+					get_sidebar( 'content-bottom-english' );
+				else :
+					get_sidebar( 'content-bottom' );
+				endif;
+			?>
 
 			<?php if ( has_nav_menu( 'social' ) ) : ?>
 				<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'twentysixteen' ); ?>">

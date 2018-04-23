@@ -7,13 +7,13 @@
  * @since Twenty Sixteen 1.0
  */
 
-if ( !is_active_sidebar( 'sidebar-2' ) ) {
+if ( !is_active_sidebar( 'sidebar-3' ) ) {
 	return;
 }
 
 // If we get this far, we have widgets. Let's do this.
 ?>
 
-<?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
-	<?php dynamic_sidebar( 'sidebar-2' ); ?>
+<?php if ( is_active_sidebar( 'sidebar-3' ) ) : ?>
+	<?php dynamic_sidebar( 'sidebar-3' ); ?>
 <?php endif; ?>
