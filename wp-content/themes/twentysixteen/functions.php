@@ -575,22 +575,28 @@ abstract class Person_Meta_Boxes
         $screens = ['person'];
         foreach ($screens as $screen) {
 						add_meta_box(
-								'person_link_id',        						// Unique ID
-								'Ссылка на контакты', 							// Box title
-								[self::class, 'html_link'],   			// Content callback, must be of type callable
-								$screen                 						// Post type
+								'person_link_id',        								// Unique ID
+								'Ссылка на контакты', 									// Box title
+								[self::class, 'html_link'],   					// Content callback, must be of type callable
+								$screen                 								// Post type
 						);
             add_meta_box(
-                'person_phone_id',        					// Unique ID
-                'Телефон', 													// Box title
-                [self::class, 'html_phone'],   			// Content callback, must be of type callable
-                $screen                 						// Post type
+                'person_phone_id',        							// Unique ID
+                'Телефон', 															// Box title
+                [self::class, 'html_phone'],   					// Content callback, must be of type callable
+                $screen                 								// Post type
             );
 						add_meta_box(
-								'person_name_english_id',       		// Unique ID
-								'Имя на английском', 								// Box title
-								[self::class, 'html_name_english'], // Content callback, must be of type callable
-								$screen                 						// Post type
+								'person_name_english_id',       				// Unique ID
+								'Имя на английском', 										// Box title
+								[self::class, 'html_name_english'], 		// Content callback, must be of type callable
+								$screen                 								// Post type
+						);
+						add_meta_box(
+								'person_excerpt_id',       							// Unique ID
+								'Описание деятельности на английском', 	// Box title
+								[self::class, 'html_excerpt'], 					// Content callback, must be of type callable
+								$screen                 								// Post type
 						);
         }
     }
@@ -618,6 +624,13 @@ abstract class Person_Meta_Boxes
 								$_POST['person_name_english_field']
 						);
 				}
+				if (array_key_exists('person_excerpt_field', $_POST)) {
+						update_post_meta(
+								$post_id,
+								'_person_excerpt_meta_key',
+								$_POST['person_excerpt_field']
+						);
+				}
     }
 
 		public static function html_link($post)
@@ -642,6 +655,14 @@ abstract class Person_Meta_Boxes
         ?>
 				<input type="text" name="person_name_english_field" id="person_name_english_field" value="<?php echo $valuePhone ?>" style="width: 100%;" />
         <?php
+    }
+
+		public static function html_excerpt($post)
+    {
+        $valuePhone = get_post_meta($post->ID, '_person_excerpt_meta_key', true);
+        ?>
+				<textarea name="person_excerpt_field" id="person_excerpt_field" value="<?php echo $valuePhone ?>" style="width: 100%;" /><?php echo $valuePhone ?></textarea>
+      	<?php
     }
 }
 

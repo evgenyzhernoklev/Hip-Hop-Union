@@ -2,14 +2,15 @@
 /*
 Template Name: Шаблон страницы персон
 */
-?>
 
-<?php get_header(); ?>
+	$isEn = has_slug('en');
+
+get_header(); ?>
 
 <main class="contentIn" role="main">
-	<?php the_title( '<h1 class="titlePage">', '</h1>' ); ?>
-
 	<?php
+	the_title( '<h1 class="titlePage">', '</h1>' );
+
 	// запрос
 	$wpb_all_query = new WP_Query(array(
 																	'post_type'				=>'person',
@@ -24,7 +25,18 @@ Template Name: Шаблон страницы персон
 		<div class="colsFlex colsFlex--3 colsFlex--center">
 			<?php while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post(); ?>
 
-				<?php $link = get_post_meta($post->ID, '_person_link_meta_key', true); ?>
+				<?php
+					$link = get_post_meta($post->ID, '_person_link_meta_key', true);
+					$title = get_the_title();
+					$excerpt = get_the_excerpt();
+					$title_english = get_post_meta($post->ID, '_person_name_english_meta_key', true);
+					$excerpt_english = get_post_meta($post->ID, '_person_excerpt_meta_key', true);
+
+					if ( $isEn ) :
+						$title = $title_english;
+						$excerpt = $excerpt_english;
+					endif;
+				?>
 
 				<div class="colsFlex__col colsFlex__col--3">
 					<div class="partner">
@@ -37,16 +49,16 @@ Template Name: Шаблон страницы персон
 							</div>
 							<h2 class="partnerTitle"><a class="partnerTitle__link"
 																					href="<?php echo $link ?>"
-																					target="_blank"><?php the_title(); ?></a></h2>
+																					target="_blank"><?php echo $title; ?></a></h2>
 						<?php else : ?>
 							<div class="partnerImg partnerImg--big">
 								<?php the_post_thumbnail(); ?>
 							</div>
-							<h2 class="partnerTitle"><?php the_title(); ?></h2>
+							<h2 class="partnerTitle"><?php echo $title; ?></h2>
 						<?php endif; ?>
 
 						<div class="partnerInfo">
-							<?php the_excerpt(); ?>
+							<?php echo $excerpt; ?>
 						</div>
 					</div>
 				</div>

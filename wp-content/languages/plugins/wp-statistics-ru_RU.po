@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WP Statistics - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2018-02-26 14:04:56+0000\n"
+"PO-Revision-Date: 2018-03-15 17:16:38+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -31,6 +31,10 @@ msgstr "Farhad Sakhaei"
 msgid "Greg Ross"
 msgstr "Greg Ross"
 
+#: includes/templates/welcomes/last-version.php:117
+msgid "Original Author"
+msgstr "Оригинальный автор"
+
 #: includes/templates/welcomes/last-version.php:116
 msgid "Mostafa Soufi"
 msgstr "Mostafa Soufi"
@@ -38,6 +42,10 @@ msgstr "Mostafa Soufi"
 #: includes/templates/welcomes/last-version.php:112
 msgid "Project Leaders"
 msgstr "Лидеры проекта"
+
+#: includes/templates/welcomes/last-version.php:93
+msgid "Please let us know about new problems by <a href=\"%s\" target=\"_blank\">contacting us</a>."
+msgstr "Чтобы сообщить нам о новых проблемах, <a href=\"%s\" target=\"_blank\">свяжитесь с нами</a>."
 
 #: includes/templates/welcomes/last-version.php:67
 msgid "New Add-Ons!"
@@ -114,6 +122,15 @@ msgstr "Самые частые поисковые фразы"
 #: includes/classes/class-wp-statistics-network-admin.php:90
 msgid "Searched Phrases"
 msgstr "Поисковые фразы"
+
+#: includes/classes/class-wp-statistics-ajax.php:354
+msgid "<a href=\"%s\">Click here</a> to see page stats."
+msgstr "<a href=\"%s\">Нажмите здесь</a>, чтобы посмотреть статистику страницы."
+
+#: includes/classes/class-wp-statistics-admin.php:415
+#: includes/classes/class-wp-statistics-admin.php:416
+msgid "Top Search Words"
+msgstr "Топ поисковых фраз"
 
 #. Author of the plugin/theme
 msgid "Verona Labs"
