@@ -17,6 +17,7 @@
  */
 
 	$title = sprintf( __( '%1$s' ), single_term_title( '', false ) );
+	$category_description = category_description();
 
 get_header(); ?>
 
@@ -26,6 +27,14 @@ get_header(); ?>
 		<header class="page-header">
 			<h1 class="titlePage"><?php echo $title; ?></h1>
 		</header>
+
+		<?php if ( $category_description ) : ?>
+			<div class="singleContent singleContent--category">
+				<div class="entry-summary">
+					<?php echo $category_description; ?>
+				</div>
+			</div>
+		<?php endif; ?>
 
 		<?php
 		echo '<div class="clear posts">';

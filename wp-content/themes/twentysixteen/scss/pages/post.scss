@@ -92,6 +92,16 @@
 	font: 20px/30px $pt-regular;
 	color: $black;
 
+	&.singleContent--category {
+		max-width: 760px;
+		margin: -25px auto 0;
+		padding: 0 20px;
+
+		.entry-summary {
+			margin-bottom: 50px;
+		}
+	}
+
 	.entry-summary {
 		position: relative;
 		margin-bottom: 45px;

@@ -1792,6 +1792,14 @@ article.post {
   font: 20px/30px 'PTSerif-Regular', Arial, sans-serif;
   color: #111;
 }
+.singleContent.singleContent--category {
+  max-width: 760px;
+  margin: -25px auto 0;
+  padding: 0 20px;
+}
+.singleContent.singleContent--category .entry-summary {
+  margin-bottom: 50px;
+}
 .singleContent .entry-summary {
   position: relative;
   margin-bottom: 45px;
