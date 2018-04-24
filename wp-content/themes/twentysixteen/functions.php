@@ -414,6 +414,52 @@ add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
 
 
 /******************************************************************************/
+/*********************************** Pages ************************************/
+/******************************************************************************/
+/**
+ * Add description field for post types => pages
+*/
+abstract class Page_Meta_Boxes
+{
+    public static function add()
+    {
+        $screens = ['page'];
+        foreach ($screens as $screen) {
+						add_meta_box(
+								'page_excerpt_id',       									// Unique ID
+								'Описание (выводится после заголовка)', 	// Box title
+								[self::class, 'html_excerpt'], 						// Content callback, must be of type callable
+								$screen                 									// Post type
+						);
+        }
+    }
+
+    public static function save($post_id)
+    {
+				if (array_key_exists('page_excerpt_field', $_POST)) {
+						update_post_meta(
+								$post_id,
+								'_page_excerpt_meta_key',
+								$_POST['page_excerpt_field']
+						);
+				}
+    }
+
+		public static function html_excerpt($post)
+    {
+        $valuePhone = get_post_meta($post->ID, '_page_excerpt_meta_key', true);
+        ?>
+				<textarea name="page_excerpt_field" id="page_excerpt_field" value="<?php echo $valuePhone ?>" style="width: 100%;" /><?php echo $valuePhone ?></textarea>
+      	<?php
+    }
+}
+
+add_action('add_meta_boxes', ['Page_Meta_Boxes', 'add']);
+add_action('save_post', ['Page_Meta_Boxes', 'save']);
+
+
+
+/******************************************************************************/
 /*********************************** Posts ************************************/
 /******************************************************************************/
 /**
@@ -773,8 +819,11 @@ add_action('save_post', ['Partner_Meta_Boxes', 'save']);
 
 
 /******************************************************************************/
-/******************************* Add svg support ******************************/
+/*********************************** common ***********************************/
 /******************************************************************************/
+/**
+ * Add svg support
+*/
 function my_myme_types($mime_types){
     $mime_types['svg'] = 'image/svg+xml'; // поддержка SVG
     return $mime_types;
@@ -784,9 +833,9 @@ add_filter('upload_mimes', 'my_myme_types', 1, 1);
 
 
 
-/******************************************************************************/
-/******************* checks if current page has special slug ******************/
-/******************************************************************************/
+/**
+ * Checks if current page has special slug
+*/
 function has_slug($slug) {
 	$url = $_SERVER["REQUEST_URI"];
 	$isSlug = strpos($url, $slug);
@@ -800,7 +849,7 @@ function has_slug($slug) {
 
 
 
-/******************************************************************************/
-/****************************** Add custom script *****************************/
-/******************************************************************************/
+/**
+ * Add custom script
+*/
 wp_enqueue_script( 'script', get_template_directory_uri() . '/js/custom.js', array ( 'jquery' ), 1.1, true);

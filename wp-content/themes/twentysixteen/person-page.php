@@ -4,13 +4,22 @@ Template Name: Шаблон страницы персон
 */
 
 	$isEn = has_slug('en');
+	$excerpt = get_post_meta($post->ID, '_page_excerpt_meta_key', true);
 
 get_header(); ?>
 
 <main class="contentIn" role="main">
-	<?php
-	the_title( '<h1 class="titlePage">', '</h1>' );
+	<?php the_title( '<h1 class="titlePage">', '</h1>' ); ?>
 
+	<?php if ( $excerpt ) : ?>
+		<div class="singleContent singleContent--category">
+			<div class="entry-summary">
+				<?php echo $excerpt; ?>
+			</div>
+		</div>
+	<?php endif; ?>
+
+	<?php
 	// запрос
 	$wpb_all_query = new WP_Query(array(
 																	'post_type'				=>'person',

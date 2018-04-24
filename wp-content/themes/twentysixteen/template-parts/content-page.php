@@ -13,9 +13,7 @@
 		<?php the_title( '<h1 class="entry-title titlePage titlePage--page">', '</h1>' ); ?>
 	</header>
 
-	<?php
-		// twentysixteen_post_thumbnail();
-	?>
+	<?php // twentysixteen_post_thumbnail(); ?>
 
 	<div class="entry-content singleContent">
 		<?php the_content(); ?>
@@ -23,7 +21,6 @@
 
 	<footer class="entry-footer singleFooter">
 		<div class="singleFooterIn">
-
 		</div>
 	</footer>
 
