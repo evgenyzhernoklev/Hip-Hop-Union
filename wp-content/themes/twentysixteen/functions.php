@@ -850,6 +850,25 @@ function has_slug($slug) {
 
 
 /**
+ * Add custom logo
+*/
+function hip_logo() {
+		$url = has_slug('en') ? '/en/' : '/';
+    $custom_logo_id = get_theme_mod( 'custom_logo' );
+    $html = sprintf( '<a href="%1$s" class="custom-logo-link" rel="home" itemprop="url">%2$s</a>',
+            esc_url( $url ),
+            wp_get_attachment_image( $custom_logo_id, 'full', false, array(
+                'class'    => 'custom-logo',
+            ) )
+        );
+    return $html;
+}
+
+add_filter( 'get_custom_logo', 'hip_logo' );
+
+
+
+/**
  * Add custom script
 */
 wp_enqueue_script( 'script', get_template_directory_uri() . '/js/custom.js', array ( 'jquery' ), 1.1, true);

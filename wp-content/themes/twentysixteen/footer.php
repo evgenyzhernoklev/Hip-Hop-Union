@@ -13,10 +13,7 @@
 	<footer class="footer content" role="contentinfo">
 		<div class="contentIn">
 
-			<?php
-				$isEn = has_slug('en');
-				the_custom_logo();
-			?>
+			<?php echo hip_logo(); ?>
 
 			<?php
 				if ( $isEn ) :
