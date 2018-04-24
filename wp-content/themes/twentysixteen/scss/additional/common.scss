@@ -63,14 +63,13 @@ a {
 	padding: 70px 0 75px;
 	font: 60px/72px $nova-bold;
 	text-align: center;
-}
 
-.titlePage:first-letter {
-	text-transform: uppercase;
+	&:first-letter {
+		text-transform: uppercase;
+	}
 }
 
 .titlePage--page {
-	margin-bottom: -35px;
 	padding-bottom: 0;
 }
 
