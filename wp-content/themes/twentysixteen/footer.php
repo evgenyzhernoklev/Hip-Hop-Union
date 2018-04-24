@@ -16,7 +16,7 @@
 			<?php echo hip_logo(); ?>
 
 			<?php
-				if ( $isEn ) :
+				if ( has_slug('en') ) :
 					get_sidebar( 'content-bottom-english' );
 				else :
 					get_sidebar( 'content-bottom' );
