@@ -11,6 +11,8 @@
 <?php
 	$post_type = get_post_type();
 	$author = '';
+	$title_length = mb_strlen( get_the_title() );
+	$title_class = '';
 
 	if ($post_type == 'glossary') :
 		$author = get_post_meta($post->ID, '_glossary_author_meta_key', true);
@@ -20,6 +22,10 @@
 
 	if (!$author) :
 		$author = get_the_author();
+	endif;
+
+	if ($title_length > 100) :
+		$title_class = ' singleHeader__title--small';
 	endif;
 ?>
 
@@ -31,7 +37,7 @@
 		<div class="contentIn contentIn--small">
 			<span class="singleHeader__date"><?php echo get_the_date('F j, Y'); ?></span>
 			<span class="singleHeader__author">Автор: <?php echo $author; ?></span>
-			<?php the_title( '<h1 class="entry-title singleHeader__title">', '</h1>' ); ?>
+			<?php the_title( '<h1 class="entry-title singleHeader__title' . $title_class . '">', '</h1>' ); ?>
 			<?php echo get_the_category_list(); ?>
 		</div>
 	</header>

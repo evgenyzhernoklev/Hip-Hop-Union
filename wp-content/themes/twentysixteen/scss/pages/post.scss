@@ -57,6 +57,11 @@
 	color: $white-light;
 }
 
+.singleHeader__title--small {
+	font-size: 36px;
+	line-height: 48px;
+}
+
 @media (max-width: 767px) {
 	.singleHeader {
 		height: 550px;
@@ -81,6 +86,12 @@
 		bottom: 125px;
 		font-size: 36px;
 		line-height: 48px;
+	}
+
+	.singleHeader__title--small {
+		bottom: 135px;
+		font-size: 24px;
+		line-height: 32px;
 	}
 }
 

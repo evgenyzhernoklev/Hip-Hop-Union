@@ -1,0 +1,57 @@
+.attached-file {
+  margin: 50px 0 30px 70px;
+}
+
+.attached-file-link {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -70px;
+    display: inline-block;
+    width: 56px;
+    height: 56px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  	background-size: 56px 56px;
+    background-image: url('/wp-content/uploads/icons/file_types/file.svg');
+  }
+
+  &[href$=".docx"],
+  &[href$=".doc"] {
+    &:before {
+      background-image: url('/wp-content/uploads/icons/file_types/doc.svg');
+    }
+  }
+
+  &[href$=".pdf"] {
+    &:before {
+      background-image: url('/wp-content/uploads/icons/file_types/pdf.svg');
+    }
+  }
+
+  &[href$=".zip"] {
+    &:before {
+      background-image: url('/wp-content/uploads/icons/file_types/zip.svg');
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .attached-file {
+    margin: 50px 0 30px 55px;
+  }
+
+  .attached-file-link {
+    font-size: 16px;
+
+    &:before {
+      width: 42px;
+      height: 42px;
+      left: -55px;
+      background-size: 42px 42px;
+    }
+  }
+}
