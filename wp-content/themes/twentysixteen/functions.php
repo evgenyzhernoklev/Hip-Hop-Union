@@ -869,6 +869,31 @@ add_filter( 'get_custom_logo', 'hip_logo' );
 
 
 /**
+ * Add custom file in article footer
+*/
+function attached_file() {
+		global $post;
+
+		$is_showing_file = get_post_meta($post->ID, 'select_type', true);
+		$attached_file_link = esc_url( get_post_meta($post->ID, 'pfdFile', true) );
+		$attached_file_name = end( explode('/', $attached_file_link) );
+		$html = '';
+
+		if ($is_showing_file == 'true') :
+			$html = sprintf( '<div class="attached-file">' .
+											 '<a href="%1$s" class="attached-file-link"' .
+											 'download>%2$s</a></div>',
+								$attached_file_link,
+								$attached_file_name
+							);
+		endif;
+
+		return $html;
+}
+
+
+
+/**
  * Add custom script
 */
 wp_enqueue_script( 'script', get_template_directory_uri() . '/js/custom.js', array ( 'jquery' ), 1.1, true);
@@ -909,11 +934,11 @@ $new_meta_fields = array(
         'options' => array (  // Параметры, всплывающие данные
             'one' => array (
                 'label' => 'Да',  // Название поля
-                'value' => 'Да'  // Значение
+                'value' => 'true'  // Значение
             ),
             'two' => array (
                 'label' => 'Нет',  // Название поля
-                'value' => 'Нет'  // Значение
+                'value' => 'false'  // Значение
             )
         )
     ),
