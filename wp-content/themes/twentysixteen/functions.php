@@ -876,7 +876,7 @@ function attached_file() {
 
 		$is_showing_file = get_post_meta($post->ID, 'select_type', true);
 		$attached_file_link = esc_url( get_post_meta($post->ID, 'pfdFile', true) );
-		$attached_file_name = end( explode('/', $attached_file_link) );
+		$attached_file_name = get_post_meta($post->ID, 'file_name', true);
 		$html = '';
 
 		if ($is_showing_file == 'true') :
@@ -920,11 +920,12 @@ add_action('add_meta_boxes', 'new_meta_box'); // Запускаем функци
 
 $new_meta_fields = array(
     array(
-        'name'  => 'File',
-        'label' => 'Файл',
-        'desc'  => '',
-        'id'    => 'pfdFile',
-        'type'  => 'file'
+        'name'  		=> 'File',
+        'label' 		=> 'Файл',
+        'desc'  		=> '',
+        'id'    		=> 'pfdFile',
+        'type'  		=> 'file',
+				'file_name' => 'file_name'
     ),
     array(
         'label' => 'Отображать в записи?',
@@ -954,8 +955,7 @@ function show_my_new_metabox() {
 	foreach ($new_meta_fields as $field) {
 		// Получаем значение если оно есть для этого поля
 		$meta = get_post_meta($post->ID, $field['id'], true);
-		$file_name = end( explode('/', $meta) );
-		// $file_name = end($file_name);
+		$file_name = get_post_meta($post->ID, $field['file_name'], true);
 
 		// Начинаем выводить таблицу
 		echo '<tr>
@@ -964,6 +964,7 @@ function show_my_new_metabox() {
 		    switch($field['type']) {
 		        case 'file':
 		            echo    '<input name="'.$field['id'].'" type="hidden" class="custom_upload_file" value="'.$meta.'" />
+								<input name="'.$field['file_name'].'" type="hidden" class="custom_upload_file_name" value="'.$file_name.'" />
 		            <a href="'.$meta.'" class="custom_file_prev">'.$file_name.'</a><br /><br />
 		            <input class="custom_upload_file_button button" type="button" value="Выберите файл" />
 		            <small style="display: inline-block; margin: 5px 0 0 10px;"><a href="#" class="custom_clear_file_button">Убрать файл</a></small>
@@ -1002,12 +1003,22 @@ function save_my_new_meta_fields($post_id) {
 
     // Если все отлично, прогоняем массив через foreach
     foreach ($new_meta_fields as $field) {
-        $old = get_post_meta($post_id, $field['id'], true); // Получаем старые данные (если они есть), для сверки
-        $new = $_POST[$field['id']];
-        if ($new && $new != $old) {  // Если данные новые
-            update_post_meta($post_id, $field['id'], $new); // Обновляем данные
-        } elseif ('' == $new && $old) {
-            delete_post_meta($post_id, $field['id'], $old); // Если данных нету, удаляем мету.
+				$old_name = get_post_meta($post_id, $field['file_name'], true); // Получаем старые данные (если они есть), для сверки
+				$new_name = $_POST[$field['file_name']];
+
+				if ($new_name && $new_name != $old_name) {  // Если данные новые
+						update_post_meta($post_id, $field['file_name'], $new_name); // Обновляем данные
+				} elseif ('' == $new_name && $old_name) {
+						delete_post_meta($post_id, $field['file_name'], $old_name); // Если данных нету, удаляем мету.
+				}
+
+        $old_id = get_post_meta($post_id, $field['id'], true); // Получаем старые данные (если они есть), для сверки
+        $new_id = $_POST[$field['id']];
+
+        if ($new_id && $new_id != $old_id) {  // Если данные новые
+            update_post_meta($post_id, $field['id'], $new_id); // Обновляем данные
+        } elseif ('' == $new_id && $old_id) {
+            delete_post_meta($post_id, $field['id'], $old_id); // Если данных нету, удаляем мету.
         }
     } // end foreach
 }
