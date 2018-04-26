@@ -588,10 +588,10 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
 .attached-file {
   margin: 50px 0 30px 70px;
 }
-.attached-file-link {
+.attached-file a, .attached-file-link {
   position: relative;
 }
-.attached-file-link:before {
+.attached-file a:before, .attached-file-link:before {
   content: '';
   position: absolute;
   top: -10px;
@@ -604,23 +604,29 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
   background-size: 56px 56px;
   background-image: url('/wp-content/uploads/icons/file_types/file.svg');
 }
-.attached-file-link[href$=".docx"]:before, .attached-file-link[href$=".doc"]:before {
+.attached-file a[href$=".docx"]:before, .attached-file-link[href$=".docx"]:before, .attached-file a[href$=".doc"]:before, .attached-file-link[href$=".doc"]:before {
   background-image: url('/wp-content/uploads/icons/file_types/doc.svg');
 }
-.attached-file-link[href$=".pdf"]:before {
+.attached-file a[href$=".pdf"]:before, .attached-file-link[href$=".pdf"]:before {
   background-image: url('/wp-content/uploads/icons/file_types/pdf.svg');
 }
-.attached-file-link[href$=".zip"]:before {
+.attached-file a[href$=".rtf"]:before, .attached-file-link[href$=".rtf"]:before {
+  background-image: url('/wp-content/uploads/icons/file_types/rtf.svg');
+}
+.attached-file a[href$=".ppt"]:before, .attached-file-link[href$=".ppt"]:before, .attached-file a[href$=".pptx"]:before, .attached-file-link[href$=".pptx"]:before {
+  background-image: url('/wp-content/uploads/icons/file_types/ppt.svg');
+}
+.attached-file a[href$=".zip"]:before, .attached-file-link[href$=".zip"]:before {
   background-image: url('/wp-content/uploads/icons/file_types/zip.svg');
 }
 @media (max-width: 767px) {
   .attached-file {
     margin: 50px 0 30px 55px;
   }
-  .attached-file-link {
+  .attached-file a, .attached-file-link {
     font-size: 16px;
   }
-  .attached-file-link:before {
+  .attached-file a:before, .attached-file-link:before {
     width: 42px;
     height: 42px;
     left: -55px;
