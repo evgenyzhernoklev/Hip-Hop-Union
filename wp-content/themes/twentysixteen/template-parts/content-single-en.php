@@ -83,6 +83,7 @@
 							foreach ($categories as $individual_category) $category_ids[] = $individual_category->term_id;
 
 							$args = array(
+								'post_type' 				=> 'news',
 								'category__in' 			=> $category_ids,
 								'post__not_in' 			=> array($post->ID),
 								'showposts'		 			=> 2,
