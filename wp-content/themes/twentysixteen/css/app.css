@@ -826,7 +826,8 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
   transition: opacity 0.3s linear, visibility 0.3s linear;
 }
 .glossary__title {
-  padding: 10px 0;
+  position: relative;
+  padding: 10px 60px 10px 0;
   border-bottom: 1px solid #ddd;
 }
 .glossary__title:last-child {
@@ -841,12 +842,29 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
 .glossary__link:hover {
   color: #226bd3;
 }
+.glossary__download {
+  position: absolute;
+  top: 15px;
+  right: 0;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: url('/wp-content/uploads/icons/download.svg') no-repeat center center;
+  background-size: 20px 35px;
+  transition: background-image 0.3s linear;
+}
+.glossary__download:hover {
+  background-image: url('/wp-content/uploads/icons/download_hover.svg');
+}
 @media (max-width: 767px) {
+  .glossaryWrapper {
+    padding: 0 0 30px;
+  }
   .glossary {
     padding: 0 0 53px;
   }
   .glossary__title {
-    padding: 5px 0;
+    padding: 5px 60px 5px 0;
   }
   .glossary__link {
     font-size: 18px;

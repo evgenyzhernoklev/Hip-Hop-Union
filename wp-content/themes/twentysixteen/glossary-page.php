@@ -55,11 +55,12 @@ Template Name: Шаблон страницы библиотеки
 
 		<div class="glossary__in glossaryList">
 		<?php
-			foreach( $posts as $k => $post ){
+			foreach ( $posts as $k => $post ) {
 				// первая буква
 				$fl = get_first_letter( $post->post_title );
 				$prev_fl = isset( $posts[ ($k-1) ] ) ? get_first_letter( $posts[ ($k-1) ]->post_title ) : '';
 				$next_fl = isset( $posts[ ($k+1) ] ) ? get_first_letter( $posts[ ($k+1) ]->post_title ) : '';
+				$file_url = get_post_meta($post->ID, 'pfdFile', true);
 
 				if ( $prev_fl !== $fl )
 					echo '<div class="glossaryList__item js-glossary-post">' .
@@ -68,7 +69,8 @@ Template Name: Шаблон страницы библиотеки
 
 				// данные
 				echo '<h3 class="glossary__title"><a class="glossary__link" href="' .
-					get_permalink($post->post_link) . '">' . $post->post_title . '</a></h3>';
+					get_permalink($post->post_link) . '">' . $post->post_title . '</a>' .
+					'<a href="' . $file_url . '" class="glossary__download" download></a></h3>';
 
 				if ( $next_fl !== $fl )
 					echo '</div></div>';
