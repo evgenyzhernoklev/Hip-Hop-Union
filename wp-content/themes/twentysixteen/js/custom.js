@@ -173,9 +173,9 @@
         currentPosition = this.window.scrollTop() +
           this.header.innerHeight() + this.catalog.innerHeight();
 
+    self.catalogLinksActive.removeClass('is-active');
     arr.forEach(function(item, i, arr) {
       if (currentPosition >= item[0] && currentPosition < item[1]) {
-        self.catalogLinksActive.removeClass('is-active');
         self.catalogLinksActive.eq(i).addClass('is-active');
       }
     });
