@@ -30,7 +30,7 @@ Template Name: Шаблон главной страницы (english)
 		<?php wp_reset_postdata(); ?>
 
 	<?php else : ?>
-		<p><?php _e( 'Извините, нет записей, соответствуюших Вашему запросу.' ); ?></p>
+		<p><?php echo 'No posts found.'; ?></p>
 	<?php endif; ?>
 
 	<div class="idea overlay" style="background-image: url('<?php the_post_thumbnail_url(); ?>');">
