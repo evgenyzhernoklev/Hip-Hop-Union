@@ -152,6 +152,12 @@
 	margin-bottom: 30px;
 }
 
+.searchContent__imgError {
+	display: block;
+	width: 70%;
+	margin: 0 auto 30px;
+}
+
 .search-form input {
 	width: 100%;
 	max-width: none;
@@ -163,6 +169,19 @@
 	border: 1px solid #CACACA;
 	box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.15);
 	border-radius: 3px;
+}
+
+@media (max-width: 767px) {
+	.searchContent {
+		.search-form {
+			padding-bottom: 50px;
+		}
+	}
+
+	.searchContent__imgError {
+		width: 90%;
+		margin-bottom: 20px;
+	}
 }
 
 
