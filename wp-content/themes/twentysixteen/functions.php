@@ -891,7 +891,7 @@ function has_slug($slug) {
  * Add custom logo
 */
 function hip_logo() {
-		$url = has_slug('en') ? '/en/' : '/';
+		$url = has_slug('en') || has_slug('news') ? '/en/' : '/';
     $custom_logo_id = get_theme_mod( 'custom_logo' );
     $html = sprintf( '<a href="%1$s" class="custom-logo-link" rel="home" itemprop="url">%2$s</a>',
             esc_url( $url ),

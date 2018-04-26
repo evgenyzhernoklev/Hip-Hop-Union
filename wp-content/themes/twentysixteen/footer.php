@@ -16,7 +16,7 @@
 			<?php echo hip_logo(); ?>
 
 			<?php
-				if ( has_slug('en') ) :
+				if ( has_slug('en') || has_slug('news') ) :
 					get_sidebar( 'content-bottom-english' );
 				else :
 					get_sidebar( 'content-bottom' );

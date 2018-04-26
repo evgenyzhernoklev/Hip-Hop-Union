@@ -19,7 +19,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<?php $isEn = has_slug('en'); ?>
+<?php $isEn = has_slug('en') || has_slug('news'); ?>
 
 <body <?php body_class(); ?>>
 	<header class="header content" role="banner">
@@ -46,6 +46,8 @@
 						</div>
 						<?php get_search_form(); ?>
 					</div>
+
+					<a class="langLink langLink--en" href="/en/"></a>
 				</div>
 
 				<div class="hamburger hamburger-spin">
@@ -54,7 +56,7 @@
 					</div>
 				</div>
 			<?php elseif ( $isEn ) : ?>
-				<div class="navigationWrapper">
+				<div class="navigationWrapper navigationWrapper--en">
 					<nav class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'twentysixteen' ); ?>">
 						<?php
 							wp_nav_menu( array(
@@ -64,6 +66,8 @@
 							 ) );
 						?>
 					</nav>
+
+					<a class="langLink langLink--ru" href="/"></a>
 				</div>
 
 				<div class="hamburger hamburger-spin">

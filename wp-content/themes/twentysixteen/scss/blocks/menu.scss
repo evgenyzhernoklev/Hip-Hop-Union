@@ -38,12 +38,37 @@
 		display: inline-block;
 		width: 100%;
 	}
+
+	& > .menu-item:last-child a {
+		position: relative;
+
+		&:before {
+			content: '';
+			position: absolute;
+			left: 10px;
+			top: 50%;
+			margin-top: -11px;
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			background: url('/wp-content/uploads/icons/en.svg') no-repeat center center;
+			background-size: 20px 20px;
+
+			.navigationWrapper--en & {
+				background-image: url('/wp-content/uploads/icons/ru.svg');
+			}
+		}
+	}
 }
 
 .menu-item {
 	display: inline-block;
 	position: relative;
 	transition: background-color .3s linear;
+
+	&:last-child {
+		display: none;
+	}
 
 	a {
 		display: inline-block;
@@ -80,6 +105,34 @@
 	background-image: url('/wp-content/uploads/icons/arrow_dropdown_hover.svg');
 }
 
+
+
+.langLink {
+	position: absolute;
+	top: 50%;
+	right: -130px;
+	margin-top: -5px;
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 40px 40px;
+	transition: margin-top $transition-normal;
+
+	&--en {
+		background-image: url('/wp-content/uploads/icons/en.svg');
+	}
+
+	&--ru {
+		background-image: url('/wp-content/uploads/icons/ru.svg');
+	}
+
+	.is-scrolled & {
+		margin-top: -22px;
+	}
+}
+
 @media (max-width: 1100px) {
 	.navigationWrapper {
 		max-width: 740px;
@@ -92,6 +145,11 @@
 			padding-right: 10px;
 			font-size: 18px;
 		}
+	}
+
+	.langLink {
+		right: -115px;
+		margin-top: -22px;
 	}
 }
 

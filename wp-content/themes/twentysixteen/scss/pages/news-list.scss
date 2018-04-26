@@ -20,6 +20,10 @@ article.post {
 	.posts {
 		.post {
 			width: 50%;
+
+			.page-template-main-page-en & {
+				width: 100%;
+			}
 		}
 	}
 }
