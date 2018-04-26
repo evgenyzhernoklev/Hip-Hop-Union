@@ -11,8 +11,8 @@ Template Name: Шаблон главной страницы (english)
 	<?php
 	// запрос
 	$wpb_all_query = new WP_Query(array(
-																	'post_type'				=>'post',
-																	'category_name'		=> 'Главные новости',
+																	'post_type'				=>'news',
+																	'category_name'		=> 'Main news',
 																	'post_status'			=>'publish',
 																	'posts_per_page'	=> 3
 																)); ?>

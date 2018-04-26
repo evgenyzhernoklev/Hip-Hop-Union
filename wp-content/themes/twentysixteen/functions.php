@@ -463,13 +463,13 @@ add_action('save_post', ['Page_Meta_Boxes', 'save']);
 /*********************************** Posts ************************************/
 /******************************************************************************/
 /**
- * Add custom fields for post types => posts
+ * Add custom fields for post types => posts, news
 */
 abstract class Post_Meta_Boxes
 {
     public static function add()
     {
-        $screens = ['post'];
+        $screens = ['post', 'news'];
         foreach ($screens as $screen) {
 						add_meta_box(
 								'post_author_id',        				// Unique ID
@@ -815,6 +815,44 @@ abstract class Partner_Meta_Boxes
 
 add_action('add_meta_boxes', ['Partner_Meta_Boxes', 'add']);
 add_action('save_post', ['Partner_Meta_Boxes', 'save']);
+
+
+
+/******************************************************************************/
+/******************************* English news *********************************/
+/******************************************************************************/
+/**
+ * Add custom post types => news
+*/
+add_action( 'init', 'create_post_type_news' );
+
+function create_post_type_news() {
+	register_post_type( 'news',
+  		array(
+          'labels' => array( // добавляем новые элементы в административную частьку
+              'name' => __( 'English news' ),
+              'singular_name' => __( 'English news' ),
+              'has_archive' => true,
+              'add_new' => 'Add post',
+              'not_found' => 'No posts',
+              'not_found_in_trash' => 'No posts in trash'
+          ),
+          'public' => true,
+					'menu_icon' => 'dashicons-admin-post',
+					'menu_position' => 4,
+          'has_archive' => true,
+          'supports' => array( //добавляем элементы в редактор
+              'title',
+							'editor',
+							'excerpt',
+              'thumbnail',
+							'revisions',
+							'comments'
+          ),
+         'taxonomies' => array('category', 'post_tag') //добавляем к записям необходимый набор таксономий
+     	)
+	);
+}
 
 
 

@@ -8,7 +8,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" class="post">
 	<header class="entry-header postHeader">
 		<div class="postHeaderImg">
 			<a href="<?php the_permalink() ?>" class="postHeaderImg__link" style="background-image: url('<?php the_post_thumbnail_url(); ?>')"></a>
