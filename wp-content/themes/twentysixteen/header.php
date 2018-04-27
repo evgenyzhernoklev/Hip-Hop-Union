@@ -19,7 +19,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<?php $isEn = has_slug('en') || has_slug('news'); ?>
+<?php $isEn = has_slug('/en') || has_slug('/news'); ?>
 
 <body <?php body_class(); ?>>
 	<header class="header content" role="banner">

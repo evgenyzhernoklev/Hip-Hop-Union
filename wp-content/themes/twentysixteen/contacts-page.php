@@ -3,7 +3,7 @@
 Template Name: Шаблон страницы контактов
 */
 
-	$isEn = has_slug('en');
+	$isEn = has_slug('/en');
 	$excerpt = get_post_meta($post->ID, '_page_excerpt_meta_key', true);
 
 get_header(); ?>

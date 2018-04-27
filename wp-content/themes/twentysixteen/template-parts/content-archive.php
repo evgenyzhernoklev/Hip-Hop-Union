@@ -7,7 +7,7 @@
  * @since Twenty Sixteen 1.0
  */
 
-	$isEn = has_slug('en');
+	$isEn = has_slug('/en');
 	$post_date = $isEn ? mysql2date('F j, Y', $post->post_date, false ) : get_the_date('F j, Y');
 ?>
 
