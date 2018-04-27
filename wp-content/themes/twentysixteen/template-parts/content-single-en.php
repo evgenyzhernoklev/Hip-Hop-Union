@@ -38,7 +38,7 @@
 			<span class="singleHeader__date"><?php echo mysql2date('F j, Y', $post->post_date, false ); ?></span>
 			<span class="singleHeader__author">Author: <?php echo $author; ?></span>
 			<?php the_title( '<h1 class="entry-title singleHeader__title' . $title_class . '">', '</h1>' ); ?>
-			<?php echo get_the_category_list(); ?>
+			<?php //echo get_the_category_list(); ?>
 		</div>
 	</header>
 
