@@ -13,7 +13,7 @@ get_header(); ?>
 																	'post_type'				=>'news',
 																	'category_name'		=> 'Main news',
 																	'post_status'			=>'publish',
-																	'posts_per_page'	=> 1
+																	'posts_per_page'	=> -1
 																)); ?>
 
 	<?php if ( $wpb_all_query->have_posts() ) : ?>
@@ -26,8 +26,6 @@ get_header(); ?>
 				endwhile;
 			?>
 		</div>
-
-		<?php wp_pagenavi( array( 'query' => $wpb_all_query ) ); ?>
 
 		<?php wp_reset_postdata(); ?>
 
