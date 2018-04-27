@@ -55,6 +55,7 @@
 
 				<?php
 					$posttags = get_the_tags();
+					$posttags = 0;
 					if ($posttags) {
 				?>
 					<div class="tags">

@@ -17,7 +17,12 @@
 			<a href="<?php the_permalink() ?>" class="postHeaderImg__link" style="background-image: url('<?php the_post_thumbnail_url(); ?>')"></a>
 		</div>
 
-		<?php echo get_the_category_list(); ?>
+		<?php
+			if ( !$isEn ) :
+				echo get_the_category_list();
+			endif;
+		?>
+
 	</header>
 
 	<div class="entry-content postContent">
