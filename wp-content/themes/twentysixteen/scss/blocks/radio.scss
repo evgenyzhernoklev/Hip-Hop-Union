@@ -1,0 +1,40 @@
+.page--radio {
+  position: relative;
+  padding-bottom: 250px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  .singleContent {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .titlePage,
+  .singleContent {
+    position: relative;
+  }
+
+  .titlePage {
+    color: #ececec;
+  }
+}
+
+.page__overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0, 0.5);
+}
+
+.jp-audio-stream {
+  margin: 30px auto 0;
+}
+
+@media (max-width: 767px) {
+  .page--radio {
+    padding-bottom: 50px;
+  }
+}

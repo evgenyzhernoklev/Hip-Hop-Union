@@ -41,5 +41,7 @@
 	</footer>
 
 <?php wp_footer(); ?>
+
+<script language="javascript" type="text/javascript" src="https://eu4.radioboss.fm:2199/system/player.js"></script>
 </body>
 </html>
