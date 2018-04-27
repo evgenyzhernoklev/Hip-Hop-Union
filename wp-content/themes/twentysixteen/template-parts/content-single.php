@@ -13,6 +13,7 @@
 	$author = '';
 	$title_length = mb_strlen( get_the_title() );
 	$title_class = '';
+	$category_list = get_the_category_list();
 
 	if ($post_type == 'glossary') :
 		$author = get_post_meta($post->ID, '_glossary_author_meta_key', true);
@@ -38,7 +39,11 @@
 			<span class="singleHeader__date"><?php echo get_the_date('F j, Y'); ?></span>
 			<span class="singleHeader__author">Автор: <?php echo $author; ?></span>
 			<?php the_title( '<h1 class="entry-title singleHeader__title' . $title_class . '">', '</h1>' ); ?>
-			<?php echo get_the_category_list(); ?>
+			<?php
+				if ( $category_list != 'Без рубрики' ) :
+					echo $category_list;
+				endif;
+			?>
 		</div>
 	</header>
 
