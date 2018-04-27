@@ -96,7 +96,7 @@ a {
 .contentIn--small {
   max-width: 720px;
 }
-@media (max-width: 1100px) {
+@media (max-width: 1300px) {
   .contentWrapper {
     padding-top: 90px;
   }
@@ -1078,7 +1078,7 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
   -webkit-transition: width 0.3s linear, height 0.3s linear;
   transition: width 0.3s linear, height 0.3s linear;
 }
-@media (max-width: 1100px) {
+@media (max-width: 1300px) {
   .header {
     height: 90px;
   }
@@ -1125,6 +1125,60 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
   top: 10px;
   right: 15px;
   margin-top: 0;
+}
+.header__radio {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  z-index: 4;
+  top: 50px;
+  left: 165px;
+  background: url('/wp-content/uploads/icons/boombox.svg') no-repeat center center;
+  background-size: 60px 60px;
+  transition: all 0.3s linear;
+}
+.is-scrolled .header__radio {
+  top: 15px;
+  left: 120px;
+}
+@media (max-width: 1300px) {
+  .header__radio {
+    width: 40px;
+    height: 40px;
+    background-size: 40px 40px;
+    top: 25px;
+    left: 110px;
+  }
+  .is-scrolled .header__radio {
+    top: 25px;
+    left: 110px;
+  }
+}
+@media (max-width: 992px) {
+  .header__radio {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin-left: 15px;
+    width: 60px;
+    height: 60px;
+    background-size: 60px 60px;
+    vertical-align: middle;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s linear, visibility 0.3s linear;
+  }
+  .is-scrolled .header__radio {
+    top: auto;
+    left: auto;
+  }
+  .search-opened .header__radio {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s linear, visibility 0.3s linear;
+    z-index: 1;
+  }
 }
 .menu-toggle {
   display: none;
@@ -1234,15 +1288,15 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
 .is-scrolled .langLink {
   margin-top: -22px;
 }
-@media (max-width: 1100px) {
+@media (max-width: 1300px) {
   .navigationWrapper {
-    max-width: 740px;
+    max-width: 680px;
     padding-top: 20px;
   }
   .menu-item a {
     padding-left: 10px;
     padding-right: 10px;
-    font-size: 18px;
+    font-size: 17px;
   }
   .langLink {
     right: -115px;
@@ -1453,39 +1507,6 @@ div.wpforms-container-full .wpforms-form input[type=submit]:hover, div.wpforms-c
 .nextpostslink {
   right: 20px;
   transform: rotate(180deg);
-}
-.page--radio {
-  position: relative;
-  padding-bottom: 250px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
-.page--radio .singleContent {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-.page--radio .titlePage, .page--radio .singleContent {
-  position: relative;
-}
-.page--radio .titlePage {
-  color: #ececec;
-}
-.page__overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-.jp-audio-stream {
-  margin: 30px auto 0;
-}
-@media (max-width: 767px) {
-  .page--radio {
-    padding-bottom: 50px;
-  }
 }
 .su-slider {
   margin: 40px 0 36px !important;
@@ -2177,6 +2198,39 @@ article.post {
     padding: 0 20px;
   }
 }
+.page--radio {
+  position: relative;
+  padding-bottom: 250px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.page--radio .singleContent {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.page--radio .titlePage, .page--radio .singleContent {
+  position: relative;
+}
+.page--radio .titlePage {
+  color: #ececec;
+}
+.page__overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.jp-audio-stream {
+  margin: 30px auto 0;
+}
+@media (max-width: 767px) {
+  .page--radio {
+    padding-bottom: 150px;
+  }
+}
 .searchResults {
   max-width: 720px;
   margin: 0 auto;
@@ -2411,7 +2465,7 @@ article.post {
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
-@media (max-width: 1100px) {
+@media (max-width: 1300px) {
   .searchHeader {
     margin-top: -25px;
   }

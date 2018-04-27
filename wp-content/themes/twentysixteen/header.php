@@ -27,6 +27,8 @@
 			<?php twentysixteen_the_custom_logo(); ?>
 
 			<?php if ( has_nav_menu( 'primary' ) && !$isEn ) : ?>
+				<a class="header__radio" href="/radio"></a>
+
 				<div class="navigationWrapper">
 					<?php if ( has_nav_menu( 'primary' ) ) : ?>
 						<nav class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'twentysixteen' ); ?>">

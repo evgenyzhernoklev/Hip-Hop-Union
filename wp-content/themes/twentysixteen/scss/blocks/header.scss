@@ -61,7 +61,7 @@
 	}
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1300px) {
 	.header {
 		height: 90px;
 
@@ -127,5 +127,65 @@
 		top: 10px;
 		right: 15px;
 		margin-top: 0;
+	}
+}
+
+
+
+// radio button
+.header__radio {
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	z-index: 4;
+	top: 50px;
+	left: 165px;
+	background: url('/wp-content/uploads/icons/boombox.svg') no-repeat center center;
+	background-size: 60px 60px;
+	transition: all $transition-normal;
+
+	.is-scrolled & {
+		top: 15px;
+		left: 120px;
+	}
+}
+
+@media (max-width: 1300px) {
+	.header__radio {
+		width: 40px;
+		height: 40px;
+		background-size: 40px 40px;
+		top: 25px;
+		left: 110px;
+
+		.is-scrolled & {
+			top: 25px;
+			left: 110px;
+		}
+	}
+}
+
+@media (max-width: 992px) {
+	.header__radio {
+		position: relative;
+		top: auto;
+		left: auto;
+		margin-left: 15px;
+		width: 60px;
+		height: 60px;
+		background-size: 60px 60px;
+		vertical-align: middle;
+		@include show();
+
+		.is-scrolled & {
+			top: auto;
+			left: auto;
+		}
+
+		.search-opened & {
+			@include hide();
+			z-index: 1;
+		}
 	}
 }
